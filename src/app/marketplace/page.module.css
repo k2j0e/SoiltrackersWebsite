@@ -76,17 +76,26 @@
 }
 
 .searchMock {
-  background: var(--st-glass-bg);
-  backdrop-filter: var(--st-glass-blur);
-  border: 1px solid var(--st-glass-border);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.4);
   border-radius: var(--st-radius-xl);
   padding: var(--st-space-6);
-  box-shadow: var(--st-shadow-pop);
-  transform: perspective(1000px) rotateY(-5deg);
-  transition: transform 0.5s ease;
+  box-shadow: 0 24px 48px -12px rgba(0,0,0,0.1);
+  transform: perspective(1000px) rotateY(-8deg) rotateX(4deg);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.searchMock::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, transparent 60%);
+  z-index: -1;
+  pointer-events: none;
 }
 .searchMock:hover {
-  transform: perspective(1000px) rotateY(0deg) translateY(-8px);
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-8px);
 }
 
 .searchInput {
@@ -170,6 +179,50 @@
   position: relative;
 }
 
+.photoCleanFill {
+  background: linear-gradient(135deg, #e6d3a8 0%, #c4b081 100%);
+  position: relative;
+  overflow: hidden;
+}
+.photoCleanFill::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background-image: radial-gradient(#9a885b 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.1;
+  transform: rotate(25deg);
+}
+
+.photoWanted {
+  background: var(--st-ink-50);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photoWanted::after {
+  content: '?';
+  font-size: 80px;
+  font-weight: 800;
+  color: var(--st-ink-100);
+}
+
+.photoTopsoil {
+  background: linear-gradient(135deg, #4a3c31 0%, #2a221b 100%);
+  position: relative;
+  overflow: hidden;
+}
+.photoTopsoil::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background-image: radial-gradient(#1a1511 2px, transparent 2px);
+  background-size: 16px 16px;
+  opacity: 0.2;
+}
+
 .listingBadge {
   position: absolute;
   top: var(--st-space-4);
@@ -245,17 +298,19 @@
 }
 
 .matchingCard {
-  background: var(--st-glass-bg);
-  backdrop-filter: var(--st-glass-blur);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
   padding: var(--st-space-6);
   border-radius: var(--st-radius-xl);
-  box-shadow: var(--st-shadow-card);
-  border: 1px solid var(--st-glass-border);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 12px 32px -8px rgba(0,0,0,0.05);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 .matchingCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--st-shadow-card-hover);
+  transform: translateY(-12px);
+  box-shadow: 0 24px 48px -12px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.9);
 }
 
 .ctaPanel {

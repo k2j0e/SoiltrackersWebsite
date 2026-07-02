@@ -80,7 +80,23 @@ export default function Haulers() {
         <section className={styles.driverApp} id="app">
           <div className={styles.driverAppInner}>
             <div className={styles.phoneMock}>
-              <i className="ri-smartphone-line" style={{fontSize: 48, marginRight: 8}}></i> Mobile App Screen Placeholder
+              <div className={styles.phoneScreen}>
+                <div className={styles.phoneHeader}>
+                  <i className="ri-arrow-left-s-line"></i>
+                  <span>Haul #482</span>
+                  <i className="ri-more-2-line"></i>
+                </div>
+                <div className={styles.phoneMap}>
+                  <div className={styles.phoneRoute}></div>
+                  <div className={styles.phonePin} style={{top:"20%", left:"20%"}}><i className="ri-map-pin-2-fill"></i></div>
+                  <div className={styles.phoneTruck}><i className="ri-truck-fill"></i></div>
+                </div>
+                <div className={styles.phoneDetails}>
+                  <div style={{fontWeight: 700, marginBottom: 4, color:"var(--st-ink-900)", fontSize: 16}}>Langley Site A</div>
+                  <div style={{color:"var(--st-ink-500)", fontSize: 12, marginBottom: 16}}>14 km remaining</div>
+                  <div className={styles.phoneButton}>Confirm Drop-off</div>
+                </div>
+              </div>
             </div>
             <div>
               <h2 className="st-h2">Two taps from the cab</h2>
@@ -100,7 +116,20 @@ export default function Haulers() {
             <p className="st-body1" style={{marginTop: 16}}>See where every truck is, exactly what they're carrying, and which jobs are behind schedule.</p>
           </div>
           <div className={styles.boardMock}>
-            <i className="ri-macbook-line" style={{fontSize: 48, marginRight: 8}}></i> Dispatch Board Screenshot Placeholder
+            <div className={styles.boardSidebar}>
+              <div className={styles.boardItem}></div>
+              <div className={styles.boardItem}></div>
+              <div className={styles.boardItem} style={{width:"80%"}}></div>
+              <div className={styles.boardItem} style={{width:"90%"}}></div>
+              <div className={styles.boardItem} style={{width:"60%"}}></div>
+            </div>
+            <div className={styles.boardMain}>
+               <div className={styles.boardMap}>
+                 <div className={styles.boardDot} style={{top:"30%", left:"40%", animationDelay: "0s"}}></div>
+                 <div className={styles.boardDot} style={{top:"60%", left:"70%", animationDelay: "1s"}}></div>
+                 <div className={styles.boardDot} style={{top:"80%", left:"20%", animationDelay: "2s"}}></div>
+               </div>
+            </div>
           </div>
         </section>
 

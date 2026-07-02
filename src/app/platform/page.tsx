@@ -30,8 +30,35 @@ export default function Platform() {
               <div className={styles.browserDot}></div>
               <div className={styles.browserDot}></div>
             </div>
-            <div className={styles.browserContent}>
-              <i className="ri-dashboard-line" style={{fontSize: 32, marginRight: 8}}></i> Project Summary Dashboard Placeholder
+            <div className={styles.browserContent} style={{alignItems: "flex-start", padding: 24}}>
+              <div style={{display: "flex", gap: 24, width: "100%", height: "100%"}}>
+                <div style={{width: 200, background: "var(--st-ink-50)", borderRadius: 8, padding: 16, display: "flex", flexDirection: "column", gap: 12}}>
+                  <div style={{width: "100%", height: 24, background: "var(--st-ink-100)", borderRadius: 4}}></div>
+                  <div style={{width: "80%", height: 16, background: "rgba(0,0,0,0.05)", borderRadius: 4}}></div>
+                  <div style={{width: "60%", height: 16, background: "rgba(0,0,0,0.05)", borderRadius: 4}}></div>
+                </div>
+                <div style={{flex: 1, display: "flex", flexDirection: "column", gap: 24}}>
+                  <div style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16}}>
+                    <div style={{height: 100, background: "white", borderRadius: 8, border: "1px solid var(--st-ink-100)", padding: 16, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+                      <div style={{width: "40%", height: 12, background: "var(--st-ink-150)", borderRadius: 4}}></div>
+                      <div style={{width: "60%", height: 32, background: "var(--st-brand-primary)", opacity: 0.1, borderRadius: 8}}></div>
+                    </div>
+                    <div style={{height: 100, background: "white", borderRadius: 8, border: "1px solid var(--st-ink-100)", padding: 16, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+                      <div style={{width: "50%", height: 12, background: "var(--st-ink-150)", borderRadius: 4}}></div>
+                      <div style={{width: "40%", height: 32, background: "var(--st-logo-leaf)", opacity: 0.2, borderRadius: 8}}></div>
+                    </div>
+                    <div style={{height: 100, background: "white", borderRadius: 8, border: "1px solid var(--st-ink-100)", padding: 16, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+                      <div style={{width: "30%", height: 12, background: "var(--st-ink-150)", borderRadius: 4}}></div>
+                      <div style={{width: "70%", height: 32, background: "var(--st-brand-primary)", opacity: 0.1, borderRadius: 8}}></div>
+                    </div>
+                  </div>
+                  <div style={{flex: 1, background: "white", borderRadius: 8, border: "1px solid var(--st-ink-100)", padding: 16}}>
+                    <div style={{width: "100%", height: 32, borderBottom: "1px solid var(--st-ink-50)", marginBottom: 12}}></div>
+                    <div style={{width: "100%", height: 32, borderBottom: "1px solid var(--st-ink-50)", marginBottom: 12}}></div>
+                    <div style={{width: "100%", height: 32, borderBottom: "1px solid var(--st-ink-50)"}}></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -49,8 +76,14 @@ export default function Platform() {
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Book regulatory review</span></li>
               </ul>
             </div>
-            <div className={styles.featureImage}>
-              <i className="ri-folder-shield-2-line" style={{fontSize: 48}}></i>
+            <div className={`${styles.featureImage} ${styles.featureImageProject}`}>
+              <div className={styles.docGraphic}>
+                <div className={styles.docHeader}><i className="ri-shield-check-fill"></i> Compliance Verified</div>
+                <div className={styles.docLine} style={{width:"80%"}}></div>
+                <div className={styles.docLine} style={{width:"60%"}}></div>
+                <div className={styles.docLine} style={{width:"90%"}}></div>
+                <div className={styles.docLine} style={{width:"40%", marginTop: 16}}></div>
+              </div>
             </div>
           </div>
         </section>
@@ -68,8 +101,13 @@ export default function Platform() {
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Digital tickets generated instantly</span></li>
               </ul>
             </div>
-            <div className={styles.featureImage}>
-              <i className="ri-truck-line" style={{fontSize: 48}}></i>
+            <div className={`${styles.featureImage} ${styles.featureImageDispatch}`}>
+              <div className={styles.mapGraphic}>
+                <div className={styles.mapRoute}></div>
+                <div className={styles.mapPin} style={{left: "20%", top: "70%"}}><i className="ri-building-2-line"></i></div>
+                <div className={styles.mapPin} style={{left: "80%", top: "30%"}}><i className="ri-map-pin-2-line"></i></div>
+                <div className={styles.mapTruck}><i className="ri-truck-fill"></i></div>
+              </div>
             </div>
           </div>
         </section>
@@ -87,8 +125,14 @@ export default function Platform() {
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Exportable monthly volumes</span></li>
               </ul>
             </div>
-            <div className={styles.featureImage}>
-              <i className="ri-file-chart-line" style={{fontSize: 48}}></i>
+            <div className={`${styles.featureImage} ${styles.featureImageReport}`}>
+              <div className={styles.chartGraphic}>
+                <div className={styles.chartBar} style={{height: "30%"}}></div>
+                <div className={styles.chartBar} style={{height: "50%"}}></div>
+                <div className={styles.chartBar} style={{height: "80%", background: "var(--st-brand-primary)", opacity: 1}}></div>
+                <div className={styles.chartBar} style={{height: "40%"}}></div>
+                <div className={styles.chartBar} style={{height: "60%"}}></div>
+              </div>
             </div>
           </div>
         </section>

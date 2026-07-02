@@ -58,9 +58,8 @@ export default function Marketplace() {
           <h2 className="st-h2">Live in the Lower Mainland</h2>
           <div className={styles.listingsGrid}>
             <div className={styles.listingCard}>
-              <div className={styles.listingPhoto}>
+              <div className={`${styles.listingPhoto} ${styles.photoCleanFill}`}>
                 <span className={`${styles.listingBadge} ${styles.badgeAvailable}`}>Available</span>
-                <div style={{position:"absolute", bottom:16, left:0, right:0, textAlign:"center", color:"var(--st-ink-300)"}}>Photo Placeholder</div>
               </div>
               <div className={styles.listingContent}>
                 <div className={styles.listingTitle}>
@@ -76,9 +75,8 @@ export default function Marketplace() {
             </div>
 
             <div className={styles.listingCard}>
-              <div className={styles.listingPhoto}>
+              <div className={`${styles.listingPhoto} ${styles.photoWanted}`}>
                 <span className={`${styles.listingBadge} ${styles.badgeWanted}`}>Wanted</span>
-                <div style={{position:"absolute", bottom:16, left:0, right:0, textAlign:"center", color:"var(--st-ink-300)"}}>Photo Placeholder</div>
               </div>
               <div className={styles.listingContent}>
                 <div className={styles.listingTitle}>
@@ -94,9 +92,8 @@ export default function Marketplace() {
             </div>
 
             <div className={styles.listingCard}>
-              <div className={styles.listingPhoto}>
+              <div className={`${styles.listingPhoto} ${styles.photoTopsoil}`}>
                 <span className={`${styles.listingBadge} ${styles.badgeAvailable}`}>Available</span>
-                <div style={{position:"absolute", bottom:16, left:0, right:0, textAlign:"center", color:"var(--st-ink-300)"}}>Photo Placeholder</div>
               </div>
               <div className={styles.listingContent}>
                 <div className={styles.listingTitle}>
