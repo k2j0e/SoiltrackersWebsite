@@ -1,26 +1,118 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* COLOR — Brand */
+  --st-brand-primary:        rgb(18, 91, 73);
+  --st-brand-primary-dark:   rgb(1, 53, 40);
+  --st-brand-primary-hover:  rgb(10, 72, 58);
+  --st-logo-orange:          rgb(192, 70, 42);
+  --st-logo-leaf:            rgb(76, 175, 80);
+
+  /* Accent */
+  --st-accent-sand:          rgb(215, 211, 157);
+  --st-accent-sand-ink:      rgb(77, 75, 42);
+  --st-accent-sand-tint:     rgb(237, 234, 191);
+
+  /* COLOR — Semantic */
+  --st-success:              rgb(19, 156, 85);
+  --st-success-bg:           rgb(170, 221, 102);
+  --st-success-tint:         rgb(218, 241, 179);
+  --st-danger:               rgb(255, 0, 72);
+  --st-danger-strong:        rgb(205, 10, 65);
+  --st-danger-bg:            rgb(255, 222, 231);
+  --st-warning:              rgb(255, 165, 0);
+  --st-warning-bg:           rgb(255, 240, 204);
+  --st-info:                 rgb(56, 130, 246);
+  --st-info-bg:              rgb(223, 237, 255);
+
+  /* COLOR — Neutrals / Ink */
+  --st-ink-900:              rgb(5, 25, 20);
+  --st-ink-800:              rgb(10, 10, 10);
+  --st-ink-700:              rgb(16, 24, 40);
+  --st-ink-600:              rgb(74, 85, 101);
+  --st-ink-500:              rgb(80, 90, 96);
+  --st-ink-400:              rgb(106, 114, 130);
+  --st-ink-350:              rgb(110, 120, 126);
+  --st-ink-300:              rgb(153, 161, 175);
+  --st-ink-200:              rgb(195, 211, 211);
+  --st-ink-150:              rgb(209, 213, 220);
+  --st-ink-100:              rgb(234, 236, 240);
+  --st-ink-50:               rgb(241, 245, 240);
+  --st-surface:              rgb(255, 255, 255);
+  --st-surface-muted:        rgb(242, 239, 239);
+
+  /* TYPE — Families mapped from Next.js injected vars */
+  --st-font-display: var(--font-inter-tight), system-ui, sans-serif;
+  --st-font-body:    var(--font-inter-tight), system-ui, sans-serif;
+  --st-font-button:  var(--font-inter), system-ui, sans-serif;
+
+  /* TYPE — Scale */
+  --st-fs-display:  40px;  --st-lh-display:  48px;
+  --st-fs-h1:       36px;  --st-lh-h1:       44px;
+  --st-fs-h2:       30px;  --st-lh-h2:       36px;
+  --st-fs-h3:       24px;  --st-lh-h3:       30px;
+  --st-fs-h4:       20px;  --st-lh-h4:       26px;
+  --st-fs-sub1:     18px;  --st-lh-sub1:     24px;
+  --st-fs-sub2:     16px;  --st-lh-sub2:     20px;
+  --st-fs-sub3:     14px;  --st-lh-sub3:     20px;
+  --st-fs-body1:    18px;  --st-lh-body1:    28px;
+  --st-fs-body2:    16px;  --st-lh-body2:    24px;
+  --st-fs-body3:    14px;  --st-lh-body3:    20px;
+  --st-fs-caption:  12px;  --st-lh-caption:  16px;
+  --st-fs-button:   16px;  --st-lh-button:   20px;
+
+  /* SPACING / RADII / SHADOW */
+  --st-space-1:  4px;
+  --st-space-2:  8px;
+  --st-space-3:  12px;
+  --st-space-4:  16px;
+  --st-space-5:  20px;
+  --st-space-6:  24px;
+  --st-space-8:  32px;
+  --st-space-10: 40px;
+  --st-space-12: 48px;
+
+  --st-radius-xs:  4px;
+  --st-radius-sm:  5px;
+  --st-radius-md:  8px;
+  --st-radius-lg:  12px;
+  --st-radius-xl:  16px;
+  --st-radius-2xl: 20px;
+  --st-radius-pill: 1000px;
+
+  --st-shadow-card:   0 4px 8.8px 0 rgba(0, 0, 0, 0.1);
+  --st-shadow-soft:   0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  --st-shadow-pop:    0 8px 24px -4px rgba(5, 25, 20, 0.12);
+  --st-shadow-inner:  inset 0 0 0 1px rgba(0, 0, 0, 0.16);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  font-family: var(--st-font-body);
+  color: var(--st-ink-900);
+  background: var(--st-ink-50);
+  font-size: var(--st-fs-body2);
+  line-height: var(--st-lh-body2);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+h1, .st-h1 { font-family: var(--st-font-display); font-weight: 600; font-size: var(--st-fs-h1); line-height: var(--st-lh-h1); letter-spacing: -0.01em; color: var(--st-ink-900); margin: 0; }
+h2, .st-h2 { font-family: var(--st-font-display); font-weight: 500; font-size: var(--st-fs-h2); line-height: var(--st-lh-h2); color: var(--st-ink-900); margin: 0; }
+h3, .st-h3 { font-family: var(--st-font-display); font-weight: 600; font-size: var(--st-fs-h3); line-height: var(--st-lh-h3); color: var(--st-ink-900); margin: 0; }
+h4, .st-h4 { font-family: var(--st-font-display); font-weight: 500; font-size: var(--st-fs-h4); line-height: var(--st-lh-h4); color: var(--st-ink-900); margin: 0; }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+.st-display    { font-family: var(--st-font-display); font-weight: 700; font-size: var(--st-fs-display); line-height: var(--st-lh-display); color: var(--st-ink-900); }
+.st-sub1       { font-family: var(--st-font-display); font-weight: 600; font-size: var(--st-fs-sub1); line-height: var(--st-lh-sub1); }
+.st-sub2       { font-family: var(--st-font-display); font-weight: 600; font-size: var(--st-fs-sub2); line-height: var(--st-lh-sub2); }
+.st-sub-caps   { font-family: var(--st-font-display); font-weight: 500; font-size: var(--st-fs-sub2); line-height: var(--st-lh-sub2); text-transform: uppercase; letter-spacing: 0.08em; }
+.st-sub3       { font-family: var(--st-font-display); font-weight: 500; font-size: var(--st-fs-sub3); line-height: var(--st-lh-sub3); }
+
+.st-body1      { font-family: var(--st-font-body); font-weight: 400; font-size: var(--st-fs-body1); line-height: var(--st-lh-body1); }
+.st-body2, p   { font-family: var(--st-font-body); font-weight: 400; font-size: var(--st-fs-body2); line-height: var(--st-lh-body2); margin: 0; color: var(--st-ink-500); }
+.st-body3      { font-family: var(--st-font-body); font-weight: 400; font-size: var(--st-fs-body3); line-height: var(--st-lh-body3); color: var(--st-ink-500); }
+.st-caption    { font-family: var(--st-font-body); font-weight: 500; font-size: var(--st-fs-caption); line-height: var(--st-lh-caption); color: var(--st-ink-400); }
+.st-button-txt { font-family: var(--st-font-button); font-weight: 500; font-size: var(--st-fs-button); line-height: var(--st-lh-button); letter-spacing: 0.02em; }

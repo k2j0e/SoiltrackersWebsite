@@ -1,0 +1,87 @@
+.footer {
+  background: var(--st-brand-primary-dark);
+  color: var(--st-surface);
+  padding: var(--st-space-12) var(--st-space-6) var(--st-space-6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--st-space-8);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-space-4);
+}
+
+.logoImg {
+  width: 140px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.tagline {
+  color: var(--st-ink-200);
+  max-width: 250px;
+  font-size: var(--st-fs-body2);
+}
+
+.column h4 {
+  color: var(--st-surface);
+  margin-bottom: var(--st-space-4);
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-space-3);
+}
+
+.link {
+  color: var(--st-ink-200);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--st-surface);
+}
+
+.legal {
+  max-width: 1200px;
+  margin: var(--st-space-12) auto 0;
+  padding-top: var(--st-space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  color: var(--st-ink-300);
+  font-size: var(--st-fs-body3);
+}
+
+.legalLinks {
+  display: flex;
+  gap: var(--st-space-6);
+}
+
+.legalLink {
+  color: var(--st-ink-300);
+  text-decoration: none;
+}
+
+.legalLink:hover {
+  color: var(--st-surface);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--st-space-10);
+  }
+}

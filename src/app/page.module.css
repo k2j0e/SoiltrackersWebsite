@@ -1,0 +1,436 @@
+.hero {
+  padding: 72px var(--st-space-6);
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 560px 1fr;
+  gap: var(--st-space-10);
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-space-6);
+}
+
+.heroSub {
+  font-size: var(--st-fs-body1);
+  line-height: var(--st-lh-body1);
+  color: var(--st-ink-500);
+}
+
+.heroCtas {
+  display: flex;
+  gap: var(--st-space-4);
+  align-items: center;
+}
+
+.buttonPrimary {
+  background: var(--st-brand-primary);
+  color: var(--st-surface);
+  padding: 17px 32px;
+  border-radius: var(--st-radius-pill);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.buttonPrimary:hover {
+  background: var(--st-brand-primary-dark);
+}
+
+.buttonSecondary {
+  background: transparent;
+  color: var(--st-brand-primary);
+  padding: 17px 32px;
+  border-radius: var(--st-radius-pill);
+  text-decoration: none;
+  border: 1px solid var(--st-ink-200);
+  transition: background 0.15s ease;
+}
+.buttonSecondary:hover {
+  background: rgba(18, 91, 73, 0.05);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--st-space-2);
+  margin-top: var(--st-space-4);
+}
+
+.chip {
+  background: var(--st-success-tint);
+  color: var(--st-brand-primary-dark);
+  padding: var(--st-space-1) var(--st-space-3);
+  border-radius: var(--st-radius-pill);
+  font-size: var(--st-fs-caption);
+  font-weight: 500;
+}
+
+.mapPanel {
+  background: var(--st-ink-50);
+  border-radius: var(--st-radius-2xl);
+  height: 560px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--st-ink-100);
+}
+
+.ticker {
+  background: var(--st-brand-primary-dark);
+  color: var(--st-surface);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: var(--st-space-3) 0;
+  display: flex;
+}
+
+.tickerTrack {
+  display: flex;
+  animation: marquee 28s linear infinite;
+  gap: var(--st-space-8);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.tickerItem {
+  font-size: var(--st-fs-body3);
+  display: flex;
+  align-items: center;
+  gap: var(--st-space-2);
+}
+
+.tickerItem span {
+  color: var(--st-success-bg);
+}
+
+.trustStrip {
+  padding: var(--st-space-12) var(--st-space-6);
+  text-align: center;
+  border-bottom: 1px solid var(--st-ink-100);
+}
+
+.trustStrip h4 {
+  color: var(--st-ink-300);
+  margin-bottom: var(--st-space-6);
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: var(--st-space-10);
+  flex-wrap: wrap;
+}
+
+.logoPlaceholder {
+  width: 120px;
+  height: 40px;
+  background: var(--st-ink-100);
+  border-radius: var(--st-radius-sm);
+}
+
+.mission {
+  padding: 120px var(--st-space-6);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mission h4 {
+  color: var(--st-brand-primary);
+  margin-bottom: var(--st-space-6);
+}
+
+.mission p {
+  font-size: var(--st-fs-display);
+  line-height: var(--st-lh-display);
+  color: var(--st-ink-900);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.mission p span {
+  color: var(--st-brand-primary);
+}
+
+.howItWorks {
+  background: var(--st-ink-50);
+  padding: 120px var(--st-space-6);
+}
+
+.howItWorks h2 {
+  text-align: center;
+  margin-bottom: var(--st-space-12);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--st-space-6);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stepCard {
+  background: var(--st-surface);
+  padding: var(--st-space-8);
+  border-radius: var(--st-radius-xl);
+  box-shadow: var(--st-shadow-card);
+}
+
+.stepNum {
+  color: var(--st-logo-orange);
+  font-size: var(--st-fs-h3);
+  font-weight: 700;
+  margin-bottom: var(--st-space-4);
+}
+
+.doors {
+  padding: 120px var(--st-space-6);
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--st-space-6);
+}
+
+.doorPlatform, .doorMarketplace {
+  padding: 64px 48px;
+  border-radius: var(--st-radius-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--st-space-6);
+}
+
+.doorPlatform {
+  background: var(--st-brand-primary);
+  color: var(--st-surface);
+}
+
+.doorMarketplace {
+  background: var(--st-accent-sand);
+  color: var(--st-ink-900);
+}
+
+.doorPlatform p, .doorMarketplace p {
+  color: inherit;
+  font-size: var(--st-fs-h3);
+  font-weight: 500;
+}
+
+.checkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-space-3);
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: var(--st-space-3);
+  font-size: var(--st-fs-body1);
+}
+
+.checkItem i {
+  color: var(--st-success);
+}
+
+.doorPlatform .checkItem i {
+  color: var(--st-success-bg);
+}
+
+.doorLink {
+  margin-top: auto;
+  padding: 12px 24px;
+  border-radius: var(--st-radius-pill);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.doorPlatform .doorLink {
+  background: var(--st-surface);
+  color: var(--st-brand-primary);
+}
+
+.doorMarketplace .doorLink {
+  background: var(--st-ink-900);
+  color: var(--st-surface);
+}
+
+.productShot {
+  background: var(--st-ink-50);
+  padding: 120px var(--st-space-6);
+  text-align: center;
+}
+
+.productShot h2 {
+  margin-bottom: var(--st-space-10);
+}
+
+.browserFrame {
+  max-width: 1024px;
+  height: 600px;
+  margin: 0 auto;
+  background: var(--st-surface);
+  border-radius: var(--st-radius-xl);
+  box-shadow: var(--st-shadow-pop);
+  border: 1px solid var(--st-ink-100);
+  display: flex;
+  flex-direction: column;
+}
+
+.browserHeader {
+  height: 40px;
+  border-bottom: 1px solid var(--st-ink-100);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--st-space-4);
+  gap: 8px;
+}
+
+.browserDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--st-ink-150);
+}
+
+.browserContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--st-ink-300);
+  font-size: var(--st-fs-body2);
+}
+
+.roles {
+  padding: 120px var(--st-space-6);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--st-space-6);
+}
+
+.roleCol {
+  border-left: 1px solid var(--st-ink-100);
+  padding-left: var(--st-space-6);
+}
+
+.roleCol i {
+  font-size: 24px;
+  color: var(--st-brand-primary);
+  margin-bottom: var(--st-space-4);
+  display: block;
+}
+
+.roleCol h3 {
+  margin-bottom: var(--st-space-2);
+}
+
+.impact {
+  background: var(--st-brand-primary-dark);
+  color: var(--st-surface);
+  padding: 120px var(--st-space-6);
+}
+
+.impactInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--st-space-12);
+  align-items: center;
+}
+
+.impact h2 {
+  color: var(--st-surface);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--st-space-6);
+}
+
+.stat {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: var(--st-space-4);
+}
+
+.statNum {
+  color: var(--st-accent-sand);
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--st-space-2);
+  line-height: 1;
+}
+
+.statLabel {
+  color: var(--st-ink-200);
+}
+
+.testimonial {
+  padding: 120px var(--st-space-6);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial p {
+  font-size: 28px;
+  line-height: 1.4;
+  color: var(--st-ink-900);
+  margin-bottom: var(--st-space-6);
+  font-weight: 500;
+}
+
+.ctaPanel {
+  max-width: 1200px;
+  margin: 0 auto 120px;
+  background: var(--st-ink-50);
+  border-radius: var(--st-radius-2xl);
+  padding: 80px var(--st-space-6);
+  text-align: center;
+}
+
+.ctaPanel h2 {
+  margin-bottom: var(--st-space-8);
+}
+
+.ctaPanelCtas {
+  display: flex;
+  justify-content: center;
+  gap: var(--st-space-4);
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .heroContent {
+    align-items: center;
+  }
+  .steps, .roles {
+    grid-template-columns: 1fr;
+  }
+  .doors {
+    grid-template-columns: 1fr;
+  }
+  .impactInner {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,73 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--st-space-6);
+  height: 80px;
+  background: var(--st-surface);
+  border-bottom: 1px solid var(--st-ink-100);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  width: 172px;
+  height: auto;
+}
+
+.links {
+  display: flex;
+  gap: var(--st-space-8);
+}
+
+.link {
+  color: var(--st-ink-900);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--st-fs-body2);
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--st-brand-primary);
+}
+
+.active {
+  color: var(--st-brand-primary);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--st-space-6);
+}
+
+.signIn {
+  color: var(--st-ink-900);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--st-fs-body2);
+}
+
+.signIn:hover {
+  color: var(--st-brand-primary);
+}
+
+.buttonPrimary {
+  background: var(--st-brand-primary);
+  color: var(--st-surface);
+  padding: 17px 32px;
+  border-radius: var(--st-radius-pill);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.buttonPrimary:hover {
+  background: var(--st-brand-primary-dark);
+}

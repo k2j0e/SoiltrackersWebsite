@@ -1,0 +1,123 @@
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import Link from "next/link";
+import styles from "./page.module.css";
+
+export default function Platform() {
+  return (
+    <>
+      <Nav />
+      <main>
+        {/* Hero */}
+        <section className={styles.hero}>
+          <div className={styles.heroContent}>
+            <div className="st-sub-caps">THE PLATFORM</div>
+            <h1 className="st-h1">One unbroken chain of custody, from dig to drop-off</h1>
+            <Link href="#demo" className={`${styles.buttonPrimary} st-button-txt`}>Book a demo</Link>
+          </div>
+          <div className={styles.browserFrame}>
+            <div className={styles.browserHeader}>
+              <div className={styles.browserDot}></div>
+              <div className={styles.browserDot}></div>
+              <div className={styles.browserDot}></div>
+            </div>
+            <div className={styles.browserContent}>
+              <i className="ri-dashboard-line" style={{fontSize: 32, marginRight: 8}}></i> Project Summary Dashboard Placeholder
+            </div>
+          </div>
+        </section>
+
+        {/* Feature 1 */}
+        <section className={styles.featureSection}>
+          <div className={styles.featureInner}>
+            <div className={styles.featureContent}>
+              <div className="st-sub-caps">Projects & compliance</div>
+              <h2 className="st-h2">The chain starts before the first truck rolls</h2>
+              <p className="st-body1">Set up sites and documentation so that when hauling starts, compliance is guaranteed automatically.</p>
+              <ul className={styles.checkList}>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Guided setup: Define Sites → Upload Documents → Invite Stakeholders</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Versioned permits</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Book regulatory review</span></li>
+              </ul>
+            </div>
+            <div className={styles.featureImage}>
+              <i className="ri-folder-shield-2-line" style={{fontSize: 48}}></i>
+            </div>
+          </div>
+        </section>
+
+        {/* Feature 2 */}
+        <section className={styles.featureSection} style={{background: "var(--st-surface-muted)"}}>
+          <div className={`${styles.featureInner} ${styles.reverse}`}>
+            <div className={styles.featureContent}>
+              <div className="st-sub-caps">Dispatch & hauling</div>
+              <h2 className="st-h2">Today's hauls, without the phone tag</h2>
+              <p className="st-body1">Real-time tracking means you always know where your soil is and exactly when it arrives.</p>
+              <ul className={styles.checkList}>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Each load a custody event with source, truck, destination, timestamp</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>GPS and geofence verification</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Digital tickets generated instantly</span></li>
+              </ul>
+            </div>
+            <div className={styles.featureImage}>
+              <i className="ri-truck-line" style={{fontSize: 48}}></i>
+            </div>
+          </div>
+        </section>
+
+        {/* Feature 3 */}
+        <section className={styles.featureSection}>
+          <div className={styles.featureInner}>
+            <div className={styles.featureContent}>
+              <div className="st-sub-caps">Reporting & oversight</div>
+              <h2 className="st-h2">The custody record writes itself</h2>
+              <p className="st-body1">Generate compliant reports with one click, backed by immutable tracking data.</p>
+              <ul className={styles.checkList}>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Load-by-load custody history</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Role-scoped regulator and QP views</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Exportable monthly volumes</span></li>
+              </ul>
+            </div>
+            <div className={styles.featureImage}>
+              <i className="ri-file-chart-line" style={{fontSize: 48}}></i>
+            </div>
+          </div>
+        </section>
+
+        {/* Seats Band */}
+        <section className={styles.seatsBand}>
+          <h2 className="st-h2">One platform, five seats at the table</h2>
+          <div className={styles.seatsGrid}>
+            <div className={styles.seatCard}>
+              <i className="ri-building-4-line"></i>
+              <h3 className="st-h4">Contractors</h3>
+            </div>
+            <div className={styles.seatCard}>
+              <i className="ri-government-line"></i>
+              <h3 className="st-h4">Government</h3>
+            </div>
+            <div className={styles.seatCard}>
+              <i className="ri-steering-2-line"></i>
+              <h3 className="st-h4">Fleet admins</h3>
+            </div>
+            <div className={styles.seatCard}>
+              <i className="ri-user-star-line"></i>
+              <h3 className="st-h4">Drivers</h3>
+            </div>
+            <div className={styles.seatCard}>
+              <i className="ri-map-pin-2-line"></i>
+              <h3 className="st-h4">Site operators</h3>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className={styles.ctaPanel}>
+          <h2 className="st-h1">See it on your own project.</h2>
+          <Link href="#demo" className={`${styles.buttonPrimary} st-button-txt`} style={{marginBottom: 0}}>Book a demo</Link>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
