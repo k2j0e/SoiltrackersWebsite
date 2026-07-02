@@ -6,7 +6,7 @@
 /* Immersive Hero */
 .hero {
   background: var(--st-surface);
-  padding: 64px var(--st-space-6) 120px;
+  padding: 0px var(--st-space-6) 120px;
   position: relative;
   overflow: hidden;
 }
@@ -72,14 +72,13 @@
 }
 
 .buttonSecondary {
-  background: var(--st-glass-bg);
-  backdrop-filter: var(--st-glass-blur);
+  background: transparent;
   color: var(--st-brand-primary);
   padding: 18px 36px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
   font-weight: 500;
-  border: 1px solid var(--st-glass-border);
+  border: 1px solid var(--st-ink-300);
 }
 
 .chips {
