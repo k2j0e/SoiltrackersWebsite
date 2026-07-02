@@ -90,7 +90,7 @@ export default function Home() {
         <section className={styles.mission}>
           <div className="st-sub-caps" style={{color: "var(--st-brand-primary)", marginBottom: 24, display: "flex", justifyContent: "center"}}>Why we exist</div>
           <p className="st-h2" style={{maxWidth: 980, margin: "0 auto"}}>
-            Soil only moves responsibly when you can prove where it came from and where it went. <span style={{color: "var(--st-brand-primary)"}}>Soiltrackers builds that chain of custody into every haul</span> — matching soil to sites, shortening trips, and keeping the record unbroken from dig to drop-off.
+            Soil only moves responsibly when you can prove where it came from and where it went. <span className={styles.highlightText}>Soiltrackers builds that chain of custody into every haul</span> — matching soil to sites, shortening trips, and keeping the record unbroken from dig to drop-off.
           </p>
         </section>
 

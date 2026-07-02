@@ -141,26 +141,63 @@
 
 /* Mission */
 .mission {
-  padding: 120px var(--st-space-6);
+  padding: 140px var(--st-space-6) 100px;
   text-align: center;
-  background: var(--st-surface);
+  background: linear-gradient(180deg, var(--st-surface) 0%, rgba(18, 91, 73, 0.03) 100%);
+}
+
+.highlightText {
+  position: relative;
+  display: inline-block;
+  color: var(--st-brand-primary);
+  z-index: 1;
+}
+
+.highlightText::after {
+  content: '';
+  position: absolute;
+  left: -2%;
+  bottom: 8%;
+  width: 104%;
+  height: 35%;
+  background: rgba(170, 221, 102, 0.5);
+  z-index: -1;
+  border-radius: 4px;
+  transform: rotate(-1deg);
 }
 
 /* Roles */
 .roles {
-  padding: 0 var(--st-space-6) 120px;
-  background: var(--st-surface);
+  padding: 0 var(--st-space-6) 140px;
+  background: rgba(18, 91, 73, 0.03);
 }
 
 .roleGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--st-ink-100);
+  background: var(--st-surface);
+  border: 1px solid var(--st-ink-100);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px -12px rgba(18, 91, 73, 0.08);
 }
 
 .roleCol {
-  padding: 40px 32px;
+  padding: 48px 32px;
   border-right: 1px solid var(--st-ink-100);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  border-radius: 16px;
+  position: relative;
+}
+.roleCol:last-child {
+  border-right: none;
+}
+.roleCol:hover {
+  transform: translateY(-8px);
+  background: var(--st-surface);
+  box-shadow: 0 20px 40px -12px rgba(18, 91, 73, 0.15);
+  z-index: 2;
+  border-color: transparent;
 }
 .roleCol i {
   font-size: 32px;
