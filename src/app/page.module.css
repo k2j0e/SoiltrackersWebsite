@@ -6,10 +6,10 @@
 /* Immersive Hero */
 .hero {
   background: var(--st-surface);
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-  padding: 120px var(--st-space-6) 60px;
+  padding: 100px var(--st-space-6) 120px;
   position: relative;
   overflow: hidden;
 }
@@ -113,7 +113,7 @@
   clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
 }
 
-/* Ticker */
+/* Ticker - Overlapping the Hero Map */
 .ticker {
   background: var(--st-brand-primary-dark);
   color: var(--st-surface);
@@ -122,6 +122,8 @@
   white-space: nowrap;
   position: relative;
   z-index: 10;
+  margin-top: -60px; /* Pull it up over the map */
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
 }
 
 .tickerTrack {
@@ -143,8 +145,33 @@
 
 /* Doors - Asymmetrical */
 .doorsSection {
-  padding: 180px var(--st-space-6);
+  padding: 120px var(--st-space-6);
   background: var(--st-gradient-surface);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.watermarkContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.watermark {
+  font-size: clamp(150px, 20vw, 300px);
+  font-weight: 800;
+  color: rgba(18, 91, 73, 0.02);
+  white-space: nowrap;
+  letter-spacing: -0.05em;
+  user-select: none;
 }
 
 .doorsInner {
@@ -152,13 +179,13 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 32px;
   position: relative;
 }
 
 .doorPlatform, .doorMarketplace {
-  padding: 80px 60px;
-  border-radius: var(--st-radius-2xl);
+  padding: 60px 48px;
+  border-radius: var(--st-radius-xl);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -169,13 +196,13 @@
 .doorPlatform {
   background: var(--st-gradient-forest);
   color: var(--st-surface);
-  margin-top: 80px; /* Asymmetry */
+  margin-top: 40px; /* Reduced asymmetry */
 }
 
 .doorMarketplace {
   background: linear-gradient(135deg, var(--st-accent-sand) 0%, rgb(195, 191, 137) 100%);
   color: var(--st-ink-900);
-  margin-bottom: 80px; /* Asymmetry */
+  margin-bottom: 40px; /* Reduced asymmetry */
 }
 
 .doorList {
@@ -212,13 +239,13 @@
 
 /* How it Works */
 .howItWorks {
-  padding: 120px var(--st-space-6) 180px;
+  padding: 100px var(--st-space-6) 120px;
   text-align: center;
   background: var(--st-surface);
 }
 
 .howItWorks h2 {
-  margin-bottom: var(--st-space-12);
+  margin-bottom: var(--st-space-10);
   display: flex;
   justify-content: center;
 }
@@ -234,8 +261,8 @@
 .stepCard {
   background: var(--st-glass-bg);
   backdrop-filter: var(--st-glass-blur);
-  padding: 60px 40px;
-  border-radius: var(--st-radius-2xl);
+  padding: 48px 32px;
+  border-radius: var(--st-radius-xl);
   box-shadow: var(--st-shadow-card);
   border: 1px solid var(--st-glass-border);
   text-align: left;
@@ -253,7 +280,7 @@
 .impact {
   background: linear-gradient(180deg, var(--st-brand-primary-dark) 0%, rgb(5, 25, 20) 100%);
   color: var(--st-surface);
-  padding: 180px var(--st-space-6);
+  padding: 120px var(--st-space-6);
   position: relative;
   overflow: hidden;
 }
@@ -295,12 +322,12 @@
 /* CTA Panel */
 .ctaPanel {
   max-width: 1000px;
-  margin: -100px auto 120px;
+  margin: -80px auto 120px;
   background: var(--st-glass-bg);
   backdrop-filter: var(--st-glass-blur);
   border: 1px solid var(--st-glass-border);
-  border-radius: 40px;
-  padding: 120px var(--st-space-6);
+  border-radius: var(--st-radius-xl);
+  padding: 100px var(--st-space-6);
   text-align: center;
   box-shadow: var(--st-shadow-pop);
   position: relative;

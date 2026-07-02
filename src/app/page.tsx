@@ -88,6 +88,17 @@ export default function Home() {
 
         {/* Dual Doors - Asymmetrical Overlapping Layout */}
         <section className={styles.doorsSection}>
+          <div className={styles.watermarkContainer}>
+            <motion.div 
+              className={styles.watermark}
+              initial={{ y: -50 }}
+              whileInView={{ y: 50 }}
+              transition={{ ease: "linear", duration: 1 }}
+              viewport={{ once: false, margin: "200px" }}
+            >
+              SOILTRACKERS
+            </motion.div>
+          </div>
           <div className={styles.doorsInner}>
             <motion.div 
               className={styles.doorPlatform}
