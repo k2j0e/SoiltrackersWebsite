@@ -257,19 +257,51 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--st-space-6);
-  box-shadow: var(--st-shadow-pop);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.doorPlatform:hover, .doorMarketplace:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 30px 60px -15px rgba(0,0,0,0.2);
+}
+
+.doorPlatform::before, .doorMarketplace::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  transition: all 0.7s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.doorPlatform:hover::before, .doorMarketplace:hover::before {
+  left: 200%;
+}
+
+.doorPlatform > *, .doorMarketplace > * {
+  position: relative;
+  z-index: 1;
 }
 
 .doorPlatform {
-  background: var(--st-gradient-forest);
+  background: linear-gradient(145deg, var(--st-brand-primary-dark) 0%, #0A2E24 100%);
   color: var(--st-surface);
-  margin-top: 40px; /* Reduced asymmetry */
+  margin-top: 40px;
 }
 
 .doorMarketplace {
-  background: linear-gradient(135deg, var(--st-accent-sand) 0%, rgb(195, 191, 137) 100%);
+  background: linear-gradient(135deg, var(--st-accent-sand) 0%, #D4CE99 100%);
   color: var(--st-ink-900);
-  margin-bottom: 40px; /* Reduced asymmetry */
+  margin-bottom: 40px;
 }
 
 .doorList {
@@ -298,10 +330,26 @@
   border-radius: var(--st-radius-pill);
   text-decoration: none;
   font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
 }
+
+.doorLink:hover {
+  background: var(--st-logo-leaf);
+  color: var(--st-brand-primary-dark);
+  box-shadow: 0 10px 20px -5px rgba(170, 221, 102, 0.4);
+}
+
 .darkLink {
-  background: var(--st-ink-900);
+  background: var(--st-brand-primary-dark);
   color: var(--st-surface);
+}
+
+.darkLink:hover {
+  background: var(--st-brand-primary);
+  color: var(--st-surface);
+  box-shadow: 0 10px 20px -5px rgba(18, 91, 73, 0.4);
 }
 
 /* How it Works */
