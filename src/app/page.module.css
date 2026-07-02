@@ -558,47 +558,108 @@
   gap: var(--st-space-6);
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--st-ink-200), transparent);
+  z-index: 0;
 }
 
 .stepCard {
-  background: var(--st-glass-bg);
-  backdrop-filter: var(--st-glass-blur);
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(12px);
   padding: 48px 32px;
   border-radius: var(--st-radius-xl);
-  box-shadow: var(--st-shadow-card);
-  border: 1px solid var(--st-glass-border);
+  box-shadow: 0 12px 32px -8px rgba(18, 91, 73, 0.08);
+  border: 1px solid rgba(18, 91, 73, 0.05);
   text-align: left;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.stepCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(18, 91, 73, 0.15);
+  background: #ffffff;
 }
 
 .stepNum {
-  font-size: 48px;
-  font-weight: 300;
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  font-size: 160px;
+  font-weight: 800;
   color: var(--st-brand-primary);
-  opacity: 0.3;
-  margin-bottom: 24px;
+  opacity: 0.03;
+  line-height: 1;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.stepCard:hover .stepNum {
+  transform: scale(1.1) rotate(-5deg);
+  opacity: 0.07;
 }
 
 /* Testimonial */
 .testimonial {
-  padding: 120px var(--st-space-6);
+  padding: 140px var(--st-space-6);
   display: flex;
   justify-content: center;
   text-align: center;
-  background: var(--st-surface);
+  background: linear-gradient(180deg, var(--st-surface) 0%, rgba(18, 91, 73, 0.04) 100%);
+  position: relative;
 }
 
 .testiContent {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.testiQuoteMark {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 240px;
+  font-family: Georgia, serif;
+  color: var(--st-brand-primary);
+  opacity: 0.05;
+  line-height: 1;
+  z-index: 0;
+}
+
+.testiAuthor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+  z-index: 1;
 }
 
 .testiAvatar {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: var(--st-ink-100);
-  margin-bottom: 24px;
+  background: var(--st-brand-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(18, 91, 73, 0.2);
 }
 
 /* CTA Panel */

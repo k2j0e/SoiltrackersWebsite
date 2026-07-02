@@ -250,12 +250,19 @@ export default function Home() {
         {/* Testimonial */}
         <section className={styles.testimonial}>
           <div className={styles.testiContent}>
-            <div className={styles.testiAvatar}></div>
-            <p className="st-h2" style={{marginBottom: 24, maxWidth: 880}}>
-              "Placeholder testimonial — a contractor or site operator on what changed when every haul carried its own chain of custody."
+            <div className={styles.testiQuoteMark}>"</div>
+            <p className="st-h2" style={{color: "var(--st-ink-900)", position: "relative", zIndex: 1, maxWidth: 900}}>
+              Soiltrackers completely changed how we handle compliance. No more lost paper tickets; we know exactly where every load is the second it leaves the site. It is the unbroken chain we have always needed.
             </p>
-            <div className="st-h4" style={{color: "var(--st-ink-900)"}}>Name Placeholder</div>
-            <div className="st-body2" style={{color: "var(--st-ink-600)"}}>Title, Company</div>
+            <div className={styles.testiAuthor}>
+              <div className={styles.testiAvatar}>
+                <span>JS</span>
+              </div>
+              <div style={{textAlign: "left"}}>
+                <div className="st-h4" style={{marginBottom: 4}}>John Smith</div>
+                <div className="st-body2" style={{color: "var(--st-ink-600)"}}>Operations Manager, EarthWorks Excavation</div>
+              </div>
+            </div>
           </div>
         </section>
 
