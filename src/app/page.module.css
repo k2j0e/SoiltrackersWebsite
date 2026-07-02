@@ -387,56 +387,108 @@
   100% { transform: translate(90px, -65px); }
 }
 
-.marketGraphicCard {
-  background: var(--st-surface);
-  border-radius: 12px;
-  padding: 16px;
-  width: 200px;
-  box-shadow: 0 12px 24px -8px rgba(0,0,0,0.1);
+.marketMatchAnimation {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  border: 1px solid rgba(0,0,0,0.05);
-  transform: rotate(-2deg);
-  transition: all 0.3s ease;
-}
-.doorMarketplace:hover .marketGraphicCard {
-  transform: rotate(0deg) scale(1.05);
+  align-items: center;
+  justify-content: center;
 }
 
-.marketTag {
-  font-size: 10px;
+.marketCard {
+  background: var(--st-surface);
+  border-radius: 8px;
+  padding: 12px;
+  width: 150px;
+  box-shadow: 0 8px 16px -4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  border: 1px solid rgba(0,0,0,0.05);
+  animation: st-card-pulse 4s infinite alternate;
+  transition: all 0.4s ease;
+}
+
+.marketCardSupply {
+  left: 10%;
+  z-index: 2;
+}
+
+.marketCardDemand {
+  right: 10%;
+  z-index: 1;
+  animation-delay: -2s;
+}
+
+.marketMatchIcon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  background: var(--st-brand-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: 0 0 0 0 rgba(18, 91, 73, 0.4);
+  animation: st-match-pulse 2s infinite;
+}
+
+@keyframes st-match-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(18, 91, 73, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(18, 91, 73, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(18, 91, 73, 0); }
+}
+
+@keyframes st-card-pulse {
+  0% { transform: translateY(4px); }
+  100% { transform: translateY(-4px); }
+}
+
+.doorMarketplace:hover .marketCardSupply {
+  transform: translateX(20px) scale(1.05);
+  box-shadow: 0 12px 24px -6px rgba(0,0,0,0.15);
+}
+.doorMarketplace:hover .marketCardDemand {
+  transform: translateX(-20px) scale(1.05);
+  box-shadow: 0 12px 24px -6px rgba(0,0,0,0.15);
+}
+
+.marketCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--st-ink-500);
+}
+
+.marketBadge {
+  font-size: 9px;
   font-weight: 700;
   color: var(--st-brand-primary-dark);
   background: rgba(18, 91, 73, 0.1);
-  padding: 4px 8px;
+  padding: 4px 6px;
   border-radius: 4px;
-  align-self: flex-start;
+}
+.marketBadgeDemand {
+  color: #a86c00;
+  background: rgba(255, 170, 0, 0.15);
 }
 
-.marketDetails {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  font-weight: 600;
+.marketCardTitle {
+  font-size: 13px;
+  font-weight: 700;
   color: var(--st-ink-900);
 }
 
-.marketMatch {
-  font-size: 12px;
-  color: var(--st-brand-primary);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.marketMatch::before {
-  content: '';
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--st-logo-leaf);
+.marketCardLocation {
+  font-size: 11px;
+  color: var(--st-ink-600);
 }
 
 .doorList {

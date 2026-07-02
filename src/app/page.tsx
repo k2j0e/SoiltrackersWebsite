@@ -168,13 +168,28 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               <div className={styles.doorGraphic}>
-                <div className={styles.marketGraphicCard}>
-                  <div className={styles.marketTag}>CLEAN FILL</div>
-                  <div className={styles.marketDetails}>
-                    <span>240 m³</span>
-                    <span>Langley, BC</span>
+                <div className={styles.marketMatchAnimation}>
+                  <div className={`${styles.marketCard} ${styles.marketCardSupply}`}>
+                    <div className={styles.marketCardHeader}>
+                      <span className={styles.marketBadge}>SURPLUS</span>
+                      <i className="ri-truck-line"></i>
+                    </div>
+                    <div className={styles.marketCardTitle}>240 m³ Clean Fill</div>
+                    <div className={styles.marketCardLocation}>Langley, BC</div>
                   </div>
-                  <div className={styles.marketMatch}>98% Match</div>
+                  
+                  <div className={styles.marketMatchIcon}>
+                    <i className="ri-link"></i>
+                  </div>
+
+                  <div className={`${styles.marketCard} ${styles.marketCardDemand}`}>
+                    <div className={styles.marketCardHeader}>
+                      <span className={`${styles.marketBadge} ${styles.marketBadgeDemand}`}>REQUEST</span>
+                      <i className="ri-map-pin-2-line"></i>
+                    </div>
+                    <div className={styles.marketCardTitle}>Needs Clean Fill</div>
+                    <div className={styles.marketCardLocation}>Surrey, BC</div>
+                  </div>
                 </div>
               </div>
               <div className="st-sub-caps" style={{color: "rgba(0,0,0,0.6)"}}>The Marketplace</div>
