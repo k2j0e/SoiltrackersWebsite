@@ -7,7 +7,7 @@ import styles from "./Nav.module.css";
 
 export default function Nav({
   primaryCtaLabel = "Get started",
-  primaryCtaHref = "#get-started"
+  primaryCtaHref = "/get-started"
 }: {
   primaryCtaLabel?: string;
   primaryCtaHref?: string;
@@ -51,7 +51,7 @@ export default function Nav({
       </div>
 
       <div className={styles.actions}>
-        <Link href="#signin" className={styles.signIn}>
+        <Link href="/get-started" className={styles.signIn}>
           Sign in
         </Link>
         <Link href={primaryCtaHref} className={`${styles.buttonPrimary} st-button-txt`}>

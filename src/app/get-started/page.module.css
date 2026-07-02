@@ -1,0 +1,79 @@
+.main {
+  background: var(--st-gradient-surface);
+  min-height: 100vh;
+  padding: 160px var(--st-space-6) 120px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
+  border: 1px solid var(--st-glass-border);
+  border-radius: var(--st-radius-2xl);
+  padding: 80px;
+  box-shadow: var(--st-shadow-pop);
+}
+
+.content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-weight: 600;
+  color: var(--st-ink-900);
+  font-size: 14px;
+}
+
+.field input, .field select {
+  padding: 16px;
+  border: 1px solid var(--st-ink-200);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.field input:focus, .field select:focus {
+  outline: none;
+  border-color: var(--st-brand-primary);
+}
+
+.submitBtn {
+  background: var(--st-brand-primary);
+  color: white;
+  padding: 18px;
+  border: none;
+  border-radius: 1000px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(18, 91, 73, 0.39);
+}
+
+.submitBtn:hover {
+  background: var(--st-brand-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(18, 91, 73, 0.23);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 24px;
+  }
+}

@@ -47,8 +47,8 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
               >
-                <MagneticButton href="#join" className={`${styles.buttonPrimary} st-button-txt`}>Join the network</MagneticButton>
-                <MagneticButton href="#tour" className={`${styles.buttonSecondary} st-button-txt`}>Watch a 2-min tour</MagneticButton>
+                <MagneticButton href="/get-started" className={`${styles.buttonPrimary} st-button-txt`}>Join the network</MagneticButton>
+                <MagneticButton href="/get-started" className={`${styles.buttonSecondary} st-button-txt`}>Book a demo</MagneticButton>
               </motion.div>
 
               <motion.div 
@@ -86,6 +86,41 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Mission Statement */}
+        <section className={styles.mission}>
+          <div className="st-sub-caps" style={{color: "var(--st-brand-primary)", marginBottom: 24, display: "flex", justifyContent: "center"}}>Why we exist</div>
+          <p className="st-h2" style={{maxWidth: 980, margin: "0 auto"}}>
+            Soil only moves responsibly when you can prove where it came from and where it went. <span style={{color: "var(--st-brand-primary)"}}>Soiltrackers builds that chain of custody into every haul</span> — matching soil to sites, shortening trips, and keeping the record unbroken from dig to drop-off.
+          </p>
+        </section>
+
+        {/* Roles */}
+        <section className={styles.roles}>
+          <h2 className="st-h2" style={{marginBottom: 48}}>Built for everyone who touches the soil</h2>
+          <div className={styles.roleGrid}>
+            <div className={styles.roleCol}>
+              <i className="ri-building-2-line"></i>
+              <h3 className="st-h4">Contractors</h3>
+              <p className="st-body2">Set up projects, invite your team, and keep every permit and haul in one record.</p>
+            </div>
+            <div className={styles.roleCol}>
+              <i className="ri-steering-2-line"></i>
+              <h3 className="st-h4">Haulers & drivers</h3>
+              <p className="st-body2">Fill trucks with matched work nearby. Drivers log loads from the cab in two taps.</p>
+            </div>
+            <div className={styles.roleCol}>
+              <i className="ri-landscape-line"></i>
+              <h3 className="st-h4">Site owners</h3>
+              <p className="st-body2">Fill your pit or source clean material — with the spec sheets to back it up.</p>
+            </div>
+            <div className={styles.roleCol} style={{borderRight: "none"}}>
+              <i className="ri-flask-line"></i>
+              <h3 className="st-h4">Environmental consultants</h3>
+              <p className="st-body2">Review specs, sign off on schedules, and audit the full chain of custody against the permit.</p>
+            </div>
+          </div>
+        </section>
+
         {/* Dual Doors - Asymmetrical Overlapping Layout */}
         <section className={styles.doorsSection}>
           <div className={styles.watermarkContainer}>
@@ -108,11 +143,11 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <div className="st-sub-caps" style={{color: "rgba(255,255,255,0.6)"}}>The Platform</div>
-              <h2 className="st-h2">Run every haul with proof built in</h2>
+              <h2 className="st-h2">Run every haul with chain of custody built in</h2>
               <ul className={styles.doorList}>
                 <li><i className="ri-check-line" style={{color: "var(--st-logo-leaf)"}}></i> Project setup, sites, and permits in one place</li>
                 <li><i className="ri-check-line" style={{color: "var(--st-logo-leaf)"}}></i> Dispatch and driver apps for daily hauls</li>
-                <li><i className="ri-check-line" style={{color: "var(--st-logo-leaf)"}}></i> Compliance records generated automatically</li>
+                <li><i className="ri-check-line" style={{color: "var(--st-logo-leaf)"}}></i> Custody records generated automatically, load by load</li>
               </ul>
               <MagneticButton href="/platform" className={styles.doorLink}>Explore the platform</MagneticButton>
             </motion.div>
@@ -138,7 +173,7 @@ export default function Home() {
 
         {/* How It Works */}
         <section className={styles.howItWorks}>
-          <RevealText text="Built for the mud, scaled for the boardroom." className="st-h2" />
+          <RevealText text="From ground to ground" className="st-h2" />
           
           <div className={styles.steps}>
             <motion.div 
@@ -179,35 +214,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Asymmetrical Impact Section */}
-        <section className={styles.impact}>
-          <div className={styles.impactInner}>
-            <motion.div 
-              className={styles.impactStats}
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <RevealText text="1.2M m³" className={styles.statLarge} />
-              <div className="st-h4" style={{marginTop: 16}}>Soil moved safely this year.</div>
-            </motion.div>
-            
-            <motion.div 
-              className={styles.impactLogos}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h3 className="st-sub-caps" style={{color: "rgba(255,255,255,0.6)", marginBottom: 24}}>Trusted by</h3>
-              <div className={styles.logoGrid}>
-                <div className={styles.logoPlaceholder}>Logo Placeholder</div>
-                <div className={styles.logoPlaceholder}>Logo Placeholder</div>
-                <div className={styles.logoPlaceholder}>Logo Placeholder</div>
-                <div className={styles.logoPlaceholder}>Logo Placeholder</div>
-              </div>
-            </motion.div>
+        {/* Testimonial */}
+        <section className={styles.testimonial}>
+          <div className={styles.testiContent}>
+            <div className={styles.testiAvatar}></div>
+            <p className="st-h2" style={{marginBottom: 24, maxWidth: 880}}>
+              "Placeholder testimonial — a contractor or site operator on what changed when every haul carried its own chain of custody."
+            </p>
+            <div className="st-h4" style={{color: "var(--st-ink-900)"}}>Name Placeholder</div>
+            <div className="st-body2" style={{color: "var(--st-ink-600)"}}>Title, Company</div>
           </div>
         </section>
 
@@ -219,8 +234,14 @@ export default function Home() {
           viewport={{ once: true, margin: "-20%" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <RevealText text="Ready to ditch the paper?" className="st-h1" />
-          <MagneticButton href="#get-started" className={`${styles.buttonPrimary} st-button-txt`} style={{marginTop: 32}}>Get Started</MagneticButton>
+          <RevealText text="Put your soil to work." className="st-h1" />
+          <p className="st-body1" style={{color: "var(--st-ink-600)", marginTop: 16, marginBottom: 32}}>
+            Join the network as a contractor, hauler, or site owner — or book a demo and we will walk you through it.
+          </p>
+          <div style={{display: "flex", gap: 14, justifyContent: "center"}}>
+            <MagneticButton href="/get-started" className={`${styles.buttonPrimary} st-button-txt`}>Book a demo</MagneticButton>
+            <MagneticButton href="/get-started" className={`${styles.buttonSecondary} st-button-txt`}>Join the network</MagneticButton>
+          </div>
         </motion.section>
       </main>
       <Footer />

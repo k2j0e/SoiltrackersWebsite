@@ -2,6 +2,12 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import styles from "./page.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Platform — Soiltrackers",
+  description: "One unbroken chain of custody, from dig to drop-off. Keep every project, permit, and haul in one record.",
+};
 
 export default function Platform() {
   return (
@@ -13,7 +19,10 @@ export default function Platform() {
           <div className={styles.heroContent}>
             <div className="st-sub-caps">THE PLATFORM</div>
             <h1 className="st-h1">One unbroken chain of custody, from dig to drop-off</h1>
-            <Link href="#demo" className={`${styles.buttonPrimary} st-button-txt`}>Book a demo</Link>
+            <p className="st-body1" style={{ color: "var(--st-ink-600)", margin: "24px 0 36px", maxWidth: 620 }}>
+              From project setup to the last load, Soiltrackers keeps every project, permit, and haul in one record — the office, the cab, and the regulator looking at the same live picture.
+            </p>
+            <Link href="/get-started" className={`${styles.buttonPrimary} st-button-txt`}>Book a demo</Link>
           </div>
           <div className={styles.browserFrame}>
             <div className={styles.browserHeader}>
@@ -91,22 +100,27 @@ export default function Platform() {
             <div className={styles.seatCard}>
               <i className="ri-building-4-line"></i>
               <h3 className="st-h4">Contractors</h3>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Manage sites and oversee all hauls.</p>
             </div>
             <div className={styles.seatCard}>
               <i className="ri-government-line"></i>
               <h3 className="st-h4">Government</h3>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Audit the full chain of custody.</p>
             </div>
             <div className={styles.seatCard}>
               <i className="ri-steering-2-line"></i>
               <h3 className="st-h4">Fleet admins</h3>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Dispatch and track trucks live.</p>
             </div>
             <div className={styles.seatCard}>
               <i className="ri-user-star-line"></i>
               <h3 className="st-h4">Drivers</h3>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Log loads with two taps.</p>
             </div>
             <div className={styles.seatCard}>
               <i className="ri-map-pin-2-line"></i>
               <h3 className="st-h4">Site operators</h3>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Verify material and specs.</p>
             </div>
           </div>
         </section>
@@ -114,7 +128,7 @@ export default function Platform() {
         {/* Final CTA */}
         <section className={styles.ctaPanel}>
           <h2 className="st-h1">See it on your own project.</h2>
-          <Link href="#demo" className={`${styles.buttonPrimary} st-button-txt`} style={{marginBottom: 0}}>Book a demo</Link>
+          <Link href="/get-started" className={`${styles.buttonPrimary} st-button-txt`} style={{marginBottom: 0}}>Book a demo</Link>
         </section>
       </main>
       <Footer />

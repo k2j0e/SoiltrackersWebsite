@@ -135,3 +135,12 @@ h4, .st-h4 { font-family: var(--st-font-display); font-weight: 500; font-size: v
 .st-body3      { font-family: var(--st-font-body); font-weight: 400; font-size: var(--st-fs-body3); line-height: var(--st-lh-body3); color: var(--st-ink-500); }
 .st-caption    { font-family: var(--st-font-body); font-weight: 500; font-size: var(--st-fs-caption); line-height: var(--st-lh-caption); color: var(--st-ink-400); }
 .st-button-txt { font-family: var(--st-font-button); font-weight: 500; font-size: var(--st-fs-button); line-height: var(--st-lh-button); letter-spacing: 0.02em; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -2,11 +2,17 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import styles from "./page.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "For Haulers — Soiltrackers",
+  description: "Keep your trucks full. Keep the chain intact. Matched hauls and dispatch for fleet owners.",
+};
 
 export default function Haulers() {
   return (
     <>
-      <Nav primaryCtaLabel="Join as a hauler" primaryCtaHref="#join" />
+      <Nav primaryCtaLabel="Join as a hauler" primaryCtaHref="/get-started" />
       <main>
         {/* Hero */}
         <section className={styles.hero}>
@@ -15,8 +21,8 @@ export default function Haulers() {
               <div className={`st-sub-caps ${styles.eyebrow}`}>FOR HAULERS</div>
               <h1 className="st-h1">Keep your trucks full. Keep the chain intact.</h1>
               <div className={styles.heroCtas}>
-                <Link href="#join" className={`${styles.buttonPrimaryLeaf} st-button-txt`}>Join the network</Link>
-                <Link href="#app" className={`${styles.buttonOutlineLight} st-button-txt`}>See the driver app</Link>
+                <Link href="/get-started" className={`${styles.buttonPrimaryLeaf} st-button-txt`}>Join the network</Link>
+                <Link href="/get-started" className={`${styles.buttonOutlineLight} st-button-txt`}>See the driver app</Link>
               </div>
             </div>
             
@@ -123,7 +129,7 @@ export default function Haulers() {
         <section className={styles.ctaPanel}>
           <h2 className="st-h1">Put your fleet on the network.</h2>
           <p className="st-body1">Registration is free. You only haul the jobs you accept.</p>
-          <Link href="#join" className={`${styles.buttonPrimaryLeaf} st-button-txt`} style={{display: "inline-block", background: "var(--st-brand-primary)", color: "var(--st-surface)"}}>Join as a hauler</Link>
+          <Link href="/get-started" className={`${styles.buttonPrimaryLeaf} st-button-txt`} style={{display: "inline-block", background: "var(--st-brand-primary)", color: "var(--st-surface)"}}>Join as a hauler</Link>
         </section>
       </main>
       <Footer />

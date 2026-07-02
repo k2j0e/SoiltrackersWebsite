@@ -143,6 +143,40 @@
   color: var(--st-logo-leaf);
 }
 
+/* Mission */
+.mission {
+  padding: 120px var(--st-space-6);
+  text-align: center;
+  background: var(--st-surface);
+}
+
+/* Roles */
+.roles {
+  padding: 0 var(--st-space-6) 120px;
+  background: var(--st-surface);
+}
+
+.roleGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--st-ink-100);
+}
+
+.roleCol {
+  padding: 40px 32px;
+  border-right: 1px solid var(--st-ink-100);
+}
+.roleCol i {
+  font-size: 32px;
+  color: var(--st-brand-primary);
+}
+.roleCol h3 {
+  margin: 16px 0 8px;
+}
+.roleCol p {
+  color: var(--st-ink-600);
+}
+
 /* Doors - Asymmetrical */
 .doorsSection {
   padding: 120px var(--st-space-6);
@@ -276,47 +310,27 @@
   margin-bottom: 24px;
 }
 
-/* Impact Section */
-.impact {
-  background: linear-gradient(180deg, var(--st-brand-primary-dark) 0%, rgb(5, 25, 20) 100%);
-  color: var(--st-surface);
+/* Testimonial */
+.testimonial {
   padding: 120px var(--st-space-6);
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: var(--st-surface);
 }
 
-.impactInner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--st-space-12);
+.testiContent {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.statLarge {
-  font-size: clamp(80px, 8vw, 120px);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--st-logo-leaf);
-  display: block !important;
-}
-
-.logoGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.logoPlaceholder {
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 40px 20px;
-  text-align: center;
-  border-radius: 16px;
-  color: rgba(255,255,255,0.5);
-  font-size: 14px;
-  backdrop-filter: blur(8px);
+.testiAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--st-ink-100);
+  margin-bottom: 24px;
 }
 
 /* CTA Panel */

@@ -52,9 +52,12 @@ export default function RevealText({ text, className, delay = 0 }: RevealTextPro
       className={className}
     >
       {words.map((word, index) => (
-        <motion.span variants={child} key={index} style={{ display: "inline-block" }}>
-          {word}
-        </motion.span>
+        <React.Fragment key={index}>
+          <motion.span variants={child} style={{ display: "inline-block" }}>
+            {word}
+          </motion.span>
+          {index < words.length - 1 && " "}
+        </React.Fragment>
       ))}
     </motion.div>
   );

@@ -25,25 +25,25 @@ export default function Footer() {
             <li><Link href="/platform" className={styles.link}>Platform</Link></li>
             <li><Link href="/marketplace" className={styles.link}>Marketplace</Link></li>
             <li><Link href="/haulers" className={styles.link}>For Haulers</Link></li>
-            <li><Link href="#pricing" className={styles.link}>Pricing</Link></li>
+            <li><Link href="/get-started" className={styles.link}>Pricing</Link></li>
           </ul>
         </div>
         
         <div className={styles.column}>
           <h4 className="st-sub-caps">Company</h4>
           <ul className={styles.linkList}>
-            <li><Link href="#about" className={styles.link}>About Us</Link></li>
-            <li><Link href="#careers" className={styles.link}>Careers</Link></li>
-            <li><Link href="#contact" className={styles.link}>Contact</Link></li>
+            <li><Link href="/get-started" className={styles.link}>About Us</Link></li>
+            <li><Link href="/get-started" className={styles.link}>Careers</Link></li>
+            <li><Link href="/get-started" className={styles.link}>Contact</Link></li>
           </ul>
         </div>
         
         <div className={styles.column}>
           <h4 className="st-sub-caps">Resources</h4>
           <ul className={styles.linkList}>
-            <li><Link href="#blog" className={styles.link}>Blog</Link></li>
-            <li><Link href="#guides" className={styles.link}>Guides</Link></li>
-            <li><Link href="#support" className={styles.link}>Support</Link></li>
+            <li><Link href="/get-started" className={styles.link}>Blog</Link></li>
+            <li><Link href="/get-started" className={styles.link}>Guides</Link></li>
+            <li><Link href="/get-started" className={styles.link}>Sign In</Link></li>
           </ul>
         </div>
       </div>

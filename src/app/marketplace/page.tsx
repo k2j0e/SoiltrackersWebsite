@@ -2,6 +2,12 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import styles from "./page.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Marketplace — Soiltrackers",
+  description: "Find soil. Move soil. Nothing wasted. The marketplace for clean and surplus fill.",
+};
 
 export default function Marketplace() {
   return (
@@ -14,10 +20,10 @@ export default function Marketplace() {
             <div className={styles.heroContent}>
               <h1 className="st-h1">Your surplus is someone's structural fill.</h1>
               <p>Every match made on the Soiltrackers Marketplace moves with a complete, unbroken chain of custody attached.</p>
-              <div className={styles.heroCtas}>
-                <Link href="#post" className={`${styles.buttonPrimaryDark} st-button-txt`}>Post a listing</Link>
-                <Link href="#browse" className={`${styles.buttonOutlineDark} st-button-txt`}>Browse material</Link>
-              </div>
+              <div className={styles.heroActions}>
+              <Link href="/get-started" className={`${styles.buttonPrimary} st-button-txt`}>Post a listing</Link>
+              <Link href="/get-started" className={`${styles.buttonSecondary} st-button-txt`}>Browse soil</Link>
+            </div>
             </div>
             
             <div className={styles.searchMock}>
@@ -131,8 +137,8 @@ export default function Marketplace() {
 
         {/* CTA Panel */}
         <section className={styles.ctaPanel}>
-          <h2 className="st-h1">Stop paying to throw soil away.</h2>
-          <Link href="#post" className={`${styles.buttonPrimaryDark} st-button-txt`} style={{display: "inline-block"}}>Post a listing for free</Link>
+          <h2 className="st-h1">Turn your surplus into supply.</h2>
+          <Link href="/get-started" className={`${styles.buttonPrimary} st-button-txt`} style={{marginTop: 32}}>Post a listing</Link>
         </section>
       </main>
       <Footer />
