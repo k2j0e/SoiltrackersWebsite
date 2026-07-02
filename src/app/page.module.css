@@ -6,10 +6,7 @@
 /* Immersive Hero */
 .hero {
   background: var(--st-surface);
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  padding: 100px var(--st-space-6) 120px;
+  padding: 64px var(--st-space-6) 120px;
   position: relative;
   overflow: hidden;
 }
