@@ -1,194 +1,216 @@
+"use client";
+
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import MapAnimation from "@/components/MapAnimation";
-import Link from "next/link";
+import RevealText from "@/components/RevealText";
+import MagneticButton from "@/components/MagneticButton";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import styles from "./page.module.css";
 
 export default function Home() {
-  const tickerItems = [
-    "Surrey excavation → Langley fill · 1,100 m³",
-    "Burnaby site → Delta reclamation · 2,400 m³",
-    "Vancouver demo → Richmond preload · 850 m³"
-  ];
-  const duplicatedTicker = [...tickerItems, ...tickerItems, ...tickerItems];
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const mapY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <>
       <Nav />
-      <main>
-        {/* 2. Hero */}
-        <section className={styles.hero}>
-          <div className={styles.heroContent}>
-            <h1 className="st-h1">Chain of custody for every load of soil.</h1>
-            <p className={styles.heroSub}>
-              From the ground it leaves to the ground it lands on — Soiltrackers records who touched it, where it went, and the permits that cover it. One unbroken record.
-            </p>
-            <div className={styles.heroCtas}>
-              <Link href="#join" className={`${styles.buttonPrimary} st-button-txt`}>Join the network</Link>
-              <Link href="#tour" className={`${styles.buttonSecondary} st-button-txt`}>Watch a 2-min tour</Link>
+      <main className={styles.main}>
+        {/* Immersive Hero */}
+        <section ref={heroRef} className={styles.hero}>
+          <motion.div style={{ y: heroY, opacity: heroOpacity }} className={styles.heroInner}>
+            <div className={styles.heroContent}>
+              <RevealText 
+                text="Chain of custody for every load of soil." 
+                className={`st-h1 ${styles.heroTitle}`} 
+              />
+              <motion.p 
+                className="st-body1"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+              >
+                From the ground it leaves to the ground it lands on — Soiltrackers records who touched it, where it went, and the permits that cover it. One unbroken record.
+              </motion.p>
+              
+              <motion.div 
+                className={styles.heroCtas}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+              >
+                <MagneticButton href="#join" className={`${styles.buttonPrimary} st-button-txt`}>Join the network</MagneticButton>
+                <MagneticButton href="#tour" className={`${styles.buttonSecondary} st-button-txt`}>Watch a 2-min tour</MagneticButton>
+              </motion.div>
+
+              <motion.div 
+                className={styles.chips}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.4, duration: 1 }}
+              >
+                <span>Contractors</span>
+                <span>Haulers</span>
+                <span>Site owners</span>
+                <span>Environmental consultants</span>
+              </motion.div>
             </div>
-            <div className={styles.chips}>
-              <span className={styles.chip}>Contractors</span>
-              <span className={styles.chip}>Haulers</span>
-              <span className={styles.chip}>Site owners</span>
-              <span className={styles.chip}>Environmental consultants</span>
-            </div>
-          </div>
-          <div className={styles.mapPanel}>
-            <MapAnimation />
-          </div>
+            
+            <motion.div style={{ y: mapY }} className={styles.mapPanel}>
+              <MapAnimation />
+            </motion.div>
+          </motion.div>
         </section>
 
-        {/* 4. Live ticker */}
-        <div className={styles.ticker}>
+        {/* Live Ticker */}
+        <section className={styles.ticker}>
           <div className={styles.tickerTrack}>
-            {duplicatedTicker.map((item, i) => (
-              <div key={i} className={styles.tickerItem}>
-                {item.split("·")[0]} <span>· {item.split("·")[1]}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* 5. Trust strip */}
-        <section className={styles.trustStrip}>
-          <h4 className="st-sub-caps">TRUSTED ACROSS BRITISH COLUMBIA</h4>
-          <div className={styles.logos}>
-            {[1, 2, 3, 4, 5].map(i => <div key={i} className={styles.logoPlaceholder}></div>)}
+            <span className={styles.tickerText}>Surrey excavation → Langley fill · 1,100 m³</span>
+            <span className={styles.tickerHighlight}>New listing: clean sand · 5,100 m³ · Abbotsford</span>
+            <span className={styles.tickerText}>Delta remediation → Richmond treatment yard · 480 m³</span>
+            <span className={styles.tickerHighlight}>Compliance review booked: Coquitlam Site 12</span>
+            
+            {/* Duplicated for smooth loop */}
+            <span className={styles.tickerText}>Surrey excavation → Langley fill · 1,100 m³</span>
+            <span className={styles.tickerHighlight}>New listing: clean sand · 5,100 m³ · Abbotsford</span>
+            <span className={styles.tickerText}>Delta remediation → Richmond treatment yard · 480 m³</span>
+            <span className={styles.tickerHighlight}>Compliance review booked: Coquitlam Site 12</span>
           </div>
         </section>
 
-        {/* 6. Mission */}
-        <section className={styles.mission}>
-          <h4 className="st-sub-caps">WHY WE EXIST</h4>
-          <p>
-            Soil only moves responsibly when you can prove where it came from and where it went. <span>Soiltrackers builds that chain of custody into every haul</span> — matching soil to sites, shortening trips, and keeping the record unbroken from dig to drop-off.
-          </p>
+        {/* Dual Doors - Asymmetrical Overlapping Layout */}
+        <section className={styles.doorsSection}>
+          <div className={styles.doorsInner}>
+            <motion.div 
+              className={styles.doorPlatform}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="st-sub-caps" style={{color: "rgba(255,255,255,0.6)"}}>The Platform</div>
+              <h2 className="st-h2">Run every haul with proof built in</h2>
+              <ul className={styles.doorList}>
+                <li><i className="ri-check-line" style={{color: "var(--st-logo-leaf)"}}></i> Project setup, sites, and permits in one place</li>
+                <li><i className="ri-check-line" style={{color: "var(--st-logo-leaf)"}}></i> Dispatch and driver apps for daily hauls</li>
+                <li><i className="ri-check-line" style={{color: "var(--st-logo-leaf)"}}></i> Compliance records generated automatically</li>
+              </ul>
+              <MagneticButton href="/platform" className={styles.doorLink}>Explore the platform</MagneticButton>
+            </motion.div>
+
+            <motion.div 
+              className={styles.doorMarketplace}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
+              <div className="st-sub-caps" style={{color: "rgba(0,0,0,0.6)"}}>The Marketplace</div>
+              <h2 className="st-h2" style={{color: "var(--st-ink-900)"}}>Find soil. Move soil. Nothing wasted.</h2>
+              <ul className={styles.doorList} style={{color: "var(--st-ink-900)"}}>
+                <li><i className="ri-check-line" style={{color: "var(--st-brand-primary)"}}></i> Post surplus soil or request material</li>
+                <li><i className="ri-check-line" style={{color: "var(--st-brand-primary)"}}></i> Matched by spec, volume, and distance</li>
+                <li><i className="ri-check-line" style={{color: "var(--st-brand-primary)"}}></i> Book hauling from the same network</li>
+              </ul>
+              <MagneticButton href="/marketplace" className={`${styles.doorLink} ${styles.darkLink}`}>Browse listings</MagneticButton>
+            </motion.div>
+          </div>
         </section>
 
-        {/* 7. How it works */}
+        {/* How It Works */}
         <section className={styles.howItWorks}>
-          <h2 className="st-h2">From ground to ground</h2>
+          <RevealText text="Built for the mud, scaled for the boardroom." className="st-h2" />
+          
           <div className={styles.steps}>
-            <div className={styles.stepCard}>
+            <motion.div 
+              className={styles.stepCard}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.6 }}
+            >
               <div className={styles.stepNum}>01</div>
-              <h3 className="st-h3" style={{marginBottom: 16}}>List your soil</h3>
-              <p className="st-body2">Register material to find the nearest compliant drop-off site.</p>
-            </div>
-            <div className={styles.stepCard}>
+              <h3 className="st-h4">Connect sites</h3>
+              <p className="st-body2">Link sources and receiving sites to form an approved route.</p>
+            </motion.div>
+            
+            <motion.div 
+              className={styles.stepCard}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               <div className={styles.stepNum}>02</div>
-              <h3 className="st-h3" style={{marginBottom: 16}}>Match nearby</h3>
-              <p className="st-body2">Our network finds the shortest distance, saving time and emissions.</p>
-            </div>
-            <div className={styles.stepCard}>
+              <h3 className="st-h4">Dispatch trucks</h3>
+              <p className="st-body2">Drivers get routes in the app. No paper tickets.</p>
+            </motion.div>
+
+            <motion.div 
+              className={styles.stepCard}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <div className={styles.stepNum}>03</div>
-              <h3 className="st-h3" style={{marginBottom: 16}}>Haul with custody</h3>
-              <p className="st-body2">Every truckload carries a digital record verifying compliance.</p>
-            </div>
+              <h3 className="st-h4">Automatic compliance</h3>
+              <p className="st-body2">The system generates the chain of custody report instantly.</p>
+            </motion.div>
           </div>
         </section>
 
-        {/* 8. Dual doors */}
-        <section className={styles.doors}>
-          <div className={styles.doorPlatform}>
-            <h2 className="st-h2">The Platform</h2>
-            <p>Run every haul with chain of custody built in.</p>
-            <ul className={styles.checkList}>
-              <li className={styles.checkItem}><i className="ri-check-line"></i> Verify compliance</li>
-              <li className={styles.checkItem}><i className="ri-check-line"></i> Track loads in real-time</li>
-              <li className={styles.checkItem}><i className="ri-check-line"></i> Export regulator reports</li>
-            </ul>
-            <Link href="/platform" className={`${styles.doorLink} st-button-txt`}>Explore the Platform →</Link>
-          </div>
-          <div className={styles.doorMarketplace}>
-            <h2 className="st-h2">The Marketplace</h2>
-            <p>Find soil. Move soil. Nothing wasted.</p>
-            <ul className={styles.checkList}>
-              <li className={styles.checkItem}><i className="ri-check-line"></i> Post excess soil</li>
-              <li className={styles.checkItem}><i className="ri-check-line"></i> Find structural fill</li>
-              <li className={styles.checkItem}><i className="ri-check-line"></i> Connect with haulers</li>
-            </ul>
-            <Link href="/marketplace" className={`${styles.doorLink} st-button-txt`}>Browse the Marketplace →</Link>
-          </div>
-        </section>
-
-        {/* 9. Product shot */}
-        <section className={styles.productShot}>
-          <h2 className="st-h2">The whole chain, one dashboard</h2>
-          <div className={styles.browserFrame}>
-            <div className={styles.browserHeader}>
-              <div className={styles.browserDot}></div>
-              <div className={styles.browserDot}></div>
-              <div className={styles.browserDot}></div>
-            </div>
-            <div className={styles.browserContent}>
-              <i className="ri-dashboard-line" style={{fontSize: 32, marginRight: 8}}></i> Dashboard Screenshot Placeholder
-            </div>
-          </div>
-        </section>
-
-        {/* 10. Roles */}
-        <section className={styles.roles}>
-          <div className={styles.roleCol}>
-            <i className="ri-building-4-line"></i>
-            <h3 className="st-h4">Contractors</h3>
-            <p className="st-body2">Move soil faster with automatic compliance logging.</p>
-          </div>
-          <div className={styles.roleCol}>
-            <i className="ri-truck-line"></i>
-            <h3 className="st-h4">Haulers & drivers</h3>
-            <p className="st-body2">Keep trucks full and eliminate paper tickets.</p>
-          </div>
-          <div className={styles.roleCol}>
-            <i className="ri-map-pin-line"></i>
-            <h3 className="st-h4">Site owners</h3>
-            <p className="st-body2">Accept soil confidently with full origin verification.</p>
-          </div>
-          <div className={styles.roleCol}>
-            <i className="ri-earth-line"></i>
-            <h3 className="st-h4">Environmental consultants</h3>
-            <p className="st-body2">Oversight and reporting simplified in one dashboard.</p>
-          </div>
-        </section>
-
-        {/* 11. Impact band */}
+        {/* Asymmetrical Impact Section */}
         <section className={styles.impact}>
           <div className={styles.impactInner}>
-            <h2 className="st-h2">Less landfill. Shorter hauls. Provable ground.</h2>
-            <div className={styles.stats}>
-              <div className={styles.stat}>
-                <div className={styles.statNum}>1.2M</div>
-                <div className={styles.statLabel}>Cubic meters moved</div>
+            <motion.div 
+              className={styles.impactStats}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <RevealText text="1.2M m³" className={styles.statLarge} />
+              <div className="st-h4" style={{marginTop: 16}}>Soil moved safely this year.</div>
+            </motion.div>
+            
+            <motion.div 
+              className={styles.impactLogos}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h3 className="st-sub-caps" style={{color: "rgba(255,255,255,0.6)", marginBottom: 24}}>Trusted by</h3>
+              <div className={styles.logoGrid}>
+                <div className={styles.logoPlaceholder}>Logo Placeholder</div>
+                <div className={styles.logoPlaceholder}>Logo Placeholder</div>
+                <div className={styles.logoPlaceholder}>Logo Placeholder</div>
+                <div className={styles.logoPlaceholder}>Logo Placeholder</div>
               </div>
-              <div className={styles.stat}>
-                <div className={styles.statNum}>86%</div>
-                <div className={styles.statLabel}>Diverted from landfill</div>
-              </div>
-              <div className={styles.stat}>
-                <div className={styles.statNum}>4.8k</div>
-                <div className={styles.statLabel}>Trips saved</div>
-              </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* 12. Testimonial */}
-        <section className={styles.testimonial}>
-          <p>“Soiltrackers changed the way we handle compliance. The chain of custody is bulletproof, and we save hours every week on paperwork.”</p>
-          <div className="st-caption">
-            — Placeholder Name, Site Operations Manager<br/>
-            (Customer Photo Placeholder)
-          </div>
-        </section>
-
-        {/* 13. CTA panel */}
-        <section className={styles.ctaPanel}>
-          <h2 className="st-h2">Put your soil to work.</h2>
-          <div className={styles.ctaPanelCtas}>
-            <Link href="#demo" className={`${styles.buttonPrimary} st-button-txt`}>Book a demo</Link>
-            <Link href="#join" className={`${styles.buttonSecondary} st-button-txt`}>Join the network</Link>
-          </div>
-        </section>
+        {/* CTA */}
+        <motion.section 
+          className={styles.ctaPanel}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-20%" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <RevealText text="Ready to ditch the paper?" className="st-h1" />
+          <MagneticButton href="#get-started" className={`${styles.buttonPrimary} st-button-txt`} style={{marginTop: 32}}>Get Started</MagneticButton>
+        </motion.section>
       </main>
       <Footer />
     </>
