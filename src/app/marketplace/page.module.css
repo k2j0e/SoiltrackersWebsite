@@ -1,6 +1,19 @@
 .hero {
-  background: var(--st-accent-sand);
+  background: var(--st-gradient-surface);
   padding: 120px var(--st-space-6) 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100%;
+  background: radial-gradient(circle at right, rgba(215, 211, 157, 0.2) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .heroInner {
@@ -10,6 +23,8 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--st-space-12);
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .heroContent h1 {
@@ -35,30 +50,43 @@
   padding: 17px 32px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
-  transition: background 0.15s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px 0 rgba(5, 25, 20, 0.3);
 }
 .buttonPrimaryDark:hover {
   background: var(--st-ink-700);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(5, 25, 20, 0.2);
 }
 
 .buttonOutlineDark {
-  background: transparent;
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
   color: var(--st-ink-900);
   padding: 17px 32px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
   border: 1px solid var(--st-ink-900);
-  transition: background 0.15s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .buttonOutlineDark:hover {
-  background: rgba(5, 25, 20, 0.05);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: var(--st-shadow-soft);
 }
 
 .searchMock {
-  background: var(--st-surface);
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
+  border: 1px solid var(--st-glass-border);
   border-radius: var(--st-radius-xl);
   padding: var(--st-space-6);
   box-shadow: var(--st-shadow-pop);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.5s ease;
+}
+.searchMock:hover {
+  transform: perspective(1000px) rotateY(0deg) translateY(-8px);
 }
 
 .searchInput {
@@ -123,11 +151,17 @@
 }
 
 .listingCard {
-  background: var(--st-surface);
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
   border-radius: var(--st-radius-xl);
   box-shadow: var(--st-shadow-card);
   overflow: hidden;
-  border: 1px solid var(--st-ink-100);
+  border: 1px solid var(--st-glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.listingCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--st-shadow-card-hover);
 }
 
 .listingPhoto {
@@ -193,7 +227,7 @@
 }
 
 .matchingBand {
-  background: var(--st-ink-50);
+  background: linear-gradient(180deg, var(--st-surface) 0%, var(--st-accent-sand) 100%);
   padding: 120px var(--st-space-6);
   text-align: center;
 }
@@ -211,17 +245,42 @@
 }
 
 .matchingCard {
-  background: var(--st-surface);
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
   padding: var(--st-space-6);
   border-radius: var(--st-radius-xl);
   box-shadow: var(--st-shadow-card);
+  border: 1px solid var(--st-glass-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.matchingCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--st-shadow-card-hover);
 }
 
 .ctaPanel {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 120px auto;
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
+  border: 1px solid var(--st-glass-border);
+  border-radius: var(--st-radius-2xl);
+  padding: 100px var(--st-space-6);
   text-align: center;
-  padding: 0 var(--st-space-6);
+  box-shadow: var(--st-shadow-pop);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaPanel::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 120%;
+  height: 200%;
+  background: radial-gradient(circle at top, rgba(18,91,73,0.05) 0%, transparent 60%);
+  z-index: -1;
 }
 
 .ctaPanel h2 {

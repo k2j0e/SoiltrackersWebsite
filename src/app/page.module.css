@@ -32,23 +32,29 @@
   padding: 17px 32px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
-  transition: background 0.15s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px 0 rgba(18, 91, 73, 0.39);
 }
 .buttonPrimary:hover {
   background: var(--st-brand-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(18, 91, 73, 0.23);
 }
 
 .buttonSecondary {
-  background: transparent;
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
   color: var(--st-brand-primary);
   padding: 17px 32px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
-  border: 1px solid var(--st-ink-200);
-  transition: background 0.15s ease;
+  border: 1px solid var(--st-glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .buttonSecondary:hover {
-  background: rgba(18, 91, 73, 0.05);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: var(--st-shadow-soft);
 }
 
 .chips {
@@ -160,8 +166,22 @@
 }
 
 .howItWorks {
-  background: var(--st-ink-50);
+  background: var(--st-gradient-surface);
   padding: 120px var(--st-space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.howItWorks::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(170,221,102,0.15) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
 }
 
 .howItWorks h2 {
@@ -175,13 +195,23 @@
   gap: var(--st-space-6);
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .stepCard {
-  background: var(--st-surface);
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
   padding: var(--st-space-8);
   border-radius: var(--st-radius-xl);
   box-shadow: var(--st-shadow-card);
+  border: 1px solid var(--st-glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stepCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--st-shadow-card-hover);
 }
 
 .stepNum {
@@ -207,15 +237,22 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--st-space-6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--st-shadow-card);
+}
+
+.doorPlatform:hover, .doorMarketplace:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--st-shadow-card-hover);
 }
 
 .doorPlatform {
-  background: var(--st-brand-primary);
+  background: var(--st-gradient-forest);
   color: var(--st-surface);
 }
 
 .doorMarketplace {
-  background: var(--st-accent-sand);
+  background: linear-gradient(135deg, var(--st-accent-sand) 0%, rgb(195, 191, 137) 100%);
   color: var(--st-ink-900);
 }
 
@@ -340,9 +377,22 @@
 }
 
 .impact {
-  background: var(--st-brand-primary-dark);
+  background: var(--st-gradient-forest);
   color: var(--st-surface);
   padding: 120px var(--st-space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.impact::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(170,221,102,0.1) 0%, rgba(255,255,255,0) 60%);
+  pointer-events: none;
 }
 
 .impactInner {
@@ -400,10 +450,26 @@
 .ctaPanel {
   max-width: 1200px;
   margin: 0 auto 120px;
-  background: var(--st-ink-50);
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
+  border: 1px solid var(--st-glass-border);
   border-radius: var(--st-radius-2xl);
-  padding: 80px var(--st-space-6);
+  padding: 100px var(--st-space-6);
   text-align: center;
+  box-shadow: var(--st-shadow-pop);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaPanel::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 120%;
+  height: 200%;
+  background: radial-gradient(circle at top, rgba(18,91,73,0.05) 0%, transparent 60%);
+  z-index: -1;
 }
 
 .ctaPanel h2 {

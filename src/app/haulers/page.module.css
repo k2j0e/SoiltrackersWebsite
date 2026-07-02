@@ -1,7 +1,21 @@
 .hero {
-  background: var(--st-brand-primary-dark);
+  background: linear-gradient(135deg, var(--st-ink-900) 0%, rgb(11, 77, 60) 100%);
   color: var(--st-surface);
   padding: 120px var(--st-space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 50vw;
+  height: 200%;
+  background: radial-gradient(circle at left, rgba(170,221,102,0.1) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .heroInner {
@@ -11,6 +25,8 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--st-space-12);
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .heroContent .eyebrow {
@@ -34,31 +50,44 @@
   padding: 17px 32px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
-  transition: background 0.15s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px 0 rgba(170, 221, 102, 0.3);
 }
 .buttonPrimaryLeaf:hover {
   background: var(--st-success-tint);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(170, 221, 102, 0.2);
 }
 
 .buttonOutlineLight {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
   color: var(--st-surface);
   padding: 17px 32px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
-  border: 1px solid var(--st-ink-300);
-  transition: background 0.15s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .buttonOutlineLight:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .dispatchCard {
-  background: var(--st-surface);
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
   color: var(--st-ink-900);
   border-radius: var(--st-radius-xl);
   padding: var(--st-space-6);
   box-shadow: var(--st-shadow-pop);
+  border: 1px solid var(--st-glass-border);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.5s ease;
+}
+.dispatchCard:hover {
+  transform: perspective(1000px) rotateY(0deg) translateY(-8px);
 }
 
 .dispatchHeader {
@@ -123,9 +152,17 @@
 }
 
 .valueCard {
-  background: var(--st-ink-50);
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
   padding: var(--st-space-8);
   border-radius: var(--st-radius-xl);
+  border: 1px solid var(--st-glass-border);
+  box-shadow: var(--st-shadow-card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.valueCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--st-shadow-card-hover);
 }
 .valueCard i {
   font-size: 32px;
@@ -151,7 +188,7 @@
 .phoneMock {
   width: 320px;
   height: 640px;
-  background: var(--st-brand-primary-dark);
+  background: linear-gradient(135deg, var(--st-brand-primary-dark) 0%, rgb(5, 40, 30) 100%);
   border-radius: 44px;
   margin: 0 auto;
   border: 12px solid var(--st-ink-900);
@@ -160,6 +197,11 @@
   justify-content: center;
   color: var(--st-ink-400);
   font-size: var(--st-fs-body3);
+  box-shadow: var(--st-shadow-pop);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.phoneMock:hover {
+  transform: translateY(-12px);
 }
 
 .fleetAdmins {
@@ -173,20 +215,39 @@
 }
 
 .boardMock {
-  background: var(--st-ink-50);
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
   border-radius: var(--st-radius-xl);
   height: 400px;
-  border: 1px solid var(--st-ink-100);
+  border: 1px solid var(--st-glass-border);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--st-ink-300);
+  box-shadow: var(--st-shadow-pop);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.boardMock:hover {
+  transform: scale(1.02);
 }
 
 .joiningBand {
-  background: var(--st-ink-900);
+  background: linear-gradient(180deg, var(--st-ink-900) 0%, rgb(5, 25, 20) 100%);
   color: var(--st-surface);
   padding: 120px var(--st-space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.joiningBand::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(170,221,102,0.1) 0%, rgba(255,255,255,0) 60%);
+  pointer-events: none;
 }
 
 .joiningInner {

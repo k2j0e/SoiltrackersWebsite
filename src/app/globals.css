@@ -78,14 +78,25 @@
   --st-radius-sm:  5px;
   --st-radius-md:  8px;
   --st-radius-lg:  12px;
-  --st-radius-xl:  16px;
-  --st-radius-2xl: 20px;
+  --st-radius-xl:  24px; /* Soften large elements */
+  --st-radius-2xl: 32px;
   --st-radius-pill: 1000px;
 
-  --st-shadow-card:   0 4px 8.8px 0 rgba(0, 0, 0, 0.1);
-  --st-shadow-soft:   0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04);
-  --st-shadow-pop:    0 8px 24px -4px rgba(5, 25, 20, 0.12);
-  --st-shadow-inner:  inset 0 0 0 1px rgba(0, 0, 0, 0.16);
+  /* Premium Layered Shadows */
+  --st-shadow-card:   0 10px 30px -10px rgba(18, 91, 73, 0.15), 0 4px 10px -4px rgba(5, 25, 20, 0.08);
+  --st-shadow-card-hover: 0 20px 40px -10px rgba(18, 91, 73, 0.2), 0 8px 16px -6px rgba(5, 25, 20, 0.1);
+  --st-shadow-soft:   0 2px 8px -2px rgba(5, 25, 20, 0.05);
+  --st-shadow-pop:    0 24px 48px -12px rgba(1, 53, 40, 0.25);
+  --st-shadow-inner:  inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+
+  /* Glassmorphism Bases */
+  --st-glass-bg:      rgba(255, 255, 255, 0.7);
+  --st-glass-border:  rgba(255, 255, 255, 0.6);
+  --st-glass-blur:    blur(16px);
+  
+  /* Gradients */
+  --st-gradient-forest: linear-gradient(135deg, var(--st-brand-primary-dark) 0%, rgb(11, 77, 60) 100%);
+  --st-gradient-surface: linear-gradient(180deg, var(--st-surface) 0%, var(--st-ink-50) 100%);
 }
 
 @keyframes st-dash {

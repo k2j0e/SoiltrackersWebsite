@@ -1,12 +1,27 @@
 .hero {
-  background: var(--st-ink-50);
+  background: var(--st-gradient-surface);
   padding: 120px var(--st-space-6) 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top, rgba(170,221,102,0.1) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .heroContent {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -21,10 +36,13 @@
   border-radius: var(--st-radius-pill);
   text-decoration: none;
   margin-bottom: 80px;
-  transition: background 0.15s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px 0 rgba(18, 91, 73, 0.39);
 }
 .buttonPrimary:hover {
   background: var(--st-brand-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(18, 91, 73, 0.23);
 }
 
 .browserFrame {
@@ -109,20 +127,27 @@
 }
 
 .featureImage {
-  background: var(--st-ink-50);
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
   border-radius: var(--st-radius-xl);
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--st-ink-100);
+  border: 1px solid var(--st-glass-border);
   color: var(--st-ink-300);
+  box-shadow: var(--st-shadow-card);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.featureImage:hover {
+  transform: scale(1.02);
 }
 
 .seatsBand {
-  background: var(--st-ink-50);
+  background: var(--st-gradient-surface);
   padding: 120px var(--st-space-6);
   text-align: center;
+  position: relative;
 }
 
 .seatsBand h2 {
@@ -138,10 +163,17 @@
 }
 
 .seatCard {
-  background: var(--st-surface);
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
   padding: var(--st-space-6);
-  border-radius: var(--st-radius-lg);
+  border-radius: var(--st-radius-xl);
   box-shadow: var(--st-shadow-card);
+  border: 1px solid var(--st-glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.seatCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--st-shadow-card-hover);
 }
 .seatCard i {
   font-size: 32px;
@@ -151,10 +183,28 @@
 }
 
 .ctaPanel {
-  max-width: 800px;
-  margin: 120px auto;
+  max-width: 1200px;
+  margin: 0 auto 120px;
+  background: var(--st-glass-bg);
+  backdrop-filter: var(--st-glass-blur);
+  border: 1px solid var(--st-glass-border);
+  border-radius: var(--st-radius-2xl);
+  padding: 100px var(--st-space-6);
   text-align: center;
-  padding: 0 var(--st-space-6);
+  box-shadow: var(--st-shadow-pop);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaPanel::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 120%;
+  height: 200%;
+  background: radial-gradient(circle at top, rgba(18,91,73,0.05) 0%, transparent 60%);
+  z-index: -1;
 }
 
 .ctaPanel h2 {
