@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import MapAnimation from "@/components/MapAnimation";
 import Link from "next/link";
 import styles from "./page.module.css";
 
@@ -34,11 +35,7 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.mapPanel}>
-            {/* 3. Animated map panel placeholder */}
-            <div className="st-body2" style={{textAlign: "center"}}>
-              <i className="ri-map-2-line" style={{fontSize: 48, color: "var(--st-brand-primary)", marginBottom: 16, display: "block"}}></i>
-              Animated Map SVG Scene Placeholder
-            </div>
+            <MapAnimation />
           </div>
         </section>
 

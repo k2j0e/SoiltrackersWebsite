@@ -88,6 +88,14 @@
   --st-shadow-inner:  inset 0 0 0 1px rgba(0, 0, 0, 0.16);
 }
 
+@keyframes st-dash {
+  to { stroke-dashoffset: -28; }
+}
+@keyframes st-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
 html, body {
   font-family: var(--st-font-body);
   color: var(--st-ink-900);
