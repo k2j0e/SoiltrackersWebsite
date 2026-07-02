@@ -30,32 +30,33 @@ export default function Platform() {
               <div className={styles.browserDot}></div>
               <div className={styles.browserDot}></div>
             </div>
-            <div className={styles.browserContent} style={{alignItems: "flex-start", padding: 24}}>
-              <div style={{display: "flex", gap: 24, width: "100%", height: "100%"}}>
-                <div style={{width: 200, background: "var(--st-ink-50)", borderRadius: 8, padding: 16, display: "flex", flexDirection: "column", gap: 12}}>
-                  <div style={{width: "100%", height: 24, background: "var(--st-ink-100)", borderRadius: 4}}></div>
-                  <div style={{width: "80%", height: 16, background: "rgba(0,0,0,0.05)", borderRadius: 4}}></div>
-                  <div style={{width: "60%", height: 16, background: "rgba(0,0,0,0.05)", borderRadius: 4}}></div>
+            <div className={styles.browserContent}>
+              <div className={styles.dashboardGraphic}>
+                <div className={styles.dashSidebar}>
+                  <div className={styles.dashSkeletonBar}></div>
+                  <div className={styles.dashSkeletonBar}></div>
+                  <div className={styles.dashSkeletonBar} style={{width: "80%"}}></div>
+                  <div className={styles.dashSkeletonBar} style={{width: "60%"}}></div>
                 </div>
-                <div style={{flex: 1, display: "flex", flexDirection: "column", gap: 24}}>
-                  <div style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16}}>
-                    <div style={{height: 100, background: "white", borderRadius: 8, border: "1px solid var(--st-ink-100)", padding: 16, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
-                      <div style={{width: "40%", height: 12, background: "var(--st-ink-150)", borderRadius: 4}}></div>
-                      <div style={{width: "60%", height: 32, background: "var(--st-brand-primary)", opacity: 0.1, borderRadius: 8}}></div>
+                <div className={styles.dashMain}>
+                  <div className={styles.dashCards}>
+                    <div className={styles.dashCard}>
+                      <div className={styles.dashSkeletonBar} style={{width: "40%", height: 12}}></div>
+                      <div className={styles.dashCardValue}></div>
                     </div>
-                    <div style={{height: 100, background: "white", borderRadius: 8, border: "1px solid var(--st-ink-100)", padding: 16, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
-                      <div style={{width: "50%", height: 12, background: "var(--st-ink-150)", borderRadius: 4}}></div>
-                      <div style={{width: "40%", height: 32, background: "var(--st-logo-leaf)", opacity: 0.2, borderRadius: 8}}></div>
+                    <div className={styles.dashCard}>
+                      <div className={styles.dashSkeletonBar} style={{width: "50%", height: 12, opacity: 0.5}}></div>
+                      <div className={styles.dashCardValue}></div>
                     </div>
-                    <div style={{height: 100, background: "white", borderRadius: 8, border: "1px solid var(--st-ink-100)", padding: 16, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
-                      <div style={{width: "30%", height: 12, background: "var(--st-ink-150)", borderRadius: 4}}></div>
-                      <div style={{width: "70%", height: 32, background: "var(--st-brand-primary)", opacity: 0.1, borderRadius: 8}}></div>
+                    <div className={styles.dashCard}>
+                      <div className={styles.dashSkeletonBar} style={{width: "30%", height: 12}}></div>
+                      <div className={styles.dashCardValue}></div>
                     </div>
                   </div>
-                  <div style={{flex: 1, background: "white", borderRadius: 8, border: "1px solid var(--st-ink-100)", padding: 16}}>
-                    <div style={{width: "100%", height: 32, borderBottom: "1px solid var(--st-ink-50)", marginBottom: 12}}></div>
-                    <div style={{width: "100%", height: 32, borderBottom: "1px solid var(--st-ink-50)", marginBottom: 12}}></div>
-                    <div style={{width: "100%", height: 32, borderBottom: "1px solid var(--st-ink-50)"}}></div>
+                  <div className={styles.dashList}>
+                    <div className={styles.dashListItem}></div>
+                    <div className={styles.dashListItem}></div>
+                    <div className={styles.dashListItem}></div>
                   </div>
                 </div>
               </div>
@@ -79,10 +80,11 @@ export default function Platform() {
             <div className={`${styles.featureImage} ${styles.featureImageProject}`}>
               <div className={styles.docGraphic}>
                 <div className={styles.docHeader}><i className="ri-shield-check-fill"></i> Compliance Verified</div>
+                <div className={styles.docLine} style={{width:"100%"}}></div>
                 <div className={styles.docLine} style={{width:"80%"}}></div>
-                <div className={styles.docLine} style={{width:"60%"}}></div>
-                <div className={styles.docLine} style={{width:"90%"}}></div>
-                <div className={styles.docLine} style={{width:"40%", marginTop: 16}}></div>
+                <div className={styles.docLine} style={{width:"95%"}}></div>
+                <div className={styles.docLine} style={{width:"60%", marginTop: 24}}></div>
+                <div className={styles.docBadge}>Approved</div>
               </div>
             </div>
           </div>
@@ -103,9 +105,11 @@ export default function Platform() {
             </div>
             <div className={`${styles.featureImage} ${styles.featureImageDispatch}`}>
               <div className={styles.mapGraphic}>
-                <div className={styles.mapRoute}></div>
+                <div className={styles.mapRoute}>
+                  <div className={styles.mapRouteFill}></div>
+                </div>
                 <div className={styles.mapPin} style={{left: "20%", top: "70%"}}><i className="ri-building-2-line"></i></div>
-                <div className={styles.mapPin} style={{left: "80%", top: "30%"}}><i className="ri-map-pin-2-line"></i></div>
+                <div className={styles.mapPin} style={{left: "80%", top: "30%"}}><i className="ri-map-pin-2-fill"></i></div>
                 <div className={styles.mapTruck}><i className="ri-truck-fill"></i></div>
               </div>
             </div>
