@@ -142,8 +142,16 @@ export default function Home() {
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
+              <div className={styles.doorGraphic}>
+                <div className={styles.platformGraphicNodes}>
+                  <div className={styles.nodePoint} style={{left: "10%", top: "75%"}}><i className="ri-building-2-fill"></i></div>
+                  <div className={styles.routeLine}></div>
+                  <div className={styles.nodePoint} style={{left: "90%", top: "25%"}}><i className="ri-map-pin-2-fill"></i></div>
+                  <div className={styles.truckIcon}><i className="ri-truck-fill"></i></div>
+                </div>
+              </div>
               <div className="st-sub-caps" style={{color: "rgba(255,255,255,0.6)"}}>The Platform</div>
-              <h2 className="st-h2">Run every haul with chain of custody built in</h2>
+              <h2 className="st-h2" style={{color: "var(--st-surface)"}}>Run every haul with chain of custody built in</h2>
               <ul className={styles.doorList}>
                 <li><i className="ri-check-line" style={{color: "var(--st-logo-leaf)"}}></i> Project setup, sites, and permits in one place</li>
                 <li><i className="ri-check-line" style={{color: "var(--st-logo-leaf)"}}></i> Dispatch and driver apps for daily hauls</li>
@@ -159,6 +167,16 @@ export default function Home() {
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
+              <div className={styles.doorGraphic}>
+                <div className={styles.marketGraphicCard}>
+                  <div className={styles.marketTag}>CLEAN FILL</div>
+                  <div className={styles.marketDetails}>
+                    <span>240 m³</span>
+                    <span>Langley, BC</span>
+                  </div>
+                  <div className={styles.marketMatch}>98% Match</div>
+                </div>
+              </div>
               <div className="st-sub-caps" style={{color: "rgba(0,0,0,0.6)"}}>The Marketplace</div>
               <h2 className="st-h2" style={{color: "var(--st-ink-900)"}}>Find soil. Move soil. Nothing wasted.</h2>
               <ul className={styles.doorList} style={{color: "var(--st-ink-900)"}}>
