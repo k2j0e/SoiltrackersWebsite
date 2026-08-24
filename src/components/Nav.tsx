@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 import styles from "./Nav.module.css";
 
 export default function Nav({
-  primaryCtaLabel = "Get started",
-  primaryCtaHref = "/get-started"
+  primaryCtaLabel = "Book Founder Call",
+  primaryCtaHref = "/get-started",
 }: {
   primaryCtaLabel?: string;
   primaryCtaHref?: string;
@@ -17,17 +17,17 @@ export default function Nav({
   const links = [
     { label: "Platform", href: "/platform" },
     { label: "Marketplace", href: "/marketplace" },
-    { label: "For haulers", href: "/haulers" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "For Haulers", href: "/haulers" },
+    { label: "BC Mandate", href: "/bc" },
   ];
 
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
-        <Link href="/">
+        <Link href="/" className={styles.brandLink}>
           <Image
             src="/ST-LOGO.png"
-            alt="Soiltrackers"
+            alt="SoilTracker"
             width={172}
             height={36}
             className={styles.logoImg}
@@ -43,9 +43,10 @@ export default function Nav({
             href={link.href}
             className={`${styles.link} ${
               pathname === link.href ? styles.active : ""
-            }`}
+            } ${link.href === "/bc" ? styles.bcLink : ""}`}
           >
             {link.label}
+            {link.href === "/bc" && <span className={styles.liveIndicator}>Live</span>}
           </Link>
         ))}
       </div>

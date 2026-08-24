@@ -15,8 +15,8 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "Soiltrackers",
-  description: "Chain of custody for every load of soil.",
+  title: "SoilTracker — The Closed-Loop Soil Operating System",
+  description: "Prove where every load came from. And where it went. One verified chain of custody from excavation to final placement.",
 };
 
 export default function RootLayout({

@@ -1,0 +1,231 @@
+.regionalSection {
+  padding: 120px var(--st-space-6);
+  background: linear-gradient(180deg, #f8faf9 0%, #ffffff 100%);
+  border-top: 1px solid var(--st-ink-100);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.card {
+  border-radius: var(--st-radius-2xl);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.liveCard {
+  background: #08261e;
+  background: linear-gradient(145deg, #0a2e24 0%, #061f18 100%);
+  border: 1px solid rgba(170, 221, 102, 0.3);
+  color: #ffffff;
+  box-shadow: 0 20px 48px -12px rgba(10, 46, 36, 0.3);
+}
+
+.liveCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px -12px rgba(10, 46, 36, 0.4);
+  border-color: var(--st-logo-leaf);
+}
+
+.waitlistCard {
+  background: #ffffff;
+  border: 1px solid var(--st-ink-150);
+  color: var(--st-ink-900);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.05);
+}
+
+.waitlistCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.1);
+  border-color: var(--st-ink-300);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.liveBadge {
+  background: rgba(19, 156, 85, 0.25);
+  color: var(--st-logo-leaf);
+  border: 1px solid rgba(170, 221, 102, 0.3);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--st-radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.liveDot {
+  width: 8px;
+  height: 8px;
+  background: var(--st-logo-leaf);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--st-logo-leaf);
+}
+
+.waitlistBadge {
+  background: #f1f5f3;
+  color: var(--st-ink-700);
+  border: 1px solid var(--st-ink-200);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--st-radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.waitlistDot {
+  width: 8px;
+  height: 8px;
+  background: var(--st-ink-400);
+  border-radius: 50%;
+}
+
+.regionCode {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.cardDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  opacity: 0.85;
+}
+
+.specTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.liveCard .specTags span {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.waitlistCard .specTags span {
+  background: #f1f5f3;
+  border: 1px solid var(--st-ink-100);
+  color: var(--st-ink-700);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.bcLinkBtn {
+  background: var(--st-logo-leaf);
+  color: var(--st-brand-primary-dark);
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: var(--st-radius-pill);
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(170, 221, 102, 0.25);
+}
+
+.bcLinkBtn:hover {
+  background: #c3eb85;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(170, 221, 102, 0.35);
+}
+
+.waitlistForm {
+  display: flex;
+  gap: 8px;
+}
+
+.waitlistInput {
+  flex: 1;
+  background: #f8faf9;
+  border: 1px solid var(--st-ink-200);
+  padding: 12px 16px;
+  border-radius: var(--st-radius-pill);
+  font-size: 13px;
+  color: var(--st-ink-900);
+  outline: none;
+}
+
+.waitlistInput:focus {
+  border-color: var(--st-brand-primary);
+  background: #ffffff;
+}
+
+.waitlistBtn {
+  background: var(--st-ink-900);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--st-radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.waitlistBtn:hover {
+  background: var(--st-brand-primary);
+}
+
+.successBox {
+  background: rgba(19, 156, 85, 0.1);
+  border: 1px solid rgba(19, 156, 85, 0.2);
+  color: var(--st-brand-primary);
+  padding: 12px 16px;
+  border-radius: var(--st-radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 800px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}

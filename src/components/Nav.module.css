@@ -6,9 +6,17 @@
   height: 80px;
   background: var(--st-surface);
   border-bottom: 1px solid var(--st-ink-100);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+}
+
+.brandLink {
   display: flex;
   align-items: center;
 }
@@ -20,6 +28,7 @@
 
 .links {
   display: flex;
+  align-items: center;
   gap: var(--st-space-8);
 }
 
@@ -29,6 +38,9 @@
   font-weight: 500;
   font-size: var(--st-fs-body2);
   transition: color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .link:hover {
@@ -38,6 +50,21 @@
 .active {
   color: var(--st-brand-primary);
   font-weight: 600;
+}
+
+.bcLink {
+  color: var(--st-brand-primary);
+  font-weight: 600;
+}
+
+.liveIndicator {
+  font-size: 10px;
+  background: rgba(19, 156, 85, 0.15);
+  color: var(--st-brand-primary);
+  padding: 2px 6px;
+  border-radius: var(--st-radius-pill);
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .actions {
@@ -60,14 +87,24 @@
 .buttonPrimary {
   background: var(--st-brand-primary);
   color: var(--st-surface);
-  padding: 17px 32px;
+  padding: 12px 24px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
   border: none;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.15s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(18, 91, 73, 0.25);
 }
 
 .buttonPrimary:hover {
   background: var(--st-brand-primary-dark);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 860px) {
+  .links {
+    display: none;
+  }
 }

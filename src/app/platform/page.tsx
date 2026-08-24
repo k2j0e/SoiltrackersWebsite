@@ -5,24 +5,28 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Platform — Soiltrackers",
-  description: "One unbroken chain of custody, from dig to drop-off. Keep every project, permit, and haul in one record.",
+  title: "The Compliance & Dispatch Platform — SoilTracker",
+  description: "One platform. Five seats at the table. Zero blind spots. Keep every project, permit, and haul in one verified record.",
 };
 
 export default function Platform() {
   return (
     <>
-      <Nav />
+      <Nav primaryCtaLabel="Book Founder Call" primaryCtaHref="/get-started" />
       <main>
         {/* Hero */}
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <div className="st-sub-caps">THE PLATFORM</div>
-            <h1 className="st-h1">One unbroken chain of custody, from dig to drop-off</h1>
-            <p className="st-body1" style={{ color: "var(--st-ink-600)", margin: "24px 0 36px", maxWidth: 620 }}>
-              From project setup to the last load, Soiltrackers keeps every project, permit, and haul in one record — the office, the cab, and the regulator looking at the same live picture.
+            <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)" }}>THE COMPLIANCE & DISPATCH PLATFORM</div>
+            <h1 className="st-h1" style={{ maxWidth: 840, margin: "16px auto 20px" }}>
+              One Platform. Five Seats at the Table. Zero Blind Spots.
+            </h1>
+            <p className="st-body1" style={{ color: "var(--st-ink-700)", margin: "0 auto 36px", maxWidth: 740, fontSize: 18, lineHeight: 1.6 }}>
+              From project setup to the final load reconciliation, SoilTracker connects the field, the office, the hauler, and the environmental consultant on one single source of truth.
             </p>
-            <Link href="/get-started" className={`${styles.buttonPrimary} st-button-txt`}>Book a demo</Link>
+            <Link href="/get-started" className={`${styles.buttonPrimary} st-button-txt`}>
+              Book a 15-Minute Founder Call
+            </Link>
           </div>
           <div className={styles.browserFrame}>
             <div className={styles.browserHeader}>
@@ -65,16 +69,16 @@ export default function Platform() {
         </section>
 
         {/* Feature 1 */}
-        <section className={styles.featureSection}>
+        <section className={styles.featureSection} id="compliance">
           <div className={styles.featureInner}>
             <div className={styles.featureContent}>
-              <div className="st-sub-caps">Projects & compliance</div>
+              <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)" }}>PROJECTS & PRE-CLEARANCE</div>
               <h2 className="st-h2">The chain starts before the first truck rolls</h2>
-              <p className="st-body1">Set up sites and documentation so that when hauling starts, compliance is guaranteed automatically.</p>
+              <p className="st-body1">Set up sites and documentation so that when hauling starts, regulatory due diligence is verified automatically.</p>
               <ul className={styles.checkList}>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Guided setup: Define Sites → Upload Documents → Invite Stakeholders</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Versioned permits</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Book regulatory review</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Guided setup: Define Sites → Upload Characterization → Invite Stakeholders</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Versioned permits & compliance filings</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Stakeholder pre-clearance and soil test verification</span></li>
               </ul>
             </div>
             <div className={`${styles.featureImage} ${styles.featureImageProject}`}>
@@ -91,16 +95,16 @@ export default function Platform() {
         </section>
 
         {/* Feature 2 */}
-        <section className={styles.featureSection} style={{background: "var(--st-surface-muted)"}}>
+        <section className={styles.featureSection} style={{background: "var(--st-surface-muted)"}} id="dispatch">
           <div className={`${styles.featureInner} ${styles.reverse}`}>
             <div className={styles.featureContent}>
-              <div className="st-sub-caps">Dispatch & hauling</div>
-              <h2 className="st-h2">Today's hauls, without the phone tag</h2>
-              <p className="st-body1">Real-time tracking means you always know where your soil is and exactly when it arrives.</p>
+              <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)" }}>DISPATCH & 2-TAP TICKETING</div>
+              <h2 className="st-h2">Today&apos;s hauls, without the phone tag</h2>
+              <p className="st-body1">Real-time tracking means you always know where your soil is and exactly when it arrives with defensible timestamps.</p>
               <ul className={styles.checkList}>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Each load a custody event with source, truck, destination, timestamp</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>GPS and geofence verification</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Digital tickets generated instantly</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>GPS and geofence departure & arrival verification</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Digital tickets generated instantly — zero paper loss</span></li>
               </ul>
             </div>
             <div className={`${styles.featureImage} ${styles.featureImageDispatch}`}>
@@ -117,16 +121,16 @@ export default function Platform() {
         </section>
 
         {/* Feature 3 */}
-        <section className={styles.featureSection}>
+        <section className={styles.featureSection} id="reporting">
           <div className={styles.featureInner}>
             <div className={styles.featureContent}>
-              <div className="st-sub-caps">Reporting & oversight</div>
+              <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)" }}>REPORTING & RECONCILIATION</div>
               <h2 className="st-h2">The custody record writes itself</h2>
-              <p className="st-body1">Generate compliant reports with one click, backed by immutable tracking data.</p>
+              <p className="st-body1">Generate audit-ready reports with one click, backed by tamper-evident digital tracking data.</p>
               <ul className={styles.checkList}>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Load-by-load custody history</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Role-scoped regulator and QP views</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Exportable monthly volumes</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Load-by-load custody history with proof of work</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Role-scoped regulator, QP, and facility views</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Exportable monthly volumes and billing reconciliation packages</span></li>
               </ul>
             </div>
             <div className={`${styles.featureImage} ${styles.featureImageReport}`}>
@@ -145,30 +149,30 @@ export default function Platform() {
         <section className={styles.seatsBand}>
           <h2 className="st-h2">One platform, five seats at the table</h2>
           <div className={styles.seatsGrid}>
-            <div className={styles.seatCard}>
+            <div className={styles.seatCard} id="contractors">
               <i className="ri-building-4-line"></i>
               <h3 className="st-h4">Contractors</h3>
-              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Manage sites and oversee all hauls.</p>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Manage sites, verify hauler tickets, and reconcile billing without delay.</p>
             </div>
-            <div className={styles.seatCard}>
-              <i className="ri-government-line"></i>
-              <h3 className="st-h4">Government</h3>
-              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Audit the full chain of custody.</p>
+            <div className={styles.seatCard} id="qps">
+              <i className="ri-shield-check-line"></i>
+              <h3 className="st-h4">Environmental QPs</h3>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Pre-screen soil tests, attach SAPs, and export audit packages.</p>
             </div>
-            <div className={styles.seatCard}>
+            <div className={styles.seatCard} id="fleet">
               <i className="ri-steering-2-line"></i>
-              <h3 className="st-h4">Fleet admins</h3>
-              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Dispatch and track trucks live.</p>
+              <h3 className="st-h4">Fleet Admins</h3>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Dispatch and track trucks live with invoice-backed proof of work.</p>
             </div>
-            <div className={styles.seatCard}>
+            <div className={styles.seatCard} id="drivers">
               <i className="ri-user-star-line"></i>
               <h3 className="st-h4">Drivers</h3>
-              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Log loads with two taps.</p>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>2-tap cab ticketing built for work gloves and sunlight glare.</p>
             </div>
-            <div className={styles.seatCard}>
+            <div className={styles.seatCard} id="facilities">
               <i className="ri-map-pin-2-line"></i>
-              <h3 className="st-h4">Site operators</h3>
-              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Verify material and specs.</p>
+              <h3 className="st-h4">Receiving Pits</h3>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Gatekeeper validation ensures only pre-approved soil is accepted.</p>
             </div>
           </div>
         </section>
@@ -176,7 +180,12 @@ export default function Platform() {
         {/* Final CTA */}
         <section className={styles.ctaPanel}>
           <h2 className="st-h1">See it on your own project.</h2>
-          <Link href="/get-started" className={`${styles.buttonPrimary} st-button-txt`} style={{marginBottom: 0}}>Book a demo</Link>
+          <p className="st-body1" style={{ maxWidth: 620, margin: "0 auto 32px", color: "var(--st-ink-700)" }}>
+            Founding member access is open. Book a 15-minute call directly with our founding team.
+          </p>
+          <Link href="/get-started" className={`${styles.buttonPrimary} st-button-txt`} style={{marginBottom: 0}}>
+            Book a 15-Minute Founder Call
+          </Link>
         </section>
       </main>
       <Footer />

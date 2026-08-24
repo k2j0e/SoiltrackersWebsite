@@ -1,0 +1,279 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 20, 16, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: var(--st-radius-2xl);
+  max-width: 760px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 32px 72px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  animation: modalEnter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modalEnter {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modalHeader {
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--st-ink-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8faf9;
+  border-top-left-radius: var(--st-radius-2xl);
+  border-top-right-radius: var(--st-radius-2xl);
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusBadge {
+  background: rgba(19, 156, 85, 0.12);
+  color: var(--st-brand-primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--st-radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hashText {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--st-ink-500);
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--st-ink-500);
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+.certBody {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--st-ink-900);
+}
+
+.certHeaderBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--st-brand-primary);
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.certLogo {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--st-brand-primary-dark);
+  letter-spacing: -0.02em;
+}
+
+.certDocType {
+  font-size: 13px;
+  color: var(--st-ink-600);
+  font-weight: 600;
+}
+
+.manifestMeta {
+  font-size: 12px;
+  color: var(--st-ink-700);
+  text-align: right;
+  line-height: 1.6;
+}
+
+.grid2Col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.certBox {
+  background: #f8faf9;
+  border: 1px solid var(--st-ink-100);
+  border-radius: var(--st-radius-lg);
+  padding: 16px;
+}
+
+.boxLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--st-brand-primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.boxTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--st-ink-900);
+  margin-bottom: 4px;
+}
+
+.boxDetail {
+  font-size: 12px;
+  color: var(--st-ink-600);
+  margin-bottom: 12px;
+}
+
+.boxSign {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--st-brand-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.certTable {
+  border: 1px solid var(--st-ink-100);
+  border-radius: var(--st-radius-lg);
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.tableRowHeader {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr;
+  padding: 10px 16px;
+  background: #f1f5f3;
+  font-weight: 700;
+  color: var(--st-ink-700);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr;
+  padding: 12px 16px;
+  border-top: 1px solid var(--st-ink-100);
+  color: var(--st-ink-800);
+  align-items: center;
+}
+
+.greenText {
+  color: var(--st-brand-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.certFooter {
+  padding-top: 8px;
+}
+
+.certSeal {
+  background: #f1f8f4;
+  border: 1px solid rgba(19, 156, 85, 0.2);
+  border-radius: var(--st-radius-lg);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.certSeal i {
+  font-size: 32px;
+  color: var(--st-brand-primary);
+}
+
+.certSeal strong {
+  display: block;
+  font-size: 13px;
+  color: var(--st-brand-primary-dark);
+}
+
+.certSeal p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--st-ink-600);
+}
+
+.modalActions {
+  padding: 20px 28px;
+  border-top: 1px solid var(--st-ink-100);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background: #f8faf9;
+  border-bottom-left-radius: var(--st-radius-2xl);
+  border-bottom-right-radius: var(--st-radius-2xl);
+}
+
+.downloadBtn {
+  background: var(--st-brand-primary);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--st-radius-pill);
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.downloadBtn:hover {
+  background: var(--st-brand-primary-dark);
+}
+
+.doneBtn {
+  background: transparent;
+  color: var(--st-ink-700);
+  border: 1px solid var(--st-ink-200);
+  padding: 10px 20px;
+  border-radius: var(--st-radius-pill);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .grid2Col {
+    grid-template-columns: 1fr;
+  }
+  .manifestMeta {
+    text-align: left;
+  }
+  .tableRowHeader, .tableRow {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}

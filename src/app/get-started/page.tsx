@@ -1,45 +1,133 @@
+"use client";
+
+import React, { useState } from "react";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import styles from "./page.module.css";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Get Started — Soiltrackers",
-  description: "Join the network to track, manage, and move soil with a built-in chain of custody.",
-};
 
 export default function GetStarted() {
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    role: "contractor",
+    interest: "founder-call",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <>
-      <Nav />
+      <Nav primaryCtaLabel="Book Founder Call" primaryCtaHref="/get-started" />
       <main className={styles.main}>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className="st-h1" style={{ marginBottom: 24 }}>Put your soil to work.</h1>
-            <p className="st-body1" style={{ color: "var(--st-ink-600)", marginBottom: 48 }}>
-              Whether you're a contractor, hauler, or site owner, join the network to manage hauls with a built-in chain of custody.
+            <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
+              FOUNDING MEMBER ACCESS
+            </div>
+            <h1 className="st-h1" style={{ marginBottom: 20 }}>
+              The next load you move should prove itself.
+            </h1>
+            <p className={styles.leadText}>
+              Founding member access is open now. Fifteen minutes with the founder — no demo theater, no sales sequence — and you&apos;ll know whether SoilTracker fits your operation.
             </p>
-            <form className={styles.form}>
-              <div className={styles.field}>
-                <label htmlFor="name">Full Name</label>
-                <input type="text" id="name" placeholder="Jane Doe" required />
+
+            {submitted ? (
+              <div className={styles.confirmationCard}>
+                <div className={styles.checkCircle}>
+                  <i className="ri-checkbox-circle-fill"></i>
+                </div>
+                <h3 className={styles.confTitle}>We&apos;ve received your request</h3>
+                <p className={styles.confText}>
+                  Thanks, <strong>{formData.name}</strong>. Our founding team will reach out directly at <strong>{formData.email}</strong> within 1 business day to schedule your 15-minute founder call.
+                </p>
+                <div className={styles.confBadge}>
+                  <i className="ri-shield-star-fill"></i> Priority Founding Member Queue
+                </div>
               </div>
-              <div className={styles.field}>
-                <label htmlFor="email">Work Email</label>
-                <input type="email" id="email" placeholder="jane@company.com" required />
-              </div>
-              <div className={styles.field}>
-                <label htmlFor="role">Primary Role</label>
-                <select id="role" required>
-                  <option value="" disabled selected>Select your role...</option>
-                  <option value="contractor">General Contractor / Excavator</option>
-                  <option value="hauler">Hauler / Fleet Owner</option>
-                  <option value="site">Receiving Site / Pit Owner</option>
-                  <option value="consultant">Environmental Consultant</option>
-                </select>
-              </div>
-              <button type="submit" className={styles.submitBtn}>Join the network</button>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit} className={styles.form}>
+                <div className={styles.fieldRow}>
+                  <div className={styles.field}>
+                    <label htmlFor="name">Full Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="Jane Doe"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    />
+                  </div>
+                  <div className={styles.field}>
+                    <label htmlFor="email">Work Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="jane@company.com"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.fieldRow}>
+                  <div className={styles.field}>
+                    <label htmlFor="company">Company / Organization</label>
+                    <input
+                      type="text"
+                      id="company"
+                      placeholder="EarthWorks Construction Ltd."
+                      required
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    />
+                  </div>
+                  <div className={styles.field}>
+                    <label htmlFor="role">Primary Stakeholder Role</label>
+                    <select
+                      id="role"
+                      required
+                      value={formData.role}
+                      onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                    >
+                      <option value="contractor">General Contractor / Excavator</option>
+                      <option value="consultant">Environmental Consultant / QP</option>
+                      <option value="site">Receiving Site / Pit / Facility Operator</option>
+                      <option value="hauler">Hauling Fleet / Trucking Operator</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className={styles.field}>
+                  <label htmlFor="interest">What would you like to do?</label>
+                  <select
+                    id="interest"
+                    required
+                    value={formData.interest}
+                    onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                  >
+                    <option value="founder-call">Book a 15-Minute Founder Call</option>
+                    <option value="founding-member">Request Founding Member Access</option>
+                    <option value="bc-mandate">BC Digital Soil Tracking Mandate Consultation</option>
+                    <option value="ontario-waitlist">Ontario Excess Soil Waitlist</option>
+                  </select>
+                </div>
+
+                <button type="submit" className={`${styles.submitBtn} st-button-txt`}>
+                  Book a 15-Minute Founder Call <i className="ri-arrow-right-line"></i>
+                </button>
+
+                <p className={styles.formNote}>
+                  <i className="ri-lock-line"></i> Operator-led intake · Direct founder conversation · No spam or third-party sharing
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </main>
