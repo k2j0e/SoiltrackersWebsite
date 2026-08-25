@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
-export const alt = 'Soiltrackers - Chain of Custody Built In'
+export const alt = 'SoilTrackers - Chain of Custody Built In'
 export const size = {
   width: 1200,
   height: 630,

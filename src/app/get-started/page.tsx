@@ -7,6 +7,8 @@ import styles from "./page.module.css";
 
 export default function GetStarted() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,9 +17,25 @@ export default function GetStarted() {
     interest: "founder-call",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, source: "get-started" }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setSubmitted(true);
+    } catch {
+      setError(
+        "Something went wrong sending your request. Please try again in a moment."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -33,7 +51,7 @@ export default function GetStarted() {
               The next load you move should prove itself.
             </h1>
             <p className={styles.leadText}>
-              Founding member access is open now. Fifteen minutes with the founder — no demo theater, no sales sequence — and you&apos;ll know whether SoilTracker fits your operation.
+              Founding member access is open now. Fifteen minutes with the founder — no demo theater, no sales sequence — and you&apos;ll know whether SoilTrackers fits your operation.
             </p>
 
             {submitted ? (
@@ -119,9 +137,21 @@ export default function GetStarted() {
                   </select>
                 </div>
 
-                <button type="submit" className={`${styles.submitBtn} st-button-txt`}>
-                  Book a 15-Minute Founder Call <i className="ri-arrow-right-line"></i>
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className={`${styles.submitBtn} st-button-txt`}
+                  style={submitting ? { opacity: 0.6, cursor: "wait" } : undefined}
+                >
+                  {submitting ? "Sending…" : "Book a 15-Minute Founder Call"}{" "}
+                  {!submitting && <i className="ri-arrow-right-line"></i>}
                 </button>
+
+                {error && (
+                  <p role="alert" style={{ color: "#c0392b", marginTop: 12, fontSize: 14 }}>
+                    <i className="ri-error-warning-line"></i> {error}
+                  </p>
+                )}
 
                 <p className={styles.formNote}>
                   <i className="ri-lock-line"></i> Operator-led intake · Direct founder conversation · No spam or third-party sharing

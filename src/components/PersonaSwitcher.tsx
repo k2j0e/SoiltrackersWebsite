@@ -16,15 +16,15 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Contractors & Excavators",
       icon: "ri-truck-line",
       headline: "Stop losing money to lost tickets and disputed invoices.",
-      body: "Every load logged from the cab in two taps. Every invoice backed by a GPS-verified record nobody can argue with. Month-end reconciliation goes from days to minutes — and the exposure from a missing paper trail goes to zero.",
+      body: "Every load logged automatically as your trucks cross each site boundary. Every invoice backed by a GPS-verified record nobody can argue with. Month-end reconciliation goes from days to minutes — and the exposure from a missing paper trail goes to zero.",
       bullets: [
         {
-          title: "2-Tap Cab Ticketing",
-          desc: "Drivers log loads instantly on iOS/Android. No paper triplicates, no lost tickets, no end-of-day data entry.",
+          title: "Automatic Load Capture",
+          desc: "GPS and geofencing log every pickup and drop-off — no driver app, no paper triplicates, no end-of-day data entry.",
         },
         {
-          title: "Live Geofenced Dispatch",
-          desc: "Automated timestamps and GPS routes confirm every pickup and drop-off as it happens.",
+          title: "Dispatcher-Run Scheduling",
+          desc: "Assign trucks and drivers to projects and send the daily dispatch from one board.",
         },
         {
           title: "Reconciled Invoicing",
@@ -34,14 +34,19 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       proofBadge: "Every load verified. Every invoice defensible.",
       mockIcon: "ri-bill-line",
       mockTitle: "Automated Hauler Reconciliation",
-      mockDetail: "148 loads matched · $42,600 verified · 0 disputes",
+      mockDetail: "148 loads matched · $42,600 verified · fully reconciled",
+      metrics: [
+        { value: "Zero Taps", label: "Automatic Capture" },
+        { value: "GPS", label: "Every Load Verified" },
+        { value: "Minutes", label: "Invoice Reconciliation" },
+      ],
     },
     {
       id: "environmental",
       label: "Environmental Professionals & Consultants",
       icon: "ri-flask-line",
       headline: "Your professional sign-off, defensible for years.",
-      body: "When your name is on the filing, it's on it long after the trucks are gone. SoilTracker preserves the full custody record behind every project — sampling, characterization, movements, receiving confirmation — so the file you'd need in an audit already exists, organized, the day the job closes.",
+      body: "When your name is on the filing, it's on it long after the trucks are gone. SoilTrackers preserves the full custody record behind every project — sampling, characterization, movements, receiving confirmation — so the file you'd need in an audit already exists, organized, the day the job closes.",
       bullets: [
         {
           title: "Spec & Standard Matching",
@@ -60,13 +65,18 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       mockIcon: "ri-file-shield-2-line",
       mockTitle: "Regulator-Ready Audit Package",
       mockDetail: "Sampling Plan & Custody Trail attached · 1-Click Export",
+      metrics: [
+        { value: "1-Click", label: "Audit Export" },
+        { value: "Full", label: "Custody History" },
+        { value: "PDF/CSV", label: "Regulator-Ready" },
+      ],
     },
     {
       id: "receiving",
       label: "Receiving Sites, Pits & Facilities",
       icon: "ri-building-4-line",
       headline: "One bad load can turn your land into a contaminated site.",
-      body: "In most North American jurisdictions, liability for contaminated fill follows the land — meaning the receiver carries it even when the generator caused it. SoilTracker screens every inbound load against your site's standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
+      body: "In most North American jurisdictions, liability for contaminated fill follows the land — meaning the receiver carries it even when the generator caused it. SoilTrackers screens every inbound load against your site's standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
       bullets: [
         {
           title: "Spec-Sheet Due Diligence",
@@ -85,6 +95,11 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       mockIcon: "ri-shield-keyhole-line",
       mockTitle: "Inbound Gatekeeper Active",
       mockDetail: "Pre-Approved Soil Only · Unmatched Trucks Blocked",
+      metrics: [
+        { value: "Pre-Screened", label: "Every Inbound Load" },
+        { value: "Live", label: "Capacity Tracking" },
+        { value: "Geofence", label: "Gate Check-In" },
+      ],
     },
   ];
 
@@ -94,11 +109,11 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Contractors & Generators",
       icon: "ri-truck-line",
       headline: "Stop losing money to lost tickets and disputed invoices.",
-      body: "Every load logged from the cab in two taps. Every invoice backed by a GPS-verified record nobody can argue with. And every movement automatically reconciled against the volumes declared on your SRNF — so you're never over your notified maximum without knowing it.",
+      body: "Every load logged automatically as your trucks cross each site boundary. Every invoice backed by a GPS-verified record nobody can argue with. And every movement automatically reconciled against the volumes declared on your SRNF — so you're never over your notified maximum without knowing it.",
       bullets: [
         {
-          title: "2-Tap Cab Ticketing",
-          desc: "Drivers log loads instantly. No paper triplicates, no lost tickets.",
+          title: "Automatic Load Capture",
+          desc: "GPS and geofencing log every movement. No driver app, no paper triplicates, no lost tickets.",
         },
         {
           title: "SRNF Volume Tracking",
@@ -113,13 +128,18 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       mockIcon: "ri-file-list-3-line",
       mockTitle: "SRNF #2026-0842 Volume Ledger",
       mockDetail: "4,200 / 5,000 m³ declared · Real-time compliance track",
+      metrics: [
+        { value: "Zero Taps", label: "Automatic Capture" },
+        { value: "Live", label: "SRNF Volume Tally" },
+        { value: "Minutes", label: "Invoice Reconciliation" },
+      ],
     },
     {
       id: "qps",
       label: "Qualified Professionals (QPs)",
       icon: "ri-microscope-line",
       headline: "Your SRNF signature, defensible for years.",
-      body: "When you file a Soil Relocation Notification, your name is on it long after the trucks are gone. SoilTracker preserves the full custody record behind every notification — the Sample and Analysis Plan, Protocol 19 characterization, every movement, every receiving confirmation — organized and export-ready from the day the job closes. Protocol 19 requires SAPs retained for ten years. Yours will be one click away for all of them.",
+      body: "When you file a Soil Relocation Notification, your name is on it long after the trucks are gone. SoilTrackers preserves the full custody record behind every notification — the Sample and Analysis Plan, Protocol 19 characterization, every movement, every receiving confirmation — organized and export-ready from the day the job closes. Protocol 19 requires SAPs retained for ten years. Yours will be one click away for all of them.",
       bullets: [
         {
           title: "Protocol 19-Aligned Records",
@@ -131,20 +151,25 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
         },
         {
           title: "One-Click Audit Packages",
-          desc: "Regulator-ready exports structured to round-trip with the SRS Web App format.",
+          desc: "Regulator-ready exports covering the full SRNF paper trail — SAP, characterization, movements, and receiving confirmations.",
         },
       ],
       proofBadge: "10-Year retention ready · Protocol 19 Compliant",
       mockIcon: "ri-award-line",
       mockTitle: "Protocol 19 Compliance Ledger",
       mockDetail: "SAP, PCOCs & lab analytics locked to source job",
+      metrics: [
+        { value: "10-Yr", label: "SAP Retention Ready" },
+        { value: "P19", label: "Characterization Bound" },
+        { value: "1-Click", label: "Audit Package Export" },
+      ],
     },
     {
       id: "hvrs",
       label: "Fill Sites & HVRS Operators",
       icon: "ri-landscape-line",
       headline: "One bad load can turn your land into a contaminated site.",
-      body: "Under BC's Environmental Management Act, contaminated site liability is absolute and retroactive — the receiver carries it even when the generator caused it. SoilTracker screens every inbound load against your site's CSR Schedule 3.1 land-use standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
+      body: "Under BC's Environmental Management Act, contaminated site liability is absolute and retroactive — the receiver carries it even when the generator caused it. SoilTrackers screens every inbound load against your site's CSR Schedule 3.1 land-use standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
       bullets: [
         {
           title: "CSR Standards Gatekeeping",
@@ -163,6 +188,11 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       mockIcon: "ri-map-pin-range-line",
       mockTitle: "HVRS Cumulative Volume Tracker",
       mockDetail: "14,800 m³ / 20,000 m³ threshold · Alert active",
+      metrics: [
+        { value: "Sch 3.1", label: "CSR Standards Match" },
+        { value: "20k m³", label: "HVRS Threshold Watch" },
+        { value: "ALR", label: "Notice of Intent Tracking" },
+      ],
     },
   ];
 
@@ -215,7 +245,26 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
 
         {/* Visual Mock Card for Active Persona */}
         <div className={styles.cardSide}>
-          <div className={styles.visualCard}>
+          <div className={styles.visualCard} style={{ position: "relative" }}>
+            <span
+              aria-label="Illustrative sample data"
+              style={{
+                position: "absolute",
+                top: 12,
+                right: 12,
+                fontSize: 10,
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "var(--st-ink-700, #6b7280)",
+                border: "1px solid currentColor",
+                borderRadius: 4,
+                padding: "2px 8px",
+                opacity: 0.75,
+              }}
+            >
+              Sample Data
+            </span>
             <div className={styles.cardHeader}>
               <div className={styles.cardIconBox}>
                 <i className={current.mockIcon}></i>
@@ -228,18 +277,12 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
 
             <div className={styles.cardBody}>
               <div className={styles.metricRow}>
-                <div className={styles.metricItem}>
-                  <span className={styles.mValue}>100%</span>
-                  <span className={styles.mLabel}>Verified Digital</span>
-                </div>
-                <div className={styles.metricItem}>
-                  <span className={styles.mValue}>2 Taps</span>
-                  <span className={styles.mLabel}>Driver Cab App</span>
-                </div>
-                <div className={styles.metricItem}>
-                  <span className={styles.mValue}>Audit-Ready</span>
-                  <span className={styles.mLabel}>Instant PDF Package</span>
-                </div>
+                {current.metrics.map((m, mIdx) => (
+                  <div key={mIdx} className={styles.metricItem}>
+                    <span className={styles.mValue}>{m.value}</span>
+                    <span className={styles.mLabel}>{m.label}</span>
+                  </div>
+                ))}
               </div>
 
               <div className={styles.statusBox}>

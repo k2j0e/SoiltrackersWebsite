@@ -117,6 +117,7 @@
   font-size: 24px;
   font-weight: 800;
   margin: 0 0 12px;
+  color: inherit;
 }
 
 .cardDesc {
@@ -124,6 +125,17 @@
   line-height: 1.6;
   margin: 0 0 24px;
   opacity: 0.85;
+}
+
+/* Dark BC card: force white text over the global near-black heading colour.
+   Declared after .cardDesc so it wins on source order. */
+.liveCard .cardTitle,
+.liveCard .cardDesc,
+.liveCard .regionCode {
+  color: #ffffff;
+}
+.liveCard .cardDesc {
+  opacity: 0.88;
 }
 
 .specTags {

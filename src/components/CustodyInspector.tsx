@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./CustodyInspector.module.css";
 
 interface CustodyInspectorProps {
@@ -12,7 +12,9 @@ export default function CustodyInspector({
   mode = "north-america",
   onOpenCertificate,
 }: CustodyInspectorProps) {
-  const [activeStep, setActiveStep] = useState<number>(2);
+  const [activeStep, setActiveStep] = useState<number>(0);
+  const [userInteracted, setUserInteracted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const naSteps = [
     {
@@ -30,10 +32,10 @@ export default function CustodyInspector({
       badge: "Geofence Active",
       title: "En Route Tracked",
       site: "Truck #482 · Apex Hauling Fleet",
-      details: "GPS geofence departure confirmed · Driver digital e-signature logged",
+      details: "GPS geofence departure confirmed automatically · Load bound to truck and project",
       icon: "ri-truck-fill",
       status: "complete",
-      tags: ["Driver: Dave M.", "Weight: 28.4 MT", "GPS Verified"],
+      tags: ["Truck #482", "Weight: 28.4 MT", "GPS Verified"],
     },
     {
       time: "09:05 AM",
@@ -66,7 +68,7 @@ export default function CustodyInspector({
       details: "Automated geofence departure · Digital manifest bound to SRNF record · GPS timestamped",
       icon: "ri-truck-fill",
       status: "complete",
-      tags: ["Driver e-Signature", "Haul License Logged", "GPS Active"],
+      tags: ["Truck #482", "Haul License Logged", "GPS Active"],
     },
     {
       time: "09:05 AM",
@@ -76,19 +78,57 @@ export default function CustodyInspector({
       details: "Volume logged against SRNF maximum · Lifetime HVRS tally updated (14,280 / 20,000 m³) · Custody record closed",
       icon: "ri-checkbox-circle-fill",
       status: "verified",
-      tags: ["CSR Schedule 3.1 Match", "HVRS Intake Logged", "SRS Round-Trip Ready"],
+      tags: ["CSR Schedule 3.1 Match", "HVRS Intake Logged", "Audit Package Ready"],
     },
   ];
 
   const steps = mode === "bc" ? bcSteps : naSteps;
 
+  // Auto-advance the chain once it scrolls into view, so the custody record
+  // visibly "builds itself". Stops permanently as soon as the user clicks a
+  // step, and never runs for prefers-reduced-motion users.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || userInteracted) return;
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+      return;
+
+    let timer: ReturnType<typeof setInterval> | null = null;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !timer) {
+          timer = setInterval(() => {
+            setActiveStep((s) => (s + 1) % steps.length);
+          }, 2600);
+        } else if (!entries[0].isIntersecting && timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      if (timer) clearInterval(timer);
+    };
+  }, [userInteracted, steps.length]);
+
+  const handleStepClick = (idx: number) => {
+    setUserInteracted(true);
+    setActiveStep(idx);
+  };
+
   return (
-    <div className={styles.inspectorContainer}>
+    <div className={styles.inspectorContainer} ref={containerRef}>
       <div className={styles.inspectorHeader}>
         <div className={styles.headerTitleGroup}>
           <div className={styles.liveIndicator}>
             <span className={styles.pulseDot}></span>
-            <span className={styles.liveText}>LIVE CUSTODY LEDGER</span>
+            <span className={styles.liveText}>SAMPLE CUSTODY LEDGER</span>
           </div>
           <h3 className={styles.manifestId}>
             Manifest #ST-{mode === "bc" ? "BC-2026-482" : "NA-2026-904"}
@@ -109,7 +149,7 @@ export default function CustodyInspector({
             className={`${styles.stepItem} ${
               activeStep === idx ? styles.activeStep : ""
             }`}
-            onClick={() => setActiveStep(idx)}
+            onClick={() => handleStepClick(idx)}
           >
             <div className={styles.stepMarker}>
               <div className={styles.iconCircle}>
@@ -143,7 +183,7 @@ export default function CustodyInspector({
       <div className={styles.inspectorFooter}>
         <div className={styles.footerNote}>
           <i className="ri-lock-2-line"></i>
-          <span>Tamper-evident record · SHA-256 verified custody hash</span>
+          <span>Tamper-evident digital custody record · Illustrative sample</span>
         </div>
         <button
           type="button"

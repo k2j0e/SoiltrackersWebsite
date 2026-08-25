@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const interTight = Inter_Tight({
-  variable: "--font-inter-tight",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "SoilTracker — The Closed-Loop Soil Operating System",
+  title: "SoilTrackers — Soil Chain of Custody & Compliance Platform",
   description: "Prove where every load came from. And where it went. One verified chain of custody from excavation to final placement.",
 };
 
@@ -25,11 +14,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${interTight.variable}`}
-    >
+    <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
           rel="stylesheet"

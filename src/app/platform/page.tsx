@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Compliance & Dispatch Platform — SoilTracker",
+  title: "The Compliance & Dispatch Platform — SoilTrackers",
   description: "One platform. Five seats at the table. Zero blind spots. Keep every project, permit, and haul in one verified record.",
 };
 
@@ -22,7 +22,7 @@ export default function Platform() {
               One Platform. Five Seats at the Table. Zero Blind Spots.
             </h1>
             <p className="st-body1" style={{ color: "var(--st-ink-700)", margin: "0 auto 36px", maxWidth: 740, fontSize: 18, lineHeight: 1.6 }}>
-              From project setup to the final load reconciliation, SoilTracker connects the field, the office, the hauler, and the environmental consultant on one single source of truth.
+              From project setup to the final load reconciliation, SoilTrackers connects the field, the office, the hauler, and the environmental consultant on one single source of truth.
             </p>
             <Link href="/get-started" className={`${styles.buttonPrimary} st-button-txt`}>
               Book a 15-Minute Founder Call
@@ -98,7 +98,7 @@ export default function Platform() {
         <section className={styles.featureSection} style={{background: "var(--st-surface-muted)"}} id="dispatch">
           <div className={`${styles.featureInner} ${styles.reverse}`}>
             <div className={styles.featureContent}>
-              <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)" }}>DISPATCH & 2-TAP TICKETING</div>
+              <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)" }}>DISPATCH & AUTOMATIC TICKETING</div>
               <h2 className="st-h2">Today&apos;s hauls, without the phone tag</h2>
               <p className="st-body1">Real-time tracking means you always know where your soil is and exactly when it arrives with defensible timestamps.</p>
               <ul className={styles.checkList}>
@@ -167,7 +167,7 @@ export default function Platform() {
             <div className={styles.seatCard} id="drivers">
               <i className="ri-user-star-line"></i>
               <h3 className="st-h4">Drivers</h3>
-              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>2-tap cab ticketing built for work gloves and sunlight glare.</p>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Nothing to install or learn — the truck&apos;s GPS logs every load automatically.</p>
             </div>
             <div className={styles.seatCard} id="facilities">
               <i className="ri-map-pin-2-line"></i>

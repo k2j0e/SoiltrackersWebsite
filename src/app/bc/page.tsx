@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import PersonaSwitcher from "@/components/PersonaSwitcher";
 import CustodyInspector from "@/components/CustodyInspector";
 import CertificateModal from "@/components/CertificateModal";
+import CountUp from "@/components/CountUp";
 import styles from "./page.module.css";
 
 export default function BCPage() {
@@ -40,7 +41,7 @@ export default function BCPage() {
               </h1>
 
               <p className={styles.heroSubtitle}>
-                British Columbia now requires digital tracking of soil movement. SoilTracker gives generators, receivers, and Qualified Professionals one verified chain of custody — from excavation to final placement — with the compliance record built automatically as the soil moves.
+                British Columbia now requires digital tracking of soil movement. SoilTrackers gives generators, receivers, and Qualified Professionals one verified chain of custody — from excavation to final placement — with the compliance record built automatically as the soil moves.
               </p>
 
               <div className={styles.heroCtas}>
@@ -54,7 +55,7 @@ export default function BCPage() {
 
               <p className={styles.heroTrustLine}>
                 <i className="ri-shield-check-fill" style={{ color: "var(--st-logo-leaf)", marginRight: 6 }}></i>
-                Built on BC&apos;s Environmental Management Act, Contaminated Sites Regulation, and Protocol 19 — by operators who run their own soil transfer facility in Coquitlam.
+                Built on BC&apos;s Environmental Management Act, Contaminated Sites Regulation, and Protocol 19 — by a team permitting its own soil transfer facility in Coquitlam right now.
               </p>
             </div>
           </div>
@@ -89,13 +90,13 @@ export default function BCPage() {
                 </span>
               </div>
               <div className={styles.statItem}>
-                <span className={styles.statNumber}>$75,000</span>
+                <span className={styles.statNumber}><CountUp text="$75,000" /></span>
                 <span className={styles.statLabel}>
                   Maximum administrative penalty per soil relocation contravention under the EMA
                 </span>
               </div>
               <div className={styles.statItem}>
-                <span className={styles.statNumber}>30 m³</span>
+                <span className={styles.statNumber}><CountUp text="30 m³" /></span>
                 <span className={styles.statLabel}>
                   The volume threshold that triggers mandatory SRNF notification from Schedule 2 sites
                 </span>
@@ -156,16 +157,16 @@ export default function BCPage() {
           <div className={styles.facilityInner}>
             <div className={styles.facilityContent}>
               <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
-                LOCAL FACILITY OWNERSHIP
+                BUILT IN BC · FACILITY IN DEVELOPMENT
               </div>
               <h2 className="st-h2" style={{ maxWidth: 760, margin: "0 auto 20px" }}>
                 We answer to the same regulators you do.
               </h2>
               <p className={styles.facilityLead}>
-                SoilTracker owns and operates a hydrovac slurry processing and soil transfer facility in Coquitlam. We file notifications through the SRS Web App, run the scale, manage receiving volumes, and live inside the same EMA, CSR, and Protocol 19 framework as every operator on this platform.
+                SoilTrackers is developing its own hydrovac slurry processing and soil transfer facility in Coquitlam — in planning and permitting right now, inside the same EMA, CSR, and municipal framework as every operator on this platform.
               </p>
               <p className={styles.facilitySub}>
-                We didn&apos;t study this industry from the outside. We built the tool we needed to run our own operation — then opened it to yours.
+                We didn&apos;t study this industry from the outside. We&apos;re building the tool we need to run our own operation — and opening it to yours.
               </p>
             </div>
 
@@ -174,9 +175,9 @@ export default function BCPage() {
                 <div className={styles.facilityIcon}>
                   <i className="ri-building-line"></i>
                 </div>
-                <h3 className={styles.facilityCardTitle}>A real BC facility</h3>
+                <h3 className={styles.facilityCardTitle}>A BC facility in motion</h3>
                 <p className={styles.facilityCardDesc}>
-                  Operating hydrovac slurry processing and soil transfer in Coquitlam.
+                  Our own hydrovac slurry processing and soil transfer facility in Coquitlam, moving through planning and permitting now.
                 </p>
               </div>
 
@@ -194,9 +195,9 @@ export default function BCPage() {
                 <div className={styles.facilityIcon}>
                   <i className="ri-shield-star-line"></i>
                 </div>
-                <h3 className={styles.facilityCardTitle}>Western Canada&apos;s only combined operator</h3>
+                <h3 className={styles.facilityCardTitle}>A combined-operator model</h3>
                 <p className={styles.facilityCardDesc}>
-                  The only platform in Western Canada pairing owned processing infrastructure with digital chain-of-custody tracking.
+                  Built to pair owned processing infrastructure with digital chain-of-custody tracking — a first for Western Canada.
                 </p>
               </div>
             </div>
@@ -229,11 +230,11 @@ export default function BCPage() {
                   </li>
                   <li>
                     <i className="ri-check-line"></i>
-                    <span>GPS-verified driver app replaces paper triplicate tickets.</span>
+                    <span>GPS and geofencing log every load automatically — no driver app required.</span>
                   </li>
                   <li>
                     <i className="ri-check-line"></i>
-                    <span>Audit-ready records structured for the SRS Web App format.</span>
+                    <span>Audit-ready records exportable as complete SRNF documentation packages.</span>
                   </li>
                 </ul>
                 <Link href="/platform" className={`${styles.doorBtnPrimary} st-button-txt`}>
@@ -284,7 +285,7 @@ export default function BCPage() {
                 Founding member access is open — and it&apos;s founder-led.
               </h2>
               <p className={styles.foundingBody}>
-                SoilTracker is onboarding founding members across BC right now: generators, receiving operators, and QP firms. No demo theater, no sales sequence. Fifteen minutes with the founder and you&apos;ll know whether this fits your operation — and founding members shape the platform before the rest of the province gets it.
+                SoilTrackers is onboarding founding members across BC right now: generators, receiving operators, and QP firms. No demo theater, no sales sequence. Fifteen minutes with the founder and you&apos;ll know whether this fits your operation — and founding members shape the platform before the rest of the province gets it.
               </p>
 
               <div className={styles.foundingCtas}>
@@ -297,7 +298,7 @@ export default function BCPage() {
               </div>
 
               <p className={styles.footerTrustLine}>
-                SoilTracker · Coquitlam, British Columbia · Operating our own soil transfer facility since day one
+                SoilTrackers · Coquitlam, British Columbia · Building our own soil transfer facility alongside the platform
               </p>
             </div>
           </div>

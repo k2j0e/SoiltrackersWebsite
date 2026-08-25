@@ -8,6 +8,8 @@ import PersonaSwitcher from "@/components/PersonaSwitcher";
 import CustodyInspector from "@/components/CustodyInspector";
 import RegionalStrip from "@/components/RegionalStrip";
 import CertificateModal from "@/components/CertificateModal";
+import MapAnimation from "@/components/MapAnimation";
+import CountUp from "@/components/CountUp";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -30,17 +32,18 @@ export default function Home() {
         =================================================================== */}
         <section className={styles.hero}>
           <div className={styles.heroInner}>
-            <div className={styles.heroContent}>
-              <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 16 }}>
-                THE CLOSED-LOOP SOIL OPERATING SYSTEM
-              </div>
+            <div className={styles.heroGrid}>
+              <div className={styles.heroContent}>
+                <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 16 }}>
+                  VERIFIED CHAIN OF CUSTODY FOR EVERY LOAD
+                </div>
 
-              <h1 className="st-h1" style={{ maxWidth: 840, margin: "0 auto 24px" }}>
-                Prove where every load came from. And where it went.
-              </h1>
+                <h1 className="st-h1" style={{ maxWidth: 640, margin: "0 0 24px" }}>
+                  Prove where every load came from. And where it went.
+                </h1>
 
               <p className={styles.heroSubtitle}>
-                Regulators across North America are done accepting paper trails for soil movement. SoilTracker gives generators, receivers, and environmental professionals one verified chain of custody — from excavation to final placement — with the compliance record built automatically as the soil moves.
+                Regulators across North America are done accepting paper trails for soil movement. SoilTrackers gives generators, receivers, and environmental professionals one verified chain of custody — from excavation to final placement — with the compliance record built automatically as the soil moves.
               </p>
 
               <div className={styles.heroCtas}>
@@ -54,8 +57,17 @@ export default function Home() {
 
               <p className={styles.heroTrustLine}>
                 <i className="ri-shield-check-fill" style={{ color: "var(--st-logo-leaf)", marginRight: 6 }}></i>
-                Built by operators who run their own soil transfer facility — purpose-built first for the strictest soil regime in North America.
+                Built by a BC team putting its own soil transfer facility through permitting right now — inside the strictest soil regime in North America.
               </p>
+              </div>
+
+              <div className={styles.heroVisual} aria-hidden="true">
+                <MapAnimation />
+                <span className={styles.heroVisualBadge}>
+                  <i className="ri-route-line" style={{ color: "var(--st-brand-primary)" }}></i>
+                  From dig to drop-off — one unbroken chain
+                </span>
+              </div>
             </div>
           </div>
         </section>
@@ -86,7 +98,7 @@ export default function Home() {
             {/* Factual Inline Stat Strip */}
             <div className={styles.statStrip}>
               <div className={styles.statItem}>
-                <span className={styles.statNumber}>2026</span>
+                <span className={styles.statNumber}><CountUp text="2026" /></span>
                 <span className={styles.statLabel}>
                   BC&apos;s legislature votes unanimously to mandate digital soil tracking
                 </span>
@@ -153,16 +165,16 @@ export default function Home() {
           <div className={styles.facilityInner}>
             <div className={styles.facilityContent}>
               <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
-                OPERATOR-FOUNDED INFRASTRUCTURE
+                SKIN IN THE GAME
               </div>
               <h2 className="st-h2" style={{ maxWidth: 760, margin: "0 auto 20px" }}>
-                Built by operators, not just developers.
+                Built inside the industry, not outside it.
               </h2>
               <p className={styles.facilityLead}>
-                SoilTracker isn&apos;t a software company guessing at how soil moves. We own and operate a hydrovac slurry processing and soil transfer facility — we file the notifications, run the scale, and answer to the same regulators you do.
+                SoilTrackers isn&apos;t a software company guessing at how soil moves. We&apos;re developing our own hydrovac slurry processing and soil transfer facility in Coquitlam — working through the same planning, permitting, and regulatory gauntlet every operator on this platform knows first-hand.
               </p>
               <p className={styles.facilitySub}>
-                The platform exists because we needed it ourselves.
+                The platform exists because we need it ourselves.
               </p>
             </div>
 
@@ -171,9 +183,9 @@ export default function Home() {
                 <div className={styles.facilityIcon}>
                   <i className="ri-building-line"></i>
                 </div>
-                <h3 className={styles.facilityCardTitle}>Real infrastructure</h3>
+                <h3 className={styles.facilityCardTitle}>Skin in the game</h3>
                 <p className={styles.facilityCardDesc}>
-                  An operating soil transfer and processing facility, not a demo environment.
+                  Our own transfer and processing facility in development in Coquitlam — we&apos;re betting on this industry, not just selling to it.
                 </p>
               </div>
 
@@ -191,9 +203,9 @@ export default function Home() {
                 <div className={styles.facilityIcon}>
                   <i className="ri-shield-user-line"></i>
                 </div>
-                <h3 className={styles.facilityCardTitle}>Skin in the game</h3>
+                <h3 className={styles.facilityCardTitle}>Operator workflows</h3>
                 <p className={styles.facilityCardDesc}>
-                  Every workflow on the platform is one we run in our own daily operation.
+                  Every workflow on the platform is designed around how soil actually moves — sites, permits, scales, and manifests.
                 </p>
               </div>
             </div>
@@ -226,7 +238,7 @@ export default function Home() {
                   </li>
                   <li>
                     <i className="ri-check-line"></i>
-                    <span>GPS-verified driver app replaces paper triplicate tickets.</span>
+                    <span>GPS and geofencing log every load automatically — no driver app required.</span>
                   </li>
                   <li>
                     <i className="ri-check-line"></i>
@@ -313,8 +325,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className={`${styles.compCard} ${styles.compCardSoilTracker}`}>
-                <div className={styles.compTypeHighlight}>SoilTracker</div>
+              <div className={`${styles.compCard} ${styles.compCardSoilTrackers}`}>
+                <div className={styles.compTypeHighlight}>SoilTrackers</div>
                 <div className={styles.compPill}>The Full Closed Loop</div>
                 <p className={styles.compDescHighlight}>
                   Match the material, dispatch the haul, verify the load, and walk away with the custody record already built.
@@ -341,7 +353,7 @@ export default function Home() {
               The next load you move should prove itself.
             </h2>
             <p className={styles.finalCtaBody}>
-              Founding member access is open now. Fifteen minutes with the founder — no demo theater, no sales sequence — and you&apos;ll know whether SoilTracker fits your operation.
+              Founding member access is open now. Fifteen minutes with the founder — no demo theater, no sales sequence — and you&apos;ll know whether SoilTrackers fits your operation.
             </p>
 
             <div className={styles.finalCtaButtons}>
@@ -354,7 +366,7 @@ export default function Home() {
             </div>
 
             <p className={styles.footerTrustLine}>
-              SoilTracker · Based in British Columbia, Canada · Operating our own soil transfer facility since day one
+              SoilTrackers · Based in British Columbia, Canada · Building our own soil transfer facility alongside the platform
             </p>
           </div>
         </section>

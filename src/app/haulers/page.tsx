@@ -5,8 +5,8 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "For Haulers & Fleet Admins — SoilTracker",
-  description: "Keep your trucks rolling. Get paid with zero disputes. Matched hauls and 2-tap cab ticketing for fleet owners.",
+  title: "For Haulers & Fleet Admins — SoilTrackers",
+  description: "Keep your trucks rolling. Verified, compliant work routed to your fleet — with load events captured automatically by GPS, no driver app required.",
 };
 
 export default function Haulers() {
@@ -19,16 +19,16 @@ export default function Haulers() {
           <div className={styles.heroInner}>
             <div className={styles.heroContent}>
               <div className={`st-sub-caps ${styles.eyebrow}`}>FOR HAULING FLEETS & OWNER-OPERATORS</div>
-              <h1 className="st-h1">Keep your trucks rolling. Get paid with zero disputes.</h1>
+              <h1 className="st-h1">Keep your trucks rolling. Prove every load without lifting a finger.</h1>
               <p className="st-body1" style={{ color: "rgba(255,255,255,0.85)", margin: "20px 0 32px", fontSize: 18, lineHeight: 1.6 }}>
-                Get matched to nearby high-volume hauls, dispatch drivers in seconds without phone tag, and use tamper-evident digital tickets as your instant invoice backup.
+                Get matched to nearby high-volume hauls and dispatch from one board instead of the phone. Every pickup and drop-off is captured automatically by GPS — no app for your drivers to learn, and a verified record behind every invoice you send.
               </p>
               <div className={styles.heroCtas}>
                 <Link href="/get-started" className={`${styles.buttonPrimaryLeaf} st-button-txt`}>
                   Join the Hauler Network
                 </Link>
-                <Link href="/get-started" className={`${styles.buttonOutlineLight} st-button-txt`}>
-                  See the Driver Cab App
+                <Link href="#capture" className={`${styles.buttonOutlineLight} st-button-txt`}>
+                  How Load Capture Works
                 </Link>
               </div>
             </div>
@@ -72,9 +72,9 @@ export default function Haulers() {
             <p className="st-body2">Get pinged for high-volume jobs right where your trucks are already running to cut empty deadhead miles.</p>
           </div>
           <div className={styles.valueCard}>
-            <i className="ri-smartphone-line"></i>
+            <i className="ri-calendar-schedule-line"></i>
             <h3 className="st-h4" style={{marginBottom: 8}}>Dispatch without phone tag</h3>
-            <p className="st-body2">Drivers receive verified routes and destination instructions directly on their phones. Zero calling for directions.</p>
+            <p className="st-body2">Assign trucks and drivers to projects, build the schedule, and send the daily dispatch from one board. Your drivers get their day; you stop repeating yourself on the phone.</p>
           </div>
           <div className={styles.valueCard}>
             <i className="ri-shield-check-line"></i>
@@ -83,40 +83,55 @@ export default function Haulers() {
           </div>
         </section>
 
-        {/* Driver App */}
-        <section className={styles.driverApp} id="app">
+        {/* Automatic load capture */}
+        <section className={styles.driverApp} id="capture">
           <div className={styles.driverAppInner}>
-            <div className={styles.phoneMock}>
-              <div className={styles.phoneScreen}>
-                <div className={styles.phoneHeader}>
-                  <i className="ri-arrow-left-s-line"></i>
-                  <span>Haul #482</span>
-                  <i className="ri-more-2-line"></i>
+            <div className={styles.captureMock}>
+              <div className={styles.captureRow}>
+                <i className="ri-cpu-line"></i>
+                <div>
+                  <div className={styles.captureLabel}>Option A · Our hardware</div>
+                  <p className={styles.captureText}>
+                    A plug-and-play GPS tracker we supply, installed in minutes. Nothing for the driver to operate.
+                  </p>
                 </div>
-                <div className={styles.phoneMap}>
-                  <div className={styles.phoneRoute}></div>
-                  <div className={styles.phonePin} style={{top:"20%", left:"20%"}}><i className="ri-map-pin-2-fill"></i></div>
-                  <div className={styles.phoneTruck}><i className="ri-truck-fill"></i></div>
+              </div>
+              <div className={styles.captureRow}>
+                <i className="ri-links-line"></i>
+                <div>
+                  <div className={styles.captureLabel}>Option B · Your fleet system</div>
+                  <p className={styles.captureText}>
+                    Already running Geotab or Samsara? We integrate by API and use the telematics you already pay for.
+                  </p>
                 </div>
-                <div className={styles.phoneDetails}>
-                  <div style={{fontWeight: 700, marginBottom: 4, color:"var(--st-ink-900)", fontSize: 16}}>Langley Site A</div>
-                  <div style={{color:"var(--st-ink-500)", fontSize: 12, marginBottom: 16}}>14 km remaining · Clean Fill</div>
-                  <div className={styles.phoneButton}>Confirm Drop-off</div>
+              </div>
+              <div className={styles.captureRow}>
+                <i className="ri-map-pin-range-line"></i>
+                <div>
+                  <div className={styles.captureLabel}>Then · Geofenced automatically</div>
+                  <p className={styles.captureText}>
+                    Departure and arrival timestamps log themselves as the truck crosses each site boundary. The receiving operator confirms the day&apos;s loads, and the custody record closes.
+                  </p>
                 </div>
+              </div>
+              <div className={styles.captureFoot}>
+                <i className="ri-shield-check-fill" style={{ color: "var(--st-logo-leaf)" }}></i>
+                Zero taps. Zero paperwork. Zero driver training.
               </div>
             </div>
             <div>
               <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
-                DRIVER-FRIENDLY CAB INTERFACE
+                AUTOMATIC LOAD CAPTURE
               </div>
-              <h2 className="st-h2">Two taps from the cab</h2>
+              <h2 className="st-h2">No app for your drivers. The truck reports itself.</h2>
               <p className="st-body1" style={{ margin: "16px 0 24px", color: "var(--st-ink-700)" }}>
-                Built specifically for truck cabs, high-sunlight glare, and work gloves. No complex menus, no manual paperwork.
+                Compliance shouldn&apos;t depend on whether a driver remembered to tap a button. Load events are captured by GPS and geofencing — either through a tracker we supply or an API link to the fleet software you already run — so the record is complete whether or not anyone thinks about it.
               </p>
               <ul className={styles.checkList}>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Turn-by-turn routes pushed directly to the cab</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Tap once at pickup, tap once at drop-off</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Automated geofencing confirms arrival timestamps</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Plug-and-play trackers, or Geotab and Samsara integration</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Geofenced pickup and drop-off timestamps, logged automatically</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Receiving-site operator confirms daily loads to close the chain</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Nothing to install on a driver&apos;s phone — dispatchers run the board</span></li>
               </ul>
             </div>
           </div>
@@ -158,9 +173,9 @@ export default function Haulers() {
             <div className={styles.joiningSteps}>
               <div className={styles.joiningStep}>
                 <div className={styles.joiningStepNum}>01</div>
-                <h3 className="st-h4" style={{color: "var(--st-surface)"}}>Register your fleet</h3>
+                <h3 className="st-h4" style={{color: "var(--st-surface)"}}>Register and connect</h3>
                 <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 13, marginTop: 8 }}>
-                  Free registration. Add your trucks, license numbers, and preferred hauling zones.
+                  Free registration. Add your trucks and hauling zones, then plug in our trackers or link your existing Geotab or Samsara account.
                 </p>
               </div>
               <div className={styles.joiningStep}>

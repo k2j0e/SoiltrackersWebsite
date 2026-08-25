@@ -428,3 +428,58 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Automatic capture section — replaces the retired driver-app phone mock */
+.captureMock {
+  background: linear-gradient(145deg, #0a2e24 0%, #061f18 100%);
+  border: 1px solid rgba(170, 221, 102, 0.25);
+  border-radius: var(--st-radius-xl);
+  padding: 36px;
+  color: #ffffff;
+  box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.captureRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+.captureRow i {
+  font-size: 22px;
+  color: var(--st-logo-leaf);
+  margin-top: 2px;
+}
+.captureLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--st-logo-leaf);
+  margin-bottom: 2px;
+}
+.captureText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+}
+.captureFoot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+}
+@media (max-width: 900px) {
+  .captureMock {
+    padding: 24px;
+  }
+}

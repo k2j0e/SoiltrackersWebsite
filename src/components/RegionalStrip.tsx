@@ -7,11 +7,26 @@ import styles from "./RegionalStrip.module.css";
 export default function RegionalStrip() {
   const [ontarioEmail, setOntarioEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleOntarioSubmit = (e: React.FormEvent) => {
+  const handleOntarioSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (ontarioEmail.trim()) {
+    if (!ontarioEmail.trim()) return;
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: ontarioEmail, source: "ontario-waitlist" }),
+      });
+      if (!res.ok) throw new Error("Request failed");
       setSubmitted(true);
+    } catch {
+      setError("Couldn't join the waitlist right now — please try again.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -24,7 +39,7 @@ export default function RegionalStrip() {
           </div>
           <h2 className="st-h2">Compliance is local. We build for your rules.</h2>
           <p className="st-body1" style={{ maxWidth: 640, margin: "16px auto 0", color: "var(--st-ink-700)" }}>
-            Soil regulation is written jurisdiction by jurisdiction. So is SoilTracker.
+            Soil regulation is written jurisdiction by jurisdiction. So is SoilTrackers.
           </p>
         </div>
 
@@ -89,10 +104,20 @@ export default function RegionalStrip() {
                   required
                   className={styles.waitlistInput}
                 />
-                <button type="submit" className={`${styles.waitlistBtn} st-button-txt`}>
-                  Join Waitlist
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className={`${styles.waitlistBtn} st-button-txt`}
+                  style={submitting ? { opacity: 0.6, cursor: "wait" } : undefined}
+                >
+                  {submitting ? "Joining…" : "Join Waitlist"}
                 </button>
               </form>
+            )}
+            {error && (
+              <p role="alert" style={{ color: "#c0392b", marginTop: 10, fontSize: 13 }}>
+                {error}
+              </p>
             )}
           </div>
         </div>

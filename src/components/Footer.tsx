@@ -9,7 +9,7 @@ export default function Footer() {
         <div className={styles.brand}>
           <Image
             src="/ST-LOGO.png"
-            alt="SoilTracker"
+            alt="SoilTrackers"
             width={140}
             height={29}
             className={styles.logoImg}
@@ -18,7 +18,7 @@ export default function Footer() {
             The closed-loop soil operating system. One verified chain of custody from excavation to final placement.
           </p>
           <p className={styles.facilityNote}>
-            <i className="ri-building-line"></i> Operating our own soil transfer and processing facility in Coquitlam, BC.
+            <i className="ri-building-line"></i> Developing our own soil transfer and processing facility in Coquitlam, BC.
           </p>
         </div>
         
@@ -54,7 +54,7 @@ export default function Footer() {
       </div>
       
       <div className={styles.legal}>
-        <span>&copy; {new Date().getFullYear()} SoilTracker Solutions Inc. Based in British Columbia, Canada. All rights reserved.</span>
+        <span>&copy; {new Date().getFullYear()} SoilTrackers Solutions Inc. Based in British Columbia, Canada. All rights reserved.</span>
         <div className={styles.legalLinks}>
           <Link href="#privacy" className={styles.legalLink}>Privacy Policy</Link>
           <Link href="#terms" className={styles.legalLink}>Terms of Service</Link>

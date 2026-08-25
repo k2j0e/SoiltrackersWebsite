@@ -43,10 +43,10 @@
   --st-surface:              rgb(255, 255, 255);
   --st-surface-muted:        rgb(242, 239, 239);
 
-  /* TYPE — Families mapped from Next.js injected vars */
-  --st-font-display: var(--font-inter-tight), system-ui, sans-serif;
-  --st-font-body:    var(--font-inter-tight), system-ui, sans-serif;
-  --st-font-button:  var(--font-inter), system-ui, sans-serif;
+  /* TYPE — Families mapped from Google Fonts with system fallbacks */
+  --st-font-display: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --st-font-body:    'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --st-font-button:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* TYPE — Scale */
   --st-fs-display:  40px;  --st-lh-display:  48px;

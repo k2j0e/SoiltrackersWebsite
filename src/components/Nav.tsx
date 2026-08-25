@@ -27,7 +27,7 @@ export default function Nav({
         <Link href="/" className={styles.brandLink}>
           <Image
             src="/ST-LOGO.png"
-            alt="SoilTracker"
+            alt="SoilTrackers"
             width={172}
             height={36}
             className={styles.logoImg}
@@ -52,9 +52,6 @@ export default function Nav({
       </div>
 
       <div className={styles.actions}>
-        <Link href="/get-started" className={styles.signIn}>
-          Sign in
-        </Link>
         <Link href={primaryCtaHref} className={`${styles.buttonPrimary} st-button-txt`}>
           {primaryCtaLabel}
         </Link>

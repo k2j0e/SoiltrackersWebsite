@@ -5,8 +5,8 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Spec-Matched Soil Exchange — SoilTracker",
-  description: "Find clean fill. Move surplus. Zero material wasted. The intelligent exchange with custody verification attached to every trade.",
+  title: "Spec-Matched Soil Exchange — SoilTrackers",
+  description: "Find clean fill. Move surplus. Zero material wasted. The spec-matched soil exchange with custody verification attached to every trade.",
 };
 
 export default function Marketplace() {
@@ -23,7 +23,7 @@ export default function Marketplace() {
               </div>
               <h1 className="st-h1">Your surplus is someone else&apos;s structural fill.</h1>
               <p>
-                The intelligent earthworks exchange that matches excess soil by classification, volume, and hauling distance — with custody verification attached to every trade.
+                The earthworks exchange where you search and filter excess soil by classification, volume, and hauling distance — with custody verification attached to every trade.
               </p>
               <div className={styles.heroActions}>
                 <Link href="/get-started" className={`${styles.buttonPrimaryDark} st-button-txt`}>
@@ -136,7 +136,7 @@ export default function Marketplace() {
             <div className={styles.matchingCard}>
               <i className="ri-truck-line" style={{fontSize: 32, color: "var(--st-brand-primary)", marginBottom: 16, display: "block"}}></i>
               <h3 className="st-h4">Hauling on the same network</h3>
-              <p className="st-body2" style={{marginTop: 8}}>Instantly dispatch verified haulers to move your matched loads with 2-tap cab ticketing.</p>
+              <p className="st-body2" style={{marginTop: 8}}>Dispatch verified haulers to move your matched loads, with every movement logged automatically by GPS.</p>
             </div>
           </div>
         </section>

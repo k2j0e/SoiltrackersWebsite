@@ -389,6 +389,17 @@
   font-weight: 800;
   line-height: 1.25;
   margin: 0 0 24px;
+  color: inherit;
+}
+/* Dark card: force white text over the global near-black heading colour */
+.doorPlatformPrimary .doorTitle,
+.doorPlatformPrimary .doorList,
+.doorPlatformPrimary .doorList li,
+.doorPlatformPrimary p {
+  color: #ffffff;
+}
+.doorPlatformPrimary .doorEyebrow {
+  color: var(--st-logo-leaf);
 }
 
 .doorList {
