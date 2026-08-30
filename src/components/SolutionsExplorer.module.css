@@ -1,0 +1,500 @@
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--st-space-6);
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.headerSubtext {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.explorerGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   LEFT: VERTICAL TABS
+   ========================================================================== */
+.tabsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tabCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--st-radius-xl);
+  padding: 24px 28px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tabCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(170, 221, 102, 0.3);
+  transform: translateX(4px);
+}
+
+.activeTabCard {
+  background: linear-gradient(135deg, rgba(19, 156, 85, 0.18) 0%, rgba(10, 46, 36, 0.4) 100%);
+  border-color: var(--st-logo-leaf);
+  box-shadow: 0 12px 32px -8px rgba(19, 156, 85, 0.25);
+}
+
+.activeIndicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: var(--st-logo-leaf);
+  box-shadow: 0 0 12px var(--st-logo-leaf);
+}
+
+.tabTopRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.tabIconBox {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--st-logo-leaf);
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.activeTabCard .tabIconBox {
+  background: var(--st-logo-leaf);
+  color: var(--st-brand-primary-dark);
+}
+
+.tabTag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--st-logo-leaf);
+}
+
+.tabTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.tabDesc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* ==========================================================================
+   RIGHT: DEVICE PREVIEW DISPLAY
+   ========================================================================== */
+.previewContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.deviceFrame {
+  background: #041611;
+  border: 1px solid rgba(170, 221, 102, 0.25);
+  border-radius: var(--st-radius-2xl);
+  overflow: hidden;
+  box-shadow: 0 32px 72px -16px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+/* Architectural Dotted Grid Background */
+.deviceFrame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.deviceHeader {
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.windowDots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.deviceTitleBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--st-logo-leaf);
+  font-family: monospace;
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  background: var(--st-logo-leaf);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--st-logo-leaf);
+  animation: pulseBeacon 2s infinite;
+}
+
+@keyframes pulseBeacon {
+  0% { box-shadow: 0 0 0 0 rgba(170, 221, 102, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(170, 221, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(170, 221, 102, 0); }
+}
+
+.deviceCategoryPill {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--st-radius-pill);
+}
+
+.screenInner {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.screenHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.screenMainTitle {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.screenSiteText {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.volumeBadge {
+  background: rgba(19, 156, 85, 0.2);
+  border: 1px solid rgba(170, 221, 102, 0.3);
+  color: var(--st-logo-leaf);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--st-radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Mock Graphics Area */
+.visualMockArea {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--st-radius-xl);
+  padding: 24px;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Phone Mock */
+.phoneMockUI {
+  width: 100%;
+}
+
+.mapTrackWidget {
+  position: relative;
+  height: 90px;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mapRoadLine {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--st-brand-primary), var(--st-logo-leaf));
+  border-radius: 2px;
+}
+
+.mapTruckPulse {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--st-logo-leaf);
+  color: var(--st-brand-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 0 16px var(--st-logo-leaf);
+}
+
+.pinA, .pinB {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Board Mock */
+.boardMockUI {
+  width: 100%;
+}
+
+.boardGridMock {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.boardCol {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.colHeader {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.boardTruckItem,
+.boardTruckItemHighlight,
+.boardTruckItemVerified {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+.boardTruckItem {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.boardTruckItemHighlight {
+  background: rgba(19, 156, 85, 0.25);
+  border: 1px solid var(--st-logo-leaf);
+  color: var(--st-logo-leaf);
+}
+
+.boardTruckItemVerified {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--st-logo-leaf);
+}
+
+/* Report Mock */
+.reportMockUI {
+  width: 100%;
+}
+
+.reportDoc {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.docHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.docStamp {
+  font-size: 10px;
+  font-weight: 800;
+  background: rgba(170, 221, 102, 0.2);
+  color: var(--st-logo-leaf);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.docDate {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.docBarRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.docBar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.auditCertBadge {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--st-logo-leaf);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Gate Mock */
+.gateMockUI {
+  width: 100%;
+}
+
+.gateScanner {
+  background: rgba(19, 156, 85, 0.1);
+  border: 1px solid rgba(19, 156, 85, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gateStatusGood {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--st-logo-leaf);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gateMetric {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.gateMetric strong {
+  color: #ffffff;
+}
+
+/* Milestones */
+.milestoneList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.milestoneItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Button */
+.actionButton {
+  background: var(--st-logo-leaf);
+  color: var(--st-brand-primary-dark);
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--st-radius-pill);
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(170, 221, 102, 0.25);
+  margin-top: 8px;
+}
+
+.actionButton:hover {
+  background: #c3eb85;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(170, 221, 102, 0.35);
+}
+
+@media (max-width: 960px) {
+  .explorerGrid {
+    grid-template-columns: 1fr;
+  }
+}

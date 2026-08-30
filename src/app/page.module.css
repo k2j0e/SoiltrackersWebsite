@@ -119,19 +119,20 @@
   overflow: hidden;
 }
 
-.urgencySection::before {
+.urgencySection::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(170, 221, 102, 0.3), transparent);
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
 }
 
 .urgencyInner {
   max-width: 1080px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .urgencyBody {
@@ -157,34 +158,6 @@
   margin: 0 auto 56px;
 }
 
-.statStrip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 48px;
-  text-align: left;
-}
-
-.statItem {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.statNumber {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--st-logo-leaf);
-  letter-spacing: -0.02em;
-}
-
-.statLabel {
-  font-size: 14px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.75);
-}
-
 /* ==========================================================================
    SECTION 3 — PERSONA SECTION
    ========================================================================== */
@@ -199,7 +172,28 @@
 }
 
 /* ==========================================================================
-   SECTION 4 — INSPECTOR SECTION
+   SECTION 4 — SOLUTIONS EXPLORER
+   ========================================================================== */
+.solutionsSection {
+  background: #061f18;
+  background: linear-gradient(180deg, #07261e 0%, #051913 100%);
+  padding: 120px var(--st-space-6);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.solutionsSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   SECTION 5 — INSPECTOR SECTION
    ========================================================================== */
 .inspectorSection {
   background: #07261e;

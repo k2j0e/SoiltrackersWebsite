@@ -8,6 +8,8 @@ import PersonaSwitcher from "@/components/PersonaSwitcher";
 import CustodyInspector from "@/components/CustodyInspector";
 import CertificateModal from "@/components/CertificateModal";
 import CountUp from "@/components/CountUp";
+import SolutionsExplorer from "@/components/SolutionsExplorer";
+import StatBand from "@/components/StatBand";
 import styles from "./page.module.css";
 
 export default function BCPage() {
@@ -41,7 +43,7 @@ export default function BCPage() {
               </h1>
 
               <p className={styles.heroSubtitle}>
-                British Columbia now requires digital tracking of soil movement. SoilTrackers gives generators, receivers, and Qualified Professionals one verified chain of custody — from excavation to final placement — with the compliance record built automatically as the soil moves.
+                British Columbia now requires digital tracking of soil movement. SoilTracker gives generators, receivers, and Qualified Professionals one verified chain of custody — from excavation to final placement — with the compliance record built automatically as the soil moves.
               </p>
 
               <div className={styles.heroCtas}>
@@ -81,33 +83,31 @@ export default function BCPage() {
               </p>
             </div>
 
-            {/* 4-Stat Strip (Factual BC Metrics) */}
-            <div className={styles.statStrip}>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}>Unanimous</span>
-                <span className={styles.statLabel}>
-                  BC&apos;s digital soil tracking mandate passed without a single opposing vote
-                </span>
-              </div>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}><CountUp text="$75,000" /></span>
-                <span className={styles.statLabel}>
-                  Maximum administrative penalty per soil relocation contravention under the EMA
-                </span>
-              </div>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}><CountUp text="30 m³" /></span>
-                <span className={styles.statLabel}>
-                  The volume threshold that triggers mandatory SRNF notification from Schedule 2 sites
-                </span>
-              </div>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}>1 week</span>
-                <span className={styles.statLabel}>
-                  Minimum advance notice required before removing soil from a Schedule 2 source
-                </span>
-              </div>
-            </div>
+            {/* Monumental Stat Band for BC Mandate */}
+            <StatBand
+              stats={[
+                {
+                  number: "Unanimous",
+                  label: "BC's digital soil tracking mandate passed without a single opposing vote",
+                  sublabel: "Bill M217 Passed",
+                },
+                {
+                  number: "$75,000",
+                  label: "Maximum administrative penalty per soil relocation contravention under the EMA",
+                  sublabel: "Daily Exposure Shield",
+                },
+                {
+                  number: "30 m³",
+                  label: "The volume threshold that triggers mandatory SRNF notification from Schedule 2 sites",
+                  sublabel: "Automated Triggers",
+                },
+                {
+                  number: "1 Week",
+                  label: "Minimum advance notice required before removing soil from a Schedule 2 source",
+                  sublabel: "Advance Filing Window",
+                },
+              ]}
+            />
           </div>
         </section>
 
@@ -127,7 +127,14 @@ export default function BCPage() {
         </section>
 
         {/* ===================================================================
-            SECTION 4 — THE BC CHAIN OF CUSTODY INSPECTOR (WIDGET)
+            SECTION 4 — THE SOLUTIONS EXPLORER (BC SPEC)
+        =================================================================== */}
+        <section className={styles.solutionsSection}>
+          <SolutionsExplorer mode="bc" />
+        </section>
+
+        {/* ===================================================================
+            SECTION 5 — THE BC CHAIN OF CUSTODY INSPECTOR (WIDGET)
         =================================================================== */}
         <section id="bc-custody-inspector" className={styles.inspectorSection}>
           <div className={styles.inspectorInner}>

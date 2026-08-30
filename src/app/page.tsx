@@ -10,6 +10,8 @@ import RegionalStrip from "@/components/RegionalStrip";
 import CertificateModal from "@/components/CertificateModal";
 import MapAnimation from "@/components/MapAnimation";
 import CountUp from "@/components/CountUp";
+import SolutionsExplorer from "@/components/SolutionsExplorer";
+import StatBand from "@/components/StatBand";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -95,27 +97,26 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Factual Inline Stat Strip */}
-            <div className={styles.statStrip}>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}><CountUp text="2026" /></span>
-                <span className={styles.statLabel}>
-                  BC&apos;s legislature votes unanimously to mandate digital soil tracking
-                </span>
-              </div>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}>Registry-filed</span>
-                <span className={styles.statLabel}>
-                  Ontario&apos;s excess soil regime requires documented reuse and filing
-                </span>
-              </div>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}>Retroactive</span>
-                <span className={styles.statLabel}>
-                  In most jurisdictions, contaminated-fill liability follows the land
-                </span>
-              </div>
-            </div>
+            {/* Monumental Factual Stat Band (Finvaro-inspired High-Impact Authority) */}
+            <StatBand
+              stats={[
+                {
+                  number: "2026",
+                  label: "BC's legislature votes unanimously to mandate digital soil tracking",
+                  sublabel: "Bill M217 Mandate",
+                },
+                {
+                  number: "Registry-Filed",
+                  label: "Ontario's excess soil regime requires documented reuse and filing",
+                  sublabel: "O. Reg. 406/19 Aligned",
+                },
+                {
+                  number: "Retroactive",
+                  label: "In most jurisdictions, contaminated-fill liability follows the land",
+                  sublabel: "Receiver Strict Liability",
+                },
+              ]}
+            />
           </div>
         </section>
 
@@ -135,7 +136,14 @@ export default function Home() {
         </section>
 
         {/* ===================================================================
-            SECTION 4 — THE INTERACTIVE CHAIN OF CUSTODY INSPECTOR (WIDGET)
+            SECTION 4 — THE SOLUTIONS EXPLORER (VERTICAL TABS + LIVE UI PREVIEW)
+        =================================================================== */}
+        <section className={styles.solutionsSection}>
+          <SolutionsExplorer mode="north-america" />
+        </section>
+
+        {/* ===================================================================
+            SECTION 5 — THE INTERACTIVE CHAIN OF CUSTODY INSPECTOR (WIDGET)
         =================================================================== */}
         <section id="custody-inspector" className={styles.inspectorSection}>
           <div className={styles.inspectorInner}>
