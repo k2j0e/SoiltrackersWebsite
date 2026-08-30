@@ -36,7 +36,7 @@ export default function CertificateModal({
         <div className={styles.certBody}>
           <div className={styles.certHeaderBlock}>
             <div className={styles.certLogo}>
-              <span className={styles.brandName}>SoilTrackers</span>
+              <span className={styles.brandName}>SoilTracker</span>
               <span className={styles.certDocType}>
                 {mode === "bc"
                   ? "BC SRNF Chain-of-Custody Manifest"
@@ -103,7 +103,7 @@ export default function CertificateModal({
             <div className={styles.certSeal}>
               <i className="ri-award-fill"></i>
               <div>
-                <strong>SoilTrackers Verified Custody</strong>
+                <strong>SoilTracker Verified Custody</strong>
                 <p>Immutable digital record for regulatory submission and billing reconciliation.</p>
               </div>
             </div>

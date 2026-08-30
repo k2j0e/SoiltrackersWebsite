@@ -4,7 +4,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
-  title: "SoilTrackers — Soil Chain of Custody & Compliance Platform",
+  title: "SoilTracker — Soil Chain of Custody & Compliance Platform",
   description: "Prove where every load came from. And where it went. One verified chain of custody from excavation to final placement.",
 };
 

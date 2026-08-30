@@ -522,7 +522,7 @@
   gap: 6px;
 }
 
-.compCardSoilTrackers {
+.compCardSoilTracker {
   background: #08261e;
   background: linear-gradient(145deg, #0a2e24 0%, #061f18 100%);
   border: 2px solid var(--st-logo-leaf);
@@ -649,7 +649,7 @@
   .facilityGrid, .comparisonGrid {
     grid-template-columns: 1fr 1fr;
   }
-  .compCardSoilTrackers {
+  .compCardSoilTracker {
     transform: none;
   }
   .doorsGrid {

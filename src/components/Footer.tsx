@@ -9,7 +9,7 @@ export default function Footer() {
         <div className={styles.brand}>
           <Image
             src="/ST-LOGO.png"
-            alt="SoilTrackers"
+            alt="SoilTracker"
             width={140}
             height={29}
             className={styles.logoImg}
@@ -54,7 +54,7 @@ export default function Footer() {
       </div>
       
       <div className={styles.legal}>
-        <span>&copy; {new Date().getFullYear()} SoilTrackers Solutions Inc. Based in British Columbia, Canada. All rights reserved.</span>
+        <span>&copy; {new Date().getFullYear()} SoilTracker Solutions Inc. Based in British Columbia, Canada. All rights reserved.</span>
         <div className={styles.legalLinks}>
           <Link href="#privacy" className={styles.legalLink}>Privacy Policy</Link>
           <Link href="#terms" className={styles.legalLink}>Terms of Service</Link>

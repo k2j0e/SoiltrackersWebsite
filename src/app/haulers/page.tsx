@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "For Haulers & Fleet Admins — SoilTrackers",
+  title: "For Haulers & Fleet Admins — SoilTracker",
   description: "Keep your trucks rolling. Verified, compliant work routed to your fleet — with load events captured automatically by GPS, no driver app required.",
 };
 

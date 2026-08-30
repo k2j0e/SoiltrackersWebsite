@@ -39,7 +39,7 @@ export default function RegionalStrip() {
           </div>
           <h2 className="st-h2">Compliance is local. We build for your rules.</h2>
           <p className="st-body1" style={{ maxWidth: 640, margin: "16px auto 0", color: "var(--st-ink-700)" }}>
-            Soil regulation is written jurisdiction by jurisdiction. So is SoilTrackers.
+            Soil regulation is written jurisdiction by jurisdiction. So is SoilTracker.
           </p>
         </div>
 

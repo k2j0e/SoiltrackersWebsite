@@ -27,7 +27,7 @@ export default function Nav({
         <Link href="/" className={styles.brandLink}>
           <Image
             src="/ST-LOGO.png"
-            alt="SoilTrackers"
+            alt="SoilTracker"
             width={172}
             height={36}
             className={styles.logoImg}

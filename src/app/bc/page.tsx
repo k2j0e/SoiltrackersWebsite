@@ -170,7 +170,7 @@ export default function BCPage() {
                 We answer to the same regulators you do.
               </h2>
               <p className={styles.facilityLead}>
-                SoilTrackers is developing its own hydrovac slurry processing and soil transfer facility in Coquitlam — in planning and permitting right now, inside the same EMA, CSR, and municipal framework as every operator on this platform.
+                SoilTracker is developing its own hydrovac slurry processing and soil transfer facility in Coquitlam — in planning and permitting right now, inside the same EMA, CSR, and municipal framework as every operator on this platform.
               </p>
               <p className={styles.facilitySub}>
                 We didn&apos;t study this industry from the outside. We&apos;re building the tool we need to run our own operation — and opening it to yours.
@@ -292,7 +292,7 @@ export default function BCPage() {
                 Founding member access is open — and it&apos;s founder-led.
               </h2>
               <p className={styles.foundingBody}>
-                SoilTrackers is onboarding founding members across BC right now: generators, receiving operators, and QP firms. No demo theater, no sales sequence. Fifteen minutes with the founder and you&apos;ll know whether this fits your operation — and founding members shape the platform before the rest of the province gets it.
+                SoilTracker is onboarding founding members across BC right now: generators, receiving operators, and QP firms. No demo theater, no sales sequence. Fifteen minutes with the founder and you&apos;ll know whether this fits your operation — and founding members shape the platform before the rest of the province gets it.
               </p>
 
               <div className={styles.foundingCtas}>
@@ -305,7 +305,7 @@ export default function BCPage() {
               </div>
 
               <p className={styles.footerTrustLine}>
-                SoilTrackers · Coquitlam, British Columbia · Building our own soil transfer facility alongside the platform
+                SoilTracker · Coquitlam, British Columbia · Building our own soil transfer facility alongside the platform
               </p>
             </div>
           </div>

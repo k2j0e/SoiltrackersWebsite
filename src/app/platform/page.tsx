@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Compliance & Dispatch Platform — SoilTrackers",
+  title: "The Compliance & Dispatch Platform — SoilTracker",
   description: "One platform. Five seats at the table. Zero blind spots. Keep every project, permit, and haul in one verified record.",
 };
 
@@ -22,7 +22,7 @@ export default function Platform() {
               One Platform. Five Seats at the Table. Zero Blind Spots.
             </h1>
             <p className="st-body1" style={{ color: "var(--st-ink-700)", margin: "0 auto 36px", maxWidth: 740, fontSize: 18, lineHeight: 1.6 }}>
-              From project setup to the final load reconciliation, SoilTrackers connects the field, the office, the hauler, and the environmental consultant on one single source of truth.
+              From project setup to the final load reconciliation, SoilTracker connects the field, the office, the hauler, and the environmental consultant on one single source of truth.
             </p>
             <Link href="/get-started" className={`${styles.buttonPrimary} st-button-txt`}>
               Book a 15-Minute Founder Call

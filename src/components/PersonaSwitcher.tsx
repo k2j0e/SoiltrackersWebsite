@@ -46,7 +46,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Environmental Professionals & Consultants",
       icon: "ri-flask-line",
       headline: "Your professional sign-off, defensible for years.",
-      body: "When your name is on the filing, it's on it long after the trucks are gone. SoilTrackers preserves the full custody record behind every project — sampling, characterization, movements, receiving confirmation — so the file you'd need in an audit already exists, organized, the day the job closes.",
+      body: "When your name is on the filing, it's on it long after the trucks are gone. SoilTracker preserves the full custody record behind every project — sampling, characterization, movements, receiving confirmation — so the file you'd need in an audit already exists, organized, the day the job closes.",
       bullets: [
         {
           title: "Spec & Standard Matching",
@@ -76,7 +76,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Receiving Sites, Pits & Facilities",
       icon: "ri-building-4-line",
       headline: "One bad load can turn your land into a contaminated site.",
-      body: "In most North American jurisdictions, liability for contaminated fill follows the land — meaning the receiver carries it even when the generator caused it. SoilTrackers screens every inbound load against your site's standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
+      body: "In most North American jurisdictions, liability for contaminated fill follows the land — meaning the receiver carries it even when the generator caused it. SoilTracker screens every inbound load against your site's standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
       bullets: [
         {
           title: "Spec-Sheet Due Diligence",
@@ -139,7 +139,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Qualified Professionals (QPs)",
       icon: "ri-microscope-line",
       headline: "Your SRNF signature, defensible for years.",
-      body: "When you file a Soil Relocation Notification, your name is on it long after the trucks are gone. SoilTrackers preserves the full custody record behind every notification — the Sample and Analysis Plan, Protocol 19 characterization, every movement, every receiving confirmation — organized and export-ready from the day the job closes. Protocol 19 requires SAPs retained for ten years. Yours will be one click away for all of them.",
+      body: "When you file a Soil Relocation Notification, your name is on it long after the trucks are gone. SoilTracker preserves the full custody record behind every notification — the Sample and Analysis Plan, Protocol 19 characterization, every movement, every receiving confirmation — organized and export-ready from the day the job closes. Protocol 19 requires SAPs retained for ten years. Yours will be one click away for all of them.",
       bullets: [
         {
           title: "Protocol 19-Aligned Records",
@@ -169,7 +169,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Fill Sites & HVRS Operators",
       icon: "ri-landscape-line",
       headline: "One bad load can turn your land into a contaminated site.",
-      body: "Under BC's Environmental Management Act, contaminated site liability is absolute and retroactive — the receiver carries it even when the generator caused it. SoilTrackers screens every inbound load against your site's CSR Schedule 3.1 land-use standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
+      body: "Under BC's Environmental Management Act, contaminated site liability is absolute and retroactive — the receiver carries it even when the generator caused it. SoilTracker screens every inbound load against your site's CSR Schedule 3.1 land-use standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
       bullets: [
         {
           title: "CSR Standards Gatekeeping",

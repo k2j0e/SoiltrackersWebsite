@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Spec-Matched Soil Exchange — SoilTrackers",
+  title: "Spec-Matched Soil Exchange — SoilTracker",
   description: "Find clean fill. Move surplus. Zero material wasted. The spec-matched soil exchange with custody verification attached to every trade.",
 };
 

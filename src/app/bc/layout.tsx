@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "BC Soil Relocation Compliance — SRNF, Protocol 19 & HVRS Tracking | SoilTrackers",
+    "BC Soil Relocation Compliance — SRNF, Protocol 19 & HVRS Tracking | SoilTracker",
   description:
     "Purpose-built for BC's digital soil tracking mandate. SRNF volume tracking, Protocol 19 characterization records, HVRS threshold monitoring, and CSR Schedule 3.1 gatekeeping — one verified chain of custody under the Environmental Management Act.",
   keywords: [
