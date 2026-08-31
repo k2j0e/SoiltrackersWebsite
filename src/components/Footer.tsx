@@ -17,9 +17,6 @@ export default function Footer() {
           <p className={styles.tagline}>
             The closed-loop soil operating system. One verified chain of custody from excavation to final placement.
           </p>
-          <p className={styles.facilityNote}>
-            <i className="ri-building-line"></i> Developing our own soil transfer and processing facility in Coquitlam, BC.
-          </p>
         </div>
         
         <div className={styles.column}>

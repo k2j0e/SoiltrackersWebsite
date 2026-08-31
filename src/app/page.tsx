@@ -12,6 +12,7 @@ import MapAnimation from "@/components/MapAnimation";
 import CountUp from "@/components/CountUp";
 import SolutionsExplorer from "@/components/SolutionsExplorer";
 import StatBand from "@/components/StatBand";
+import PaperVsDigital from "@/components/PaperVsDigital";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -59,7 +60,7 @@ export default function Home() {
 
               <p className={styles.heroTrustLine}>
                 <i className="ri-shield-check-fill" style={{ color: "var(--st-logo-leaf)", marginRight: 6 }}></i>
-                Built by a BC team putting its own soil transfer facility through permitting right now, inside the strictest soil regime in North America.
+                Automated GPS geofencing, digital ticketing, and regulatory compliance built in.
               </p>
               </div>
 
@@ -74,49 +75,32 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ===================================================================
-            SECTION 2 — THE URGENCY BLOCK (REGULATORY DIRECTION OF TRAVEL)
-        =================================================================== */}
+        {/* SECTION 2: THE SHIFT TO DIGITAL CUSTODY */}
         <section className={styles.urgencySection}>
           <div className={styles.urgencyInner}>
-            <div className={styles.urgencyHeader}>
-              <div className="st-sub-caps" style={{ color: "var(--st-logo-leaf)", marginBottom: 12 }}>
-                REGULATORY DIRECTION OF TRAVEL
-              </div>
-              <h2 className="st-h2" style={{ color: "#ffffff", maxWidth: 760, margin: "0 auto 20px" }}>
-                The paper trail era is ending everywhere.
-              </h2>
-              <p className={styles.urgencyBody}>
-                British Columbia now mandates digital soil tracking. Ontario requires registry filings for excess soil. Municipal fill bylaws across North America are tightening every year, and liability for contaminated fill lands on whoever received it, often retroactively.
-              </p>
-              <p className={styles.urgencyHighlight}>
-                The jurisdictions differ. The direction doesn&apos;t.
-              </p>
-              <p className={styles.urgencyConclusion}>
-                The question is no longer whether to digitize your chain of custody. It&apos;s whether your records will hold up when someone asks for them.
-              </p>
-            </div>
+            <PaperVsDigital mode="north-america" />
 
-            {/* Monumental Factual Stat Band (Finvaro-inspired High-Impact Authority) */}
-            <StatBand
-              stats={[
-                {
-                  number: "2026",
-                  label: "BC's legislature votes unanimously to mandate digital soil tracking",
-                  sublabel: "Bill M217 Mandate",
-                },
-                {
-                  number: "Registry-Filed",
-                  label: "Ontario's excess soil regime requires documented reuse and filing",
-                  sublabel: "O. Reg. 406/19 Aligned",
-                },
-                {
-                  number: "Retroactive",
-                  label: "In most jurisdictions, contaminated-fill liability follows the land",
-                  sublabel: "Receiver Strict Liability",
-                },
-              ]}
-            />
+            <div style={{ marginTop: 64 }}>
+              <StatBand
+                stats={[
+                  {
+                    number: "2026",
+                    label: "BC's legislature votes unanimously to mandate digital soil tracking",
+                    sublabel: "Bill M217 Mandate",
+                  },
+                  {
+                    number: "Registry-Filed",
+                    label: "Ontario's excess soil regime requires documented reuse and filing",
+                    sublabel: "O. Reg. 406/19 Aligned",
+                  },
+                  {
+                    number: "Retroactive",
+                    label: "In most jurisdictions, contaminated-fill liability follows the land",
+                    sublabel: "Receiver Strict Liability",
+                  },
+                ]}
+              />
+            </div>
           </div>
         </section>
 
@@ -160,61 +144,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECTION 5: BUILT BY OPERATORS (THE FACILITY TRUST SECTION) */}
-        <section className={styles.facilitySection}>
-          <div className={styles.facilityInner}>
-            <div className={styles.facilityContent}>
-              <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
-                SKIN IN THE GAME
-              </div>
-              <h2 className="st-h2" style={{ maxWidth: 760, margin: "0 auto 20px" }}>
-                Built inside the industry, not outside it.
-              </h2>
-              <p className={styles.facilityLead}>
-                SoilTracker isn&apos;t a software company guessing at how soil moves. We&apos;re developing our own hydrovac slurry processing and soil transfer facility in Coquitlam, working through the same planning, permitting, and regulatory gauntlet every operator on this platform knows first-hand.
-              </p>
-              <p className={styles.facilitySub}>
-                The platform exists because we need it ourselves.
-              </p>
-            </div>
-
-            <div className={styles.facilityGrid}>
-              <div className={styles.facilityCard}>
-                <div className={styles.facilityIcon}>
-                  <i className="ri-building-line"></i>
-                </div>
-                <h3 className={styles.facilityCardTitle}>Skin in the game</h3>
-                <p className={styles.facilityCardDesc}>
-                  Our own transfer and processing facility in development in Coquitlam. We&apos;re betting on this industry, not just selling to it.
-                </p>
-              </div>
-
-              <div className={styles.facilityCard}>
-                <div className={styles.facilityIcon}>
-                  <i className="ri-government-line"></i>
-                </div>
-                <h3 className={styles.facilityCardTitle}>Regulatory fluency</h3>
-                <p className={styles.facilityCardDesc}>
-                  Built inside the strictest soil relocation regime in North America, then generalized outward.
-                </p>
-              </div>
-
-              <div className={styles.facilityCard}>
-                <div className={styles.facilityIcon}>
-                  <i className="ri-shield-user-line"></i>
-                </div>
-                <h3 className={styles.facilityCardTitle}>Operator workflows</h3>
-                <p className={styles.facilityCardDesc}>
-                  Every workflow on the platform is designed around how soil actually moves, including sites, permits, scales, and manifests.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            SECTION 6 — THE DUAL DOORS (PLATFORM VS. MARKETPLACE)
-        =================================================================== */}
+        {/* SECTION 6: THE DUAL DOORS */}
         <section className={styles.dualDoorsSection}>
           <div className={styles.dualDoorsInner}>
             <div className={styles.dualDoorsHeader}>
@@ -360,7 +290,7 @@ export default function Home() {
             </div>
 
             <p className={styles.footerTrustLine}>
-              SoilTracker · Based in British Columbia, Canada · Building our own soil transfer facility alongside the platform
+              SoilTracker · The Closed-Loop Soil Operating System · British Columbia, Canada
             </p>
           </div>
         </section>

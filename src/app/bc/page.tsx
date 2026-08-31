@@ -10,6 +10,7 @@ import CertificateModal from "@/components/CertificateModal";
 import CountUp from "@/components/CountUp";
 import SolutionsExplorer from "@/components/SolutionsExplorer";
 import StatBand from "@/components/StatBand";
+import PaperVsDigital from "@/components/PaperVsDigital";
 import styles from "./page.module.css";
 
 export default function BCPage() {
@@ -57,54 +58,43 @@ export default function BCPage() {
 
               <p className={styles.heroTrustLine}>
                 <i className="ri-shield-check-fill" style={{ color: "var(--st-logo-leaf)", marginRight: 6 }}></i>
-                Built on BC's Environmental Management Act, Contaminated Sites Regulation, and Protocol 19 by a team permitting its own soil transfer facility in Coquitlam right now.
+                Built on BC's Environmental Management Act, Contaminated Sites Regulation, and Protocol 19 for verified chain-of-custody compliance.
               </p>
             </div>
           </div>
         </section>
 
-        {/* SECTION 2: THE MANDATE BLOCK */}
+        {/* SECTION 2: THE MANDATE & CUSTODY SHIFT */}
         <section className={styles.mandateSection}>
           <div className={styles.mandateInner}>
-            <div className={styles.mandateHeader}>
-              <div className="st-sub-caps" style={{ color: "var(--st-logo-leaf)", marginBottom: 12 }}>
-                LEGISLATIVE REALITY & PENALTIES
-              </div>
-              <h2 className="st-h2" style={{ color: "#ffffff", maxWidth: 760, margin: "0 auto 20px" }}>
-                The paper trail era is over.
-              </h2>
-              <p className={styles.mandateBody}>
-                In May 2026, BC's legislature voted unanimously to mandate digital tracking of soil movement. Penalties for soil relocation violations already run up to $75,000 per contravention, and a continuing violation can count as a separate offence for every day it continues.
-              </p>
-              <p className={styles.mandateConclusion}>
-                The question is no longer whether to digitize your chain of custody. It's whether your system will hold up when someone asks for it.
-              </p>
-            </div>
+            <PaperVsDigital mode="bc" />
 
-            <StatBand
-              stats={[
-                {
-                  number: "Unanimous",
-                  label: "BC's digital soil tracking mandate passed without a single opposing vote",
-                  sublabel: "Bill M217 Passed",
-                },
-                {
-                  number: "$75,000",
-                  label: "Maximum administrative penalty per soil relocation contravention under the EMA",
-                  sublabel: "Daily Exposure Shield",
-                },
-                {
-                  number: "30 m³",
-                  label: "The volume threshold that triggers mandatory SRNF notification from Schedule 2 sites",
-                  sublabel: "Automated Triggers",
-                },
-                {
-                  number: "1 Week",
-                  label: "Minimum advance notice required before removing soil from a Schedule 2 source",
-                  sublabel: "Advance Filing Window",
-                },
-              ]}
-            />
+            <div style={{ marginTop: 64 }}>
+              <StatBand
+                stats={[
+                  {
+                    number: "Unanimous",
+                    label: "BC's digital soil tracking mandate passed without a single opposing vote",
+                    sublabel: "Bill M217 Passed",
+                  },
+                  {
+                    number: "$75,000",
+                    label: "Maximum administrative penalty per soil relocation contravention under the EMA",
+                    sublabel: "Daily Exposure Shield",
+                  },
+                  {
+                    number: "30 m³",
+                    label: "The volume threshold that triggers mandatory SRNF notification from Schedule 2 sites",
+                    sublabel: "Automated Triggers",
+                  },
+                  {
+                    number: "1 Week",
+                    label: "Minimum advance notice required before removing soil from a Schedule 2 source",
+                    sublabel: "Advance Filing Window",
+                  },
+                ]}
+              />
+            </div>
           </div>
         </section>
 
@@ -148,59 +138,7 @@ export default function BCPage() {
           </div>
         </section>
 
-        {/* SECTION 6: BUILT IN BC, BY BC OPERATORS */}
-        <section className={styles.facilitySection}>
-          <div className={styles.facilityInner}>
-            <div className={styles.facilityContent}>
-              <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
-                BUILT IN BC · FACILITY IN DEVELOPMENT
-              </div>
-              <h2 className="st-h2" style={{ maxWidth: 760, margin: "0 auto 20px" }}>
-                We answer to the same regulators you do.
-              </h2>
-              <p className={styles.facilityLead}>
-                SoilTracker is developing its own hydrovac slurry processing and soil transfer facility in Coquitlam, in planning and permitting right now inside the same EMA, CSR, and municipal framework as every operator on this platform.
-              </p>
-              <p className={styles.facilitySub}>
-                We didn't study this industry from the outside. We're building the tool we need to run our own operation, and opening it to yours.
-              </p>
-            </div>
-
-            <div className={styles.facilityGrid}>
-              <div className={styles.facilityCard}>
-                <div className={styles.facilityIcon}>
-                  <i className="ri-building-line"></i>
-                </div>
-                <h3 className={styles.facilityCardTitle}>A BC facility in motion</h3>
-                <p className={styles.facilityCardDesc}>
-                  Our own hydrovac slurry processing and soil transfer facility in Coquitlam, moving through planning and permitting now.
-                </p>
-              </div>
-
-              <div className={styles.facilityCard}>
-                <div className={styles.facilityIcon}>
-                  <i className="ri-map-2-line"></i>
-                </div>
-                <h3 className={styles.facilityCardTitle}>The full regulatory map</h3>
-                <p className={styles.facilityCardDesc}>
-                  Every SRNF filing in the province analyzed. We know BC's soil movement landscape better than anyone building software for it.
-                </p>
-              </div>
-
-              <div className={styles.facilityCard}>
-                <div className={styles.facilityIcon}>
-                  <i className="ri-shield-star-line"></i>
-                </div>
-                <h3 className={styles.facilityCardTitle}>A combined operator model</h3>
-                <p className={styles.facilityCardDesc}>
-                  Built to pair owned processing infrastructure with digital chain of custody tracking, a first for Western Canada.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 7: DUAL DOORS */}
+        {/* SECTION 6: DUAL DOORS */}
         <section className={styles.dualDoorsSection}>
           <div className={styles.dualDoorsInner}>
             <div className={styles.dualDoorsHeader}>
@@ -288,7 +226,7 @@ export default function BCPage() {
               </div>
 
               <p className={styles.footerTrustLine}>
-                SoilTracker · Coquitlam, British Columbia · Building our own soil transfer facility alongside the platform
+                SoilTracker · Built for British Columbia&apos;s Digital Soil Tracking Mandate
               </p>
             </div>
           </div>
