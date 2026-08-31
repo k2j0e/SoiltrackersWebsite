@@ -10,43 +10,32 @@ interface PaperVsDigitalProps {
 
 export default function PaperVsDigital({ mode = "north-america" }: PaperVsDigitalProps) {
   return (
-    <div className={styles.sectionWrapper}>
-      <div className={styles.header}>
-        <div className="st-sub-caps" style={{ color: "var(--st-logo-leaf)", marginBottom: 12 }}>
-          THE SHIFT TO DIGITAL CUSTODY
-        </div>
-        <h2 className="st-h2" style={{ color: "#ffffff", maxWidth: 760, margin: "0 auto" }}>
-          The paper trail era is over.
-        </h2>
+    <div className={styles.bannerWrapper}>
+      {/* Background Cinematic Graphic */}
+      <div className={styles.imageBackdrop}>
+        <Image
+          src="/images/digital-custody-shift.jpg"
+          alt="The Shift from Paper Soil Slips to Verified Digital Custody"
+          fill
+          priority
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          className={styles.backdropImg}
+        />
+        {/* Atmospheric Gradient Overlays for Razor-Sharp Readability */}
+        <div className={styles.topVignette}></div>
+        <div className={styles.radialHighlight}></div>
+        <div className={styles.edgeFade}></div>
       </div>
 
-      <div className={styles.graphicContainer}>
-        <div className={styles.glowBackdrop}></div>
-        <div className={styles.imageFrame}>
-          <Image
-            src="/images/digital-custody-shift.jpg"
-            alt="The Shift from Paper Soil Slips to Verified Digital Custody"
-            width={1200}
-            height={675}
-            priority
-            className={styles.graphicImage}
-          />
+      {/* Heroic Overlay Text */}
+      <div className={styles.textOverlay}>
+        <div className={styles.eyebrowBadge}>
+          <span className={styles.pulseDot}></span>
+          <span>THE SHIFT TO DIGITAL CUSTODY</span>
         </div>
-
-        {/* Minimalist Micro Badges for Context */}
-        <div className={styles.badgeBar}>
-          <div className={styles.badgeLeft}>
-            <span className={styles.dotRed}></span>
-            <span>Broken Paper Trail</span>
-          </div>
-          <div className={styles.badgeCenter}>
-            <i className="ri-arrow-right-line"></i>
-          </div>
-          <div className={styles.badgeRight}>
-            <span className={styles.dotGreen}></span>
-            <span>SoilTracker Closed Loop</span>
-          </div>
-        </div>
+        <h2 className={styles.monumentalHeading}>
+          The paper trail era is over.
+        </h2>
       </div>
     </div>
   );
