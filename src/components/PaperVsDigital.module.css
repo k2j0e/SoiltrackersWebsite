@@ -1,5 +1,5 @@
 .contrastWrapper {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -11,9 +11,9 @@
 }
 
 .subtext {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.75);
-  max-width: 600px;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 620px;
   margin: 0 auto;
   line-height: 1.6;
 }
@@ -21,188 +21,198 @@
 .cardsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  gap: 32px;
   align-items: stretch;
 }
 
 /* ==========================================================================
-   CONVENTIONAL PAPER CARD (NEGATIVE)
+   CONVENTIONAL PAPER CARD (CRISP HIGH CONTRAST)
    ========================================================================== */
 .paperCard {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 0, 72, 0.2);
+  background: #ffffff;
+  border: 1px solid rgba(239, 68, 68, 0.3);
   border-radius: var(--st-radius-2xl);
   padding: 36px 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .paperCard:hover {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 0, 72, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
 }
 
 .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .statusBadgeBad {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255, 0, 72, 0.15);
-  border: 1px solid rgba(255, 0, 72, 0.3);
-  color: #ff5277;
-  font-size: 12px;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  font-size: 13px;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: var(--st-radius-pill);
 }
 
 .cardMeta {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: 500;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600;
 }
 
 .pointsList {
   list-style: none;
   padding: 0;
-  margin: 0 0 32px;
+  margin: 0 0 28px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .pointItemBad {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: flex-start;
 }
 
 .pointItemBad i {
-  color: #ff5277;
-  font-size: 20px;
+  color: #dc2626;
+  font-size: 22px;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .pointItemBad strong {
   display: block;
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 4px;
+  font-size: 16px;
+  color: #0f172a;
+  margin-bottom: 3px;
+  font-weight: 700;
 }
 
 .pointItemBad p {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.6);
+  color: #475569;
   margin: 0;
 }
 
 .paperFooter {
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid #f1f5f9;
 }
 
 .footerAlert {
-  font-size: 12px;
-  color: #ff859e;
-  font-weight: 600;
-  display: flex;
+  font-size: 13px;
+  color: #b91c1c;
+  font-weight: 700;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
+  background: #fff1f2;
+  padding: 6px 14px;
+  border-radius: var(--st-radius-pill);
+  border: 1px solid #fecdd3;
 }
 
 /* ==========================================================================
-   SOILTRACKER DIGITAL CARD (POSITIVE)
+   SOILTRACKER DIGITAL CARD (ELEVATED EMERALD HERO)
    ========================================================================== */
 .digitalCard {
-  background: linear-gradient(145deg, rgba(19, 156, 85, 0.12) 0%, rgba(10, 46, 36, 0.4) 100%);
-  border: 1px solid var(--st-logo-leaf);
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+  border: 2px solid #139c55;
   border-radius: var(--st-radius-2xl);
   padding: 36px 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 48px -12px rgba(19, 156, 85, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(19, 156, 85, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .digitalCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 28px 60px -12px rgba(19, 156, 85, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 28px 56px rgba(19, 156, 85, 0.25), 0 0 0 2px #139c55;
 }
 
 .statusBadgeGood {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--st-logo-leaf);
-  color: var(--st-brand-primary-dark);
-  font-size: 12px;
-  font-weight: 800;
-  padding: 4px 12px;
+  background: #139c55;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 14px;
   border-radius: var(--st-radius-pill);
+  box-shadow: 0 2px 8px rgba(19, 156, 85, 0.3);
 }
 
 .cardMetaGood {
-  font-size: 12px;
-  color: var(--st-logo-leaf);
-  font-weight: 600;
+  font-size: 13px;
+  color: #15803d;
+  font-weight: 700;
 }
 
 .pointItemGood {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: flex-start;
 }
 
 .pointItemGood i {
-  color: var(--st-logo-leaf);
-  font-size: 20px;
+  color: #139c55;
+  font-size: 22px;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .pointItemGood strong {
   display: block;
-  font-size: 15px;
-  color: #ffffff;
-  margin-bottom: 4px;
+  font-size: 16px;
+  color: #052e16;
+  margin-bottom: 3px;
+  font-weight: 700;
 }
 
 .pointItemGood p {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.8);
+  color: #1e293b;
   margin: 0;
 }
 
 .digitalFooter {
   padding-top: 16px;
-  border-top: 1px solid rgba(170, 221, 102, 0.2);
+  border-top: 1px solid #dcfce7;
 }
 
 .footerSuccess {
-  font-size: 12px;
-  color: var(--st-logo-leaf);
+  font-size: 13px;
+  color: #15803d;
   font-weight: 700;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
+  background: #dcfce7;
+  padding: 6px 14px;
+  border-radius: var(--st-radius-pill);
+  border: 1px solid #bbf7d0;
 }
 
 @media (max-width: 800px) {
