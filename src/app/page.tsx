@@ -79,32 +79,15 @@ export default function Home() {
         <section className={styles.urgencySection}>
           <div className={styles.urgencyInner}>
             <PaperVsDigital mode="north-america" />
-
-            <div style={{ marginTop: 64 }}>
-              <StatBand
-                stats={[
-                  {
-                    number: "2026",
-                    label: "BC's legislature votes unanimously to mandate digital soil tracking",
-                    sublabel: "Bill M217 Mandate",
-                  },
-                  {
-                    number: "Registry-Filed",
-                    label: "Ontario's excess soil regime requires documented reuse and filing",
-                    sublabel: "O. Reg. 406/19 Aligned",
-                  },
-                  {
-                    number: "Retroactive",
-                    label: "In most jurisdictions, contaminated-fill liability follows the land",
-                    sublabel: "Receiver Strict Liability",
-                  },
-                ]}
-              />
-            </div>
           </div>
         </section>
 
-        {/* SECTION 3: THE 3-WAY PERSONA SWITCHER */}
+        {/* SECTION 3: THE SOLUTIONS EXPLORER */}
+        <section id="solutions-explorer" className={styles.solutionsSection}>
+          <SolutionsExplorer mode="north-america" />
+        </section>
+
+        {/* SECTION 4: THE 3-WAY PERSONA SWITCHER */}
         <section className={styles.personaSection}>
           <div className={styles.personaHeader}>
             <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
@@ -115,11 +98,6 @@ export default function Home() {
             </h2>
           </div>
           <PersonaSwitcher mode="north-america" />
-        </section>
-
-        {/* SECTION 4: THE SOLUTIONS EXPLORER */}
-        <section className={styles.solutionsSection}>
-          <SolutionsExplorer mode="north-america" />
         </section>
 
         {/* SECTION 5: THE INTERACTIVE CHAIN OF CUSTODY INSPECTOR */}

@@ -68,37 +68,15 @@ export default function BCPage() {
         <section className={styles.mandateSection}>
           <div className={styles.mandateInner}>
             <PaperVsDigital mode="bc" />
-
-            <div style={{ marginTop: 64 }}>
-              <StatBand
-                stats={[
-                  {
-                    number: "Unanimous",
-                    label: "BC's digital soil tracking mandate passed without a single opposing vote",
-                    sublabel: "Bill M217 Passed",
-                  },
-                  {
-                    number: "$75,000",
-                    label: "Maximum administrative penalty per soil relocation contravention under the EMA",
-                    sublabel: "Daily Exposure Shield",
-                  },
-                  {
-                    number: "30 m³",
-                    label: "The volume threshold that triggers mandatory SRNF notification from Schedule 2 sites",
-                    sublabel: "Automated Triggers",
-                  },
-                  {
-                    number: "1 Week",
-                    label: "Minimum advance notice required before removing soil from a Schedule 2 source",
-                    sublabel: "Advance Filing Window",
-                  },
-                ]}
-              />
-            </div>
           </div>
         </section>
 
-        {/* SECTION 3: THE BC PERSONA SWITCHER */}
+        {/* SECTION 3: THE SOLUTIONS EXPLORER */}
+        <section id="solutions-explorer" className={styles.solutionsSection}>
+          <SolutionsExplorer mode="bc" />
+        </section>
+
+        {/* SECTION 4: THE BC PERSONA SWITCHER */}
         <section className={styles.personaSection}>
           <div className={styles.personaHeader}>
             <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
@@ -109,11 +87,6 @@ export default function BCPage() {
             </h2>
           </div>
           <PersonaSwitcher mode="bc" />
-        </section>
-
-        {/* SECTION 4: THE SOLUTIONS EXPLORER */}
-        <section className={styles.solutionsSection}>
-          <SolutionsExplorer mode="bc" />
         </section>
 
         {/* SECTION 5: THE BC CHAIN OF CUSTODY INSPECTOR */}
