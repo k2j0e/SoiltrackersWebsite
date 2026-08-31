@@ -126,10 +126,10 @@ export default function PaperVsDigital({ mode = "north-america" }: PaperVsDigita
         })}
       </div>
 
-      {/* Bottom Visual Funnel into Solutions Explorer */}
+      {/* Bottom Visual Funnel */}
       <div className={styles.bottomFunnel}>
-        <a href="#solutions-explorer" className={styles.funnelLink}>
-          <span>Explore the 4 Pillars of the Platform</span>
+        <a href="#tailored-workflows" className={styles.funnelLink}>
+          <span>See How It Works for Your Role</span>
           <i className="ri-arrow-down-line"></i>
         </a>
       </div>

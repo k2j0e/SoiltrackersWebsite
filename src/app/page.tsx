@@ -82,13 +82,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECTION 3: THE SOLUTIONS EXPLORER */}
-        <section id="solutions-explorer" className={styles.solutionsSection}>
-          <SolutionsExplorer mode="north-america" />
-        </section>
-
-        {/* SECTION 4: THE 3-WAY PERSONA SWITCHER */}
-        <section className={styles.personaSection}>
+        {/* SECTION 3: THE 3-WAY PERSONA SWITCHER (TAILORED WORKFLOWS) */}
+        <section id="tailored-workflows" className={styles.personaSection}>
           <div className={styles.personaHeader}>
             <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
               TAILORED WORKFLOWS
@@ -98,6 +93,11 @@ export default function Home() {
             </h2>
           </div>
           <PersonaSwitcher mode="north-america" />
+        </section>
+
+        {/* SECTION 4: THE PLATFORM SOLUTIONS EXPLORER */}
+        <section id="solutions-explorer" className={styles.solutionsSection}>
+          <SolutionsExplorer mode="north-america" />
         </section>
 
         {/* SECTION 5: THE INTERACTIVE CHAIN OF CUSTODY INSPECTOR */}

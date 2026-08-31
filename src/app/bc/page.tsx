@@ -71,13 +71,8 @@ export default function BCPage() {
           </div>
         </section>
 
-        {/* SECTION 3: THE SOLUTIONS EXPLORER */}
-        <section id="solutions-explorer" className={styles.solutionsSection}>
-          <SolutionsExplorer mode="bc" />
-        </section>
-
-        {/* SECTION 4: THE BC PERSONA SWITCHER */}
-        <section className={styles.personaSection}>
+        {/* SECTION 3: THE BC PERSONA SWITCHER (TAILORED WORKFLOWS) */}
+        <section id="tailored-workflows" className={styles.personaSection}>
           <div className={styles.personaHeader}>
             <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
               BUILT FOR BC STAKEHOLDERS
@@ -87,6 +82,11 @@ export default function BCPage() {
             </h2>
           </div>
           <PersonaSwitcher mode="bc" />
+        </section>
+
+        {/* SECTION 4: THE SOLUTIONS EXPLORER */}
+        <section id="solutions-explorer" className={styles.solutionsSection}>
+          <SolutionsExplorer mode="bc" />
         </section>
 
         {/* SECTION 5: THE BC CHAIN OF CUSTODY INSPECTOR */}
