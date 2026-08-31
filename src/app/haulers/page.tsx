@@ -5,8 +5,8 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "For Haulers & Fleet Admins — SoilTracker",
-  description: "Keep your trucks rolling. Verified, compliant work routed to your fleet — with load events captured automatically by GPS, no driver app required.",
+  title: "For Haulers & Fleet Admins | SoilTracker",
+  description: "Keep your trucks rolling. Verified, compliant work routed to your fleet with load events captured automatically by GPS, no driver app required.",
 };
 
 export default function Haulers() {
@@ -21,7 +21,7 @@ export default function Haulers() {
               <div className={`st-sub-caps ${styles.eyebrow}`}>FOR HAULING FLEETS & OWNER-OPERATORS</div>
               <h1 className="st-h1">Keep your trucks rolling. Prove every load without lifting a finger.</h1>
               <p className="st-body1" style={{ color: "rgba(255,255,255,0.85)", margin: "20px 0 32px", fontSize: 18, lineHeight: 1.6 }}>
-                Get matched to nearby high-volume hauls and dispatch from one board instead of the phone. Every pickup and drop-off is captured automatically by GPS — no app for your drivers to learn, and a verified record behind every invoice you send.
+                Get matched to nearby high-volume hauls and dispatch from one board instead of the phone. Every pickup and drop-off is captured automatically by GPS with no app for your drivers to learn, and a verified record behind every invoice you send.
               </p>
               <div className={styles.heroCtas}>
                 <Link href="/get-started" className={`${styles.buttonPrimaryLeaf} st-button-txt`}>
@@ -58,7 +58,7 @@ export default function Haulers() {
               </div>
               <div className={styles.confirmationRow}>
                 <i className="ri-shield-check-fill"></i>
-                Haul #482 delivered — verified digital custody complete
+                Haul #482 delivered with verified digital custody complete
               </div>
             </div>
           </div>
@@ -125,13 +125,13 @@ export default function Haulers() {
               </div>
               <h2 className="st-h2">No app for your drivers. The truck reports itself.</h2>
               <p className="st-body1" style={{ margin: "16px 0 24px", color: "var(--st-ink-700)" }}>
-                Compliance shouldn&apos;t depend on whether a driver remembered to tap a button. Load events are captured by GPS and geofencing — either through a tracker we supply or an API link to the fleet software you already run — so the record is complete whether or not anyone thinks about it.
+                Compliance shouldn&apos;t depend on whether a driver remembered to tap a button. Load events are captured by GPS and geofencing (either through a tracker we supply or an API link to the fleet software you already run) so the record is complete whether or not anyone thinks about it.
               </p>
               <ul className={styles.checkList}>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Plug-and-play trackers, or Geotab and Samsara integration</span></li>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Geofenced pickup and drop-off timestamps, logged automatically</span></li>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Receiving-site operator confirms daily loads to close the chain</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Nothing to install on a driver&apos;s phone — dispatchers run the board</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Nothing to install on a driver&apos;s phone because dispatchers run the board</span></li>
               </ul>
             </div>
           </div>

@@ -16,11 +16,11 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Contractors & Excavators",
       icon: "ri-truck-line",
       headline: "Stop losing money to lost tickets and disputed invoices.",
-      body: "Every load logged automatically as your trucks cross each site boundary. Every invoice backed by a GPS-verified record nobody can argue with. Month-end reconciliation goes from days to minutes — and the exposure from a missing paper trail goes to zero.",
+      body: "Every load logged automatically as your trucks cross each site boundary. Every invoice backed by a GPS-verified record nobody can argue with. Month-end reconciliation goes from days to minutes, and the exposure from a missing paper trail goes to zero.",
       bullets: [
         {
           title: "Automatic Load Capture",
-          desc: "GPS and geofencing log every pickup and drop-off — no driver app, no paper triplicates, no end-of-day data entry.",
+          desc: "GPS and geofencing log every pickup and drop-off with no driver app, no paper triplicates, and no end-of-day data entry.",
         },
         {
           title: "Dispatcher-Run Scheduling",
@@ -46,7 +46,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Environmental Professionals & Consultants",
       icon: "ri-flask-line",
       headline: "Your professional sign-off, defensible for years.",
-      body: "When your name is on the filing, it's on it long after the trucks are gone. SoilTracker preserves the full custody record behind every project — sampling, characterization, movements, receiving confirmation — so the file you'd need in an audit already exists, organized, the day the job closes.",
+      body: "When your name is on the filing, it's on it long after the trucks are gone. SoilTracker preserves the full custody record behind every project (sampling, characterization, movements, receiving confirmation) so the file you'd need in an audit already exists, organized, the day the job closes.",
       bullets: [
         {
           title: "Spec & Standard Matching",
@@ -76,7 +76,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Receiving Sites, Pits & Facilities",
       icon: "ri-building-4-line",
       headline: "One bad load can turn your land into a contaminated site.",
-      body: "In most North American jurisdictions, liability for contaminated fill follows the land — meaning the receiver carries it even when the generator caused it. SoilTracker screens every inbound load against your site's standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
+      body: "In most North American jurisdictions, liability for contaminated fill follows the land, meaning the receiver carries it even when the generator caused it. SoilTracker screens every inbound load against your site's standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
       bullets: [
         {
           title: "Spec-Sheet Due Diligence",
@@ -109,7 +109,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Contractors & Generators",
       icon: "ri-truck-line",
       headline: "Stop losing money to lost tickets and disputed invoices.",
-      body: "Every load logged automatically as your trucks cross each site boundary. Every invoice backed by a GPS-verified record nobody can argue with. And every movement automatically reconciled against the volumes declared on your SRNF — so you're never over your notified maximum without knowing it.",
+      body: "Every load logged automatically as your trucks cross each site boundary. Every invoice backed by a GPS-verified record nobody can argue with. And every movement automatically reconciled against the volumes declared on your SRNF, so you're never over your notified maximum without knowing it.",
       bullets: [
         {
           title: "Automatic Load Capture",
@@ -139,7 +139,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Qualified Professionals (QPs)",
       icon: "ri-microscope-line",
       headline: "Your SRNF signature, defensible for years.",
-      body: "When you file a Soil Relocation Notification, your name is on it long after the trucks are gone. SoilTracker preserves the full custody record behind every notification — the Sample and Analysis Plan, Protocol 19 characterization, every movement, every receiving confirmation — organized and export-ready from the day the job closes. Protocol 19 requires SAPs retained for ten years. Yours will be one click away for all of them.",
+      body: "When you file a Soil Relocation Notification, your name is on it long after the trucks are gone. SoilTracker preserves the full custody record behind every notification (the Sample and Analysis Plan, Protocol 19 characterization, every movement, and every receiving confirmation) organized and export-ready from the day the job closes. Protocol 19 requires SAPs retained for ten years. Yours will be one click away for all of them.",
       bullets: [
         {
           title: "Protocol 19-Aligned Records",
@@ -151,7 +151,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
         },
         {
           title: "One-Click Audit Packages",
-          desc: "Regulator-ready exports covering the full SRNF paper trail — SAP, characterization, movements, and receiving confirmations.",
+          desc: "Regulator-ready exports covering the full SRNF paper trail, including SAP, characterization, movements, and receiving confirmations.",
         },
       ],
       proofBadge: "10-Year retention ready · Protocol 19 Compliant",
@@ -169,7 +169,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Fill Sites & HVRS Operators",
       icon: "ri-landscape-line",
       headline: "One bad load can turn your land into a contaminated site.",
-      body: "Under BC's Environmental Management Act, contaminated site liability is absolute and retroactive — the receiver carries it even when the generator caused it. SoilTracker screens every inbound load against your site's CSR Schedule 3.1 land-use standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
+      body: "Under BC's Environmental Management Act, contaminated site liability is absolute and retroactive, meaning the receiver carries it even when the generator caused it. SoilTracker screens every inbound load against your site's CSR Schedule 3.1 land-use standards before a truck is ever dispatched, so non-compliant material is rejected on the platform, not discovered on your property.",
       bullets: [
         {
           title: "CSR Standards Gatekeeping",
@@ -177,7 +177,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
         },
         {
           title: "HVRS Threshold Tracking",
-          desc: "Automatic lifetime volume tallies with warnings as you approach the 20,000 m³ registration threshold — no surprise registrations, no accidental violations.",
+          desc: "Automatic lifetime volume tallies with warnings as you approach the 20,000 m³ registration threshold, preventing surprise registrations and accidental violations.",
         },
         {
           title: "ALR-Aware Workflows",

@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Spec-Matched Soil Exchange — SoilTracker",
+  title: "Spec-Matched Soil Exchange | SoilTracker",
   description: "Find clean fill. Move surplus. Zero material wasted. The spec-matched soil exchange with custody verification attached to every trade.",
 };
 
@@ -23,7 +23,7 @@ export default function Marketplace() {
               </div>
               <h1 className="st-h1">Your surplus is someone else&apos;s structural fill.</h1>
               <p>
-                The earthworks exchange where you search and filter excess soil by classification, volume, and hauling distance — with custody verification attached to every trade.
+                The earthworks exchange where you search and filter excess soil by classification, volume, and hauling distance, with custody verification attached to every trade.
               </p>
               <div className={styles.heroActions}>
                 <Link href="/get-started" className={`${styles.buttonPrimaryDark} st-button-txt`}>

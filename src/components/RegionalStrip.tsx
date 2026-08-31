@@ -24,7 +24,7 @@ export default function RegionalStrip() {
       if (!res.ok) throw new Error("Request failed");
       setSubmitted(true);
     } catch {
-      setError("Couldn't join the waitlist right now — please try again.");
+      setError("Couldn't join the waitlist right now. Please try again.");
     } finally {
       setSubmitting(false);
     }

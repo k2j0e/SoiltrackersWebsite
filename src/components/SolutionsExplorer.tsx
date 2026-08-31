@@ -12,20 +12,20 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
 
   const tabs = [
     {
-      id: "cab-app",
-      tag: "THE CAB APP",
-      title: "2-Tap Driver Ticketing",
-      desc: "Built for work gloves and glare. Drivers tap once at source pickup, tap once at drop-off. Zero paper triplicates, zero lost tickets.",
-      icon: "ri-smartphone-line",
-      previewType: "phone",
-      badgeText: "Cab-Ready Interface",
+      id: "ticketing",
+      tag: "DIGITAL TICKETING",
+      title: "Automated Field Ticketing",
+      desc: "Instant digital tickets generated at the scale house or field gate. Zero paper triplicates, zero lost tickets, and zero invoice disputes.",
+      icon: "ri-ticket-line",
+      previewType: "ticket",
+      badgeText: "Instant Digital Record",
       statusLabel: "GPS Geofence: Active",
-      screenTitle: "Haul #ST-482",
-      screenSite: "Excavation Site A → Surrey Receiving",
+      screenTitle: "E-Ticket #ST-482",
+      screenSite: "Excavation Site A to Surrey Receiving",
       screenVolume: "28.4 MT (18.2 m³)",
-      step1: "Pickup Confirmed (08:14 AM)",
-      step2: "En Route · Turn-by-Turn Active",
-      btnLabel: "Tap to Confirm Drop-off",
+      step1: "Pickup Logged (08:14 AM)",
+      step2: "En Route with GPS Tracking",
+      btnLabel: "Download Digital Manifest",
     },
     {
       id: "dispatch",
@@ -38,10 +38,10 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
       statusLabel: "14 Active Trucks Tracked",
       screenTitle: "Fleet Dispatch Board",
       screenSite: "Metro Region Operations",
-      screenVolume: "148 Loads Today · 4,200 m³ Moved",
+      screenVolume: "148 Loads Today (4,200 m³ Moved)",
       step1: "Geofenced Site Check-ins: 100%",
       step2: "Cycle Time Optimization: +22%",
-      btnLabel: "Reconcile Invoices (0 Disputes)",
+      btnLabel: "Reconcile Invoices with Zero Disputes",
     },
     {
       id: "qp-engine",
@@ -55,7 +55,7 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
       badgeText: "Audit-Ready Ledger",
       statusLabel: mode === "bc" ? "SRNF #2026-0842 Bound" : "Lab Analytics Verified",
       screenTitle: mode === "bc" ? "Protocol 19 Compliance Package" : "Environmental Custody Ledger",
-      screenSite: "Source Site A · Lab File #ENV-9802",
+      screenSite: "Source Site A (Lab File #ENV-9802)",
       screenVolume: "240 m³ Clean Fill Approved",
       step1: "Chemical Testing: CSR Standards Met",
       step2: "Tamper-Evident SHA-256 Hash Generated",
@@ -93,7 +93,7 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
           Explore the operating system in action.
         </h2>
         <p className={styles.headerSubtext}>
-          Click through each pillar to see how SoilTracker eliminates paper trails across the field, cab, office, and lab.
+          Click through each pillar to see how SoilTracker eliminates paper trails across the field, office, and lab.
         </p>
       </div>
 
@@ -154,7 +154,7 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
 
               {/* Dynamic UI Render Based on Type */}
               <div className={styles.visualMockArea}>
-                {current.previewType === "phone" && (
+                {current.previewType === "ticket" && (
                   <div className={styles.phoneMockUI}>
                     <div className={styles.mapTrackWidget}>
                       <div className={styles.mapRoadLine}>
@@ -178,7 +178,7 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
                       </div>
                       <div className={styles.boardCol}>
                         <span className={styles.colHeader}>En Route (7)</span>
-                        <div className={styles.boardTruckItemHighlight}><span>Truck #501</span> <span>Hwy 1 · GPS Active</span></div>
+                        <div className={styles.boardTruckItemHighlight}><span>Truck #501</span> <span>Hwy 1 (GPS Active)</span></div>
                         <div className={styles.boardTruckItem}><span>Truck #512</span> <span>Port Mann</span></div>
                       </div>
                       <div className={styles.boardCol}>

@@ -45,7 +45,7 @@ export default function Home() {
                 </h1>
 
               <p className={styles.heroSubtitle}>
-                Regulators across North America are done accepting paper trails for soil movement. SoilTracker gives generators, receivers, and environmental professionals one verified chain of custody — from excavation to final placement — with the compliance record built automatically as the soil moves.
+                Regulators across North America are done accepting paper trails for soil movement. SoilTracker gives generators, receivers, and environmental professionals one verified chain of custody from excavation to final placement, with the compliance record built automatically as the soil moves.
               </p>
 
               <div className={styles.heroCtas}>
@@ -59,7 +59,7 @@ export default function Home() {
 
               <p className={styles.heroTrustLine}>
                 <i className="ri-shield-check-fill" style={{ color: "var(--st-logo-leaf)", marginRight: 6 }}></i>
-                Built by a BC team putting its own soil transfer facility through permitting right now — inside the strictest soil regime in North America.
+                Built by a BC team putting its own soil transfer facility through permitting right now, inside the strictest soil regime in North America.
               </p>
               </div>
 
@@ -67,7 +67,7 @@ export default function Home() {
                 <MapAnimation />
                 <span className={styles.heroVisualBadge}>
                   <i className="ri-route-line" style={{ color: "var(--st-brand-primary)" }}></i>
-                  From dig to drop-off — one unbroken chain
+                  From dig to drop-off with one unbroken chain
                 </span>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function Home() {
                 The paper trail era is ending everywhere.
               </h2>
               <p className={styles.urgencyBody}>
-                British Columbia now mandates digital soil tracking. Ontario requires registry filings for excess soil. Municipal fill bylaws across North America are tightening every year — and liability for contaminated fill lands on whoever received it, often retroactively.
+                British Columbia now mandates digital soil tracking. Ontario requires registry filings for excess soil. Municipal fill bylaws across North America are tightening every year, and liability for contaminated fill lands on whoever received it, often retroactively.
               </p>
               <p className={styles.urgencyHighlight}>
                 The jurisdictions differ. The direction doesn&apos;t.
@@ -120,9 +120,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ===================================================================
-            SECTION 3 — THE 3-WAY PERSONA SWITCHER
-        =================================================================== */}
+        {/* SECTION 3: THE 3-WAY PERSONA SWITCHER */}
         <section className={styles.personaSection}>
           <div className={styles.personaHeader}>
             <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
@@ -135,16 +133,12 @@ export default function Home() {
           <PersonaSwitcher mode="north-america" />
         </section>
 
-        {/* ===================================================================
-            SECTION 4 — THE SOLUTIONS EXPLORER (VERTICAL TABS + LIVE UI PREVIEW)
-        =================================================================== */}
+        {/* SECTION 4: THE SOLUTIONS EXPLORER */}
         <section className={styles.solutionsSection}>
           <SolutionsExplorer mode="north-america" />
         </section>
 
-        {/* ===================================================================
-            SECTION 5 — THE INTERACTIVE CHAIN OF CUSTODY INSPECTOR (WIDGET)
-        =================================================================== */}
+        {/* SECTION 5: THE INTERACTIVE CHAIN OF CUSTODY INSPECTOR */}
         <section id="custody-inspector" className={styles.inspectorSection}>
           <div className={styles.inspectorInner}>
             <div className={styles.inspectorHeading}>
@@ -166,9 +160,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ===================================================================
-            SECTION 5 — BUILT BY OPERATORS (THE FACILITY TRUST SECTION)
-        =================================================================== */}
+        {/* SECTION 5: BUILT BY OPERATORS (THE FACILITY TRUST SECTION) */}
         <section className={styles.facilitySection}>
           <div className={styles.facilityInner}>
             <div className={styles.facilityContent}>
@@ -179,7 +171,7 @@ export default function Home() {
                 Built inside the industry, not outside it.
               </h2>
               <p className={styles.facilityLead}>
-                SoilTracker isn&apos;t a software company guessing at how soil moves. We&apos;re developing our own hydrovac slurry processing and soil transfer facility in Coquitlam — working through the same planning, permitting, and regulatory gauntlet every operator on this platform knows first-hand.
+                SoilTracker isn&apos;t a software company guessing at how soil moves. We&apos;re developing our own hydrovac slurry processing and soil transfer facility in Coquitlam, working through the same planning, permitting, and regulatory gauntlet every operator on this platform knows first-hand.
               </p>
               <p className={styles.facilitySub}>
                 The platform exists because we need it ourselves.
@@ -193,7 +185,7 @@ export default function Home() {
                 </div>
                 <h3 className={styles.facilityCardTitle}>Skin in the game</h3>
                 <p className={styles.facilityCardDesc}>
-                  Our own transfer and processing facility in development in Coquitlam — we&apos;re betting on this industry, not just selling to it.
+                  Our own transfer and processing facility in development in Coquitlam. We&apos;re betting on this industry, not just selling to it.
                 </p>
               </div>
 
@@ -213,7 +205,7 @@ export default function Home() {
                 </div>
                 <h3 className={styles.facilityCardTitle}>Operator workflows</h3>
                 <p className={styles.facilityCardDesc}>
-                  Every workflow on the platform is designed around how soil actually moves — sites, permits, scales, and manifests.
+                  Every workflow on the platform is designed around how soil actually moves, including sites, permits, scales, and manifests.
                 </p>
               </div>
             </div>
@@ -233,7 +225,7 @@ export default function Home() {
             </div>
 
             <div className={styles.doorsGrid}>
-              {/* Left Card — The Management Platform (PRIMARY) */}
+              {/* Left Card: The Management Platform (PRIMARY) */}
               <div className={`${styles.doorCard} ${styles.doorPlatformPrimary}`}>
                 <div className={styles.doorEyebrow}>THE COMPLIANCE & DISPATCH PLATFORM</div>
                 <h3 className={styles.doorTitle}>
@@ -246,7 +238,7 @@ export default function Home() {
                   </li>
                   <li>
                     <i className="ri-check-line"></i>
-                    <span>GPS and geofencing log every load automatically — no driver app required.</span>
+                    <span>GPS and geofencing log every load automatically with no driver app required.</span>
                   </li>
                   <li>
                     <i className="ri-check-line"></i>
@@ -258,7 +250,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Right Card — The Verified Soil Exchange */}
+              {/* Right Card: The Verified Soil Exchange */}
               <div className={`${styles.doorCard} ${styles.doorExchangeSecondary}`}>
                 <div className={styles.doorEyebrow} style={{ color: "var(--st-ink-700)" }}>
                   SPEC-MATCHED EXCHANGE
@@ -273,7 +265,7 @@ export default function Home() {
                   </li>
                   <li>
                     <i className="ri-check-line" style={{ color: "var(--st-brand-primary)" }}></i>
-                    <span>Every match starts with characterization data — not a stranger&apos;s word.</span>
+                    <span>Every match starts with verified characterization data, never a stranger&apos;s word.</span>
                   </li>
                   <li>
                     <i className="ri-check-line" style={{ color: "var(--st-brand-primary)" }}></i>
@@ -288,9 +280,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ===================================================================
-            SECTION 7 — CATEGORY COMPARISON (NO COMPETITORS NAMED)
-        =================================================================== */}
+        {/* SECTION 7: CATEGORY COMPARISON */}
         <section className={styles.comparisonSection}>
           <div className={styles.comparisonInner}>
             <div className={styles.comparisonHeader}>
@@ -316,7 +306,7 @@ export default function Home() {
               <div className={styles.compCard}>
                 <div className={styles.compType}>Tracking-Only Apps</div>
                 <p className={styles.compDesc}>
-                  Log the truck, but can&apos;t tell you where the soil should go — and leave you to source or place material on your own.
+                  Log the truck, but cannot tell you where the soil should go, leaving you to source or place material on your own.
                 </p>
                 <div className={styles.compStatusMid}>
                   <i className="ri-alert-line"></i> No Material Sourcing
@@ -347,21 +337,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ===================================================================
-            SECTION 8 — REGIONAL COMPLIANCE STRIP
-        =================================================================== */}
+        {/* SECTION 8: REGIONAL COMPLIANCE STRIP */}
         <RegionalStrip />
 
-        {/* ===================================================================
-            SECTION 9 — FINAL CTA BLOCK
-        =================================================================== */}
+        {/* SECTION 9: FINAL CTA BLOCK */}
         <section className={styles.finalCtaSection}>
           <div className={styles.finalCtaInner}>
             <h2 className="st-h1" style={{ color: "#ffffff", maxWidth: 800, margin: "0 auto 20px" }}>
               The next load you move should prove itself.
             </h2>
             <p className={styles.finalCtaBody}>
-              Founding member access is open now. Fifteen minutes with the founder — no demo theater, no sales sequence — and you&apos;ll know whether SoilTracker fits your operation.
+              Founding member access is open now. Fifteen minutes with the founder (no demo theater, no sales sequence) and you&apos;ll know whether SoilTracker fits your operation.
             </p>
 
             <div className={styles.finalCtaButtons}>

@@ -51,7 +51,7 @@ export default function GetStarted() {
               The next load you move should prove itself.
             </h1>
             <p className={styles.leadText}>
-              Founding member access is open now. Fifteen minutes with the founder — no demo theater, no sales sequence — and you&apos;ll know whether SoilTracker fits your operation.
+              Founding member access is open now. Fifteen minutes with the founder (no demo theater, no sales sequence) and you&apos;ll know whether SoilTracker fits your operation.
             </p>
 
             {submitted ? (

@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Compliance & Dispatch Platform — SoilTracker",
+  title: "The Compliance & Dispatch Platform | SoilTracker",
   description: "One platform. Five seats at the table. Zero blind spots. Keep every project, permit, and haul in one verified record.",
 };
 
@@ -104,7 +104,7 @@ export default function Platform() {
               <ul className={styles.checkList}>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Each load a custody event with source, truck, destination, timestamp</span></li>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span>GPS and geofence departure & arrival verification</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Digital tickets generated instantly — zero paper loss</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span>Digital tickets generated instantly with zero paper loss</span></li>
               </ul>
             </div>
             <div className={`${styles.featureImage} ${styles.featureImageDispatch}`}>
@@ -167,7 +167,7 @@ export default function Platform() {
             <div className={styles.seatCard} id="drivers">
               <i className="ri-user-star-line"></i>
               <h3 className="st-h4">Drivers</h3>
-              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Nothing to install or learn — the truck&apos;s GPS logs every load automatically.</p>
+              <p className="st-body2" style={{color: "var(--st-ink-600)", marginTop: 8}}>Nothing to install or learn as the truck&apos;s GPS logs every load automatically.</p>
             </div>
             <div className={styles.seatCard} id="facilities">
               <i className="ri-map-pin-2-line"></i>
