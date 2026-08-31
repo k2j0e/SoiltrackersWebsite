@@ -1,5 +1,5 @@
-.contrastWrapper {
-  max-width: 1120px;
+.sectionWrapper {
+  max-width: 1140px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -7,216 +7,119 @@
 
 .header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
-.subtext {
-  font-size: 17px;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 620px;
-  margin: 0 auto;
-  line-height: 1.6;
+.graphicContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.cardsGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: stretch;
+.glowBackdrop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(19, 156, 85, 0.18) 0%, rgba(5, 25, 20, 0) 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.imageFrame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: var(--st-radius-2xl);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(19, 156, 85, 0.2);
+  background: #03140f;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+}
+
+.imageFrame:hover {
+  border-color: rgba(170, 221, 102, 0.4);
+  transform: translateY(-2px);
+}
+
+.graphicImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 /* ==========================================================================
-   CONVENTIONAL PAPER CARD (CRISP HIGH CONTRAST)
+   MINIMALIST BADGE BAR
    ========================================================================== */
-.paperCard {
-  background: #ffffff;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  border-radius: var(--st-radius-2xl);
-  padding: 36px 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.badgeBar {
   position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.paperCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
-}
-
-.cardHeader {
+  z-index: 2;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #f1f5f9;
-}
-
-.statusBadgeBad {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #fee2e2;
-  border: 1px solid #fca5a5;
-  color: #b91c1c;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 5px 14px;
+  width: 100%;
+  max-width: 680px;
+  margin-top: 24px;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--st-radius-pill);
+  backdrop-filter: blur(12px);
 }
 
-.cardMeta {
+.badgeLeft,
+.badgeRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 13px;
-  color: #64748b;
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-.pointsList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.badgeLeft {
+  color: #f87171;
 }
 
-.pointItemBad {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
+.badgeRight {
+  color: var(--st-logo-leaf);
 }
 
-.pointItemBad i {
-  color: #dc2626;
-  font-size: 22px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.pointItemBad strong {
-  display: block;
+.badgeCenter {
+  color: rgba(255, 255, 255, 0.4);
   font-size: 16px;
-  color: #0f172a;
-  margin-bottom: 3px;
-  font-weight: 700;
 }
 
-.pointItemBad p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #475569;
-  margin: 0;
+.dotRed {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
 }
 
-.paperFooter {
-  padding-top: 16px;
-  border-top: 1px solid #f1f5f9;
+.dotGreen {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--st-logo-leaf);
+  box-shadow: 0 0 10px rgba(170, 221, 102, 0.5);
 }
 
-.footerAlert {
-  font-size: 13px;
-  color: #b91c1c;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #fff1f2;
-  padding: 6px 14px;
-  border-radius: var(--st-radius-pill);
-  border: 1px solid #fecdd3;
-}
-
-/* ==========================================================================
-   SOILTRACKER DIGITAL CARD (ELEVATED EMERALD HERO)
-   ========================================================================== */
-.digitalCard {
-  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
-  border: 2px solid #139c55;
-  border-radius: var(--st-radius-2xl);
-  padding: 36px 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(19, 156, 85, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.digitalCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 28px 56px rgba(19, 156, 85, 0.25), 0 0 0 2px #139c55;
-}
-
-.statusBadgeGood {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #139c55;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 5px 14px;
-  border-radius: var(--st-radius-pill);
-  box-shadow: 0 2px 8px rgba(19, 156, 85, 0.3);
-}
-
-.cardMetaGood {
-  font-size: 13px;
-  color: #15803d;
-  font-weight: 700;
-}
-
-.pointItemGood {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-
-.pointItemGood i {
-  color: #139c55;
-  font-size: 22px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.pointItemGood strong {
-  display: block;
-  font-size: 16px;
-  color: #052e16;
-  margin-bottom: 3px;
-  font-weight: 700;
-}
-
-.pointItemGood p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #1e293b;
-  margin: 0;
-}
-
-.digitalFooter {
-  padding-top: 16px;
-  border-top: 1px solid #dcfce7;
-}
-
-.footerSuccess {
-  font-size: 13px;
-  color: #15803d;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #dcfce7;
-  padding: 6px 14px;
-  border-radius: var(--st-radius-pill);
-  border: 1px solid #bbf7d0;
-}
-
-@media (max-width: 800px) {
-  .cardsGrid {
-    grid-template-columns: 1fr;
+@media (max-width: 640px) {
+  .badgeBar {
+    flex-direction: column;
+    gap: 8px;
+    border-radius: var(--st-radius-lg);
+    padding: 12px 16px;
+  }
+  .badgeCenter {
+    display: none;
   }
 }
