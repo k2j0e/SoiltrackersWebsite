@@ -169,11 +169,65 @@ export default function CustodyInspector({
               <p className={styles.detailsText}>{step.details}</p>
 
               <div className={styles.tagStrip}>
-                {step.tags.map((tag, tIdx) => (
-                  <span key={tIdx} className={styles.tag}>
-                    {tag}
-                  </span>
-                ))}
+                {step.tags.map((tag, tIdx) => {
+                  const t = tag.toLowerCase();
+                  let tagClass = styles.tagDefault;
+                  let icon = "ri-price-tag-3-line";
+
+                  if (
+                    t.includes("volume") ||
+                    t.includes("weight") ||
+                    t.includes("tally") ||
+                    t.includes("intake") ||
+                    t.includes("240 m³") ||
+                    t.includes("28.4 mt")
+                  ) {
+                    tagClass = styles.tagVolume;
+                    icon = "ri-scales-3-line";
+                  } else if (
+                    t.includes("lab") ||
+                    t.includes("protocol") ||
+                    t.includes("csr") ||
+                    t.includes("sap") ||
+                    t.includes("characterization")
+                  ) {
+                    tagClass = styles.tagLab;
+                    icon = "ri-flask-line";
+                  } else if (
+                    t.includes("pre-approved") ||
+                    t.includes("verified") ||
+                    t.includes("sign-off") ||
+                    t.includes("active") ||
+                    t.includes("audit") ||
+                    t.includes("complete") ||
+                    t.includes("ready") ||
+                    t.includes("qp")
+                  ) {
+                    tagClass = styles.tagStatus;
+                    icon = "ri-checkbox-circle-fill";
+                  } else if (
+                    t.includes("truck") ||
+                    t.includes("fleet") ||
+                    t.includes("hauler")
+                  ) {
+                    tagClass = styles.tagFleet;
+                    icon = "ri-truck-line";
+                  } else if (
+                    t.includes("srnf") ||
+                    t.includes("license") ||
+                    t.includes("schedule")
+                  ) {
+                    tagClass = styles.tagCompliance;
+                    icon = "ri-shield-check-line";
+                  }
+
+                  return (
+                    <span key={tIdx} className={`${styles.tag} ${tagClass}`}>
+                      <i className={icon} style={{ marginRight: 5 }}></i>
+                      <span>{tag}</span>
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </div>

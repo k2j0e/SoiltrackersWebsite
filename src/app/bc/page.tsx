@@ -93,10 +93,10 @@ export default function BCPage() {
         <section id="bc-custody-inspector" className={styles.inspectorSection}>
           <div className={styles.inspectorInner}>
             <div className={styles.inspectorHeading}>
-              <div className="st-sub-caps" style={{ color: "var(--st-logo-leaf)", marginBottom: 12 }}>
+              <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
                 REAL TIME PROOF OF WORK
               </div>
-              <h2 className="st-h2" style={{ color: "#ffffff", maxWidth: 720, margin: "0 auto 16px" }}>
+              <h2 className="st-h2" style={{ color: "var(--st-ink-900)", maxWidth: 720, margin: "0 auto 16px" }}>
                 What an unbroken chain of custody actually looks like.
               </h2>
               <p className={styles.inspectorSubtext}>

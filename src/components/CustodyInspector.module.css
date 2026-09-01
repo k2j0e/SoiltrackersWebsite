@@ -1,11 +1,10 @@
 .inspectorContainer {
-  background: #08261e;
-  background: linear-gradient(145deg, #0a2e24 0%, #061f18 100%);
-  border: 1px solid rgba(170, 221, 102, 0.2);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: var(--st-radius-2xl);
   padding: 36px;
-  color: var(--st-surface);
-  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  color: var(--st-ink-900);
+  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
   text-align: left;
@@ -18,7 +17,7 @@
   right: 0;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(19, 156, 85, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(19, 156, 85, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -26,7 +25,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #f1f5f9;
   padding-bottom: 24px;
   margin-bottom: 32px;
   flex-wrap: wrap;
@@ -44,43 +43,44 @@
   align-items: center;
   gap: 8px;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--st-logo-leaf);
+  color: #047857;
 }
 
 .pulseDot {
   width: 8px;
   height: 8px;
-  background: var(--st-logo-leaf);
+  background: #10b981;
   border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(170, 221, 102, 0.6);
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
   animation: pulseLedger 2s infinite;
 }
 
 @keyframes pulseLedger {
-  0% { box-shadow: 0 0 0 0 rgba(170, 221, 102, 0.6); }
-  70% { box-shadow: 0 0 0 8px rgba(170, 221, 102, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(170, 221, 102, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
 .manifestId {
   font-size: 20px;
-  font-weight: 700;
-  color: var(--st-surface);
+  font-weight: 800;
+  color: #0f172a;
   margin: 0;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: -0.01em;
 }
 
 .statusPill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(19, 156, 85, 0.2);
-  border: 1px solid rgba(19, 156, 85, 0.4);
-  color: var(--st-logo-leaf);
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 6px 14px;
   border-radius: var(--st-radius-pill);
 }
@@ -110,9 +110,9 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.8);
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  color: #64748b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,32 +124,33 @@
 .stepItem:hover .iconCircle,
 .stepItem.activeStep .iconCircle {
   background: var(--st-brand-primary);
-  border-color: var(--st-logo-leaf);
-  color: var(--st-logo-leaf);
-  box-shadow: 0 0 20px rgba(19, 156, 85, 0.4);
+  border-color: var(--st-brand-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(19, 156, 85, 0.35);
   transform: scale(1.08);
 }
 
 .connectingLine {
   width: 2px;
   flex: 1;
-  background: rgba(255, 255, 255, 0.12);
+  background: #e2e8f0;
   margin: 6px 0;
 }
 
 .stepCard {
   flex: 1;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: var(--st-radius-xl);
-  padding: 20px 24px;
+  padding: 22px 26px;
   transition: all 0.3s ease;
 }
 
 .stepItem:hover .stepCard,
 .stepItem.activeStep .stepCard {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(170, 221, 102, 0.3);
+  background: #ffffff;
+  border-color: var(--st-brand-primary);
+  box-shadow: 0 12px 32px rgba(19, 156, 85, 0.12), 0 0 0 1px var(--st-brand-primary);
   transform: translateX(4px);
 }
 
@@ -165,38 +166,38 @@
 .timeTag {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 12px;
-  color: var(--st-logo-leaf);
-  font-weight: 600;
+  color: #059669;
+  font-weight: 700;
 }
 
 .badge {
   font-size: 11px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.1);
-  padding: 3px 10px;
+  font-weight: 700;
+  color: #334155;
+  background: #e2e8f0;
+  padding: 4px 12px;
   border-radius: var(--st-radius-pill);
 }
 
 .stepTitle {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--st-surface);
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
   margin: 0 0 4px;
 }
 
 .siteName {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #047857;
   margin: 0 0 10px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .detailsText {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.5;
-  margin: 0 0 14px;
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0 0 16px;
 }
 
 .tagStrip {
@@ -205,19 +206,76 @@
   gap: 8px;
 }
 
+/* ==========================================================================
+   COLOR-CODED TAG PILLS (LIGHT THEME)
+   ========================================================================== */
 .tag {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.75);
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 3px 8px;
-  border-radius: 4px;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: var(--st-radius-pill);
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.15s ease;
 }
 
+.tag:hover {
+  transform: translateY(-1px);
+}
+
+/* 1. Lab Characterization & Testing (Sky/Blue) */
+.tagLab {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+/* 2. Volume & Quantities (Amber/Gold) */
+.tagVolume {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #b45309;
+  font-weight: 700;
+}
+
+/* 3. Pre-Approved / Status / Verification (Emerald/Green) */
+.tagStatus {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
+  font-weight: 700;
+}
+
+/* 4. Fleet & Trucks (Purple/Violet) */
+.tagFleet {
+  background: #faf5ff;
+  border: 1px solid #e9d5ff;
+  color: #7e22ce;
+  font-weight: 700;
+}
+
+/* 5. Compliance & Permits (Teal/Cyan) */
+.tagCompliance {
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  color: #0f766e;
+  font-weight: 700;
+}
+
+.tagDefault {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   FOOTER AREA
+   ========================================================================== */
 .inspectorFooter {
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #f1f5f9;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -229,13 +287,14 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
 }
 
 .certButton {
-  background: var(--st-logo-leaf);
-  color: var(--st-brand-primary-dark);
+  background: var(--st-brand-primary);
+  color: #ffffff;
   border: none;
   padding: 12px 24px;
   border-radius: var(--st-radius-pill);
@@ -246,13 +305,13 @@
   gap: 8px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 14px rgba(170, 221, 102, 0.25);
+  box-shadow: 0 4px 14px rgba(1, 53, 40, 0.2);
 }
 
 .certButton:hover {
-  background: #c3eb85;
+  background: #01241c;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(170, 221, 102, 0.35);
+  box-shadow: 0 8px 22px rgba(1, 53, 40, 0.3);
 }
 
 @media (max-width: 768px) {

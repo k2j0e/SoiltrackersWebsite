@@ -196,10 +196,12 @@
    SECTION 5 — INSPECTOR SECTION
    ========================================================================== */
 .inspectorSection {
-  background: #07261e;
+  background: #f4f6f4;
   padding: 120px var(--st-space-6);
   text-align: center;
   position: relative;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .inspectorInner {
@@ -213,9 +215,10 @@
 
 .inspectorSubtext {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--st-ink-700);
   max-width: 680px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 /* ==========================================================================
