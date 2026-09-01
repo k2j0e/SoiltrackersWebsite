@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import HaulerEfficiencyCorridor from "@/components/HaulerEfficiencyCorridor";
 import styles from "./page.module.css";
 import type { Metadata } from "next";
 
@@ -398,117 +399,9 @@ export default function Haulers() {
           </div>
         </section>
 
-        {/* Realistic Hauler Efficiency & Value Section */}
-        <section className={styles.savingsSection}>
-          <div className={styles.savingsInner}>
-            <div className={styles.savingsHeader}>
-              <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 8 }}>
-                THE FLEET EFFICIENCY ADVANTAGE
-              </div>
-              <h2 className="st-h2">Faster billing. Zero disputed loads. More profitable miles.</h2>
-              <p className="st-body1" style={{ color: "var(--st-ink-700)", margin: "16px auto 0", maxWidth: 720 }}>
-                See how automated geofenced load capture eliminates month-end paperwork, protects your billed hours, and accelerates payment cycles across your fleet.
-              </p>
-            </div>
-
-            <div className={styles.savingsGrid}>
-              {/* Card 1: Conventional Paper Fleet */}
-              <div className={`${styles.savingsCard} ${styles.savingsCardWaste}`}>
-                <div className={styles.savingsCardTitle} style={{ color: "rgb(220, 38, 38)" }}>
-                  The Paper Drag
-                </div>
-                <div className={styles.savingsAmount} style={{ color: "var(--st-ink-900)", fontSize: 28, lineHeight: 1.2 }}>
-                  Manual Friction &amp; 60-Day Pay
-                </div>
-                <div className={styles.savingsSubtitle} style={{ color: "var(--st-ink-500)" }}>
-                  Typical operational headaches of paper triplicate slips
-                </div>
-                <ul className={styles.savingsList}>
-                  <li className={styles.savingsListItem}>
-                    <span>Month-End Reconciliation</span>
-                    <strong style={{ color: "rgb(220, 38, 38)" }}>15+ hours hunting down slips</strong>
-                  </li>
-                  <li className={styles.savingsListItem}>
-                    <span>Disputed Loads</span>
-                    <strong>1-2 loads per job disputed by GCs</strong>
-                  </li>
-                  <li className={styles.savingsListItem}>
-                    <span>Payment Wait Time</span>
-                    <strong style={{ color: "rgb(220, 38, 38)" }}>45-60 days while slips verified</strong>
-                  </li>
-                  <li className={styles.savingsListItem}>
-                    <span>Deadhead Return Trips</span>
-                    <strong>30%+ miles run empty</strong>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Card 2: SoilTracker Telematics */}
-              <div className={`${styles.savingsCard} ${styles.savingsCardExchange}`}>
-                <div className={styles.savingsCardTitle} style={{ color: "var(--st-brand-primary)" }}>
-                  The Closed-Loop Fleet
-                </div>
-                <div className={styles.savingsAmount} style={{ color: "var(--st-ink-900)", fontSize: 28, lineHeight: 1.2 }}>
-                  Instant Billing &amp; Active Corridors
-                </div>
-                <div className={styles.savingsSubtitle} style={{ color: "var(--st-ink-500)" }}>
-                  Automated telematics from pad to receiving gate
-                </div>
-                <ul className={styles.savingsList}>
-                  <li className={styles.savingsListItem}>
-                    <span>Month-End Reconciliation</span>
-                    <strong style={{ color: "var(--st-success)" }}>Under 15 minutes (1 click)</strong>
-                  </li>
-                  <li className={styles.savingsListItem}>
-                    <span>Disputed Loads</span>
-                    <strong style={{ color: "var(--st-success)" }}>0 unbacked loads (GPS verified)</strong>
-                  </li>
-                  <li className={styles.savingsListItem}>
-                    <span>Payment Approval</span>
-                    <strong style={{ color: "var(--st-success)" }}>14-30 days (Instant digital proof)</strong>
-                  </li>
-                  <li className={styles.savingsListItem}>
-                    <span>Return Route Matching</span>
-                    <strong>Live surplus &amp; aggregate discovery</strong>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Card 3: Net Fleet Value */}
-              <div className={`${styles.savingsCard} ${styles.savingsCardHero}`}>
-                <div className={styles.savingsCardTitle} style={{ color: "var(--st-accent-sand)" }}>
-                  Total Fleet Gains
-                </div>
-                <div className={styles.savingsAmount} style={{ color: "#ffffff", fontSize: 28, lineHeight: 1.2 }}>
-                  Faster Cash &amp; Less Overhead
-                </div>
-                <div className={styles.savingsSubtitle} style={{ color: "rgba(255,255,255,0.85)" }}>
-                  Operational impact across a typical 15-truck fleet
-                </div>
-                <ul className={styles.savingsList}>
-                  <li className={styles.savingsListItem}>
-                    <span>Admin Labor Reclaimed</span>
-                    <strong style={{ color: "var(--st-accent-sand)" }}>~180 office hours saved / yr</strong>
-                  </li>
-                  <li className={styles.savingsListItem}>
-                    <span>Dispute Protection</span>
-                    <strong style={{ color: "var(--st-accent-sand)" }}>100% loads backed by GPS</strong>
-                  </li>
-                  <li className={styles.savingsListItem}>
-                    <span>Driver Cab Distraction</span>
-                    <strong>Zero Apps (100% passive)</strong>
-                  </li>
-                  <li className={styles.savingsListItem}>
-                    <span>Payment Velocity</span>
-                    <strong style={{ color: "var(--st-accent-sand)" }}>Invoices out Day 1; paid faster</strong>
-                  </li>
-                </ul>
-                <Link href="/get-started" className={`${styles.buttonPrimaryLeaf} st-button-txt`} style={{ marginTop: "auto", background: "#ffffff", color: "var(--st-brand-primary-dark)", textAlign: "center", justifyContent: "center" }}>
-                  Put Your Fleet on the Network →
-                </Link>
-              </div>
-            </div>
-          </div>
+        {/* Interactive Hauler Fleet Efficiency Corridor */}
+        <section className={styles.efficiencySection} id="efficiency">
+          <HaulerEfficiencyCorridor />
         </section>
 
         {/* Rapid 3-Step Onboarding & Hardware Integration */}

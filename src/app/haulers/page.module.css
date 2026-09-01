@@ -319,6 +319,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--st-space-8);
+  position: relative;
 }
 
 .valueCard {
@@ -365,6 +366,8 @@
    ========================================================================== */
 .driverApp {
   background: linear-gradient(180deg, #edf3ef 0%, #f4f7f5 100%);
+  background-image: radial-gradient(rgba(18, 91, 73, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
   padding: 128px var(--st-space-6);
   border-top: 1px solid rgba(18, 91, 73, 0.08);
   border-bottom: 1px solid rgba(18, 91, 73, 0.08);
@@ -537,6 +540,8 @@
 .fleetAdmins {
   padding: 120px var(--st-space-6);
   background: #ffffff;
+  background-image: radial-gradient(rgba(18, 91, 73, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
 }
 
 .fleetAdminsInner {
@@ -789,99 +794,16 @@
 }
 
 /* ==========================================================================
-   THE FLEET EFFICIENCY ADVANTAGE (SECTION 5)
+   THE FLEET EFFICIENCY ADVANTAGE (SECTION 5 - Interactive Corridor)
    ========================================================================== */
-.savingsSection {
-  padding: 120px var(--st-space-6);
-  background: #f4f7f5;
+.efficiencySection {
+  padding: 128px 0 120px;
+  background: linear-gradient(180deg, #edf3ef 0%, #f4f7f5 100%);
+  background-image: radial-gradient(rgba(18, 91, 73, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
   border-top: 1px solid rgba(18, 91, 73, 0.08);
-}
-
-.savingsInner {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.savingsHeader {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.savingsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.savingsCard {
-  background: #ffffff;
-  border: 1px solid #dce4de;
-  border-radius: var(--st-radius-2xl);
-  padding: 36px 30px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 16px rgba(18, 91, 73, 0.04);
-}
-
-.savingsCardWaste {
-  border-top: 4px solid rgb(220, 38, 38);
-}
-
-.savingsCardExchange {
-  border-top: 4px solid var(--st-brand-primary);
-}
-
-.savingsCardHero {
-  background: linear-gradient(145deg, var(--st-brand-primary-dark) 0%, rgb(11, 77, 60) 100%);
-  color: #ffffff;
-  border: 1px solid var(--st-brand-primary);
-  box-shadow: 0 20px 48px -12px rgba(1, 53, 40, 0.35);
-}
-
-.savingsCardTitle {
-  font-size: 13px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 12px;
-}
-
-.savingsAmount {
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 6px;
-}
-
-.savingsSubtitle {
-  font-size: 13px;
-  margin-bottom: 24px;
-}
-
-.savingsList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  padding-top: 16px;
-}
-
-.savingsCardHero .savingsList {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.savingsListItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  color: var(--st-ink-700);
-}
-
-.savingsCardHero .savingsListItem {
-  color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(18, 91, 73, 0.08);
+  position: relative;
 }
 
 /* ==========================================================================
@@ -889,6 +811,8 @@
    ========================================================================== */
 .joiningBand {
   background: #ffffff;
+  background-image: radial-gradient(rgba(18, 91, 73, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
   color: var(--st-ink-900);
   padding: 128px var(--st-space-6);
   position: relative;
