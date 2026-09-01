@@ -90,13 +90,13 @@ export default function Platform() {
                   <div className={styles.cmdTableRow}>
                     <span style={{ fontWeight: 600 }}>#4187 · 14:42</span>
                     <span>Westcoast Aggregate · #BC-228</span>
-                    <span>14.2 m³ (28.4t scale verified)</span>
+                    <span>14.2 m³ (Tri-Drive Capacity)</span>
                     <span className={styles.cmdSealedBadge}>✓ Sealed &amp; Delivered</span>
                   </div>
                   <div className={styles.cmdTableRow}>
                     <span style={{ fontWeight: 600 }}>#4188 · 14:48</span>
                     <span>Lions Gate Earth · #LG-104</span>
-                    <span>15.8 m³ (31.6t scale verified)</span>
+                    <span>15.8 m³ (Transfer Capacity)</span>
                     <span className={styles.cmdTransitBadge}>● In Transit (Corridor Verified)</span>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ export default function Platform() {
             <div className={styles.featureContent}>
               <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)" }}>ZERO-TOUCH FLEET TELEMATICS</div>
               <h2 className="st-h2">Zero driver distraction. 100% automated GPS &amp; geofencing.</h2>
-              <p className="st-body1">Drivers never have to download an app, tap a screen, or fiddle with phones in the cab. On-truck telematics and virtual geofences detect when a truck enters the excavation pad, capture certified scale weights, monitor transit corridors, and seal delivery at the receiving gate automatically.</p>
+              <p className="st-body1">Drivers never have to download an app, tap a screen, or fiddle with phones in the cab. On-truck telematics and virtual geofences detect when a truck enters the excavation pad, track load departure volumes, monitor transit corridors, and seal delivery at the receiving gate automatically.</p>
               <ul className={styles.checkList}>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span><strong>Zero driver apps:</strong> No phone handling, no typing, no distraction in the cab</span></li>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span><strong>Virtual geofencing:</strong> Automated pickup and delivery logging at pads and gates</span></li>
@@ -197,8 +197,8 @@ export default function Platform() {
                   <div className={styles.geofenceStep}>
                     <div className={styles.geofenceStepNum}>02</div>
                     <div>
-                      <div className={styles.geofenceStepTitle}>Certified Scale Slip Synced · 13:20 PT</div>
-                      <div className={styles.geofenceStepDesc}>Weigh-in auto-recorded: Gross 42.1t, Tare 13.7t (Net 28.4t / 14.2 m³ Clean Fill).</div>
+                      <div className={styles.geofenceStepTitle}>Load Departure Confirmed · 13:20 PT</div>
+                      <div className={styles.geofenceStepDesc}>Excavation load recorded: Tri-drive capacity ~14.2 m³ Clean Fill bound to SRNF record.</div>
                     </div>
                   </div>
                   <div className={styles.geofenceStep}>
@@ -231,7 +231,7 @@ export default function Platform() {
               <ul className={styles.checkList}>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span><strong>Cryptographic hash seal:</strong> SHA-256 tamper-evident integrity for every load</span></li>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span><strong>3-party automated record:</strong> Generator, transporter telematics, and receiver gate</span></li>
-                <li className={styles.checkItem}><i className="ri-check-line"></i> <span><strong>Scale &amp; photo attachment:</strong> Objective digital proof permanently bound to the ticket</span></li>
+                <li className={styles.checkItem}><i className="ri-check-line"></i> <span><strong>Photo &amp; load verification:</strong> Objective digital proof permanently bound to the ticket</span></li>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span><strong>Defensible exports:</strong> Instant regulatory-grade PDF summaries and signed-JSON packages</span></li>
               </ul>
             </div>
@@ -251,7 +251,7 @@ export default function Platform() {
                   <div className={styles.manifestItem}><span>Source Site</span>Brentwood Pad 2 (PID 007-249-322)</div>
                   <div className={styles.manifestItem}><span>Destination</span>Lehigh Fraser Valley Pit</div>
                   <div className={styles.manifestItem}><span>Material Spec</span>Clean Fill · Commercial (CL)</div>
-                  <div className={styles.manifestItem}><span>Certified Volume</span>14.2 m³ (28.4 tonnes)</div>
+                  <div className={styles.manifestItem}><span>Estimated Volume</span>14.2 m³ (Tri-Drive)</div>
                   <div className={styles.manifestItem}><span>Hauler &amp; Unit</span>Westcoast Aggregate · Unit #228</div>
                   <div className={styles.manifestItem}><span>Audit Status</span>3 of 3 Checkpoints Verified</div>
                 </div>

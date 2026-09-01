@@ -15,7 +15,7 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
       id: "ticketing",
       tag: "DIGITAL TICKETING",
       title: "Automated Field Ticketing",
-      desc: "Instant digital tickets generated at the scale house or field gate. Zero paper triplicates, zero lost tickets, and zero invoice disputes.",
+      desc: "Instant digital tickets generated at the project gate or excavation pad. Zero paper triplicates, zero lost tickets, and zero invoice disputes.",
       icon: "ri-ticket-line",
       previewType: "ticket",
       badgeText: "Instant Digital Record",

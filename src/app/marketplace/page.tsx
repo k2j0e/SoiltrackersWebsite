@@ -183,7 +183,7 @@ export default function Marketplace() {
                 </div>
                 <div className={styles.listingFooter}>
                   <span className={styles.dispatchTag}>
-                    <i className="ri-shield-check-line"></i> Certified scale on-site
+                    <i className="ri-shield-check-line"></i> Verified intake gate on-site
                   </span>
                   <Link href="/get-started" className={styles.listingCta}>
                     Claim Window →
@@ -366,7 +366,7 @@ export default function Marketplace() {
             <div className={styles.matchingCard}>
               <i className="ri-truck-line"></i>
               <h3 className="st-h4">Zero-Touch Telematics Hauling</h3>
-              <p>Dispatch trucks with zero driver app distraction. Virtual geofences, automated scale slips, and transit corridors log every load seamlessly.</p>
+              <p>Dispatch trucks with zero driver app distraction. Virtual geofences, automated departure logs, and transit corridors log every load seamlessly.</p>
             </div>
           </div>
         </section>

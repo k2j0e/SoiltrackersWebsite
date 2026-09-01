@@ -20,7 +20,7 @@ export default function Haulers() {
             <div className={styles.heroContent}>
               <div className={`st-sub-caps ${styles.eyebrow}`}>FOR HAULING FLEETS &amp; OWNER-OPERATORS</div>
               <h1 className="st-h1">Keep your trucks rolling. Prove every load without lifting a finger.</h1>
-              <p className="st-body1" style={{ color: "rgba(255,255,255,0.88)", margin: "20px 0 32px", fontSize: 18, lineHeight: 1.6 }}>
+              <p className="st-body1" style={{ color: "var(--st-ink-700)", margin: "20px 0 32px", fontSize: 18, lineHeight: 1.6 }}>
                 Get matched to nearby high-volume civil earthworks hauls and dispatch from one central board. Every pickup and drop-off is captured automatically by GPS and geofencing with zero apps for your drivers to learn, and tamper-evident proof of work behind every invoice you send.
               </p>
               <div className={styles.heroCtas}>
@@ -50,12 +50,12 @@ export default function Haulers() {
               <div className={styles.financialStrip}>
                 <div className={styles.financialItem}>
                   <span className={styles.financialLabel}>Today&apos;s Verified Hauls</span>
-                  <strong className={styles.financialValue}>42 Loads (1,180 MT)</strong>
+                  <strong className={styles.financialValue}>42 Loads (~630 m³)</strong>
                 </div>
                 <div className={styles.financialDivider}></div>
                 <div className={styles.financialItem}>
                   <span className={styles.financialLabel}>Approved for Billing</span>
-                  <strong className={styles.financialValue} style={{ color: "var(--st-logo-leaf)" }}>$14,820.00 (100%)</strong>
+                  <strong className={styles.financialValue} style={{ color: "var(--st-brand-primary)" }}>$14,820.00 (100%)</strong>
                 </div>
               </div>
 
@@ -66,17 +66,17 @@ export default function Haulers() {
                   <div className={styles.unitTop}>
                     <div className={styles.unitIdentity}>
                       <span className={styles.unitBadge}>Unit #BC-208</span>
-                      <span className={styles.unitClass}>Tri-Drive (28.4 MT Net)</span>
+                      <span className={styles.unitClass}>Tri-Drive (~15 m³ Capacity)</span>
                     </div>
                     <span className={styles.statusApproved}>✓ Approved for Billing</span>
                   </div>
                   <div className={styles.unitRoute}>
                     <span>Brentwood Pad 2</span>
-                    <i className="ri-arrow-right-line" style={{ color: "var(--st-logo-leaf)" }}></i>
+                    <i className="ri-arrow-right-line" style={{ color: "var(--st-brand-primary)" }}></i>
                     <span>Lehigh Receiving Pit</span>
                   </div>
                   <div className={styles.unitFooter}>
-                    <span><i className="ri-scales-3-line"></i> Certified Scale: 42.1t gross / 13.7t tare</span>
+                    <span><i className="ri-road-map-line"></i> Geofence Departure Verified · Clean Fill</span>
                     <span className={styles.timestampTag}>Auto-Geofenced 13:58 PT</span>
                   </div>
                 </div>
@@ -86,17 +86,17 @@ export default function Haulers() {
                   <div className={styles.unitTop}>
                     <div className={styles.unitIdentity}>
                       <span className={styles.unitBadge}>Unit #BC-114</span>
-                      <span className={styles.unitClass}>Truck &amp; Transfer (34.2 MT Net)</span>
+                      <span className={styles.unitClass}>Truck &amp; Transfer (~22 m³ Capacity)</span>
                     </div>
                     <span className={styles.statusTransit}>● Hwy 1 Corridor (GPS Active)</span>
                   </div>
                   <div className={styles.unitRoute}>
                     <span>Coquitlam Pipeline</span>
-                    <i className="ri-arrow-right-line" style={{ color: "#38bdf8" }}></i>
+                    <i className="ri-arrow-right-line" style={{ color: "#0284c7" }}></i>
                     <span>Surrey Campbell Heights</span>
                   </div>
                   <div className={styles.unitFooter}>
-                    <span><i className="ri-compass-3-line"></i> Speed: 84 km/h · Zero Detour Deviation</span>
+                    <span><i className="ri-compass-3-line"></i> Speed: 84 km/h · Transit Corridor Active</span>
                     <span className={styles.timestampTag}>ETA 12 mins</span>
                   </div>
                 </div>
@@ -106,13 +106,13 @@ export default function Haulers() {
                   <div className={styles.unitTop}>
                     <div className={styles.unitIdentity}>
                       <span className={styles.unitBadge}>Unit #BC-305</span>
-                      <span className={styles.unitClass}>Tandem (16.8 MT Net)</span>
+                      <span className={styles.unitClass}>Tandem (~10 m³ Capacity)</span>
                     </div>
                     <span className={styles.statusBackhaul}>⇄ Return Backhaul Matched</span>
                   </div>
                   <div className={styles.unitRoute}>
                     <span>Delta Farmland</span>
-                    <i className="ri-arrow-right-line" style={{ color: "var(--st-accent-sand)" }}></i>
+                    <i className="ri-arrow-right-line" style={{ color: "var(--st-brand-primary)" }}></i>
                     <span>Burnaby Cut &amp; Fill</span>
                   </div>
                   <div className={styles.unitFooter}>
@@ -123,8 +123,8 @@ export default function Haulers() {
               </div>
 
               <div className={styles.consoleFooter}>
-                <i className="ri-shield-check-fill" style={{ color: "var(--st-logo-leaf)" }}></i>
-                <span>All loads backed by tamper-evident GPS &amp; certified scale data. Zero paper tickets needed.</span>
+                <i className="ri-shield-check-fill" style={{ color: "var(--st-brand-primary)" }}></i>
+                <span>All loads backed by tamper-evident GPS geofences and load counts. Zero paper tickets needed.</span>
               </div>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function Haulers() {
               Billed in 5 minutes. Paid weeks faster.
             </h3>
             <p className="st-body2" style={{ color: "var(--st-ink-600)", lineHeight: 1.6 }}>
-              Stop wasting days sorting through water-logged triplicate tickets at month-end. Invoices generate with GPS timestamps, route corridors, and certified scale weights attached. GCs approve bills without dispute.
+              Stop wasting days sorting through water-logged triplicate tickets at month-end. Invoices generate with GPS timestamps, route corridors, and verified load events attached. GCs approve bills without dispute.
             </p>
           </div>
 
@@ -179,7 +179,7 @@ export default function Haulers() {
             <div className={styles.telematicsCard}>
               <div className={styles.telematicsHead}>
                 <div>
-                  <div className={styles.telematicsTitle}>Automated Geofence &amp; Scale Stream</div>
+                  <div className={styles.telematicsTitle}>Automated Geofence &amp; Load Stream</div>
                   <div className={styles.telematicsSub}>Unit #BC-208 · Brentwood Excavation ➔ Lehigh Receiving Pit</div>
                 </div>
                 <span className={styles.telematicsPill}>100% Automated Telematics</span>
@@ -203,11 +203,11 @@ export default function Haulers() {
                   <div className={styles.stepIndicator}>02</div>
                   <div className={styles.stepContent}>
                     <div className={styles.stepTitleRow}>
-                      <span className={styles.stepTitle}>Certified Scale Weight Synced</span>
+                      <span className={styles.stepTitle}>Load Departure &amp; Volume Logged</span>
                       <span className={styles.stepTime}>07:22 PT</span>
                     </div>
                     <p className={styles.stepDesc}>
-                      Certified scale gross 42.1t, tare 13.7t. Net 28.4t (14.2 m³ Clean Fill) digitally sealed to ticket #4187.
+                      Load volume estimated by vehicle class (~14.2 m³ Clean Fill) and bound to digital manifest ticket #4187.
                     </p>
                   </div>
                 </div>
@@ -240,7 +240,7 @@ export default function Haulers() {
               </div>
 
               <div className={styles.telematicsFoot}>
-                <i className="ri-cpu-line" style={{ color: "var(--st-logo-leaf)", fontSize: 18 }}></i>
+                <i className="ri-cpu-line" style={{ color: "var(--st-brand-primary)", fontSize: 18 }}></i>
                 <span>Hardware Agnostic: Syncs via Geotab API, Samsara API, or SoilTracker OBD Plug-and-Play Tags.</span>
               </div>
             </div>
@@ -265,7 +265,7 @@ export default function Haulers() {
                 </li>
                 <li className={styles.checkItem}>
                   <i className="ri-checkbox-circle-fill"></i>
-                  <span><strong>Automated scale integration:</strong> Weigh-in and weigh-out slips attached directly to load tickets.</span>
+                  <span><strong>Automated load logging:</strong> Every haul tracked by vehicle class and estimated volume without driver input.</span>
                 </li>
                 <li className={styles.checkItem}>
                   <i className="ri-checkbox-circle-fill"></i>
@@ -289,17 +289,17 @@ export default function Haulers() {
               </p>
             </div>
 
-            {/* High-Fidelity Dispatch Workstation */}
+            {/* High-Fidelity Dispatch Workstation (Lightened Enterprise Workstation) */}
             <div className={styles.workstationCard}>
               <div className={styles.workstationHeader}>
                 <div className={styles.workstationTitle}>
-                  <i className="ri-dashboard-3-line" style={{ color: "var(--st-logo-leaf)" }}></i>
+                  <i className="ri-dashboard-3-line" style={{ color: "var(--st-brand-primary)" }}></i>
                   <span>SoilTracker Fleet Dispatcher — Metro Vancouver Command</span>
                 </div>
                 <div className={styles.workstationStats}>
                   <span className={styles.statPill}>18 Trucks Active</span>
                   <span className={styles.statPill}>42 Loads Delivered</span>
-                  <span className={styles.statPill} style={{ background: "rgba(19, 156, 85, 0.2)", color: "var(--st-logo-leaf)" }}>
+                  <span className={styles.statPill} style={{ background: "#ecfdf5", color: "#047857", borderColor: "#a7f3d0" }}>
                     100% Invoice Backed
                   </span>
                 </div>
@@ -340,9 +340,9 @@ export default function Haulers() {
                     <div className={styles.rosterItem}>
                       <div>
                         <div className={styles.rosterUnitId}>Unit #BC-412 · Tri-Axle</div>
-                        <div className={styles.rosterSub}>Driver: Ray P. · Surrey Scale In</div>
+                        <div className={styles.rosterSub}>Driver: Ray P. · Surrey Intake Gate</div>
                       </div>
-                      <span className={styles.cycleGood}>Scale Synced</span>
+                      <span className={styles.cycleGood}>Gate Logged</span>
                     </div>
                   </div>
                 </div>
@@ -378,13 +378,13 @@ export default function Haulers() {
                   {/* Batch Invoicing Bar */}
                   <div className={styles.reconciliationBar}>
                     <div className={styles.reconciliationInfo}>
-                      <i className="ri-file-text-line" style={{ color: "var(--st-logo-leaf)", fontSize: 20 }}></i>
+                      <i className="ri-file-text-line" style={{ color: "var(--st-brand-primary)", fontSize: 20 }}></i>
                       <div>
-                        <div style={{ fontWeight: 700, color: "#ffffff", fontSize: 13 }}>
+                        <div style={{ fontWeight: 700, color: "var(--st-ink-900)", fontSize: 13 }}>
                           Batch Invoice #INV-2026-089 Prepared
                         </div>
-                        <div style={{ color: "rgba(255,255,255,0.7)", fontSize: 12 }}>
-                          42 loads · 1,180 MT verified · Zero missing slips
+                        <div style={{ color: "var(--st-ink-600)", fontSize: 12 }}>
+                          42 loads · ~630 m³ verified · Zero missing tickets
                         </div>
                       </div>
                     </div>
@@ -398,109 +398,109 @@ export default function Haulers() {
           </div>
         </section>
 
-        {/* Hauler Financial ROI & Cash Flow Comparison */}
+        {/* Realistic Hauler Efficiency & Value Section */}
         <section className={styles.savingsSection}>
           <div className={styles.savingsInner}>
             <div className={styles.savingsHeader}>
               <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 8 }}>
-                THE HAULER BOTTOM LINE
+                THE FLEET EFFICIENCY ADVANTAGE
               </div>
-              <h2 className="st-h2">Stop losing $25,000+ per year to lost paper tickets</h2>
-              <p className="st-body1" style={{ color: "var(--st-ink-700)", margin: "16px auto 0", maxWidth: 680 }}>
-                Compare conventional paper slip operations against SoilTracker automated telematics across a standard 15-truck civil earthworks fleet.
+              <h2 className="st-h2">Faster billing. Zero disputed loads. More profitable miles.</h2>
+              <p className="st-body1" style={{ color: "var(--st-ink-700)", margin: "16px auto 0", maxWidth: 720 }}>
+                See how automated geofenced load capture eliminates month-end paperwork, protects your billed hours, and accelerates payment cycles across your fleet.
               </p>
             </div>
 
             <div className={styles.savingsGrid}>
-              {/* Conventional Paper Fleet */}
+              {/* Card 1: Conventional Paper Fleet */}
               <div className={`${styles.savingsCard} ${styles.savingsCardWaste}`}>
                 <div className={styles.savingsCardTitle} style={{ color: "rgb(220, 38, 38)" }}>
-                  Traditional Paper Ticket Operation
+                  The Paper Drag
                 </div>
-                <div className={styles.savingsAmount} style={{ color: "var(--st-ink-900)" }}>
-                  -$28,400
+                <div className={styles.savingsAmount} style={{ color: "var(--st-ink-900)", fontSize: 28, lineHeight: 1.2 }}>
+                  Manual Friction &amp; 60-Day Pay
                 </div>
                 <div className={styles.savingsSubtitle} style={{ color: "var(--st-ink-500)" }}>
-                  Lost revenue &amp; administrative waste per year
+                  Typical operational headaches of paper triplicate slips
                 </div>
                 <ul className={styles.savingsList}>
                   <li className={styles.savingsListItem}>
-                    <span>Lost / Unsigned Tickets</span>
-                    <strong style={{ color: "rgb(220, 38, 38)" }}>2-3 loads/mo ($8,400 uncollected)</strong>
+                    <span>Month-End Reconciliation</span>
+                    <strong style={{ color: "rgb(220, 38, 38)" }}>15+ hours hunting down slips</strong>
                   </li>
                   <li className={styles.savingsListItem}>
-                    <span>Month-End Paper Matching</span>
-                    <strong>16 hours/mo ($9,600 admin labor)</strong>
+                    <span>Disputed Loads</span>
+                    <strong>1-2 loads per job disputed by GCs</strong>
                   </li>
                   <li className={styles.savingsListItem}>
-                    <span>Deadhead Empty Return Miles</span>
-                    <strong>34% unmonetized travel</strong>
+                    <span>Payment Wait Time</span>
+                    <strong style={{ color: "rgb(220, 38, 38)" }}>45-60 days while slips verified</strong>
                   </li>
                   <li className={styles.savingsListItem}>
-                    <span>GC Payment Settlement Lag</span>
-                    <strong style={{ color: "rgb(220, 38, 38)" }}>45-60 days (Disputed invoices)</strong>
+                    <span>Deadhead Return Trips</span>
+                    <strong>30%+ miles run empty</strong>
                   </li>
                 </ul>
               </div>
 
-              {/* SoilTracker Telematics Operation */}
+              {/* Card 2: SoilTracker Telematics */}
               <div className={`${styles.savingsCard} ${styles.savingsCardExchange}`}>
                 <div className={styles.savingsCardTitle} style={{ color: "var(--st-brand-primary)" }}>
-                  SoilTracker Telematics Network
+                  The Closed-Loop Fleet
                 </div>
-                <div className={styles.savingsAmount} style={{ color: "var(--st-ink-900)" }}>
-                  +$36,200
+                <div className={styles.savingsAmount} style={{ color: "var(--st-ink-900)", fontSize: 28, lineHeight: 1.2 }}>
+                  Instant Billing &amp; Active Corridors
                 </div>
                 <div className={styles.savingsSubtitle} style={{ color: "var(--st-ink-500)" }}>
-                  Net recovered revenue &amp; backhaul margin
+                  Automated telematics from pad to receiving gate
                 </div>
                 <ul className={styles.savingsList}>
                   <li className={styles.savingsListItem}>
-                    <span>Ticket Loss Rate</span>
-                    <strong style={{ color: "var(--st-success)" }}>0.0% (100% GPS Geofenced)</strong>
+                    <span>Month-End Reconciliation</span>
+                    <strong style={{ color: "var(--st-success)" }}>Under 15 minutes (1 click)</strong>
                   </li>
                   <li className={styles.savingsListItem}>
-                    <span>Invoice Reconciliation Time</span>
-                    <strong style={{ color: "var(--st-success)" }}>Under 5 minutes (One click)</strong>
+                    <span>Disputed Loads</span>
+                    <strong style={{ color: "var(--st-success)" }}>0 unbacked loads (GPS verified)</strong>
                   </li>
                   <li className={styles.savingsListItem}>
-                    <span>Matched Return Backhauls</span>
-                    <strong>+$18,200 annual fuel offset</strong>
+                    <span>Payment Approval</span>
+                    <strong style={{ color: "var(--st-success)" }}>14-30 days (Instant digital proof)</strong>
                   </li>
                   <li className={styles.savingsListItem}>
-                    <span>GC Payment Cycle</span>
-                    <strong style={{ color: "var(--st-success)" }}>14 days (Tamper-evident backup)</strong>
+                    <span>Return Route Matching</span>
+                    <strong>Live surplus &amp; aggregate discovery</strong>
                   </li>
                 </ul>
               </div>
 
-              {/* Net ROI Hero */}
+              {/* Card 3: Net Fleet Value */}
               <div className={`${styles.savingsCard} ${styles.savingsCardHero}`}>
                 <div className={styles.savingsCardTitle} style={{ color: "var(--st-accent-sand)" }}>
-                  Net Fleet Value Created
+                  Total Fleet Gains
                 </div>
-                <div className={styles.savingsAmount} style={{ color: "#ffffff" }}>
-                  +$64,600
+                <div className={styles.savingsAmount} style={{ color: "#ffffff", fontSize: 28, lineHeight: 1.2 }}>
+                  Faster Cash &amp; Less Overhead
                 </div>
                 <div className={styles.savingsSubtitle} style={{ color: "rgba(255,255,255,0.85)" }}>
-                  Per 15-truck fleet in recovered loads &amp; saved diesel
+                  Operational impact across a typical 15-truck fleet
                 </div>
                 <ul className={styles.savingsList}>
                   <li className={styles.savingsListItem}>
-                    <span>100% Billable Load Capture</span>
-                    <strong style={{ color: "var(--st-accent-sand)" }}>+$8,400 unbilled loads saved</strong>
+                    <span>Admin Labor Reclaimed</span>
+                    <strong style={{ color: "var(--st-accent-sand)" }}>~180 office hours saved / yr</strong>
                   </li>
                   <li className={styles.savingsListItem}>
-                    <span>Driver Cab Interaction</span>
-                    <strong style={{ color: "var(--st-accent-sand)" }}>Zero Apps (100% passive)</strong>
+                    <span>Dispute Protection</span>
+                    <strong style={{ color: "var(--st-accent-sand)" }}>100% loads backed by GPS</strong>
                   </li>
                   <li className={styles.savingsListItem}>
-                    <span>Admin Payroll Reclaimed</span>
-                    <strong>192 hours/year saved</strong>
+                    <span>Driver Cab Distraction</span>
+                    <strong>Zero Apps (100% passive)</strong>
                   </li>
                   <li className={styles.savingsListItem}>
-                    <span>Contractor Confidence</span>
-                    <strong>Top-tier GC dispatch preference</strong>
+                    <span>Payment Velocity</span>
+                    <strong style={{ color: "var(--st-accent-sand)" }}>Invoices out Day 1; paid faster</strong>
                   </li>
                 </ul>
                 <Link href="/get-started" className={`${styles.buttonPrimaryLeaf} st-button-txt`} style={{ marginTop: "auto", background: "#ffffff", color: "var(--st-brand-primary-dark)", textAlign: "center", justifyContent: "center" }}>
@@ -514,38 +514,38 @@ export default function Haulers() {
         {/* Rapid 3-Step Onboarding & Hardware Integration */}
         <section className={styles.joiningBand}>
           <div className={styles.joiningInner}>
-            <div className="st-sub-caps" style={{ color: "var(--st-logo-leaf)", marginBottom: 8, textAlign: "center" }}>
+            <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 8, textAlign: "center" }}>
               FAST ONBOARDING
             </div>
-            <h2 className="st-h2" style={{ textAlign: "center", color: "#ffffff", marginBottom: 16 }}>
+            <h2 className="st-h2" style={{ textAlign: "center", color: "var(--st-ink-900)", marginBottom: 16 }}>
               Onboarding your fleet takes an afternoon
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.75)", textAlign: "center", maxWidth: 640, margin: "0 auto 48px", fontSize: 16 }}>
+            <p style={{ color: "var(--st-ink-700)", textAlign: "center", maxWidth: 640, margin: "0 auto 48px", fontSize: 16 }}>
               No complex installations or driver seminars. Connect the telematics you already run or plug in our discrete hardware tags.
             </p>
 
             <div className={styles.joiningSteps}>
               <div className={styles.joiningStep}>
                 <div className={styles.joiningStepNum}>01</div>
-                <h3 className="st-h4" style={{ color: "#ffffff", marginBottom: 10 }}>Connect Your Fleet Telematics</h3>
-                <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 13, lineHeight: 1.6, margin: 0 }}>
+                <h3 className="st-h4" style={{ color: "var(--st-ink-900)", marginBottom: 10 }}>Connect Your Fleet Telematics</h3>
+                <p style={{ color: "var(--st-ink-600)", fontSize: 13, lineHeight: 1.6, margin: 0 }}>
                   Sync directly with Geotab, Samsara, or ISAAC in 2 clicks via secure API, or order pre-configured OBD GPS trackers that plug in in under 60 seconds.
                 </p>
               </div>
 
               <div className={styles.joiningStep}>
                 <div className={styles.joiningStepNum}>02</div>
-                <h3 className="st-h4" style={{ color: "#ffffff", marginBottom: 10 }}>Select Your Operating Corridors</h3>
-                <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 13, lineHeight: 1.6, margin: 0 }}>
+                <h3 className="st-h4" style={{ color: "var(--st-ink-900)", marginBottom: 10 }}>Select Your Operating Corridors</h3>
+                <p style={{ color: "var(--st-ink-600)", fontSize: 13, lineHeight: 1.6, margin: 0 }}>
                   Define your service radius across Metro Vancouver and the Fraser Valley. Receive high-volume hauls matched to where your trucks already run.
                 </p>
               </div>
 
               <div className={styles.joiningStep}>
                 <div className={styles.joiningStepNum}>03</div>
-                <h3 className="st-h4" style={{ color: "#ffffff", marginBottom: 10 }}>Haul, Reconcile &amp; Settle Fast</h3>
-                <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 13, lineHeight: 1.6, margin: 0 }}>
-                  Every trip logs automatically. Send 100% verified invoices backed by GPS and scale data, and get approved for payment in days instead of months.
+                <h3 className="st-h4" style={{ color: "var(--st-ink-900)", marginBottom: 10 }}>Haul, Reconcile &amp; Settle Fast</h3>
+                <p style={{ color: "var(--st-ink-600)", fontSize: 13, lineHeight: 1.6, margin: 0 }}>
+                  Every trip logs automatically. Send 100% verified invoices backed by GPS timestamps and load records, and get approved for payment in days instead of months.
                 </p>
               </div>
             </div>
