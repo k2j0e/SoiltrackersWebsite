@@ -46,8 +46,9 @@
 }
 
 .browserFrame {
-  max-width: 1024px;
-  height: 600px;
+  max-width: 1040px;
+  min-height: 540px;
+  height: auto;
   margin: 0 auto;
   background: var(--st-surface);
   border-top-left-radius: var(--st-radius-xl);
@@ -57,33 +58,282 @@
   border-bottom: none;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .browserHeader {
-  height: 40px;
+  height: 48px;
+  background: var(--st-ink-50);
   border-bottom: 1px solid var(--st-ink-100);
   display: flex;
   align-items: center;
-  padding: 0 var(--st-space-4);
-  gap: 8px;
+  padding: 0 var(--st-space-5);
+  gap: 12px;
+}
+
+.browserDots {
+  display: flex;
+  gap: 6px;
 }
 
 .browserDot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: var(--st-ink-150);
+  background: var(--st-ink-200);
+}
+
+.browserUrl {
+  background: var(--st-surface);
+  border: 1px solid var(--st-ink-150);
+  border-radius: var(--st-radius-sm);
+  padding: 4px 14px;
+  font-size: 12px;
+  font-family: monospace;
+  color: var(--st-ink-500);
+  flex: 1;
+  max-width: 420px;
+  text-align: left;
+}
+
+.browserLiveBadge {
+  margin-left: auto;
+  background: var(--st-success-tint);
+  color: var(--st-brand-primary-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--st-radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.browserLivePulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--st-success);
+  box-shadow: 0 0 0 3px rgba(19, 156, 85, 0.25);
+  animation: pulseLive 2s infinite;
+}
+
+@keyframes pulseLive {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(19, 156, 85, 0.5); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(19, 156, 85, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(19, 156, 85, 0); }
 }
 
 .browserContent {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--st-ink-300);
-  font-size: var(--st-fs-body2);
+  padding: 24px;
+  background: var(--st-surface);
+  text-align: left;
 }
 
+/* Command Center Inside Browser */
+.cmdCenter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.cmdHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--st-ink-50);
+  border: 1px solid var(--st-ink-100);
+  border-radius: var(--st-radius-lg);
+}
+
+.cmdProjectName {
+  font-family: var(--st-font-display);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--st-ink-900);
+}
+
+.cmdProjectMeta {
+  font-size: 12px;
+  color: var(--st-ink-500);
+  margin-top: 3px;
+}
+
+.cmdStatusPill {
+  background: var(--st-success-tint);
+  color: var(--st-brand-primary-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--st-radius-pill);
+}
+
+.cmdKpiGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cmdKpiCard {
+  background: var(--st-surface);
+  border: 1px solid var(--st-ink-100);
+  border-radius: var(--st-radius-lg);
+  padding: 18px;
+  box-shadow: var(--st-shadow-soft);
+}
+
+.cmdKpiLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--st-ink-400);
+}
+
+.cmdKpiValue {
+  font-family: var(--st-font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--st-ink-900);
+  margin: 6px 0 2px;
+}
+
+.cmdKpiSub {
+  font-size: 12px;
+  color: var(--st-brand-primary);
+  font-weight: 600;
+}
+
+.cmdRouteScene {
+  background: linear-gradient(135deg, rgb(1, 53, 40) 0%, rgb(10, 72, 58) 100%);
+  border-radius: var(--st-radius-lg);
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.cmdRouteGrid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.cmdRouteTrack {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--st-logo-leaf) 0%, var(--st-logo-leaf) 45%, var(--st-accent-sand) 100%);
+  border-radius: 4px;
+}
+
+.cmdPinSource {
+  position: absolute;
+  top: calc(50% - 36px);
+  left: 6%;
+  background: white;
+  color: var(--st-ink-900);
+  padding: 6px 14px;
+  border-radius: var(--st-radius-md);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  border: 2px solid var(--st-success);
+}
+
+.cmdPinDest {
+  position: absolute;
+  top: calc(50% - 36px);
+  right: 6%;
+  background: white;
+  color: var(--st-ink-900);
+  padding: 6px 14px;
+  border-radius: var(--st-radius-md);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  border: 2px solid var(--st-accent-sand-ink);
+}
+
+.cmdTruckMarker {
+  position: absolute;
+  top: calc(50% - 16px);
+  left: 46%;
+  background: var(--st-ink-900);
+  color: white;
+  padding: 5px 12px;
+  border-radius: var(--st-radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.cmdTable {
+  border: 1px solid var(--st-ink-100);
+  border-radius: var(--st-radius-lg);
+  overflow: hidden;
+  background: white;
+}
+
+.cmdTableRow {
+  display: grid;
+  grid-template-columns: 140px 1fr 180px 140px;
+  gap: 12px;
+  padding: 12px 18px;
+  align-items: center;
+  font-size: 13px;
+  border-top: 1px solid var(--st-ink-100);
+}
+
+.cmdTableRow:first-child {
+  border-top: none;
+  background: var(--st-ink-50);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--st-ink-400);
+}
+
+.cmdSealedBadge {
+  background: var(--st-success-tint);
+  color: var(--st-brand-primary-dark);
+  padding: 3px 10px;
+  border-radius: var(--st-radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-block;
+  text-align: center;
+}
+
+.cmdTransitBadge {
+  background: var(--st-warning-bg);
+  color: rgb(160, 90, 0);
+  padding: 3px 10px;
+  border-radius: var(--st-radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Feature Sections 2-Col Grid Layout */
 .featureSection {
   padding: 120px var(--st-space-6);
 }
@@ -109,7 +359,7 @@
 }
 
 .checkList {
-  list-style: none;
+  list-style: none !important;
   padding: 0;
   margin: var(--st-space-6) 0 0;
   display: flex;
@@ -118,292 +368,302 @@
 }
 
 .checkItem {
+  list-style: none !important;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--st-space-3);
-}
-.checkItem i {
-  color: var(--st-success);
+  font-size: var(--st-fs-body2);
+  color: var(--st-ink-700);
+  line-height: 1.5;
 }
 
+.checkItem i {
+  color: var(--st-success);
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Feature 1 Card: Compliance Matrix */
 .featureImage {
   background: linear-gradient(135deg, var(--st-brand-primary-dark) 0%, rgb(11, 77, 60) 100%);
   border-radius: var(--st-radius-2xl);
-  height: 400px;
+  min-height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   box-shadow: 0 24px 48px -12px rgba(18, 91, 73, 0.3);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-}
-.featureImage:hover {
-  transform: translateY(-8px);
+  padding: 28px;
 }
 
-/* Feature 1 Graphic */
-/* Feature 1 Graphic */
-.featureImageProject {
-}
-.docGraphic {
-  width: 280px;
-  height: 380px;
+.csrMatrixCard {
+  width: 100%;
   background: white;
-  border-radius: 12px;
+  border-radius: var(--st-radius-xl);
   box-shadow: 0 24px 48px rgba(0,0,0,0.2);
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transform: rotate(5deg) translateY(30px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-.featureImageProject:hover .docGraphic {
-  transform: rotate(0deg) translateY(0);
-}
-.docHeader {
-  font-weight: 700;
-  color: var(--st-brand-primary);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 18px;
-}
-.docLine {
-  height: 16px;
-  background: rgba(18, 91, 73, 0.05);
-  border-radius: 8px;
-}
-.docBadge {
-  position: absolute;
-  top: 40px;
-  right: -20px;
-  background: var(--st-logo-leaf);
-  color: var(--st-brand-primary-dark);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 14px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  transform: scale(0);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
-}
-.featureImageProject:hover .docBadge {
-  transform: scale(1) rotate(10deg);
-}
-
-/* Feature 2 Graphic */
-.featureImageDispatch {
-}
-.mapGraphic {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h80v80H10z' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='2'/%3E%3C/svg%3E");
-}
-.mapRoute {
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  width: 60%;
-  height: 6px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 6px;
-  transform: translateY(-50%) rotate(-10deg);
-  overflow: hidden;
-}
-.mapRouteFill {
-  height: 100%;
-  background: var(--st-logo-leaf);
-  width: 0%;
-  transition: width 1s ease-out;
-}
-.featureImageDispatch:hover .mapRouteFill {
-  width: 100%;
-}
-.mapPin {
-  position: absolute;
-  width: 56px;
-  height: 56px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  color: var(--st-brand-primary);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-.mapTruck {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 48px;
-  height: 48px;
-  background: var(--st-logo-leaf);
-  color: var(--st-brand-primary-dark);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  animation: drive 4s ease-in-out infinite alternate;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-}
-@keyframes drive {
-  0% { transform: translate(-120px, 40px); }
-  100% { transform: translate(120px, -30px); }
-}
-
-/* Feature 3 Graphic */
-.featureImageReport {
-}
-.chartGraphic {
-  width: 80%;
-  height: 60%;
-  display: flex;
-  align-items: flex-end;
-  gap: 16px;
-  padding: 0 24px;
-  border-bottom: 2px solid rgba(255,255,255,0.1);
-}
-.chartBar {
-  flex: 1;
-  background: rgba(255,255,255,0.2);
-  border-radius: 8px 8px 0 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: bottom;
-  transform: scaleY(0.5);
-}
-.featureImageReport:hover .chartBar {
-  transform: scaleY(1);
-}
-.chartBar:nth-child(3) {
-  background: var(--st-logo-leaf);
-  transform: scaleY(0.8);
-}
-.featureImageReport:hover .chartBar:nth-child(3) {
-  transform: scaleY(1.2);
-  box-shadow: 0 -12px 24px rgba(170, 221, 102, 0.3);
-}
-
-/* Dashboard Mockup */
-.dashboardGraphic {
-  width: 100%;
-  height: 100%;
-  padding: 32px;
-  display: flex;
-  gap: 32px;
-  background: var(--st-surface);
-  align-items: flex-start;
-  overflow: hidden;
-}
-
-.dashSidebar {
-  width: 200px;
-  background: rgba(18, 91, 73, 0.03);
-  border-radius: var(--st-radius-lg);
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  height: 100%;
-  border: 1px solid rgba(18, 91, 73, 0.05);
+  text-align: left;
 }
 
-.dashSkeletonBar {
-  height: 16px;
-  background: var(--st-brand-primary);
-  opacity: 0.1;
-  border-radius: 8px;
-  width: 100%;
-}
-
-.dashSkeletonBar:first-child {
-  opacity: 0.2;
-  margin-bottom: 24px;
-  height: 24px;
-}
-
-.dashMain {
-  flex: 1;
+.csrMatrixHead {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--st-ink-100);
+  padding-bottom: 12px;
 }
 
-.dashCards {
+.csrMatrixTitle {
+  font-family: var(--st-font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--st-ink-900);
+}
+
+.csrMatrixSub {
+  font-size: 11px;
+  color: var(--st-ink-400);
+  margin-top: 2px;
+}
+
+.csrSitesGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-.dashCard {
-  background: white;
+.csrSiteBox {
+  background: var(--st-ink-50);
   border: 1px solid var(--st-ink-100);
-  border-radius: var(--st-radius-xl);
-  padding: 24px;
+  border-radius: var(--st-radius-md);
+  padding: 12px;
+}
+
+.csrSiteBoxLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--st-ink-400);
+  margin-bottom: 4px;
+}
+
+.csrSiteBoxValue {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--st-ink-900);
+}
+
+.csrSiteBoxMeta {
+  font-size: 11px;
+  color: var(--st-ink-500);
+  margin-top: 2px;
+}
+
+.csrChecklist {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  box-shadow: 0 12px 24px rgba(18, 91, 73, 0.05);
-  animation: floatUp 0.8s ease-out forwards;
-  opacity: 0;
-  transform: translateY(20px);
+  gap: 8px;
 }
 
-.dashCard:nth-child(1) { animation-delay: 0.1s; }
-.dashCard:nth-child(2) { 
-  animation-delay: 0.2s; 
-  border-color: var(--st-brand-primary); 
-  box-shadow: 0 16px 32px rgba(18, 91, 73, 0.15); 
-  transform: scale(1.02); 
-}
-.dashCard:nth-child(3) { animation-delay: 0.3s; }
-
-@keyframes floatUp {
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.dashCardValue {
-  height: 48px;
-  background: var(--st-brand-primary);
-  opacity: 0.1;
-  border-radius: 8px;
-  width: 80%;
-}
-
-.dashCard:nth-child(2) .dashCardValue {
-  background: var(--st-logo-leaf);
-  opacity: 1;
-  width: 90%;
-}
-
-.dashList {
-  background: white;
-  border: 1px solid var(--st-ink-100);
-  border-radius: var(--st-radius-xl);
-  padding: 24px;
-  flex: 1;
-  box-shadow: 0 12px 24px rgba(18, 91, 73, 0.05);
+.csrCheckItem {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--st-surface);
+  border: 1px solid var(--st-ink-100);
+  border-radius: var(--st-radius-md);
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--st-ink-700);
 }
 
-.dashListItem {
-  height: 48px;
-  background: rgba(18, 91, 73, 0.03);
-  border-radius: 8px;
+.csrCheckStatus {
+  color: var(--st-success);
+  font-weight: 700;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Feature 2 Card: Automated Geofence Dispatch (Zero Driver Apps) */
+.geofenceCard {
   width: 100%;
+  background: white;
+  border-radius: var(--st-radius-xl);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.2);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.geofenceHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--st-ink-100);
+  padding-bottom: 12px;
+}
+
+.geofenceTitle {
+  font-family: var(--st-font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--st-ink-900);
+}
+
+.geofenceSub {
+  font-size: 11px;
+  color: var(--st-ink-400);
+  margin-top: 2px;
+}
+
+.geofencePillZero {
+  background: var(--st-accent-sand-tint);
+  color: var(--st-accent-sand-ink);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--st-radius-pill);
+}
+
+.geofenceTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.geofenceStep {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.geofenceStepNum {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--st-ink-50);
+  color: var(--st-brand-primary);
+  font-weight: 800;
+  font-size: 11px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid var(--st-ink-100);
+}
+
+.geofenceStepNumActive {
+  background: var(--st-brand-primary);
+  color: white;
+  border-color: var(--st-brand-primary);
+}
+
+.geofenceStepTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--st-ink-900);
+}
+
+.geofenceStepDesc {
+  font-size: 11px;
+  color: var(--st-ink-500);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* Feature 3 Card: Tamper-Evident Manifest */
+.manifestCard {
+  width: 100%;
+  background: white;
+  border-radius: var(--st-radius-xl);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.2);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.manifestHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--st-ink-100);
+  padding-bottom: 12px;
+}
+
+.manifestTitle {
+  font-family: var(--st-font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--st-ink-900);
+}
+
+.manifestSub {
+  font-size: 11px;
+  color: var(--st-ink-400);
+  margin-top: 2px;
+}
+
+.manifestHash {
+  font-family: monospace;
+  font-size: 11px;
+  background: var(--st-ink-50);
+  color: var(--st-brand-primary);
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px solid var(--st-ink-100);
+}
+
+.manifestGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.manifestItem {
+  font-size: 12px;
+  color: var(--st-ink-700);
+}
+
+.manifestItem span {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: var(--st-ink-400);
+  margin-bottom: 2px;
+}
+
+.manifestSignatures {
+  background: var(--st-ink-50);
+  border: 1px solid var(--st-ink-100);
+  border-radius: var(--st-radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.manifestExportBtn {
+  font-size: 12px;
+  color: var(--st-brand-primary);
+  font-weight: 700;
+  text-align: right;
+  cursor: pointer;
 }
 
 .seatsBand {
@@ -477,9 +737,10 @@
   margin-bottom: var(--st-space-8);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .featureInner {
     grid-template-columns: 1fr;
+    gap: var(--st-space-8);
   }
   .featureInner.reverse {
     direction: ltr;
