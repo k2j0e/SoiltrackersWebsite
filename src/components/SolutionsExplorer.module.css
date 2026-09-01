@@ -47,7 +47,7 @@
   overflow: hidden;
 }
 
-.tabCard:hover {
+.tabCard:not(.activeTabCard):hover {
   background: #fbfdfc;
   border-color: #139c55;
   transform: translateX(4px);
@@ -55,10 +55,12 @@
 }
 
 /* Active Tab: Rich Forest Emerald Hero Card */
-.activeTabCard {
-  background: linear-gradient(145deg, #072e23 0%, #031c15 100%);
-  border: 1px solid #139c55;
-  box-shadow: 0 16px 36px -6px rgba(3, 28, 21, 0.35), 0 0 0 1px rgba(170, 221, 102, 0.3);
+.activeTabCard,
+.activeTabCard:hover {
+  background: linear-gradient(145deg, #072e23 0%, #031c15 100%) !important;
+  border: 1px solid #139c55 !important;
+  box-shadow: 0 16px 36px -6px rgba(3, 28, 21, 0.35), 0 0 0 1px rgba(170, 221, 102, 0.3) !important;
+  transform: translateX(4px);
 }
 
 .activeIndicator {
@@ -92,9 +94,10 @@
   transition: all 0.3s ease;
 }
 
-.activeTabCard .tabIconBox {
-  background: #139c55;
-  color: #ffffff;
+.activeTabCard .tabIconBox,
+.activeTabCard:hover .tabIconBox {
+  background: #139c55 !important;
+  color: #ffffff !important;
   box-shadow: 0 0 14px rgba(19, 156, 85, 0.5);
 }
 
@@ -109,10 +112,11 @@
   border-radius: var(--st-radius-pill);
 }
 
-.activeTabCard .tabTag {
-  background: rgba(170, 221, 102, 0.18);
-  border: 1px solid rgba(170, 221, 102, 0.4);
-  color: #aadd66;
+.activeTabCard .tabTag,
+.activeTabCard:hover .tabTag {
+  background: rgba(170, 221, 102, 0.18) !important;
+  border: 1px solid rgba(170, 221, 102, 0.4) !important;
+  color: #aadd66 !important;
 }
 
 .tabTitle {
@@ -122,8 +126,9 @@
   margin: 0 0 8px;
 }
 
-.activeTabCard .tabTitle {
-  color: #ffffff;
+.activeTabCard .tabTitle,
+.activeTabCard:hover .tabTitle {
+  color: #ffffff !important;
 }
 
 .tabDesc {
@@ -133,8 +138,9 @@
   margin: 0;
 }
 
-.activeTabCard .tabDesc {
-  color: rgba(255, 255, 255, 0.85);
+.activeTabCard .tabDesc,
+.activeTabCard:hover .tabDesc {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* ==========================================================================
