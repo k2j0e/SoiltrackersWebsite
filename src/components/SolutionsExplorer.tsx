@@ -86,10 +86,10 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
   return (
     <div className={styles.container}>
       <div className={styles.sectionHeader}>
-        <div className="st-sub-caps" style={{ color: "var(--st-logo-leaf)", marginBottom: 12 }}>
+        <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)", marginBottom: 12 }}>
           PLATFORM SOLUTIONS EXPLORER
         </div>
-        <h2 className="st-h2" style={{ color: "#ffffff", maxWidth: 740, margin: "0 auto 16px" }}>
+        <h2 className="st-h2" style={{ color: "var(--st-ink-900)", maxWidth: 740, margin: "0 auto 16px" }}>
           Explore the operating system in action.
         </h2>
         <p className={styles.headerSubtext}>

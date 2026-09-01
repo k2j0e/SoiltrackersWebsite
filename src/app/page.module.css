@@ -175,19 +175,19 @@
    SECTION 4 — SOLUTIONS EXPLORER
    ========================================================================== */
 .solutionsSection {
-  background: #061f18;
-  background: linear-gradient(180deg, #07261e 0%, #051913 100%);
+  background: #ffffff;
   padding: 120px var(--st-space-6);
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .solutionsSection::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 32px 32px;
   pointer-events: none;
 }

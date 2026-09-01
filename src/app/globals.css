@@ -119,6 +119,10 @@ html, body {
   padding: 0;
 }
 
+section[id] {
+  scroll-margin-top: 96px;
+}
+
 h1, .st-h1 { font-family: var(--st-font-display); font-weight: 600; font-size: var(--st-fs-h1); line-height: var(--st-lh-h1); letter-spacing: -0.01em; color: var(--st-ink-900); margin: 0; }
 h2, .st-h2 { font-family: var(--st-font-display); font-weight: 500; font-size: var(--st-fs-h2); line-height: var(--st-lh-h2); color: var(--st-ink-900); margin: 0; }
 h3, .st-h3 { font-family: var(--st-font-display); font-weight: 600; font-size: var(--st-fs-h3); line-height: var(--st-lh-h3); color: var(--st-ink-900); margin: 0; }
