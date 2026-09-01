@@ -1,7 +1,7 @@
 .hero {
   background: linear-gradient(135deg, var(--st-ink-900) 0%, rgb(11, 77, 60) 100%);
   color: var(--st-surface);
-  padding: 120px var(--st-space-6);
+  padding: 128px var(--st-space-6) 112px;
   position: relative;
   overflow: hidden;
 }
@@ -14,7 +14,7 @@
   transform: translateY(-50%);
   width: 50vw;
   height: 200%;
-  background: radial-gradient(circle at left, rgba(170,221,102,0.1) 0%, transparent 60%);
+  background: radial-gradient(circle at left, rgba(170, 221, 102, 0.12) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -22,7 +22,7 @@
   max-width: 1440px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 1.15fr;
   gap: var(--st-space-12);
   align-items: center;
   position: relative;
@@ -31,342 +31,880 @@
 
 .heroContent .eyebrow {
   color: var(--st-logo-leaf);
+  margin-bottom: 12px;
 }
 
 .heroContent h1 {
   color: var(--st-surface);
-  margin: var(--st-space-4) 0 var(--st-space-8);
+  margin: 0 0 20px;
 }
 
 .heroCtas {
   display: flex;
   gap: var(--st-space-4);
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .buttonPrimaryLeaf {
   background: var(--st-logo-leaf);
   color: var(--st-brand-primary-dark);
-  padding: 17px 32px;
+  padding: 16px 32px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 14px 0 rgba(170, 221, 102, 0.3);
 }
+
 .buttonPrimaryLeaf:hover {
-  background: var(--st-success-tint);
+  background: #c3eb85;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(170, 221, 102, 0.2);
+  box-shadow: 0 8px 24px rgba(170, 221, 102, 0.4);
 }
 
 .buttonOutlineLight {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
   color: var(--st-surface);
-  padding: 17px 32px;
+  padding: 16px 32px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
+  font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .buttonOutlineLight:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
-.dispatchCard {
-  background: var(--st-glass-bg);
-  backdrop-filter: var(--st-glass-blur);
-  color: var(--st-ink-900);
-  border-radius: var(--st-radius-xl);
-  padding: var(--st-space-6);
-  box-shadow: var(--st-shadow-pop);
-  border: 1px solid var(--st-glass-border);
-  transform: perspective(1000px) rotateY(-5deg);
-  transition: transform 0.5s ease;
-}
-.dispatchCard:hover {
-  transform: perspective(1000px) rotateY(0deg) translateY(-8px);
+/* ==========================================================================
+   LIVE FLEET TELEMATICS & SETTLEMENT CONSOLE (HERO)
+   ========================================================================== */
+.dispatchConsole {
+  background: #041712;
+  border: 1px solid rgba(170, 221, 102, 0.28);
+  border-radius: var(--st-radius-2xl);
+  padding: 28px;
+  box-shadow: 0 28px 64px -12px rgba(0, 0, 0, 0.5), 0 0 36px -8px rgba(19, 156, 85, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.dispatchHeader {
+.consoleHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--st-space-6);
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
 }
 
-.dispatchHeader span {
-  background: var(--st-success-tint);
-  color: var(--st-brand-primary-dark);
-  padding: var(--st-space-1) var(--st-space-3);
+.consoleTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.livePulseGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.livePulseDot {
+  width: 8px;
+  height: 8px;
+  background: var(--st-logo-leaf);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--st-logo-leaf);
+  animation: pulseBeacon 2s infinite;
+}
+
+@keyframes pulseBeacon {
+  0% { box-shadow: 0 0 0 0 rgba(170, 221, 102, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(170, 221, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(170, 221, 102, 0); }
+}
+
+.consoleTitle {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.consoleMeta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.activeTrucksBadge {
+  background: rgba(19, 156, 85, 0.25);
+  border: 1px solid var(--st-logo-leaf);
+  color: var(--st-logo-leaf);
+  padding: 4px 12px;
   border-radius: var(--st-radius-pill);
-  font-size: var(--st-fs-caption);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Financial Strip */
+.financialStrip {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.financialItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.financialLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.financialValue {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.financialDivider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Unit Stream */
+.unitStream {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.unitCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.unitCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(170, 221, 102, 0.3);
+}
+
+.unitTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.unitIdentity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unitBadge {
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.unitClass {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.statusApproved {
+  font-size: 11px;
+  font-weight: 700;
+  color: #aadd66;
+  background: rgba(170, 221, 102, 0.15);
+  border: 1px solid rgba(170, 221, 102, 0.3);
+  padding: 2px 8px;
+  border-radius: var(--st-radius-pill);
+}
+
+.statusTransit {
+  font-size: 11px;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 2px 8px;
+  border-radius: var(--st-radius-pill);
+}
+
+.statusBackhaul {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--st-accent-sand);
+  background: rgba(215, 211, 157, 0.15);
+  border: 1px solid rgba(215, 211, 157, 0.3);
+  padding: 2px 8px;
+  border-radius: var(--st-radius-pill);
+}
+
+.unitRoute {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.unitFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 6px;
+  margin-top: 2px;
+}
+
+.timestampTag {
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 600;
 }
 
-.jobRow {
-  margin-bottom: var(--st-space-6);
-}
-
-.jobRowInfo {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: var(--st-space-2);
-  font-size: var(--st-fs-body2);
-  font-weight: 500;
-}
-
-.progressTrack {
-  height: 8px;
-  background: var(--st-accent-sand-tint);
-  border-radius: var(--st-radius-pill);
-  overflow: hidden;
-}
-
-.progressFill {
-  height: 100%;
-  background: var(--st-brand-primary);
-  border-radius: var(--st-radius-pill);
-  animation: fillProgress 1.5s ease-out forwards;
-}
-
-@keyframes fillProgress {
-  from { width: 0%; }
-}
-
-.confirmationRow {
-  padding-top: var(--st-space-4);
-  border-top: 1px solid var(--st-ink-100);
-  font-size: var(--st-fs-body3);
-  color: var(--st-brand-primary);
+.consoleFooter {
   display: flex;
   align-items: center;
-  gap: var(--st-space-2);
-  font-weight: 500;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
 }
 
+/* ==========================================================================
+   THE 3 HAULER PROFIT PILLARS
+   ========================================================================== */
 .valueProps {
-  padding: 120px var(--st-space-6);
+  padding: 112px var(--st-space-6);
   max-width: 1440px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--st-space-6);
+  gap: var(--st-space-8);
 }
 
 .valueCard {
-  background: var(--st-glass-bg);
-  backdrop-filter: var(--st-glass-blur);
-  padding: var(--st-space-8);
-  border-radius: var(--st-radius-xl);
-  border: 1px solid var(--st-glass-border);
-  box-shadow: var(--st-shadow-card);
+  background: #ffffff;
+  padding: 36px 32px;
+  border-radius: var(--st-radius-2xl);
+  border: 1px solid #dce4de;
+  box-shadow: 0 4px 16px rgba(18, 91, 73, 0.04);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.valueCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--st-shadow-card-hover);
-}
-.valueCard i {
-  font-size: 32px;
-  color: var(--st-brand-primary);
-  margin-bottom: var(--st-space-4);
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
+.valueCard:hover {
+  transform: translateY(-6px);
+  border-color: #139c55;
+  box-shadow: 0 16px 32px rgba(18, 91, 73, 0.1);
+}
+
+.valueIconBox {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #eef5f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: var(--st-brand-primary);
+  margin-bottom: 20px;
+}
+
+.valueTag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--st-brand-primary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   AUTOMATIC LOAD CAPTURE & TELEMATICS CORRIDOR TIMELINE
+   ========================================================================== */
 .driverApp {
-  background: var(--st-ink-50);
-  padding: 120px var(--st-space-6);
+  background: #edf3ef;
+  background: linear-gradient(180deg, #edf3ef 0%, #f4f7f5 100%);
+  padding: 128px var(--st-space-6);
+  border-top: 1px solid rgba(18, 91, 73, 0.08);
+  border-bottom: 1px solid rgba(18, 91, 73, 0.08);
 }
 
 .driverAppInner {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: var(--st-space-12);
   align-items: center;
 }
 
-.phoneMock {
-  width: 320px;
-  height: 640px;
-  background: linear-gradient(135deg, var(--st-brand-primary-dark) 0%, rgb(5, 40, 30) 100%);
-  border-radius: 44px;
-  margin: 0 auto;
-  border: 12px solid var(--st-ink-900);
+.telematicsCard {
+  background: #041712;
+  border: 1px solid rgba(170, 221, 102, 0.25);
+  border-radius: var(--st-radius-2xl);
+  padding: 32px;
+  color: #ffffff;
+  box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.4), 0 0 32px -8px rgba(19, 156, 85, 0.2);
   display: flex;
-  color: var(--st-ink-400);
-  box-shadow: 0 24px 48px -12px rgba(0,0,0,0.2);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.phoneMock:hover {
-  transform: translateY(-12px);
+  flex-direction: column;
+  gap: 24px;
 }
 
-.phoneScreen {
-  width: 100%;
-  height: 100%;
-  background: white;
-  border-radius: 32px;
+.telematicsHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.telematicsTitle {
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.telematicsSub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.telematicsPill {
+  background: rgba(170, 221, 102, 0.18);
+  border: 1px solid rgba(170, 221, 102, 0.35);
+  color: #aadd66;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--st-radius-pill);
+}
+
+.telematicsTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.telematicsStep {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stepIndicator {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stepIndicatorActive {
+  background: var(--st-logo-leaf);
+  color: var(--st-brand-primary-dark);
+  box-shadow: 0 0 12px var(--st-logo-leaf);
+}
+
+.stepContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stepTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stepTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stepTime {
+  font-family: monospace;
+  font-size: 11.5px;
+  color: #aadd66;
+  font-weight: 700;
+}
+
+.stepDesc {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.telematicsFoot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+}
+
+.captureExplanation h2 {
+  margin: 8px 0 16px;
+  color: var(--st-ink-900);
+}
+
+.checkList {
+  list-style: none;
+  padding: 0;
+  margin: var(--st-space-6) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-space-3);
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--st-space-3);
+  font-size: var(--st-fs-body2);
+  color: var(--st-ink-700);
+  line-height: 1.5;
+}
+
+.checkItem i {
+  color: var(--st-success);
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   FLEET COMMAND & AUTOMATED BILLING WORKSTATION
+   ========================================================================== */
+.fleetAdmins {
+  padding: 120px var(--st-space-6);
+  background: #ffffff;
+}
+
+.fleetAdminsInner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.fleetAdminsHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.workstationCard {
+  background: #041712;
+  border: 1px solid rgba(170, 221, 102, 0.28);
+  border-radius: var(--st-radius-2xl);
   overflow: hidden;
+  box-shadow: 0 28px 64px -12px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
 }
-.phoneHeader {
+
+.workstationHeader {
+  padding: 18px 24px;
+  background: rgba(0, 0, 0, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   justify-content: space-between;
-  padding: 24px 16px 16px;
-  font-weight: 600;
-  color: var(--st-ink-900);
-  border-bottom: 1px solid var(--st-ink-100);
-}
-.phoneMap {
-  flex: 1;
-  background: var(--st-ink-50);
-  position: relative;
-  overflow: hidden;
-}
-.phoneRoute {
-  position: absolute;
-  top: 20%; left: 20%;
-  width: 120%; height: 120%;
-  border-top: 4px dashed var(--st-brand-primary);
-  border-left: 4px dashed var(--st-brand-primary);
-  border-top-left-radius: 40px;
-}
-.phonePin {
-  position: absolute;
-  color: var(--st-brand-primary);
-  font-size: 24px;
-  transform: translate(-50%, -50%);
-}
-.phoneTruck {
-  position: absolute;
-  color: var(--st-logo-leaf);
-  font-size: 24px;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  animation: phoneDrive 3s infinite alternate;
-}
-@keyframes phoneDrive {
-  0% { top: 20%; left: 20%; }
-  100% { top: 80%; left: 80%; }
-}
-.phoneDetails {
-  padding: 16px;
-  background: white;
-  border-top: 1px solid var(--st-ink-100);
-  text-align: left;
-}
-.phoneButton {
-  background: var(--st-brand-primary);
-  color: white;
-  text-align: center;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-.fleetAdmins {
-  padding: 120px var(--st-space-6);
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: var(--st-space-12);
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.boardMock {
-  background: white;
-  border-radius: var(--st-radius-xl);
-  height: 400px;
-  border: 1px solid var(--st-ink-100);
+.workstationTitle {
   display: flex;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.05);
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.boardMock:hover {
-  transform: scale(1.02);
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
-.boardSidebar {
-  width: 200px;
-  background: var(--st-ink-50);
-  padding: 16px;
+.workstationStats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.statPill {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--st-radius-pill);
+}
+
+.workstationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+}
+
+.rosterCol {
+  background: rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rosterHead {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rosterList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rosterItem {
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.rosterItemActive {
+  background: rgba(19, 156, 85, 0.22);
+  border-color: rgba(170, 221, 102, 0.4);
+}
+
+.rosterUnitId {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.rosterSub {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.cycleGood {
+  font-size: 11px;
+  font-weight: 700;
+  color: #aadd66;
+  background: rgba(170, 221, 102, 0.15);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.radarCol {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.radarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.radarLivePill {
+  color: #aadd66;
+  font-size: 11px;
+  font-family: monospace;
+}
+
+.corridorRouteDisplay {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.routeWaypoint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.routeWaypoint strong {
+  display: block;
+}
+
+.routeWaypoint span {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.pointDotSource {
+  color: var(--st-logo-leaf);
+  font-size: 20px;
+}
+
+.pointDotDest {
+  color: #38bdf8;
+  font-size: 20px;
+}
+
+.routeTransitBar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  position: relative;
+}
+
+.routeTransitFill {
+  height: 100%;
+  background: linear-gradient(90deg, #139c55, #aadd66);
+  border-radius: 3px;
+  position: relative;
+}
+
+.routeTransitFill i {
+  position: absolute;
+  right: -14px;
+  top: -14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #139c55;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 12px rgba(19, 156, 85, 0.6);
+}
+
+.reconciliationBar {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.reconciliationInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.exportInvoiceBtn {
+  background: var(--st-logo-leaf);
+  color: var(--st-brand-primary-dark);
+  padding: 10px 20px;
+  border-radius: var(--st-radius-pill);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.exportInvoiceBtn:hover {
+  background: #c3eb85;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SAVINGS & ROI COMPARISON SECTION
+   ========================================================================== */
+.savingsSection {
+  padding: 120px var(--st-space-6);
+  background: #f8faf8;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.savingsInner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.savingsHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.savingsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.savingsCard {
+  background: #ffffff;
+  border: 1px solid #dce4de;
+  border-radius: var(--st-radius-2xl);
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(18, 91, 73, 0.04);
+}
+
+.savingsCardWaste {
+  border-top: 4px solid rgb(220, 38, 38);
+}
+
+.savingsCardExchange {
+  border-top: 4px solid var(--st-brand-primary);
+}
+
+.savingsCardHero {
+  background: linear-gradient(145deg, var(--st-brand-primary-dark) 0%, rgb(11, 77, 60) 100%);
+  color: #ffffff;
+  border: 1px solid var(--st-logo-leaf);
+  box-shadow: 0 20px 48px -12px rgba(1, 53, 40, 0.35);
+}
+
+.savingsCardTitle {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.savingsAmount {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.savingsSubtitle {
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.savingsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border-right: 1px solid var(--st-ink-100);
-}
-.boardItem {
-  height: 24px;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
-}
-.boardMain {
-  flex: 1;
-  position: relative;
-  background: radial-gradient(circle at center, rgba(18, 91, 73, 0.05) 0%, white 100%);
-}
-.boardMap {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.boardDot {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: var(--st-brand-primary);
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(18, 91, 73, 0.2);
-  animation: pulseDot 2s infinite;
-}
-@keyframes pulseDot {
-  0% { box-shadow: 0 0 0 0 rgba(18, 91, 73, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(18, 91, 73, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(18, 91, 73, 0); }
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 16px;
 }
 
+.savingsCardHero .savingsList {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.savingsListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--st-ink-700);
+}
+
+.savingsCardHero .savingsListItem {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================================================
+   JOINING BAND & HARDWARE INTEGRATION
+   ========================================================================== */
 .joiningBand {
   background: linear-gradient(180deg, var(--st-ink-900) 0%, rgb(5, 25, 20) 100%);
   color: var(--st-surface);
-  padding: 120px var(--st-space-6);
+  padding: 128px var(--st-space-6);
   position: relative;
   overflow: hidden;
-}
-
-.joiningBand::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(170,221,102,0.1) 0%, rgba(255,255,255,0) 60%);
-  pointer-events: none;
 }
 
 .joiningInner {
   max-width: 1200px;
   margin: 0 auto;
 }
-.joiningInner h2 {
-  color: var(--st-surface);
-  margin-bottom: var(--st-space-12);
-  text-align: center;
-}
 
 .joiningSteps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  position: relative;
+  margin-bottom: 48px;
 }
 
 .joiningStep {
@@ -375,7 +913,6 @@
   border-radius: var(--st-radius-xl);
   padding: 32px 28px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
   text-align: left;
 }
 
@@ -383,7 +920,6 @@
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(170, 221, 102, 0.35);
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.3);
 }
 
 .joiningStepNum {
@@ -401,6 +937,39 @@
   margin-bottom: 20px;
 }
 
+.hardwareBadgeStrip {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hardwareLabel {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+.hardwarePills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hardwarePill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--st-radius-pill);
+}
+
+/* CTA Panel */
 .ctaPanel {
   max-width: 800px;
   margin: 120px auto;
@@ -408,89 +977,31 @@
   padding: 0 var(--st-space-6);
 }
 
-.ctaPanel h2 {
+.ctaPanel h2,
+.ctaPanel h1 {
   margin-bottom: var(--st-space-4);
+  color: var(--st-ink-900);
 }
 
-.ctaPanel p {
-  margin-bottom: var(--st-space-8);
-}
-
-.checkList {
-  list-style: none;
-  padding: 0;
-  margin: var(--st-space-6) 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--st-space-3);
-}
-
-.checkItem {
-  display: flex;
-  align-items: center;
-  gap: var(--st-space-3);
-}
-.checkItem i {
-  color: var(--st-success);
-}
-
+/* Media Queries */
 @media (max-width: 1024px) {
-  .heroInner, .valueProps, .driverAppInner, .fleetAdmins, .joiningSteps {
+  .heroInner,
+  .driverAppInner,
+  .savingsGrid,
+  .joiningSteps {
     grid-template-columns: 1fr;
   }
-}
 
-/* Automatic capture section — replaces the retired driver-app phone mock */
-.captureMock {
-  background: linear-gradient(145deg, #0a2e24 0%, #061f18 100%);
-  border: 1px solid rgba(170, 221, 102, 0.25);
-  border-radius: var(--st-radius-xl);
-  padding: 36px;
-  color: #ffffff;
-  box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.captureRow {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 16px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-}
-.captureRow i {
-  font-size: 22px;
-  color: var(--st-logo-leaf);
-  margin-top: 2px;
-}
-.captureLabel {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--st-logo-leaf);
-  margin-bottom: 2px;
-}
-.captureText {
-  font-size: 14px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.88);
-  margin: 0;
-}
-.captureFoot {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12.5px;
-  color: rgba(255, 255, 255, 0.7);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 16px;
-}
-@media (max-width: 900px) {
-  .captureMock {
-    padding: 24px;
+  .valueProps {
+    grid-template-columns: 1fr;
+  }
+
+  .workstationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rosterCol {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 }
