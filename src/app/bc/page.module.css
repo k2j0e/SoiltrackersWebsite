@@ -192,20 +192,21 @@
    SECTION 4 — SOLUTIONS EXPLORER
    ========================================================================== */
 .solutionsSection {
-  background: #ffffff;
-  padding: 120px var(--st-space-6);
+  background: #edf3f0;
+  background: linear-gradient(180deg, #edf3ef 0%, #f4f7f5 100%);
+  padding: 128px var(--st-space-6) 120px;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid rgba(18, 91, 73, 0.08);
+  border-bottom: 1px solid rgba(18, 91, 73, 0.08);
 }
 
 .solutionsSection::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: radial-gradient(rgba(18, 91, 73, 0.08) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
   pointer-events: none;
 }
 
