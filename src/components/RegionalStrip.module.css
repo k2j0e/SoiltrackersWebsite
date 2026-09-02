@@ -237,7 +237,24 @@
 }
 
 @media (max-width: 800px) {
+  .regionalSection {
+    padding: 60px 16px;
+  }
   .cardsGrid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .card {
+    padding: 24px 20px;
+    border-radius: var(--st-radius-xl);
+  }
+  .waitlistForm {
+    flex-direction: column;
+    width: 100%;
+  }
+  .waitlistInput,
+  .waitlistBtn {
+    width: 100%;
+    box-sizing: border-box;
   }
 }

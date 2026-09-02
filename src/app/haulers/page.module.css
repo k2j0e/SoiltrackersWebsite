@@ -909,7 +909,6 @@
   color: var(--st-ink-900);
 }
 
-/* Media Queries */
 @media (max-width: 1024px) {
   .heroInner,
   .driverAppInner,
@@ -929,5 +928,55 @@
   .rosterCol {
     border-right: none;
     border-bottom: 1px solid #eef2ef;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 48px 16px 64px;
+  }
+  .heroCtas {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .buttonPrimaryLeaf,
+  .buttonOutlineLight {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 14px 20px;
+    box-sizing: border-box;
+  }
+  .financialStrip {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .financialDivider {
+    width: 100%;
+    height: 1px;
+  }
+  .corridorRouteDisplay {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .routeTransitBar {
+    width: 100%;
+  }
+  .reconciliationBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .exportInvoiceBtn {
+    width: 100%;
+    text-align: center;
+  }
+  .valueProps,
+  .driverApp,
+  .fleetAdmins,
+  .joiningBand {
+    padding: 64px 16px;
   }
 }

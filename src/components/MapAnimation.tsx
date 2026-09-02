@@ -1,6 +1,6 @@
 export default function MapAnimation() {
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+    <div style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden" }}>
       <svg
         width="100%"
         height="100%"

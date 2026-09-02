@@ -568,6 +568,9 @@
 }
 
 @media (max-width: 680px) {
+  .hero {
+    padding: 48px 16px 64px;
+  }
   .statStrip {
     grid-template-columns: 1fr;
   }
@@ -581,5 +584,8 @@
   .buttonPrimary, .buttonSecondary, .founderPrimaryBtn, .founderSecondaryBtn {
     width: 100%;
     justify-content: center;
+    text-align: center;
+    padding: 14px 20px;
+    box-sizing: border-box;
   }
 }

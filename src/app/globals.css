@@ -117,28 +117,44 @@ html, body {
   text-rendering: optimizeLegibility;
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
 }
 
 section[id] {
   scroll-margin-top: 96px;
 }
 
-h1, .st-h1 { font-family: var(--st-font-display); font-weight: 600; font-size: var(--st-fs-h1); line-height: var(--st-lh-h1); letter-spacing: -0.01em; color: var(--st-ink-900); margin: 0; }
-h2, .st-h2 { font-family: var(--st-font-display); font-weight: 500; font-size: var(--st-fs-h2); line-height: var(--st-lh-h2); color: var(--st-ink-900); margin: 0; }
-h3, .st-h3 { font-family: var(--st-font-display); font-weight: 600; font-size: var(--st-fs-h3); line-height: var(--st-lh-h3); color: var(--st-ink-900); margin: 0; }
-h4, .st-h4 { font-family: var(--st-font-display); font-weight: 500; font-size: var(--st-fs-h4); line-height: var(--st-lh-h4); color: var(--st-ink-900); margin: 0; }
+h1, .st-h1 { font-family: var(--st-font-display); font-weight: 700; font-size: clamp(28px, 4.5vw, 40px); line-height: 1.2; letter-spacing: -0.02em; color: var(--st-ink-900); margin: 0; }
+h2, .st-h2 { font-family: var(--st-font-display); font-weight: 700; font-size: clamp(23px, 3.8vw, 32px); line-height: 1.25; color: var(--st-ink-900); margin: 0; }
+h3, .st-h3 { font-family: var(--st-font-display); font-weight: 600; font-size: clamp(19px, 3vw, 24px); line-height: 1.3; color: var(--st-ink-900); margin: 0; }
+h4, .st-h4 { font-family: var(--st-font-display); font-weight: 600; font-size: clamp(17px, 2.5vw, 20px); line-height: 1.35; color: var(--st-ink-900); margin: 0; }
 
-.st-display    { font-family: var(--st-font-display); font-weight: 700; font-size: var(--st-fs-display); line-height: var(--st-lh-display); color: var(--st-ink-900); }
+.st-display    { font-family: var(--st-font-display); font-weight: 800; font-size: clamp(32px, 5vw, 46px); line-height: 1.15; color: var(--st-ink-900); }
 .st-sub1       { font-family: var(--st-font-display); font-weight: 600; font-size: var(--st-fs-sub1); line-height: var(--st-lh-sub1); }
 .st-sub2       { font-family: var(--st-font-display); font-weight: 600; font-size: var(--st-fs-sub2); line-height: var(--st-lh-sub2); }
-.st-sub-caps   { font-family: var(--st-font-display); font-weight: 500; font-size: var(--st-fs-sub2); line-height: var(--st-lh-sub2); text-transform: uppercase; letter-spacing: 0.08em; }
+.st-sub-caps   { font-family: var(--st-font-display); font-weight: 600; font-size: 11px; line-height: 16px; text-transform: uppercase; letter-spacing: 0.08em; }
 .st-sub3       { font-family: var(--st-font-display); font-weight: 500; font-size: var(--st-fs-sub3); line-height: var(--st-lh-sub3); }
 
-.st-body1      { font-family: var(--st-font-body); font-weight: 400; font-size: var(--st-fs-body1); line-height: var(--st-lh-body1); }
+.st-body1      { font-family: var(--st-font-body); font-weight: 400; font-size: clamp(16px, 2vw, 18px); line-height: 1.6; }
 .st-body2, p   { font-family: var(--st-font-body); font-weight: 400; font-size: var(--st-fs-body2); line-height: var(--st-lh-body2); margin: 0; color: var(--st-ink-500); }
 .st-body3      { font-family: var(--st-font-body); font-weight: 400; font-size: var(--st-fs-body3); line-height: var(--st-lh-body3); color: var(--st-ink-500); }
 .st-caption    { font-family: var(--st-font-body); font-weight: 500; font-size: var(--st-fs-caption); line-height: var(--st-lh-caption); color: var(--st-ink-400); }
-.st-button-txt { font-family: var(--st-font-button); font-weight: 500; font-size: var(--st-fs-button); line-height: var(--st-lh-button); letter-spacing: 0.02em; }
+.st-button-txt { font-family: var(--st-font-button); font-weight: 600; font-size: var(--st-fs-button); line-height: var(--st-lh-button); letter-spacing: 0.01em; }
+
+@media (max-width: 640px) {
+  .st-button-txt {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {

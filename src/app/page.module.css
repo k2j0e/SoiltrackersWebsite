@@ -662,6 +662,12 @@
 }
 
 @media (max-width: 680px) {
+  .hero {
+    padding: 48px 16px 64px;
+  }
+  .urgencySection, .personaSection, .comparisonSection, .facilitySection, .finalCtaSection {
+    padding: 64px 16px;
+  }
   .facilityGrid, .comparisonGrid {
     grid-template-columns: 1fr;
   }
@@ -672,6 +678,9 @@
   .buttonPrimary, .buttonSecondary, .finalPrimaryBtn, .finalSecondaryBtn {
     width: 100%;
     justify-content: center;
+    text-align: center;
+    padding: 14px 20px;
+    box-sizing: border-box;
   }
 }
 
@@ -685,9 +694,13 @@
   gap: 56px;
   align-items: center;
   text-align: left;
+  width: 100%;
+  max-width: 100%;
 }
 .heroGrid .heroContent {
   align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
 }
 .heroVisual {
   position: relative;
@@ -697,6 +710,8 @@
   border: 1px solid var(--st-ink-100);
   box-shadow: 0 24px 64px rgba(22, 38, 27, 0.14);
   background: #eef4ec;
+  width: 100%;
+  max-width: 100%;
 }
 .heroVisualBadge {
   position: absolute;
@@ -720,12 +735,23 @@
     grid-template-columns: 1fr;
     gap: 32px;
     text-align: center;
+    width: 100%;
   }
   .heroGrid .heroContent {
     align-items: center;
+    width: 100%;
   }
   .heroVisual {
-    height: 320px;
+    height: 300px;
+    width: 100%;
+  }
+}
+@media (max-width: 540px) {
+  .heroVisual {
+    height: 240px;
+  }
+  .heroVisualBadge {
+    display: none;
   }
 }
 

@@ -689,3 +689,32 @@
   }
 }
 
+@media (max-width: 640px) {
+  .hero {
+    padding: 60px 16px 80px;
+  }
+  .heroCtas {
+    flex-direction: column;
+    width: 100%;
+  }
+  .heroCtas a {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .searchMock {
+    padding: 16px;
+    border-radius: var(--st-radius-lg);
+  }
+  .matchingBand,
+  .savingsSection {
+    padding: 64px 16px;
+  }
+  .ctaPanel {
+    padding: 60px 20px;
+    margin: 60px 16px;
+    border-radius: var(--st-radius-xl);
+  }
+}
+

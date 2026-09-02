@@ -544,5 +544,82 @@
 @media (max-width: 960px) {
   .explorerGrid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  .sectionHeader {
+    margin-bottom: 32px;
+  }
+  .tabsList {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    gap: 10px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .tabsList::-webkit-scrollbar {
+    display: none;
+  }
+  .tabCard {
+    flex: 0 0 auto;
+    width: 250px;
+    padding: 16px 18px;
+    border-radius: var(--st-radius-lg);
+  }
+  .tabTitle {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .tabDesc {
+    font-size: 12px;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .deviceFrame {
+    border-radius: var(--st-radius-xl);
+  }
+  .deviceHeader {
+    padding: 12px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .deviceTitleBadge {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    font-size: 11px;
+  }
+  .screenInner {
+    padding: 20px 16px;
+  }
+  .screenHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .volumeBadge {
+    align-self: flex-start;
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+  .screenMainTitle {
+    font-size: 18px;
+  }
+  .actionButton {
+    width: 100%;
+    font-size: 13.5px;
+    padding: 14px 16px;
   }
 }
