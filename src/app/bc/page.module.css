@@ -5,31 +5,21 @@
 }
 
 /* ==========================================================================
-   BC HERO
+   HERO: BC DASHCAM MANDATE
    ========================================================================== */
 .hero {
-  background: linear-gradient(180deg, #ffffff 0%, #f1f8f4 100%);
-  padding: 80px var(--st-space-6) 100px;
+  background: linear-gradient(180deg, #edf3ef 0%, #f4f7f5 100%);
+  background-image: radial-gradient(rgba(18, 91, 73, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  padding: 80px var(--st-space-6) 90px;
   position: relative;
   overflow: hidden;
   text-align: center;
-  border-bottom: 1px solid var(--st-ink-100);
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1000px;
-  height: 500px;
-  background: radial-gradient(circle at center, rgba(19, 156, 85, 0.15) 0%, transparent 70%);
-  pointer-events: none;
+  border-bottom: 1px solid rgba(18, 91, 73, 0.08);
 }
 
 .heroInner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -39,37 +29,46 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 48px;
 }
 
 .mandateBadge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(19, 156, 85, 0.12);
-  border: 1px solid rgba(19, 156, 85, 0.3);
-  color: var(--st-brand-primary);
+  background: rgba(18, 91, 73, 0.1);
+  border: 1px solid rgba(18, 91, 73, 0.25);
+  color: #125b49;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
   padding: 6px 16px;
   border-radius: var(--st-radius-pill);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .mandateDot {
   width: 8px;
   height: 8px;
-  background: var(--st-brand-primary);
+  background: #10b981;
   border-radius: 50%;
-  box-shadow: 0 0 6px var(--st-brand-primary);
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
 .heroSubtitle {
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.6;
   color: var(--st-ink-700);
-  max-width: 840px;
-  margin: 0 auto 36px;
+  max-width: 860px;
+  margin: 0 auto 32px;
 }
 
 .heroCtas {
@@ -89,6 +88,9 @@
   text-decoration: none;
   font-weight: 700;
   font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 16px rgba(18, 91, 73, 0.3);
 }
@@ -102,7 +104,7 @@
 .buttonSecondary {
   background: #ffffff;
   color: var(--st-brand-primary-dark);
-  border: 1px solid var(--st-ink-200);
+  border: 1px solid #cce0d4;
   padding: 16px 32px;
   border-radius: var(--st-radius-pill);
   text-decoration: none;
@@ -120,472 +122,608 @@
   transform: translateY(-2px);
 }
 
-.heroTrustLine {
-  font-size: 13px;
-  color: var(--st-ink-600);
-  font-weight: 500;
-  max-width: 720px;
+/* Trust Pills */
+.trustPillsRow {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.trustPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #dce4de;
+  border-radius: var(--st-radius-pill);
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--st-ink-700);
+  box-shadow: 0 2px 6px rgba(18, 91, 73, 0.04);
+}
+
+.trustPill i {
+  color: var(--st-brand-primary);
+  font-size: 14px;
+}
+
+/* Windshield HUD Showcase */
+.hudShowcase {
+  max-width: 1080px;
   margin: 0 auto;
-  line-height: 1.5;
 }
 
-/* ==========================================================================
-   SECTION 2 — MANDATE BLOCK
-   ========================================================================== */
-.mandateSection {
-  background: #061f18;
-  background: linear-gradient(180deg, #07261e 0%, #051913 100%);
-  color: #ffffff;
-  padding: 120px var(--st-space-6);
-  text-align: center;
+.hudImageWrapper {
   position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--st-radius-2xl);
   overflow: hidden;
+  border: 1px solid rgba(170, 221, 102, 0.4);
+  box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.45), 0 0 30px -6px rgba(19, 156, 85, 0.3);
+  background: #041712;
 }
 
-.mandateSection::after {
-  content: '';
+.hudImg {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hudImageWrapper:hover .hudImg {
+  transform: scale(1.02);
+}
+
+.hudVignette {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 32px 32px;
+  box-shadow: inset 0 0 80px rgba(4, 23, 18, 0.6);
   pointer-events: none;
 }
 
-.mandateInner {
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+/* HUD Badges */
+.hudBadgeTopLeft {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(4, 23, 18, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(170, 221, 102, 0.35);
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  text-align: left;
+  z-index: 2;
 }
 
-.mandateBody {
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 840px;
-  margin: 0 auto 20px;
+.hudLiveDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+  animation: pulseDot 1.5s infinite;
 }
 
-.mandateConclusion {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--st-logo-leaf);
-  font-weight: 600;
-  max-width: 760px;
-  margin: 0 auto 56px;
+.hudBadgeTopLeft strong {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #aadd66;
+}
+
+.hudBadgeTopLeft span {
+  display: block;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hudBadgeTopRight {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(4, 23, 18, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(170, 221, 102, 0.35);
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-align: left;
+  z-index: 2;
+}
+
+.hudBadgeTopRight strong {
+  display: block;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.hudBadgeTopRight span {
+  display: block;
+  font-size: 11px;
+  color: #aadd66;
+}
+
+.hudBadgeBottomCenter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(4, 23, 18, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: var(--st-radius-pill);
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #ffffff;
+  z-index: 2;
+  white-space: nowrap;
 }
 
 /* ==========================================================================
-   SECTION 3 — PERSONA SECTION
+   SECTION 2: THE 4 STATUTORY MANDATE REQUIREMENTS
    ========================================================================== */
-.personaSection {
+.statutorySection {
   padding: 120px var(--st-space-6);
-  background: #f8faf9;
-  text-align: center;
+  background: #ffffff;
+  background-image: radial-gradient(rgba(18, 91, 73, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
 }
 
-.personaHeader {
-  margin-bottom: 24px;
+.sectionInner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.sectionSubtext {
+  font-size: 16px;
+  color: var(--st-ink-600);
+  max-width: 720px;
+  margin: 14px auto 0;
+  line-height: 1.6;
+}
+
+.statutoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.statutoryCard {
+  background: #ffffff;
+  border: 1px solid #dce4de;
+  border-radius: var(--st-radius-xl);
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(18, 91, 73, 0.04);
+}
+
+.statutoryCard:hover {
+  transform: translateY(-6px);
+  border-color: #139c55;
+  box-shadow: 0 16px 36px rgba(18, 91, 73, 0.1);
+}
+
+.cardIconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #eef5f1;
+  color: var(--st-brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.cardStep {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--st-brand-primary);
+  margin-bottom: 6px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--st-ink-900);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--st-ink-600);
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.cardCheck {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #047857;
+  border-top: 1px solid #eef2ef;
+  padding-top: 14px;
+}
+
+.cardCheck i {
+  font-size: 16px;
 }
 
 /* ==========================================================================
-   SECTION 4 — SOLUTIONS EXPLORER
+   SECTION 3: CHECKER CONTAINER
    ========================================================================== */
-.solutionsSection {
-  background: #edf3f0;
+.checkerSection {
+  padding: 112px var(--st-space-6);
   background: linear-gradient(180deg, #edf3ef 0%, #f4f7f5 100%);
-  padding: 128px var(--st-space-6) 120px;
-  position: relative;
-  overflow: hidden;
+  background-image: radial-gradient(rgba(18, 91, 73, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
   border-top: 1px solid rgba(18, 91, 73, 0.08);
   border-bottom: 1px solid rgba(18, 91, 73, 0.08);
 }
 
-.solutionsSection::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(18, 91, 73, 0.08) 1.5px, transparent 1.5px);
-  background-size: 28px 28px;
-  pointer-events: none;
-}
-
 /* ==========================================================================
-   SECTION 5 — INSPECTOR SECTION
+   SECTION 4: THE 2-IN-1 ADVANTAGE
    ========================================================================== */
-.inspectorSection {
-  background: #f4f6f4;
-  padding: 120px var(--st-space-6);
-  text-align: center;
-  position: relative;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.inspectorInner {
-  max-width: 1040px;
-  margin: 0 auto;
-}
-
-.inspectorHeading {
-  margin-bottom: 48px;
-}
-
-.inspectorSubtext {
-  font-size: 16px;
-  color: var(--st-ink-700);
-  max-width: 680px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* ==========================================================================
-   SECTION 5 — FACILITY TRUST SECTION
-   ========================================================================== */
-.facilitySection {
+.advantageSection {
   padding: 120px var(--st-space-6);
   background: #ffffff;
-  text-align: center;
 }
 
-.facilityInner {
-  max-width: 1140px;
-  margin: 0 auto;
+.advantageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
 }
 
-.facilityContent {
-  margin-bottom: 56px;
+.advantageCard {
+  background: #f8faf8;
+  border: 1px solid #dce4de;
+  border-radius: var(--st-radius-2xl);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.facilityLead {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--st-ink-800);
-  max-width: 820px;
-  margin: 0 auto 12px;
+.advantageCardSoilTracker {
+  background: linear-gradient(145deg, #072e23 0%, #031c15 100%);
+  border-color: #139c55;
+  box-shadow: 0 20px 48px -12px rgba(1, 53, 40, 0.35);
+  color: #ffffff;
 }
 
-.facilitySub {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--st-brand-primary);
+.advantageHead {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.advantageTag {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--st-radius-pill);
+}
+
+.advantageTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--st-ink-900);
   margin: 0;
 }
 
-.facilityGrid {
+.advantageList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.advantageList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.advantageList li i {
+  font-size: 20px;
+  color: var(--st-brand-primary);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.advantageList li div strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--st-ink-900);
+  margin-bottom: 2px;
+}
+
+.advantageList li div span {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--st-ink-600);
+}
+
+/* ==========================================================================
+   SECTION 5: CARRIER RISK & THE COST OF NON-COMPLIANCE
+   ========================================================================== */
+.riskSection {
+  padding: 120px var(--st-space-6);
+  background: linear-gradient(180deg, #fbf7f7 0%, #ffffff 100%);
+  border-top: 1px solid #fee2e2;
+  border-bottom: 1px solid #eef2ef;
+}
+
+.riskGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  text-align: left;
+  gap: 24px;
 }
 
-.facilityCard {
-  background: #f8faf9;
-  border: 1px solid var(--st-ink-100);
+.riskCard {
+  background: #ffffff;
+  border: 1px solid #fecaca;
   border-radius: var(--st-radius-xl);
-  padding: 36px 28px;
-  transition: all 0.3s ease;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.04);
 }
 
-.facilityCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px -10px rgba(18, 91, 73, 0.1);
-  border-color: rgba(19, 156, 85, 0.25);
-}
-
-.facilityIcon {
+.riskIconBox {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(19, 156, 85, 0.12);
-  color: var(--st-brand-primary);
+  background: #fef2f2;
+  color: #dc2626;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-.facilityCardTitle {
+.riskTitle {
   font-size: 18px;
-  font-weight: 700;
-  color: var(--st-ink-900);
+  font-weight: 800;
+  color: #991b1b;
   margin: 0 0 10px;
+  line-height: 1.3;
 }
 
-.facilityCardDesc {
-  font-size: 14px;
+.riskDesc {
+  font-size: 13.5px;
   line-height: 1.6;
-  color: var(--st-ink-600);
+  color: var(--st-ink-700);
   margin: 0;
 }
 
 /* ==========================================================================
-   SECTION 6 — DUAL DOORS
+   SECTION 6: RETROFIT SECTION
    ========================================================================== */
-.dualDoorsSection {
+.retrofitSection {
   padding: 120px var(--st-space-6);
-  background: #f8faf9;
-  border-top: 1px solid var(--st-ink-100);
+  background: #ffffff;
+  background-image: radial-gradient(rgba(18, 91, 73, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
 }
 
-.dualDoorsInner {
-  max-width: 1200px;
+.retrofitInner {
+  max-width: 1080px;
   margin: 0 auto;
 }
 
-.dualDoorsHeader {
+.retrofitBody {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--st-ink-700);
+  max-width: 760px;
+  margin: 0 auto 48px;
   text-align: center;
-  margin-bottom: 56px;
 }
 
-.doorsGrid {
+.retrofitCardsGrid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 32px;
-  align-items: stretch;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
 }
 
-.doorCard {
+.retrofitCard {
+  background: #f8faf8;
+  border: 1px solid #dce4de;
   border-radius: var(--st-radius-2xl);
-  padding: 48px 40px;
+  padding: 36px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  text-align: left;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
-.doorPlatformPrimary {
-  background: #08261e;
-  background: linear-gradient(145deg, #0a2e24 0%, #061f18 100%);
-  color: #ffffff;
-  border: 1px solid rgba(170, 221, 102, 0.3);
-  box-shadow: 0 24px 60px -12px rgba(10, 46, 36, 0.35);
-}
-
-.doorPlatformPrimary:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 32px 72px -12px rgba(10, 46, 36, 0.45);
-  border-color: var(--st-logo-leaf);
-}
-
-.doorExchangeSecondary {
+.retrofitCardPopular {
   background: #ffffff;
-  color: var(--st-ink-900);
-  border: 1px solid var(--st-ink-150);
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.06);
+  border: 2px solid var(--st-brand-primary);
+  box-shadow: 0 16px 40px -10px rgba(18, 91, 73, 0.15);
 }
 
-.doorExchangeSecondary:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 48px -10px rgba(0, 0, 0, 0.1);
-  border-color: var(--st-ink-300);
-}
-
-.doorEyebrow {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--st-logo-leaf);
-  margin-bottom: 12px;
-}
-
-.doorTitle {
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 1.25;
-  margin: 0 0 24px;
-  color: inherit;
-}
-/* Dark card: force white text over the global near-black heading colour */
-.doorPlatformPrimary .doorTitle,
-.doorPlatformPrimary .doorList,
-.doorPlatformPrimary .doorList li,
-.doorPlatformPrimary p {
-  color: #ffffff;
-}
-.doorPlatformPrimary .doorEyebrow {
-  color: var(--st-logo-leaf);
-}
-
-.doorList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 36px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.doorList li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.doorList li i {
-  color: var(--st-logo-leaf);
-  font-size: 18px;
-  margin-top: 2px;
-}
-
-.doorBtnPrimary {
-  background: var(--st-logo-leaf);
-  color: var(--st-brand-primary-dark);
-  text-decoration: none;
-  padding: 16px 32px;
-  border-radius: var(--st-radius-pill);
-  font-weight: 700;
-  font-size: 15px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-  align-self: flex-start;
-  box-shadow: 0 4px 16px rgba(170, 221, 102, 0.3);
-}
-
-.doorBtnPrimary:hover {
-  background: #c3eb85;
-  transform: translateY(-2px);
-}
-
-.doorBtnSecondary {
+.popularBadge {
+  position: absolute;
+  top: -14px;
+  right: 28px;
   background: var(--st-brand-primary);
   color: #ffffff;
-  text-decoration: none;
-  padding: 16px 32px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 14px;
   border-radius: var(--st-radius-pill);
-  font-weight: 700;
-  font-size: 15px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-  align-self: flex-start;
 }
 
-.doorBtnSecondary:hover {
+.retrofitPlan {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--st-ink-900);
+  margin-bottom: 4px;
+}
+
+.retrofitUnit {
+  font-size: 13.5px;
+  color: var(--st-brand-primary);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.retrofitFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--st-ink-800);
+}
+
+.retrofitFeatures li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.retrofitFeatures li i {
+  color: var(--st-brand-primary);
+  font-size: 18px;
+}
+
+.retrofitBtn {
+  margin-top: auto;
+  background: #ffffff;
+  color: var(--st-brand-primary-dark);
+  border: 1px solid #cce0d4;
+  padding: 14px 24px;
+  border-radius: var(--st-radius-pill);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.retrofitBtn:hover {
+  background: #eef5f1;
+  border-color: var(--st-brand-primary);
+}
+
+.retrofitBtnPrimary {
+  background: var(--st-brand-primary);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(18, 91, 73, 0.3);
+}
+
+.retrofitBtnPrimary:hover {
   background: var(--st-brand-primary-dark);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(18, 91, 73, 0.4);
 }
 
-/* ==========================================================================
-   SECTION 7 — FOUNDING MEMBER BLOCK (BC CLOSE)
-   ========================================================================== */
-.foundingSection {
-  padding: 120px var(--st-space-6);
-  background: #061f18;
-  background: linear-gradient(145deg, #08261e 0%, #04140f 100%);
-  color: #ffffff;
+.retrofitFooterNote {
   text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.foundingInner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.foundingBody {
-  font-size: 18px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 740px;
-  margin: 0 auto 40px;
-}
-
-.foundingCtas {
+  font-size: 13px;
+  color: var(--st-ink-500);
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-
-.founderPrimaryBtn {
-  background: var(--st-logo-leaf);
-  color: var(--st-brand-primary-dark);
-  text-decoration: none;
-  padding: 16px 36px;
-  border-radius: var(--st-radius-pill);
-  font-weight: 700;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(170, 221, 102, 0.3);
-}
-
-.founderPrimaryBtn:hover {
-  background: #c3eb85;
-  transform: translateY(-2px);
-}
-
-.founderSecondaryBtn {
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  text-decoration: none;
-  padding: 16px 32px;
-  border-radius: var(--st-radius-pill);
-  font-weight: 600;
-  font-size: 15px;
-  transition: all 0.3s ease;
-}
-
-.founderSecondaryBtn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-}
-
-.footerTrustLine {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 0;
-  letter-spacing: 0.02em;
 }
 
 /* ==========================================================================
-   RESPONSIVE
+   RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1024px) {
-  .statStrip {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+  .statutoryGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .facilityGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .doorsGrid {
+  .riskGrid {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 768px) {
   .hero {
     padding: 48px 16px 64px;
   }
-  .statStrip {
+  .statutorySection,
+  .checkerSection,
+  .advantageSection,
+  .riskSection,
+  .retrofitSection {
+    padding: 64px 16px;
+  }
+  .statutoryGrid {
     grid-template-columns: 1fr;
   }
-  .facilityGrid {
+  .advantageGrid,
+  .retrofitCardsGrid {
     grid-template-columns: 1fr;
   }
-  .heroCtas, .foundingCtas {
+  .heroCtas {
     flex-direction: column;
     width: 100%;
   }
-  .buttonPrimary, .buttonSecondary, .founderPrimaryBtn, .founderSecondaryBtn {
+  .buttonPrimary,
+  .buttonSecondary {
     width: 100%;
     justify-content: center;
     text-align: center;
     padding: 14px 20px;
     box-sizing: border-box;
+  }
+  .hudBadgeTopLeft,
+  .hudBadgeTopRight {
+    display: none;
+  }
+  .hudBadgeBottomCenter {
+    width: calc(100% - 32px);
+    justify-content: center;
+    font-size: 11px;
+    white-space: normal;
+    text-align: center;
   }
 }

@@ -1,0 +1,286 @@
+.checkerWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.checkerHeader {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--st-brand-primary);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.checkerTitle {
+  font-size: clamp(24px, 3.5vw, 32px);
+  font-weight: 800;
+  color: var(--st-ink-900);
+  margin: 0 0 10px;
+}
+
+.checkerSubtitle {
+  font-size: 15px;
+  color: var(--st-ink-600);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* Selector Pills */
+.pillSelector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.truckPill {
+  background: #ffffff;
+  border: 1px solid #dce4de;
+  border-radius: var(--st-radius-pill);
+  padding: 10px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--st-ink-700);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(18, 91, 73, 0.04);
+}
+
+.truckPill:hover {
+  border-color: var(--st-brand-primary);
+  color: var(--st-brand-primary);
+  background: #f8faf8;
+}
+
+.truckPillActive {
+  background: var(--st-brand-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--st-brand-primary) !important;
+  box-shadow: 0 4px 16px rgba(18, 91, 73, 0.25);
+}
+
+.truckPillActive i {
+  color: #aadd66;
+}
+
+/* Result Card */
+.resultCard {
+  background: #ffffff;
+  border: 1px solid #cce0d4;
+  border-radius: var(--st-radius-2xl);
+  padding: 36px 32px;
+  box-shadow: 0 16px 40px -10px rgba(18, 91, 73, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.resultCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--st-brand-primary), #10b981);
+}
+
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid #eef2ef;
+  padding-bottom: 20px;
+}
+
+.truckName {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--st-ink-900);
+}
+
+.truckGvwr {
+  font-size: 13.5px;
+  color: var(--st-ink-500);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.statusBadgeMandatory {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--st-radius-pill);
+}
+
+.statusBadgeExempt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--st-radius-pill);
+}
+
+/* 3 Spec Boxes */
+.resultGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.specBox {
+  background: #f8faf8;
+  border: 1px solid #e2ece5;
+  border-radius: 12px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.specLabel {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--st-ink-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.specValue {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--st-ink-900);
+}
+
+.specSub {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--st-ink-600);
+}
+
+/* Notes */
+.resultNotes {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f1f8f5;
+  border: 1px solid #cbe3d6;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 13.5px;
+  color: var(--st-ink-800);
+  line-height: 1.5;
+}
+
+.resultNotes i {
+  color: var(--st-brand-primary);
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Recommendation Bar */
+.recommendationBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #06231b;
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 18px 24px;
+}
+
+.recText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 260px;
+}
+
+.recLabel {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #aadd66;
+  text-transform: uppercase;
+}
+
+.recValue {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.recBtn {
+  background: #10b981;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: var(--st-radius-pill);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.recBtn:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .resultCard {
+    padding: 24px 18px;
+  }
+  .resultGrid {
+    grid-template-columns: 1fr;
+  }
+  .recommendationBar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .recBtn {
+    text-align: center;
+    padding: 12px 20px;
+  }
+  .truckPill {
+    width: 100%;
+    justify-content: center;
+  }
+}
