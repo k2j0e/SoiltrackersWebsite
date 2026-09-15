@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "BC Commercial Truck Dashcam Mandate (Bill M217) | SoilTracker",
-  description: "Turnkey forward-facing dashcam compliance for BC heavy commercial vehicles over 11,793 kg. 1080p road-ahead video, 72+ hour rolling storage, and zero driver cab intrusion with integrated load telematics.",
+  description: "Turnkey dashcam compliance for BC heavy commercial vehicles over 11,793 kg. Forward-facing and dual-camera AI safety options, 72+ hour rolling storage, and integrated load telematics.",
 };
 
 export default function BCPage() {
@@ -33,7 +33,7 @@ export default function BCPage() {
               </h1>
 
               <p className={styles.heroSubtitle}>
-                British Columbia requires forward-facing dashboard cameras for commercial vehicles with a registered GVWR exceeding <strong>11,793 kg (~26,000 lbs)</strong>. SoilTracker delivers 100% compliant forward-road video, 72+ hour continuous storage, and zero driver cab intrusion — paired with automated GPS load tracking.
+                British Columbia requires forward-facing dashboard cameras for commercial vehicles with a registered GVWR exceeding <strong>11,793 kg (~26,000 lbs)</strong>. SoilTracker delivers 100% compliant video hardware with 72+ hour continuous storage — available in both forward-facing and dual AI safety configurations — paired with automated GPS load tracking.
               </p>
 
               <div className={styles.heroCtas}>
@@ -51,7 +51,7 @@ export default function BCPage() {
                   <i className="ri-check-line"></i> &gt; 11,793 kg GVWR Compliant
                 </span>
                 <span className={styles.trustPill}>
-                  <i className="ri-eye-off-line"></i> Forward Road-Facing Only (Zero Driver Intrusion)
+                  <i className="ri-dual-screen-line"></i> Forward-Facing &amp; Dual AI Options
                 </span>
                 <span className={styles.trustPill}>
                   <i className="ri-history-line"></i> 72-Hour Continuous Storage
@@ -93,8 +93,8 @@ export default function BCPage() {
                 </div>
 
                 <div className={styles.hudBadgeBottomCenter}>
-                  <i className="ri-user-unfollow-line" style={{ color: "#38bdf8" }}></i>
-                  <span>Zero Driver-Facing Cameras · 100% Driver Cab Privacy Protected</span>
+                  <i className="ri-dual-screen-line" style={{ color: "#38bdf8" }}></i>
+                  <span>Forward Road View (Mandate Baseline) · Dual-Facing AI Safety Option Available</span>
                 </div>
               </div>
             </div>
@@ -137,13 +137,13 @@ export default function BCPage() {
                   <i className="ri-camera-lens-line"></i>
                 </div>
                 <span className={styles.cardStep}>Requirement 02</span>
-                <h3 className={styles.cardTitle}>Forward Road-Facing Only</h3>
+                <h3 className={styles.cardTitle}>Forward Road View (Dual AI Available)</h3>
                 <p className={styles.cardDesc}>
-                  The camera must continuously record the forward path of travel through the windshield while the truck is in operation. <strong>Driver-facing cameras are NOT mandated</strong>, preventing driver turnover and respecting cab privacy.
+                  Under Bill M217, the statutory baseline requires continuous recording of the forward road path through the windshield. While inward cameras are not legally mandated, SoilTracker supports both forward-facing only (for privacy-focused fleets) and dual AI safety cameras with active distraction and fatigue detection.
                 </p>
                 <div className={styles.cardCheck}>
                   <i className="ri-checkbox-circle-fill"></i>
-                  <span>Zero in-cab microphone or driver monitoring</span>
+                  <span>Forward-facing legal baseline or full dual AI safety</span>
                 </div>
               </div>
 
@@ -237,8 +237,8 @@ export default function BCPage() {
                   <li>
                     <i className="ri-checkbox-circle-fill"></i>
                     <div>
-                      <strong>Retain Drivers with Zero Cab Intrusion</strong>
-                      <span>No inward cameras, no facial AI tracking, no audio recording. Drivers feel respected and stay with your fleet.</span>
+                      <strong>Flexible Hardware: Road-Only or Dual AI Safety</strong>
+                      <span>Equip forward-facing cameras for lightweight compliance and driver privacy, or choose dual-lens AI safety cameras for active distraction and fatigue prevention.</span>
                     </div>
                   </li>
                 </ul>
@@ -355,7 +355,7 @@ export default function BCPage() {
                 <div className={styles.retrofitPlan}>Owner-Operator Kit</div>
                 <div className={styles.retrofitUnit}>1–4 Commercial Trucks</div>
                 <ul className={styles.retrofitFeatures}>
-                  <li><i className="ri-check-line"></i> 1080p HDR Forward Road Dashcam</li>
+                  <li><i className="ri-check-line"></i> 1080p HDR Forward Road Dashcam (Dual AI Available)</li>
                   <li><i className="ri-check-line"></i> 72-Hour Continuous Rolling Loop Storage</li>
                   <li><i className="ri-check-line"></i> Plug &amp; Play OBD-II / J1939 Harness</li>
                   <li><i className="ri-check-line"></i> SoilTracker Geofenced Load Tracking Built In</li>
@@ -371,7 +371,7 @@ export default function BCPage() {
                 <div className={styles.retrofitUnit}>5–50+ Commercial Trucks</div>
                 <ul className={styles.retrofitFeatures}>
                   <li><i className="ri-check-line"></i> Full Bill M217 Compliant Hardware Fleet Outfitting</li>
-                  <li><i className="ri-check-line"></i> 1080p Forward Road Cam + 72H Storage per Unit</li>
+                  <li><i className="ri-check-line"></i> 1080p Forward Road Cam or Dual-Facing AI Safety per Unit</li>
                   <li><i className="ri-check-line"></i> Central Dispatcher Board &amp; Telematics Console</li>
                   <li><i className="ri-check-line"></i> 1-Click Batch Invoicing with GPS Proof of Work</li>
                   <li><i className="ri-check-line"></i> Dedicated Fleet Onboarding &amp; Hardware Support</li>

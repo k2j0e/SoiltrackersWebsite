@@ -31,7 +31,7 @@ export default function BCDashcamChecker() {
       gvwr: "> 11,793 kg (Typically 22,000–26,000 kg)",
       applies: true,
       notes: "Fully subject to Bill M217. Required to record forward road ahead through the windshield at all times during operation.",
-      recommendedKit: "SoilTracker Heavy Fleet Kit (1080p Forward Road Cam + Zero Driver Cab Intrusion + GPS Geofence)",
+      recommendedKit: "SoilTracker Heavy Fleet Kit (1080p Forward Road Cam or Dual AI Camera + GPS Geofence)",
     },
     {
       id: "truck-pup",
@@ -101,9 +101,9 @@ export default function BCDashcamChecker() {
 
         <div className={styles.resultGrid}>
           <div className={styles.specBox}>
-            <span className={styles.specLabel}>Camera Angle Rule</span>
-            <strong className={styles.specValue} style={{ color: "#047857" }}>Forward Road-Facing Only</strong>
-            <span className={styles.specSub}>Zero driver-facing cameras. 100% driver cab privacy guaranteed.</span>
+            <span className={styles.specLabel}>Camera Configuration</span>
+            <strong className={styles.specValue} style={{ color: "#047857" }}>Road View (Dual AI Available)</strong>
+            <span className={styles.specSub}>BC mandate requires forward road view. Forward-only or dual AI safety available.</span>
           </div>
 
           <div className={styles.specBox}>
