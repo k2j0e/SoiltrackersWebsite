@@ -59,7 +59,7 @@ export default function RegionalStrip() {
             </p>
 
             <div className={styles.specTags}>
-              <span>EMA & CSR Compliant</span>
+              <span>Built for EMA & CSR</span>
               <span>SRNF & HVRS Tracking</span>
               <span>Protocol 19 SAP</span>
             </div>

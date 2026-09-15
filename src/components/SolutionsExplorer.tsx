@@ -5,9 +5,13 @@ import styles from "./SolutionsExplorer.module.css";
 
 interface SolutionsExplorerProps {
   mode?: "north-america" | "bc";
+  onOpenCertificate?: () => void;
 }
 
-export default function SolutionsExplorer({ mode = "north-america" }: SolutionsExplorerProps) {
+export default function SolutionsExplorer({
+  mode = "north-america",
+  onOpenCertificate,
+}: SolutionsExplorerProps) {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
@@ -31,7 +35,7 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
       id: "dispatch",
       tag: "FLEET TELEMATICS",
       title: "Live GPS Fleet Dispatch",
-      desc: "Track every truck from excavation to placement. Automatic geofencing logs departure and arrival timestamps for instant invoice reconciliation.",
+      desc: "Connect supported GPS and telematics systems, with custom integrations where provider APIs allow. Automatic geofencing logs departure and arrival timestamps.",
       icon: "ri-radar-line",
       previewType: "board",
       badgeText: "Real-Time Telematics",
@@ -49,7 +53,7 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
       title: mode === "bc" ? "Protocol 19 & SRNF Engine" : "QP Compliance & Audit Engine",
       desc: mode === "bc" 
         ? "Binds Protocol 19 SAPs, PCOCs, and lab test data directly to your SRNF declaration. 10-year statutory retention ready in one click."
-        : "Pre-screen soil tests, attach environmental characterization, and generate one-click regulator-ready audit packages.",
+        : "Pre-screen soil tests, attach environmental characterization, and generate regulator-ready audit packages: a PDF custody report, CSV trip exports, and a full JSON data export on request.",
       icon: "ri-microscope-line",
       previewType: "report",
       badgeText: "Audit-Ready Ledger",
@@ -67,7 +71,7 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
       title: mode === "bc" ? "HVRS & CSR Gatekeeper" : "Receiving Pit Gatekeeper",
       desc: mode === "bc"
         ? "Screen inbound loads against CSR Schedule 3.1 land-use standards. Cumulative tracking alerts you before approaching the 20,000 m³ HVRS threshold."
-        : "Automated gate validation ensures non-compliant or uncharacterized soil is rejected on the platform before wheels ever enter your facility.",
+        : "Gate validation flags non-compliant or uncharacterized soil on the platform before wheels enter your facility.",
       icon: "ri-shield-keyhole-line",
       previewType: "gate",
       badgeText: "Receiver Liability Shield",
@@ -239,7 +243,11 @@ export default function SolutionsExplorer({ mode = "north-america" }: SolutionsE
               </div>
 
               {/* Interactive CTA Action Button */}
-              <button type="button" className={`${styles.actionButton} st-button-txt`}>
+              <button
+                type="button"
+                onClick={onOpenCertificate}
+                className={`${styles.actionButton} st-button-txt`}
+              >
                 <i className="ri-cursor-line"></i>
                 <span>{current.btnLabel}</span>
               </button>

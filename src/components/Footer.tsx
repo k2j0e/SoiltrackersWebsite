@@ -53,8 +53,8 @@ export default function Footer() {
       <div className={styles.legal}>
         <span>&copy; {new Date().getFullYear()} SoilTracker Solutions Inc. Based in British Columbia, Canada. All rights reserved.</span>
         <div className={styles.legalLinks}>
-          <Link href="#privacy" className={styles.legalLink}>Privacy Policy</Link>
-          <Link href="#terms" className={styles.legalLink}>Terms of Service</Link>
+          <Link href="/privacy" className={styles.legalLink}>Privacy Policy</Link>
+          <Link href="/terms" className={styles.legalLink}>Terms of Service</Link>
         </div>
       </div>
     </footer>

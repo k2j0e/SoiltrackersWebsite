@@ -46,7 +46,7 @@ export default function Home() {
                 </h1>
 
               <p className={styles.heroSubtitle}>
-                Regulators across North America are done accepting paper trails for soil movement. SoilTracker gives generators, receivers, and environmental professionals one verified chain of custody from excavation to final placement, with the compliance record built automatically as the soil moves.
+                Regulators across North America are done accepting paper trails for soil movement. SoilTracker gives generators, receivers, and environmental professionals one verified chain of custody from excavation to final placement, with the compliance record assembled as the soil moves, ready for your confirmation.
               </p>
 
               <div className={styles.heroCtas}>
@@ -97,7 +97,10 @@ export default function Home() {
 
         {/* SECTION 4: THE PLATFORM SOLUTIONS EXPLORER */}
         <section id="solutions-explorer" className={styles.solutionsSection}>
-          <SolutionsExplorer mode="north-america" />
+          <SolutionsExplorer
+            mode="north-america"
+            onOpenCertificate={() => setCertModalOpen(true)}
+          />
         </section>
 
         {/* SECTION 5: THE INTERACTIVE CHAIN OF CUSTODY INSPECTOR */}
@@ -150,7 +153,7 @@ export default function Home() {
                   </li>
                   <li>
                     <i className="ri-check-line"></i>
-                    <span>The custody record writes itself, load by load.</span>
+                    <span>The custody record builds itself load by load. You confirm, it seals.</span>
                   </li>
                 </ul>
                 <Link href="/platform" className={`${styles.doorBtnPrimary} st-button-txt`}>
@@ -177,7 +180,7 @@ export default function Home() {
                   </li>
                   <li>
                     <i className="ri-check-line" style={{ color: "var(--st-brand-primary)" }}></i>
-                    <span>Every completed trade produces a verified custody record automatically.</span>
+                    <span>Every completed trade produces a custody record, confirmed and sealed by the parties involved.</span>
                   </li>
                 </ul>
                 <Link href="/marketplace" className={`${styles.doorBtnSecondary} st-button-txt`}>

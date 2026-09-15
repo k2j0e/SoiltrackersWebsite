@@ -16,27 +16,27 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Contractors & Excavators",
       icon: "ri-truck-line",
       headline: "Stop losing money to lost tickets and disputed invoices.",
-      body: "Every load logged automatically as your trucks cross each site boundary. Every invoice backed by a GPS-verified record nobody can argue with. Month-end reconciliation goes from days to minutes, and the exposure from a missing paper trail goes to zero.",
+      body: "Every load detected automatically as your trucks cross each site boundary, then confirmed in seconds. Every invoice backed by a GPS-verified record. Month-end reconciliation gets faster because the evidence is already attached, and a missing paper trail stops being your exposure.",
       bullets: [
         {
           title: "Automatic Load Capture",
-          desc: "GPS and geofencing log every pickup and drop-off with no driver app, no paper triplicates, and no end-of-day data entry.",
+          desc: "GPS and geofencing capture every pickup and drop-off with no driver app and no paper triplicates.",
         },
         {
           title: "Dispatcher-Run Scheduling",
-          desc: "Assign trucks and drivers to projects and send the daily dispatch from one board.",
+          desc: "Assign trucks and drivers to projects and send the day's dispatch from one view.",
         },
         {
-          title: "Reconciled Invoicing",
-          desc: "Match hauler invoices against verified digital logs in minutes, with the evidence attached.",
+          title: "Reconciliation Evidence",
+          desc: "GPS-backed trip records that support billing, reconciliation, and dispute resolution.",
         },
       ],
       proofBadge: "Every load verified. Every invoice defensible.",
       mockIcon: "ri-bill-line",
       mockTitle: "Automated Hauler Reconciliation",
-      mockDetail: "148 loads matched · $42,600 verified · fully reconciled",
+      mockDetail: "148 loads matched · $42,600 verified · fully documented",
       metrics: [
-        { value: "Zero Taps", label: "Automatic Capture" },
+        { value: "No driver app", label: "Automatic Capture" },
         { value: "GPS", label: "Every Load Verified" },
         { value: "Minutes", label: "Invoice Reconciliation" },
       ],
@@ -109,19 +109,19 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       label: "Contractors & Generators",
       icon: "ri-truck-line",
       headline: "Stop losing money to lost tickets and disputed invoices.",
-      body: "Every load logged automatically as your trucks cross each site boundary. Every invoice backed by a GPS-verified record nobody can argue with. And every movement automatically reconciled against the volumes declared on your SRNF, so you're never over your notified maximum without knowing it.",
+      body: "Every load detected automatically as your trucks cross each site boundary, then confirmed in seconds. Every invoice backed by a GPS-verified record. And every movement automatically reconciled against the volumes declared on your SRNF, so you're never over your notified maximum without knowing it.",
       bullets: [
         {
           title: "Automatic Load Capture",
-          desc: "GPS and geofencing log every movement. No driver app, no paper triplicates, no lost tickets.",
+          desc: "GPS and geofencing capture every movement with no driver app and no paper triplicates.",
         },
         {
           title: "SRNF Volume Tracking",
           desc: "Live running totals against the maximum volumes declared for each receiving site in your notification.",
         },
         {
-          title: "Reconciled Invoicing",
-          desc: "Match hauler invoices against verified digital logs in minutes, with the evidence attached.",
+          title: "Reconciliation Evidence",
+          desc: "GPS-backed trip records that support billing, reconciliation, and dispute resolution.",
         },
       ],
       proofBadge: "Every movement bound to your SRNF declaration.",
@@ -129,7 +129,7 @@ export default function PersonaSwitcher({ mode = "north-america" }: PersonaSwitc
       mockTitle: "SRNF #2026-0842 Volume Ledger",
       mockDetail: "4,200 / 5,000 m³ declared · Real-time compliance track",
       metrics: [
-        { value: "Zero Taps", label: "Automatic Capture" },
+        { value: "No driver app", label: "Automatic Capture" },
         { value: "Live", label: "SRNF Volume Tally" },
         { value: "Minutes", label: "Invoice Reconciliation" },
       ],

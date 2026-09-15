@@ -50,7 +50,7 @@ export default function PaperVsDigital({ mode = "north-america" }: PaperVsDigita
       title: "SoilTracker Closed Loop",
       desc: mode === "bc"
         ? "Automated geofence capture, Protocol 19 lab records, and 1-click SRNF audit compliance."
-        : "Automated geofence check-in, verified material characterization, and 1-click audit-ready records.",
+        : "Automated geofence check-in, verified material characterization, and one-click audit packages: PDF report, CSV exports, JSON on request.",
       badge: "Audit-Ready Defense",
       badgeType: "good",
       icon: "ri-shield-check-fill",

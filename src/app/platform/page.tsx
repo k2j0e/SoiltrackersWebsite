@@ -226,7 +226,7 @@ export default function Platform() {
           <div className={styles.featureInner}>
             <div className={styles.featureContent}>
               <div className="st-sub-caps" style={{ color: "var(--st-brand-primary)" }}>REPORTING &amp; REGULATORY AUDIT</div>
-              <h2 className="st-h2">The custody record writes itself</h2>
+              <h2 className="st-h2">The custody record builds itself. You confirm, it seals.</h2>
               <p className="st-body1">Every load is a signed, time-stamped, cryptographically verified manifest. Edits are permanently logged with the actor and reason. When consultants or ministry auditors ask, export the entire defensible custody history in two clicks.</p>
               <ul className={styles.checkList}>
                 <li className={styles.checkItem}><i className="ri-check-line"></i> <span><strong>Cryptographic hash seal:</strong> SHA-256 tamper-evident integrity for every load</span></li>
