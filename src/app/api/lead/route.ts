@@ -25,15 +25,23 @@ export async function POST(req: Request) {
   };
   let forwarded = false;
 
+  const userAgent = req.headers.get("user-agent") || "";
+  const clientIp = req.headers.get("x-forwarded-for") || "";
+
   try {
+    const headers: Record<string, string> = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    };
+    if (userAgent) headers["User-Agent"] = userAgent;
+    if (clientIp) headers["X-Forwarded-For"] = clientIp;
+
     const r = await fetch(FORMSPREE_ENDPOINT, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
+      headers,
       body: JSON.stringify({
         ...lead,
+        _replyto: typeof lead.email === "string" ? lead.email : undefined,
         _subject: `New website lead: ${lead.name ?? lead.email ?? "unknown"} (${lead.source ?? "site"})`,
       }),
     });
