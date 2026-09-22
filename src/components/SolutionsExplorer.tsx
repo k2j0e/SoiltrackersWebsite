@@ -29,7 +29,6 @@ export default function SolutionsExplorer({
       screenVolume: "28.4 MT (18.2 m³)",
       step1: "Pickup Logged (08:14 AM)",
       step2: "En Route with GPS Tracking",
-      btnLabel: "Download Digital Manifest",
     },
     {
       id: "dispatch",
@@ -45,7 +44,6 @@ export default function SolutionsExplorer({
       screenVolume: "148 Loads Today (4,200 m³ Moved)",
       step1: "Geofenced Site Check-ins: 100%",
       step2: "Cycle Time Optimization: +22%",
-      btnLabel: "Reconcile Invoices with Zero Disputes",
     },
     {
       id: "qp-engine",
@@ -63,7 +61,6 @@ export default function SolutionsExplorer({
       screenVolume: "240 m³ Clean Fill Approved",
       step1: "Chemical Testing: CSR Standards Met",
       step2: "Tamper-Evident SHA-256 Hash Generated",
-      btnLabel: "Export Full Audit Package (PDF)",
     },
     {
       id: "gatekeeper",
@@ -81,7 +78,6 @@ export default function SolutionsExplorer({
       screenVolume: "Capacity: 74% Utilized",
       step1: "Inbound Check-in: Truck #482 Verified",
       step2: "Spec Verification: 100% Match",
-      btnLabel: "Authorize Gate Access",
     },
   ];
 
@@ -241,16 +237,6 @@ export default function SolutionsExplorer({
                   <span>{current.step2}</span>
                 </div>
               </div>
-
-              {/* Interactive CTA Action Button */}
-              <button
-                type="button"
-                onClick={onOpenCertificate}
-                className={`${styles.actionButton} st-button-txt`}
-              >
-                <i className="ri-cursor-line"></i>
-                <span>{current.btnLabel}</span>
-              </button>
             </div>
           </div>
         </div>

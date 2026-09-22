@@ -516,30 +516,6 @@
   font-size: 16px;
 }
 
-/* Button */
-.actionButton {
-  background: #139c55;
-  color: #ffffff;
-  border: none;
-  padding: 14px 28px;
-  border-radius: var(--st-radius-pill);
-  font-weight: 700;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(19, 156, 85, 0.4);
-  margin-top: 8px;
-}
-
-.actionButton:hover {
-  background: #0f8547;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(19, 156, 85, 0.5);
-}
 
 @media (max-width: 960px) {
   .explorerGrid {
@@ -616,10 +592,5 @@
   }
   .screenMainTitle {
     font-size: 18px;
-  }
-  .actionButton {
-    width: 100%;
-    font-size: 13.5px;
-    padding: 14px 16px;
   }
 }

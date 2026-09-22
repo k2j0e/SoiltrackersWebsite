@@ -45,7 +45,6 @@ export default function Footer() {
             <li><Link href="/get-started" className={styles.link}>Book 15-Min Founder Call</Link></li>
             <li><Link href="/bc" className={styles.link}>BC EMA & Protocol 19</Link></li>
             <li><Link href="/get-started" className={styles.link}>Ontario Waitlist</Link></li>
-            <li><Link href="/get-started" className={styles.link}>Sign In</Link></li>
           </ul>
         </div>
       </div>

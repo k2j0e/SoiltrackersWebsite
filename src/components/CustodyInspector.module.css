@@ -277,41 +277,19 @@
   padding-top: 24px;
   border-top: 1px solid #f1f5f9;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
 }
 
 .footerNote {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-size: 13px;
   color: #64748b;
   font-weight: 500;
-}
-
-.certButton {
-  background: var(--st-brand-primary);
-  color: #ffffff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: var(--st-radius-pill);
-  font-weight: 700;
-  font-size: 13px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 14px rgba(1, 53, 40, 0.2);
-}
-
-.certButton:hover {
-  background: #01241c;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(1, 53, 40, 0.3);
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -320,14 +298,8 @@
     border-radius: var(--st-radius-xl);
   }
   .inspectorFooter {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  .certButton {
-    width: 100%;
     justify-content: center;
-    padding: 14px 20px;
+    align-items: center;
   }
 }
 

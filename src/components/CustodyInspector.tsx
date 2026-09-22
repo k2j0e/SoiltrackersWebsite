@@ -239,14 +239,6 @@ export default function CustodyInspector({
           <i className="ri-lock-2-line"></i>
           <span>Tamper-evident digital custody record · Illustrative sample</span>
         </div>
-        <button
-          type="button"
-          onClick={onOpenCertificate}
-          className={`${styles.certButton} st-button-txt`}
-        >
-          <i className="ri-file-download-line"></i>
-          <span>Download Sample Chain-of-Custody Certificate (PDF)</span>
-        </button>
       </div>
     </div>
   );
