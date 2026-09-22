@@ -2,9 +2,15 @@ import { NextResponse } from "next/server";
 import { appendFile, mkdir } from "fs/promises";
 import path from "path";
 
-// HubSpot CRM integration
-// Directly creates or updates Contacts in HubSpot CRM (Portal 343572703)
-// and attaches an activity note to the contact record timeline.
+// HubSpot Native Form Configuration
+// Portal: 343572703 | Region: na3
+// Form GUID: d5bb2ef1-c262-4448-90db-1b854ea2a5ac
+const HUBSPOT_PORTAL_ID = process.env.HUBSPOT_PORTAL_ID || "343572703";
+const HUBSPOT_FORM_ID = process.env.HUBSPOT_FORM_ID || "d5bb2ef1-c262-4448-90db-1b854ea2a5ac";
+const HUBSPOT_REGION = process.env.HUBSPOT_REGION || "na3";
+const HUBSPOT_SUBMIT_URL = `https://api-${HUBSPOT_REGION}.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
+
+// Optional Private App Token for CRM note enrichment
 const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN || "";
 
 export async function POST(req: Request) {
@@ -21,11 +27,7 @@ export async function POST(req: Request) {
   }
 
   const receivedAt = new Date().toISOString();
-  const lead: Record<string, unknown> = {
-    ...data,
-    email,
-    receivedAt,
-  };
+  const clientIp = req.headers.get("x-forwarded-for") || "";
 
   // Parse Name into First and Last
   let firstname = "";
@@ -44,111 +46,137 @@ export async function POST(req: Request) {
     hauler: "Fleet Hauler / Trucking Operator",
   };
   const roleStr = typeof data.role === "string" ? data.role : "";
-  const jobtitle = roleMap[roleStr] || roleStr;
+  const jobtitle = roleMap[roleStr] || roleStr || "General Inquirer";
 
   // Human-readable interest / engagement
   const interestMap: Record<string, string> = {
     "founder-call": "Book 15-Min Founder Call",
     "ontario-waitlist": "Ontario Compliance Waitlist",
   };
-  const rawInterest = typeof data.interest === "string" ? data.interest : (data.source === "ontario-waitlist" ? "ontario-waitlist" : "General Inquiry");
+  const rawInterest =
+    typeof data.interest === "string"
+      ? data.interest
+      : data.source === "ontario-waitlist"
+      ? "ontario-waitlist"
+      : "General Inquiry";
   const interestLabel = interestMap[rawInterest] || rawInterest;
 
-  // Build Contact Properties
-  const contactProperties: Record<string, string> = {
-    email,
-    lifecyclestage: "lead",
-    hs_lead_status: "NEW",
-  };
-  if (firstname) contactProperties.firstname = firstname;
-  if (lastname) contactProperties.lastname = lastname;
-  if (typeof data.company === "string" && data.company.trim()) {
-    contactProperties.company = data.company.trim();
-  }
-  if (jobtitle) contactProperties.jobtitle = jobtitle;
-  contactProperties.message = `Inquiry: ${interestLabel} | Role: ${jobtitle || "N/A"} | Source: ${data.source || "Website"}`;
+  const company = typeof data.company === "string" ? data.company.trim() : "";
+  const pageSource = typeof data.source === "string" ? data.source : "get-started";
 
-  let hubspotSuccess = false;
-  let hubspotContactId: string | null = null;
+  // Format message payload containing all custom attributes
+  const messageContent = [
+    `Industry Role: ${jobtitle}`,
+    `Inquiry Type: ${interestLabel}`,
+    `Source: ${pageSource}`,
+    `Submitted: ${receivedAt}`,
+  ].join(" | ");
 
-  if (!HUBSPOT_ACCESS_TOKEN) {
-    console.warn("HUBSPOT_ACCESS_TOKEN is not set. Skipping HubSpot CRM push.");
-  } else {
-    try {
-      // 1. Upsert Contact in HubSpot CRM
-      const upsertRes = await fetch("https://api.hubapi.com/crm/v3/objects/contacts/batch/upsert", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
-          "Content-Type": "application/json",
-        },
+  // Build HubSpot Form Fields
+  const fields = [
+    { name: "email", value: email },
+    { name: "firstname", value: firstname },
+    { name: "lastname", value: lastname },
+    { name: "company", value: company },
+    { name: "message", value: messageContent },
+  ].filter((f) => f.value);
+
+  let formSuccess = false;
+
+  try {
+    // 1. Submit to Native HubSpot Forms API
+    // This triggers HubSpot's native submission notifications and creates/updates the contact
+    const formRes = await fetch(HUBSPOT_SUBMIT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        inputs: [
-          {
-            id: email,
-            idProperty: "email",
-            properties: contactProperties,
-          },
-        ],
+        fields,
+        context: {
+          pageUri: `https://www.soiltrackers.com/${pageSource}`,
+          pageName: `SoilTracker | ${interestLabel}`,
+          ipAddress: clientIp || undefined,
+        },
       }),
     });
 
-    if (upsertRes.ok) {
-      const resJson = await upsertRes.json();
-      hubspotContactId = resJson.results?.[0]?.id || null;
-      hubspotSuccess = true;
-    } else {
-      console.error("HubSpot contact upsert failed:", upsertRes.status, await upsertRes.text());
+    formSuccess = formRes.ok;
+    if (!formRes.ok) {
+      console.error("HubSpot form submission error:", formRes.status, await formRes.text());
     }
+  } catch (err) {
+    console.error("HubSpot form dispatch failed:", err);
+  }
 
-    // 2. Attach an Activity Note to the Contact's HubSpot timeline
-    if (hubspotContactId) {
-      const noteHtml = `<strong>New SoilTracker Website Lead:</strong><br/>
-• <strong>Name:</strong> ${data.name || "N/A"}<br/>
-• <strong>Email:</strong> ${email}<br/>
-• <strong>Company:</strong> ${data.company || "N/A"}<br/>
-• <strong>Industry Role:</strong> ${jobtitle || "N/A"}<br/>
-• <strong>Interest:</strong> ${interestLabel}<br/>
-• <strong>Source Page:</strong> ${data.source || "Website"}<br/>
-• <strong>Timestamp:</strong> ${receivedAt}`;
-
-      await fetch("https://api.hubapi.com/crm/v3/objects/notes", {
+  // 2. Optional CRM Note enrichment if HUBSPOT_ACCESS_TOKEN is present
+  if (HUBSPOT_ACCESS_TOKEN) {
+    try {
+      // Find contact ID by email to attach note
+      const searchRes = await fetch("https://api.hubapi.com/crm/v3/objects/contacts/search", {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
+          Authorization: `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          properties: {
-            hs_note_body: noteHtml,
-            hs_timestamp: receivedAt,
-          },
-          associations: [
+          filterGroups: [
             {
-              to: { id: hubspotContactId },
-              types: [
-                {
-                  associationCategory: "HUBSPOT_DEFINED",
-                  associationTypeId: 202, // Note to Contact
-                },
-              ],
+              filters: [{ propertyName: "email", operator: "EQ", value: email }],
             },
           ],
         }),
       });
-    }
+
+      if (searchRes.ok) {
+        const searchJson = await searchRes.json();
+        const contactId = searchJson.results?.[0]?.id;
+        if (contactId) {
+          const noteHtml = `<strong>New SoilTracker Website Lead:</strong><br/>
+• <strong>Name:</strong> ${data.name || "N/A"}<br/>
+• <strong>Email:</strong> ${email}<br/>
+• <strong>Company:</strong> ${company || "N/A"}<br/>
+• <strong>Industry Role:</strong> ${jobtitle}<br/>
+• <strong>Interest:</strong> ${interestLabel}<br/>
+• <strong>Source:</strong> ${pageSource}<br/>
+• <strong>Timestamp:</strong> ${receivedAt}`;
+
+          await fetch("https://api.hubapi.com/crm/v3/objects/notes", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              properties: {
+                hs_note_body: noteHtml,
+                hs_timestamp: receivedAt,
+              },
+              associations: [
+                {
+                  to: { id: contactId },
+                  types: [
+                    {
+                      associationCategory: "HUBSPOT_DEFINED",
+                      associationTypeId: 202,
+                    },
+                  ],
+                },
+              ],
+            }),
+          });
+        }
+      }
     } catch (err) {
-      console.error("HubSpot lead submission error:", err);
+      console.warn("HubSpot note attachment non-blocking error:", err);
     }
   }
 
-  // Local fallback log — preserves record in dev / self-hosted environments
+  // 3. Local fallback log
   try {
     const dir = path.join(process.cwd(), "leads");
     await mkdir(dir, { recursive: true });
     await appendFile(
       path.join(dir, "leads.jsonl"),
-      JSON.stringify({ ...lead, hubspotSuccess, hubspotContactId }) + "\n",
+      JSON.stringify({ ...data, email, formSuccess, receivedAt }) + "\n",
       "utf8"
     );
   } catch (err) {
