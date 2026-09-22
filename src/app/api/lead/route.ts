@@ -10,6 +10,10 @@ const HUBSPOT_FORM_ID = process.env.HUBSPOT_FORM_ID || "d5bb2ef1-c262-4448-90db-
 const HUBSPOT_REGION = process.env.HUBSPOT_REGION || "na3";
 const HUBSPOT_SUBMIT_URL = `https://api-${HUBSPOT_REGION}.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
 
+// Make.com Webhook for instant automated email confirmations & notifications
+const MAKE_WEBHOOK_URL =
+  process.env.MAKE_WEBHOOK_URL || "https://hook.us2.make.com/9duzp56uyolo85t3tgj8ri0yqa7695l5";
+
 // Optional Private App Token for CRM note enrichment
 const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN || "";
 
@@ -170,13 +174,42 @@ export async function POST(req: Request) {
     }
   }
 
-  // 3. Local fallback log
+  // 3. Dispatch to Make.com webhook for automated email confirmations
+  let makeSuccess = false;
+  if (MAKE_WEBHOOK_URL) {
+    try {
+      const makeRes = await fetch(MAKE_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...data,
+          name: data.name || `${firstname} ${lastname}`.trim() || email,
+          firstname,
+          lastname,
+          email,
+          company,
+          role: roleStr,
+          jobtitle,
+          interest: rawInterest,
+          interestLabel,
+          source: pageSource,
+          receivedAt,
+          message: messageContent,
+        }),
+      });
+      makeSuccess = makeRes.ok;
+    } catch (err) {
+      console.error("Make.com webhook dispatch failed:", err);
+    }
+  }
+
+  // 4. Local fallback log
   try {
     const dir = path.join(process.cwd(), "leads");
     await mkdir(dir, { recursive: true });
     await appendFile(
       path.join(dir, "leads.jsonl"),
-      JSON.stringify({ ...data, email, formSuccess, receivedAt }) + "\n",
+      JSON.stringify({ ...data, email, formSuccess, makeSuccess, receivedAt }) + "\n",
       "utf8"
     );
   } catch (err) {
