@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "For Hauling Fleets & Owner-Operators | SoilTracker",
+  title: "For Hauling Fleets & Owner-Operators | Soiltrackers",
   description: "Keep your trucks rolling. High-volume earthworks hauls, zero-touch GPS telematics with no driver apps, and 100% backed invoice reconciliation with zero lost tickets.",
 };
 
@@ -168,7 +168,7 @@ export default function Haulers() {
               Monetize empty deadhead return miles.
             </h3>
             <p className="st-body2" style={{ color: "var(--st-ink-600)", lineHeight: 1.6 }}>
-              Dropping off structural fill in Surrey? SoilTracker matches clean aggregate or topsoil hauls on the return leg so your trucks roll full in both directions, saving thousands in diesel every month.
+              Dropping off structural fill in Surrey? Soiltrackers matches clean aggregate or topsoil hauls on the return leg so your trucks roll full in both directions, saving thousands in diesel every month.
             </p>
           </div>
         </section>
@@ -242,7 +242,7 @@ export default function Haulers() {
 
               <div className={styles.telematicsFoot}>
                 <i className="ri-cpu-line" style={{ color: "var(--st-brand-primary)", fontSize: 18 }}></i>
-                <span>Hardware Agnostic: Syncs via Geotab API, Samsara API, or SoilTracker OBD Plug-and-Play Tags.</span>
+                <span>Hardware Agnostic: Syncs via Geotab API, Samsara API, or Soiltrackers OBD Plug-and-Play Tags.</span>
               </div>
             </div>
 
@@ -253,7 +253,7 @@ export default function Haulers() {
               </div>
               <h2 className="st-h2">No app for your drivers. The truck reports itself.</h2>
               <p className="st-body1" style={{ margin: "16px 0 24px", color: "var(--st-ink-700)", lineHeight: 1.6 }}>
-                Compliance and billing accuracy shouldn&apos;t depend on whether a driver remembered to tap a screen with muddy gloves. SoilTracker captures every load event automatically through geofencing and vehicle telematics, so your custody records and billing backups are 100% complete without human error.
+                Compliance and billing accuracy shouldn&apos;t depend on whether a driver remembered to tap a screen with muddy gloves. Soiltrackers captures every load event automatically through geofencing and vehicle telematics, so your custody records and billing backups are 100% complete without human error.
               </p>
               <ul className={styles.checkList}>
                 <li className={styles.checkItem}>
@@ -295,7 +295,7 @@ export default function Haulers() {
               <div className={styles.workstationHeader}>
                 <div className={styles.workstationTitle}>
                   <i className="ri-dashboard-3-line" style={{ color: "var(--st-brand-primary)" }}></i>
-                  <span>SoilTracker Fleet Dispatcher — Metro Vancouver Command</span>
+                  <span>Soiltrackers Fleet Dispatcher — Metro Vancouver Command</span>
                 </div>
                 <div className={styles.workstationStats}>
                   <span className={styles.statPill}>18 Trucks Active</span>
@@ -450,7 +450,7 @@ export default function Haulers() {
                 <span className={styles.hardwarePill}>Geotab API</span>
                 <span className={styles.hardwarePill}>Samsara IoT</span>
                 <span className={styles.hardwarePill}>ISAAC Instruments</span>
-                <span className={styles.hardwarePill}>SoilTracker OBD Tag</span>
+                <span className={styles.hardwarePill}>Soiltrackers OBD Tag</span>
               </div>
             </div>
           </div>

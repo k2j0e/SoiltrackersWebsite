@@ -47,7 +47,7 @@ export default function Nav({
           <Link href="/" className={styles.brandLink} onClick={() => setMobileMenuOpen(false)}>
             <Image
               src="/ST-LOGO.png"
-              alt="SoilTracker"
+              alt="Soiltrackers"
               width={160}
               height={34}
               className={styles.logoImg}

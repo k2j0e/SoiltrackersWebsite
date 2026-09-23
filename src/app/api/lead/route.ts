@@ -97,7 +97,7 @@ export async function POST(req: Request) {
         fields,
         context: {
           pageUri: `https://www.soiltrackers.com/${pageSource}`,
-          pageName: `SoilTracker | ${interestLabel}`,
+          pageName: `Soiltrackers | ${interestLabel}`,
           ipAddress: clientIp || undefined,
         },
       }),
@@ -134,7 +134,7 @@ export async function POST(req: Request) {
         const searchJson = await searchRes.json();
         const contactId = searchJson.results?.[0]?.id;
         if (contactId) {
-          const noteHtml = `<strong>New SoilTracker Website Lead:</strong><br/>
+          const noteHtml = `<strong>New Soiltrackers Website Lead:</strong><br/>
 • <strong>Name:</strong> ${data.name || "N/A"}<br/>
 • <strong>Email:</strong> ${email}<br/>
 • <strong>Company:</strong> ${company || "N/A"}<br/>

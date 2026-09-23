@@ -47,7 +47,7 @@ export default function PaperVsDigital({ mode = "north-america" }: PaperVsDigita
       id: "right",
       x: "78%",
       y: "52%",
-      title: "SoilTracker Closed Loop",
+      title: "Soiltrackers Closed Loop",
       desc: mode === "bc"
         ? "Automated geofence capture, Protocol 19 lab records, and 1-click SRNF audit compliance."
         : "Automated geofence check-in, verified material characterization, and one-click audit packages: PDF report, CSV exports, JSON on request.",

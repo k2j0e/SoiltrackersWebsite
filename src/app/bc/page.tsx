@@ -8,7 +8,7 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "BC Commercial Truck Dashcam Mandate (Bill M217) | SoilTracker",
+  title: "BC Commercial Truck Dashcam Mandate (Bill M217) | Soiltrackers",
   description: "Turnkey dashcam compliance for BC heavy commercial vehicles over 11,793 kg. Forward-facing and dual-camera AI safety options, 72+ hour rolling storage, and integrated load telematics.",
 };
 
@@ -33,7 +33,7 @@ export default function BCPage() {
               </h1>
 
               <p className={styles.heroSubtitle}>
-                British Columbia requires forward-facing dashboard cameras for commercial vehicles with a registered GVWR exceeding <strong>11,793 kg (~26,000 lbs)</strong>. SoilTracker delivers 100% compliant video hardware with 72+ hour continuous storage — available in both forward-facing and dual AI safety configurations — paired with automated GPS load tracking.
+                British Columbia requires forward-facing dashboard cameras for commercial vehicles with a registered GVWR exceeding <strong>11,793 kg (~26,000 lbs)</strong>. Soiltrackers delivers 100% compliant video hardware with 72+ hour continuous storage — available in both forward-facing and dual AI safety configurations — paired with automated GPS load tracking.
               </p>
 
               <div className={styles.heroCtas}>
@@ -139,7 +139,7 @@ export default function BCPage() {
                 <span className={styles.cardStep}>Requirement 02</span>
                 <h3 className={styles.cardTitle}>Forward Road View (Dual AI Available)</h3>
                 <p className={styles.cardDesc}>
-                  Under Bill M217, the statutory baseline requires continuous recording of the forward road path through the windshield. While inward cameras are not legally mandated, SoilTracker supports both forward-facing only (for privacy-focused fleets) and dual AI safety cameras with active distraction and fatigue detection.
+                  Under Bill M217, the statutory baseline requires continuous recording of the forward road path through the windshield. While inward cameras are not legally mandated, Soiltrackers supports both forward-facing only (for privacy-focused fleets) and dual AI safety cameras with active distraction and fatigue detection.
                 </p>
                 <div className={styles.cardCheck}>
                   <i className="ri-checkbox-circle-fill"></i>
@@ -200,7 +200,7 @@ export default function BCPage() {
               </div>
               <h2 className="st-h2">Turn a Mandated Cost into a Profit Center</h2>
               <p className={styles.sectionSubtext}>
-                Most dashcam vendors charge you monthly fees just to check a legal compliance box. SoilTracker bundles the mandate-compliant camera with automated geofenced load tracking to eliminate lost paper tickets and accelerate billing.
+                Most dashcam vendors charge you monthly fees just to check a legal compliance box. Soiltrackers bundles the mandate-compliant camera with automated geofenced load tracking to eliminate lost paper tickets and accelerate billing.
               </p>
             </div>
 
@@ -249,7 +249,7 @@ export default function BCPage() {
                   <span className={styles.advantageTag} style={{ background: "rgba(170, 221, 102, 0.2)", color: "#aadd66" }}>
                     OPERATIONAL ROI
                   </span>
-                  <h3 className={styles.advantageTitle} style={{ color: "#ffffff" }}>SoilTracker Load Telematics</h3>
+                  <h3 className={styles.advantageTitle} style={{ color: "#ffffff" }}>Soiltrackers Load Telematics</h3>
                 </div>
                 <ul className={styles.advantageList}>
                   <li>
@@ -347,7 +347,7 @@ export default function BCPage() {
               Get your trucks outfitted before enforcement begins.
             </h2>
             <p className={styles.retrofitBody}>
-              Whether you operate 1 truck or 50+, SoilTracker delivers turnkey, plug-and-play kits with simple 15-minute installation. Speak directly with the founder to review your fleet configuration, lock in mandate compliance, and test automated load tracking.
+              Whether you operate 1 truck or 50+, Soiltrackers delivers turnkey, plug-and-play kits with simple 15-minute installation. Speak directly with the founder to review your fleet configuration, lock in mandate compliance, and test automated load tracking.
             </p>
 
             <div className={styles.retrofitCardsGrid}>
@@ -358,7 +358,7 @@ export default function BCPage() {
                   <li><i className="ri-check-line"></i> 1080p HDR Forward Road Dashcam (Dual AI Available)</li>
                   <li><i className="ri-check-line"></i> 72-Hour Continuous Rolling Loop Storage</li>
                   <li><i className="ri-check-line"></i> Plug &amp; Play OBD-II / J1939 Harness</li>
-                  <li><i className="ri-check-line"></i> SoilTracker Geofenced Load Tracking Built In</li>
+                  <li><i className="ri-check-line"></i> Soiltrackers Geofenced Load Tracking Built In</li>
                 </ul>
                 <Link href="/get-started" className={styles.retrofitBtn}>
                   Equip Owner-Operator Truck →
@@ -384,7 +384,7 @@ export default function BCPage() {
 
             <p className={styles.retrofitFooterNote}>
               <i className="ri-shield-check-fill" style={{ color: "var(--st-brand-primary)", marginRight: 6 }}></i>
-              SoilTracker · Built for British Columbia&apos;s Heavy Commercial Vehicle Safety &amp; Dashcam Mandate
+              Soiltrackers · Built for British Columbia&apos;s Heavy Commercial Vehicle Safety &amp; Dashcam Mandate
             </p>
           </div>
         </section>

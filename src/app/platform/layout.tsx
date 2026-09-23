@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Compliance & Dispatch Platform | SoilTracker",
+  title: "The Compliance & Dispatch Platform | Soiltrackers",
   description:
     "Sites, permits, and volume tracking in one real-time dashboard. GPS and geofencing capture every load automatically, and the custody record builds itself load by load. You confirm, it seals.",
 };

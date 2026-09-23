@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "For Hauling Fleets & Owner-Operators | SoilTracker",
+  title: "For Hauling Fleets & Owner-Operators | Soiltrackers",
   description:
     "Get matched to nearby high-volume hauls, dispatch drivers without phone tag, and back every invoice with automated, tamper-evident digital tickets.",
 };

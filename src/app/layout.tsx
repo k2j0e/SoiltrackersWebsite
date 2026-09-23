@@ -13,12 +13,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.soiltrackers.com"),
   title: {
-    default: "SoilTracker | Soil Chain of Custody & Compliance Platform",
-    template: "%s | SoilTracker",
+    default: "Soiltrackers | Soil Chain of Custody & Compliance Platform",
+    template: "%s | Soiltrackers",
   },
   description:
     "Prove where every load came from. And where it went. One verified chain of custody from excavation to final placement with automated GPS telematics and BC compliance.",
-  applicationName: "SoilTracker",
+  applicationName: "Soiltrackers",
   keywords: [
     "soil tracking",
     "soil chain of custody",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     "earthworks telematics",
     "Metro Vancouver soil disposal",
   ],
-  authors: [{ name: "SoilTracker Solutions Inc." }],
-  creator: "SoilTracker Solutions Inc.",
-  publisher: "SoilTracker Solutions Inc.",
+  authors: [{ name: "Soiltrackers Solutions Inc." }],
+  creator: "Soiltrackers Solutions Inc.",
+  publisher: "Soiltrackers Solutions Inc.",
   icons: {
     icon: [
       { url: "/icon.svg?v=2", type: "image/svg+xml" },
@@ -49,25 +49,33 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     url: "https://www.soiltrackers.com",
-    siteName: "SoilTracker",
-    title: "SoilTracker | Soil Chain of Custody & Compliance Platform",
+    siteName: "Soiltrackers",
+    title: "Soiltrackers | Soil Chain of Custody & Compliance Platform",
     description:
       "Prove where every load came from. And where it went. One verified chain of custody from excavation to final placement.",
     images: [
       {
-        url: "/opengraph-image",
+        url: "https://www.soiltrackers.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "SoilTracker | Soil Chain of Custody & Telematics Platform",
+        type: "image/jpeg",
+        alt: "Soiltrackers | Soil Chain of Custody & Telematics Platform",
+      },
+      {
+        url: "https://www.soiltrackers.com/og-image.png",
+        width: 1200,
+        height: 630,
+        type: "image/png",
+        alt: "Soiltrackers | Soil Chain of Custody & Telematics Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SoilTracker | Soil Chain of Custody & Compliance Platform",
+    title: "Soiltrackers | Soil Chain of Custody & Compliance Platform",
     description:
       "Prove where every load came from. And where it went. One verified chain of custody from excavation to final placement.",
-    images: ["/opengraph-image"],
+    images: ["https://www.soiltrackers.com/og-image.jpg"],
   },
 };
 
@@ -84,6 +92,13 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
         <link rel="shortcut icon" href="/favicon.ico?v=2" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+        <meta property="og:image" content="https://www.soiltrackers.com/og-image.jpg" />
+        <meta property="og:image:secure_url" content="https://www.soiltrackers.com/og-image.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Soiltrackers | Soil Chain of Custody & Telematics Platform" />
+        <meta name="twitter:image" content="https://www.soiltrackers.com/og-image.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

@@ -23,7 +23,7 @@ export default function BCDashcamChecker() {
       gvwr: "> 11,793 kg (Typically 24,000–31,000 kg)",
       applies: true,
       notes: "Fully subject to Bill M217. Forward-facing 1080p dashcam with 72h continuous storage mandatory for operation on all BC highways.",
-      recommendedKit: "SoilTracker Heavy Fleet Kit (OBD/J1939 + Forward 1080p HDR Dashcam + Geofenced Load Telematics)",
+      recommendedKit: "Soiltrackers Heavy Fleet Kit (OBD/J1939 + Forward 1080p HDR Dashcam + Geofenced Load Telematics)",
     },
     {
       id: "tandem",
@@ -31,7 +31,7 @@ export default function BCDashcamChecker() {
       gvwr: "> 11,793 kg (Typically 22,000–26,000 kg)",
       applies: true,
       notes: "Fully subject to Bill M217. Required to record forward road ahead through the windshield at all times during operation.",
-      recommendedKit: "SoilTracker Heavy Fleet Kit (1080p Forward Road Cam or Dual AI Camera + GPS Geofence)",
+      recommendedKit: "Soiltrackers Heavy Fleet Kit (1080p Forward Road Cam or Dual AI Camera + GPS Geofence)",
     },
     {
       id: "truck-pup",
@@ -39,7 +39,7 @@ export default function BCDashcamChecker() {
       gvwr: "> 11,793 kg (Typically 38,000–55,000 kg Combined)",
       applies: true,
       notes: "Fully subject to Bill M217. Forward camera required in power unit. High-risk highway corridors receive strict CVSE enforcement.",
-      recommendedKit: "SoilTracker Multi-Axle Fleet Kit (Forward Road Cam + High-Capacity Power Harness)",
+      recommendedKit: "Soiltrackers Multi-Axle Fleet Kit (Forward Road Cam + High-Capacity Power Harness)",
     },
     {
       id: "highway-tractor",
@@ -47,15 +47,15 @@ export default function BCDashcamChecker() {
       gvwr: "> 11,793 kg (Typically 35,000–63,500 kg Combined)",
       applies: true,
       notes: "Fully subject to Bill M217. Applicable to all commercial highway tractors operating in BC, including interprovincial and US-plated trucks.",
-      recommendedKit: "SoilTracker Commercial Tractor Kit (J1939 Plug & Play + 72H Night-Vision Dashcam)",
+      recommendedKit: "Soiltrackers Commercial Tractor Kit (J1939 Plug & Play + 72H Night-Vision Dashcam)",
     },
     {
       id: "single-axle",
       name: "Single-Axle Flatbed / Light Medium",
       gvwr: "Under 11,793 kg GVWR",
       applies: false,
-      notes: "Exempt from the mandatory commercial dashcam requirement, but eligible for voluntary SoilTracker load and geofence tracking.",
-      recommendedKit: "SoilTracker Telematics Only (Voluntary Dashcam Optional)",
+      notes: "Exempt from the mandatory commercial dashcam requirement, but eligible for voluntary Soiltrackers load and geofence tracking.",
+      recommendedKit: "Soiltrackers Telematics Only (Voluntary Dashcam Optional)",
     },
   ];
 

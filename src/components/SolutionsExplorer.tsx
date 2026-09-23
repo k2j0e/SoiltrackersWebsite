@@ -93,7 +93,7 @@ export default function SolutionsExplorer({
           Explore the operating system in action.
         </h2>
         <p className={styles.headerSubtext}>
-          Click through each pillar to see how SoilTracker eliminates paper trails across the field, office, and lab.
+          Click through each pillar to see how Soiltrackers eliminates paper trails across the field, office, and lab.
         </p>
       </div>
 

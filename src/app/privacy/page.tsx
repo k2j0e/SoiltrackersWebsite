@@ -6,8 +6,8 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | SoilTracker Solutions Inc.",
-  description: "Privacy Policy for SoilTracker Solutions Inc. Explaining how we collect, use, and protect personal information under BC PIPA and Canadian privacy laws.",
+  title: "Privacy Policy | Soiltrackers Solutions Inc.",
+  description: "Privacy Policy for Soiltrackers Solutions Inc. Explaining how we collect, use, and protect personal information under BC PIPA and Canadian privacy laws.",
 };
 
 export default function PrivacyPage() {
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
             <div className={styles.eyebrow}>LEGAL &amp; COMPLIANCE</div>
             <h1 className={styles.title}>Privacy Policy</h1>
             <p className={styles.companyLine}>
-              <strong>SoilTracker Solutions Inc.</strong> · Last updated: 15 September 2026
+              <strong>Soiltrackers Solutions Inc.</strong> · Last updated: 15 September 2026
             </p>
             <div className={styles.draftNotice}>
               <strong>DRAFT FOR LEGAL REVIEW.</strong> This is a working draft prepared for transparency and regulatory alignment, not formal legal advice. It outlines our data governance policies under British Columbia&apos;s <em>Personal Information Protection Act</em> (PIPA) and applicable Canadian privacy legislation.
@@ -31,12 +31,12 @@ export default function PrivacyPage() {
             <section className={styles.section}>
               <h2>1. Who we are</h2>
               <p>
-                SoilTracker Solutions Inc. (&ldquo;SoilTracker&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is a company incorporated in British Columbia, Canada. We operate the SoilTracker platform, a chain-of-custody and compliance system for soil movement, together with the SoilTracker marketplace and this website.
+                Soiltrackers Solutions Inc. (&ldquo;Soiltrackers&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is a company incorporated in British Columbia, Canada. We operate the Soiltrackers platform, a chain-of-custody and compliance system for soil movement, together with the Soiltrackers marketplace and this website.
               </p>
               <p>You can reach us about anything in this policy at:</p>
               <div className={styles.contactCard}>
                 <strong>Privacy Officer</strong>
-                <p>SoilTracker Solutions Inc.</p>
+                <p>Soiltrackers Solutions Inc.</p>
                 <p>Email: <a href="mailto:privacy@soiltrackers.com">privacy@soiltrackers.com</a></p>
                 <p>British Columbia, Canada</p>
               </div>
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
               <p>This policy covers personal information we collect through:</p>
               <ul>
                 <li>This website, including the founder call booking form and any waitlist or access request forms</li>
-                <li>The SoilTracker platform and marketplace, once you hold an account</li>
+                <li>The Soiltrackers platform and marketplace, once you hold an account</li>
                 <li>Email, phone, and other direct correspondence with us</li>
                 <li>Our business development and outreach activity</li>
               </ul>
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
                 We send commercial email to business contacts where we have express consent, or where implied consent exists under CASL, including where a business contact&apos;s address is conspicuously published or provided to us without a statement refusing such messages, and our message is relevant to that person&apos;s role.
               </p>
               <p>
-                Every commercial message we send identifies SoilTracker Solutions Inc., gives our contact information, and contains a working unsubscribe mechanism. Unsubscribe requests are honoured without charge and no later than ten business days.
+                Every commercial message we send identifies Soiltrackers Solutions Inc., gives our contact information, and contains a working unsubscribe mechanism. Unsubscribe requests are honoured without charge and no later than ten business days.
               </p>
               <p>
                 If you received a message from us and would rather not hear from us again, use the unsubscribe link or write to <a href="mailto:privacy@soiltrackers.com">privacy@soiltrackers.com</a> and we will remove you.
@@ -257,7 +257,7 @@ export default function PrivacyPage() {
               <h2>14. Contact</h2>
               <p>Questions, requests, and complaints go to:</p>
               <div className={styles.contactCard}>
-                <strong>Privacy Officer, SoilTracker Solutions Inc.</strong>
+                <strong>Privacy Officer, Soiltrackers Solutions Inc.</strong>
                 <p><a href="mailto:privacy@soiltrackers.com">privacy@soiltrackers.com</a></p>
               </div>
             </section>

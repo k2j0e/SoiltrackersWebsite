@@ -46,7 +46,7 @@ export default function Home() {
                 </h1>
 
               <p className={styles.heroSubtitle}>
-                Regulators across North America are done accepting paper trails for soil movement. SoilTracker gives generators, receivers, and environmental professionals one verified chain of custody from excavation to final placement, with the compliance record assembled as the soil moves, ready for your confirmation.
+                Regulators across North America are done accepting paper trails for soil movement. Soiltrackers gives generators, receivers, and environmental professionals one verified chain of custody from excavation to final placement, with the compliance record assembled as the soil moves, ready for your confirmation.
               </p>
 
               <div className={styles.heroCtas}>
@@ -235,7 +235,7 @@ export default function Home() {
               </div>
 
               <div className={`${styles.compCard} ${styles.compCardSoilTracker}`}>
-                <div className={styles.compTypeHighlight}>SoilTracker</div>
+                <div className={styles.compTypeHighlight}>Soiltrackers</div>
                 <div className={styles.compPill}>The Full Closed Loop</div>
                 <p className={styles.compDescHighlight}>
                   Match the material, dispatch the haul, verify the load, and walk away with the custody record already built.
@@ -258,7 +258,7 @@ export default function Home() {
               The next load you move should prove itself.
             </h2>
             <p className={styles.finalCtaBody}>
-              Founding member access is open now. Fifteen minutes with the founder (no demo theater, no sales sequence) and you&apos;ll know whether SoilTracker fits your operation.
+              Founding member access is open now. Fifteen minutes with the founder (no demo theater, no sales sequence) and you&apos;ll know whether Soiltrackers fits your operation.
             </p>
 
             <div className={styles.finalCtaButtons}>
@@ -271,7 +271,7 @@ export default function Home() {
             </div>
 
             <p className={styles.footerTrustLine}>
-              SoilTracker · The Closed-Loop Soil Operating System · British Columbia, Canada
+              Soiltrackers · The Closed-Loop Soil Operating System · British Columbia, Canada
             </p>
           </div>
         </section>

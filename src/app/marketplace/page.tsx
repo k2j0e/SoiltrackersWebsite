@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Spec-Matched Soil Exchange | SoilTracker",
+  title: "Spec-Matched Soil Exchange | Soiltrackers",
   description: "Find clean fill. Move surplus. Zero material wasted. The spec-matched soil exchange with custody verification attached to every trade.",
 };
 
@@ -281,7 +281,7 @@ export default function Marketplace() {
               {/* Direct Site Exchange */}
               <div className={`${styles.savingsCard} ${styles.savingsCardExchange}`}>
                 <div className={styles.savingsCardTitle} style={{ color: "var(--st-brand-primary)" }}>
-                  SoilTracker Direct Exchange
+                  Soiltrackers Direct Exchange
                 </div>
                 <div className={styles.savingsAmount} style={{ color: "var(--st-ink-900)" }}>
                   $68,000
