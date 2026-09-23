@@ -236,6 +236,15 @@
   z-index: 10;
 }
 
+.tooltipCard::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
 .tooltipVisible {
   opacity: 1;
   visibility: visible;

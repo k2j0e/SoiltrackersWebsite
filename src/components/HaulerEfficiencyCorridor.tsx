@@ -17,7 +17,7 @@ interface Hotspot {
 }
 
 export default function HaulerEfficiencyCorridor() {
-  const [activeHotspot, setActiveHotspot] = useState<string | null>("right");
+  const [activeHotspot, setActiveHotspot] = useState<string | null>(null);
 
   const hotspots: Hotspot[] = [
     {
@@ -54,7 +54,7 @@ export default function HaulerEfficiencyCorridor() {
 
   return (
     <div className={styles.sectionContainer}>
-      <div className={styles.bannerWrapper}>
+      <div className={styles.bannerWrapper} onClick={() => setActiveHotspot(null)}>
         {/* Background 3D Graphic */}
         <div className={styles.imageBackdrop}>
           <Image
@@ -94,7 +94,11 @@ export default function HaulerEfficiencyCorridor() {
                 className={`${styles.hotspotAnchor} ${isActive ? styles.hotspotActive : ""}`}
                 style={{ left: spot.x, top: spot.y }}
                 onMouseEnter={() => setActiveHotspot(spot.id)}
-                onClick={() => setActiveHotspot(spot.id)}
+                onMouseLeave={() => setActiveHotspot(null)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveHotspot((prev) => (prev === spot.id ? null : spot.id));
+                }}
               >
                 <button
                   type="button"

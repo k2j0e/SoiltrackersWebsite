@@ -20,7 +20,7 @@ interface Hotspot {
 }
 
 export default function PaperVsDigital({ mode = "north-america" }: PaperVsDigitalProps) {
-  const [activeHotspot, setActiveHotspot] = useState<string | null>("right");
+  const [activeHotspot, setActiveHotspot] = useState<string | null>(null);
 
   const hotspots: Hotspot[] = [
     {
@@ -58,7 +58,7 @@ export default function PaperVsDigital({ mode = "north-america" }: PaperVsDigita
   ];
 
   return (
-    <div className={styles.bannerWrapper}>
+    <div className={styles.bannerWrapper} onClick={() => setActiveHotspot(null)}>
       {/* Background Graphic */}
       <div className={styles.imageBackdrop}>
         <Image
@@ -100,7 +100,11 @@ export default function PaperVsDigital({ mode = "north-america" }: PaperVsDigita
               className={`${styles.hotspotAnchor} ${isActive ? styles.hotspotActive : ""}`}
               style={{ left: spot.x, top: spot.y }}
               onMouseEnter={() => setActiveHotspot(spot.id)}
-              onClick={() => setActiveHotspot(spot.id)}
+              onMouseLeave={() => setActiveHotspot(null)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveHotspot((prev) => (prev === spot.id ? null : spot.id));
+              }}
             >
               <button
                 type="button"
